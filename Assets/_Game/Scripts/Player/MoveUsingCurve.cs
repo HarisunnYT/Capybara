@@ -4,52 +4,44 @@ using UnityEngine;
 
 public class MoveUsingCurve : MonoBehaviour
 {
-    [SerializeField]
     private float moveDuration = 2;
+    private Vector3 targetPosition;
+    private Vector3 startPosition;
 
-    [SerializeField]
-    private float normalizedTimeUntilCallback = 0.5f;
-
-    [SerializeField]
     private AnimationCurve moveCurve;
 
-    private System.Action callback;
+    private float timeElapsed = float.MaxValue;
+    private bool local = false;
 
-    private bool doneCallback = false;
-
-    IEnumerator MoveToHome(Vector3 targetPosition)
+    public void UpdateMovement(float multiplier)
     {
-        Vector3 startPoint = transform.position;
-
-        float timeElapsed = 0;
-
-        do
+        if (timeElapsed < moveDuration && multiplier != 0)
         {
             timeElapsed += Time.deltaTime;
             float normalizedTime = timeElapsed / moveDuration;
 
-            Vector3 newPos = Vector3.Lerp(startPoint, targetPosition, normalizedTime);
-            newPos.y = targetPosition.y + moveCurve.Evaluate(normalizedTime);
+            Vector3 newPos = Vector3.Lerp(startPosition, targetPosition, normalizedTime);
+            //newPos.y = targetPosition.y + moveCurve.Evaluate(normalizedTime);
 
-            transform.position = newPos;
-
-            if (!doneCallback && normalizedTime >= normalizedTimeUntilCallback)
+            if (local)
             {
-                callback?.Invoke();
-                doneCallback = true;
+                transform.localPosition = newPos;
             }
-
-            // Wait for one frame
-            yield return null;
+            else
+            {
+                transform.position = newPos;
+            }
         }
-        while (timeElapsed < moveDuration);
     }
 
-    public void Move(Vector3 targetPos, System.Action completeCallback)
+    public void SetTarget(Vector3 targetPosition, float moveDuration, bool local = false, AnimationCurve moveCurve = default)
     {
-        doneCallback = false;
-        callback = completeCallback;
+        this.moveDuration = moveDuration;
+        this.moveCurve = moveCurve;
+        this.targetPosition = targetPosition;
+        startPosition = local ? transform.localPosition : transform.position;
+        this.local = local;
 
-        StartCoroutine(MoveToHome(targetPos));
+        timeElapsed = 0;
     }
 }

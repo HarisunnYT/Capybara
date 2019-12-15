@@ -748,18 +748,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &823940937 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 823940937, guid: 75b384b8a5853f648ad78b9c11b09199,
-    type: 3}
-  m_PrefabInstance: {fileID: 1978355518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cc329982edfc412a8a508a8e175eef1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &847785694
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946931301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.545, y: 0.24, z: -1}
+  m_LocalPosition: {x: -0.5, y: 0.24, z: -0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 350382181}
@@ -975,32 +963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2d93186e4ee0c429c9ef7be107630f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 0.5
-  normalizedTimeUntilCallback: 1
-  moveCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9998199
-      value: -0.00030627823
-      inSlope: -2.0069108
-      outSlope: -2.0069108
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.059133034
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   otherLeg: {fileID: 2000234794}
   legType: 0
 --- !u!1 &1223395278
@@ -1128,32 +1090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3e11aafb4bba348b8dd8e3c24ea50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 0.5
-  normalizedTimeUntilCallback: 0.7
-  moveCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9998199
-      value: -0.00030627823
-      inSlope: -2.0069108
-      outSlope: -2.0069108
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.059133034
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!135 &1396288562
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1530,7 +1466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741838595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.543, y: 0.24, z: -2}
+  m_LocalPosition: {x: 0.5, y: 0.24, z: -3.3}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 350382181}
@@ -1607,32 +1543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2d93186e4ee0c429c9ef7be107630f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 0.5
-  normalizedTimeUntilCallback: 1
-  moveCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9998199
-      value: -0.00030627823
-      inSlope: -2.0069108
-      outSlope: -2.0069108
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.059133034
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   otherLeg: {fileID: 1814740885}
   legType: 1
 --- !u!1 &1814740880
@@ -1663,7 +1573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814740880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.543, y: 0.24, z: 1.5}
+  m_LocalPosition: {x: 0.5, y: 0.24, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 350382181}
@@ -1740,32 +1650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2d93186e4ee0c429c9ef7be107630f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 0.5
-  normalizedTimeUntilCallback: 1
-  moveCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9998199
-      value: -0.00030627823
-      inSlope: -2.0069108
-      outSlope: -2.0069108
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.059133034
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   otherLeg: {fileID: 1741838600}
   legType: 0
 --- !u!1 &1859073689
@@ -1816,6 +1700,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 823940937, guid: 75b384b8a5853f648ad78b9c11b09199, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 1644524126292303029}
+    - target: {fileID: 823940937, guid: 75b384b8a5853f648ad78b9c11b09199, type: 3}
+      propertyPath: Parent
+      value: 
+      objectReference: {fileID: 7236268079501446884}
     - target: {fileID: 6350834601153272906, guid: 75b384b8a5853f648ad78b9c11b09199,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2036,14 +1928,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: 0.003882285
       objectReference: {fileID: 0}
-    - target: {fileID: 823940937, guid: 75b384b8a5853f648ad78b9c11b09199, type: 3}
-      propertyPath: Character
-      value: 
-      objectReference: {fileID: 1644524126292303029}
-    - target: {fileID: 823940937, guid: 75b384b8a5853f648ad78b9c11b09199, type: 3}
-      propertyPath: Parent
-      value: 
-      objectReference: {fileID: 7236268079501446884}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b384b8a5853f648ad78b9c11b09199, type: 3}
 --- !u!1 &1979361741
@@ -2153,7 +2037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000234789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.545, y: 0.24, z: -4.5}
+  m_LocalPosition: {x: -0.5, y: 0.24, z: -3.3}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 350382181}
@@ -2230,32 +2114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2d93186e4ee0c429c9ef7be107630f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 0.5
-  normalizedTimeUntilCallback: 1
-  moveCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9998199
-      value: -0.00030627823
-      inSlope: -2.0069108
-      outSlope: -2.0069108
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.059133034
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   otherLeg: {fileID: 946931306}
   legType: 1
 --- !u!1 &2021819808
@@ -2919,14 +2777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe52f6826cc3a24496f3c947e8c18db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothMovement: {fileID: 680998199}
-  target: {fileID: 266483176}
-  stepDuration: 0.5
-  wantStepAtDistance: 0.7
-  stepOverShootFraction: 1
-  <Moving>k__BackingField: 0
-  bioIK: {fileID: 0}
-  segmant: {fileID: 0}
 --- !u!1 &476032459958693461
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,14 +3173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe52f6826cc3a24496f3c947e8c18db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothMovement: {fileID: 287083818}
-  target: {fileID: 847785695}
-  stepDuration: 0.5
-  wantStepAtDistance: 0.7
-  stepOverShootFraction: 1
-  <Moving>k__BackingField: 0
-  bioIK: {fileID: 0}
-  segmant: {fileID: 0}
 --- !u!114 &800694809864998937
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4547,7 +4389,7 @@ MonoBehaviour:
   - {fileID: 6094042869782707112}
   - {fileID: 8796695289418875254}
   - {fileID: 2999951946860768897}
-  - {fileID: 823940937}
+  - {fileID: 0}
   Root: {fileID: 1644524126292303028}
   Solution:
   - 0.039779296305924444
@@ -7681,6 +7523,8 @@ GameObject:
   m_Component:
   - component: {fileID: 968091098948105672}
   - component: {fileID: 4266035164721842140}
+  - component: {fileID: 4266035164721842141}
+  - component: {fileID: 4266035164721842142}
   m_Layer: 0
   m_Name: capybara-lessbones
   m_TagString: Untagged
@@ -7700,12 +7544,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32dad8d0ff218334788f20d63486cbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quadrupedWalk: {fileID: 4266035164721842141}
+  quadrupedIdle: {fileID: 4266035164721842142}
+--- !u!114 &4266035164721842141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4266035164721842139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb89c697a0cf924c8dc4d2cb1052500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   frontLegs:
   - {fileID: 946931306}
   - {fileID: 1814740885}
   backLegs:
   - {fileID: 2000234794}
   - {fileID: 1741838600}
+  moveDuration: 0.7
+  stepDistance: 4
+  moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &4266035164721842142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4266035164721842139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf38879c740e29b4f87496ea44167255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontLegs:
+  - {fileID: 946931306}
+  - {fileID: 1814740885}
+  backLegs:
+  - {fileID: 2000234794}
+  - {fileID: 1741838600}
+  moveToIdleDuration: 0.5
+  frontLegLocalPositions:
+  - {x: -0.5, y: 0.24, z: 0}
+  - {x: 0.5, y: 0.24, z: 0}
+  backLegLocalPositions:
+  - {x: -0.5, y: 0.24, z: -3.3}
+  - {x: 0.5, y: 0.24, z: -3.3}
 --- !u!1 &4381601440615395165
 GameObject:
   m_ObjectHideFlags: 0
@@ -10881,8 +10790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32dad8d0ff218334788f20d63486cbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontLegs: []
-  backLegs: []
+  quadrupedWalk: {fileID: 0}
+  quadrupedIdle: {fileID: 0}
 --- !u!4 &6571696543633004991
 Transform:
   m_ObjectHideFlags: 8
@@ -13207,14 +13116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe52f6826cc3a24496f3c947e8c18db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothMovement: {fileID: 1690718506}
-  target: {fileID: 282429847}
-  stepDuration: 0.5
-  wantStepAtDistance: 0.7
-  stepOverShootFraction: 1
-  <Moving>k__BackingField: 0
-  bioIK: {fileID: 0}
-  segmant: {fileID: 0}
 --- !u!4 &8457858317349602623
 Transform:
   m_ObjectHideFlags: 8
@@ -13799,14 +13700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe52f6826cc3a24496f3c947e8c18db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothMovement: {fileID: 1979361742}
-  target: {fileID: 1223395279}
-  stepDuration: 0.5
-  wantStepAtDistance: 0.7
-  stepOverShootFraction: 1
-  <Moving>k__BackingField: 0
-  bioIK: {fileID: 0}
-  segmant: {fileID: 0}
 --- !u!4 &9000603637023196995
 Transform:
   m_ObjectHideFlags: 8

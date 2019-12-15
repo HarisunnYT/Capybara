@@ -7,15 +7,14 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     [SerializeField]
-    private LegNode[] frontLegs;
+    private QuadrupedWalk quadrupedWalk;
 
     [SerializeField]
-    private LegNode[] backLegs;
+    private QuadrupedIdle quadrupedIdle;
 
-    private int currentLegIndex = 0;
+    private QuadrupedAnim currentAnimation;
 
     private Vector2 inputAxis;
-    private bool moving = false;
 
     private void Start()
     {
@@ -26,38 +25,24 @@ public class PlayerController : MonoBehaviour
     {
         inputAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (inputAxis.y > 0 && !moving)
+        if (inputAxis == Vector2.zero)
         {
-            moving = true;
-            MoveLeg();
+            if (currentAnimation == quadrupedWalk)
+            {
+                currentAnimation.StopAnimating();
+            }
+            currentAnimation = quadrupedIdle;
+            currentAnimation.Animate();
         }
-
-        moving = inputAxis.y > 0;
-    }
-
-    private void MoveLeg()
-    {
-        if (!moving)
+        else if (currentAnimation == quadrupedIdle)
         {
-            return;
+            quadrupedIdle.StopAnimating();
+            currentAnimation = null;
         }
-
-        if (currentLegIndex > 1)
+        else
         {
-            currentLegIndex = 0;
+            currentAnimation = quadrupedWalk;
+            quadrupedWalk.Walk(inputAxis);
         }
-
-        float distanceMultiplier = 4;
-
-        frontLegs[currentLegIndex].Move(frontLegs[currentLegIndex].transform.position + (frontLegs[currentLegIndex].transform.forward * distanceMultiplier), () =>
-        {
-            MoveLeg();
-        });
-
-        backLegs[currentLegIndex].Move(backLegs[currentLegIndex].transform.position + (backLegs[currentLegIndex].transform.forward * distanceMultiplier), () =>
-        {
-        });
-
-        currentLegIndex++;
     }
 }
