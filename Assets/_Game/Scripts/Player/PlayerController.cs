@@ -4,39 +4,60 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [System.Serializable]
-    struct Legs
-    {
-        public Feet Feet;
-        public AddForce AddForce;
-    }
+    public static PlayerController Instance;
 
     [SerializeField]
-    private float force = 0;
+    private LegNode[] frontLegs;
 
     [SerializeField]
-    private Legs[] legs = null;
+    private LegNode[] backLegs;
 
-    private Animator animator;
-    private new Rigidbody rigidbody;
+    private int currentLegIndex = 0;
 
-    private CharacterJoint joint;
+    private Vector2 inputAxis;
+    private bool moving = false;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody>();
+        Instance = this;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        inputAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (inputAxis.y > 0 && !moving)
         {
-            for (int i = 0; i < legs.Length; i++)
-            {
-                legs[i].Feet.Lock(false);
-                legs[i].AddForce.AddDirectionalForce(appliedForce: force);
-            }
+            moving = true;
+            MoveLeg();
         }
+
+        moving = inputAxis.y > 0;
+    }
+
+    private void MoveLeg()
+    {
+        if (!moving)
+        {
+            return;
+        }
+
+        if (currentLegIndex > 1)
+        {
+            currentLegIndex = 0;
+        }
+
+        float distanceMultiplier = 4;
+
+        frontLegs[currentLegIndex].Move(frontLegs[currentLegIndex].transform.position + (frontLegs[currentLegIndex].transform.forward * distanceMultiplier), () =>
+        {
+            MoveLeg();
+        });
+
+        backLegs[currentLegIndex].Move(backLegs[currentLegIndex].transform.position + (backLegs[currentLegIndex].transform.forward * distanceMultiplier), () =>
+        {
+        });
+
+        currentLegIndex++;
     }
 }
