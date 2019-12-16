@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Stone
+  m_Shader: {fileID: 4800000, guid: 11a7a8a9fee69f844a535e62fc9114bf, type: 3}
+  m_ShaderKeywords: _DESATURATELIGHTCOLOR_ON _GRADIENTCHANGEDIRECTION_ON _HEIGHTFOG_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BackTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BottomTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FrontTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientTextureWhite:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LeftTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RightTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SimulatedLightRampTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AdditiveSimulatedLight: 0
+    - _AdditiveSimulatedLightLevel: 1
+    - _Ambient: 0
+    - _BackLightLevel: 0.374
+    - _BackOpacityLevel: 1
+    - _BackTextureLevel: 1
+    - _BottomLightLevel: 0
+    - _BottomOpacityLevel: 1
+    - _BottomTextureLevel: 1
+    - _BumpScale: 1
+    - _Cull: 0
+    - _Cutoff: 0.5
+    - _DesaturateLightColor: 1
+    - _DetailNormalMapScale: 1
+    - _DirectionalLight: 0
+    - _DistanceFog: 0
+    - _DistanceFogDensity: 1
+    - _DistanceFogLength: 0
+    - _DistanceFogStartPosition: 10
+    - _DstBlend: 0
+    - _FogHeight: 1.38
+    - _FrontLightLevel: 0.8
+    - _FrontOpacityLevel: 1
+    - _FrontTextureLevel: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Gradient: 0
+    - _GradientCenter: 0.5
+    - _GradientChangeDirection: 1
+    - _GradientRamp: 0
+    - _GradientRevert: 0
+    - _GradientRotation: 0
+    - _GradientWidth: 0.5
+    - _HeightFog: 1
+    - _HeightFogDensity: 1
+    - _HeightFogStartPosition: -0.94
+    - _LeftLightLevel: 0
+    - _LeftOpacityLevel: 1
+    - _LeftTextureLevel: 1
+    - _Light: 0
+    - _Lightmap: 0
+    - _LightmapLevel: 0.02
+    - _LocalHeightFog: 0
+    - _MainTextureLevel: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _MultiplyLightmap: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Posterize: 0
+    - _RenderMode: 0
+    - _RightLightLevel: 1
+    - _RightOpacityLevel: 1
+    - _RightTextureLevel: 1
+    - _ShadowLevel: 0
+    - _SimulatedLight: 0
+    - _SimulatedLightDistance: 10
+    - _SimulatedLightLevel: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Steps: 2
+    - _TopLightLevel: 1
+    - _TopOpacityLevel: 1
+    - _TopTextureLevel: 1
+    - _UVSec: 0
+    - _UseAlpha: 0
+    - _UseAlphaValue: 0
+    - _UseExternalColor: 0
+    - _ViewDirection: 0
+    - _WorldDistanceFog: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _CenterColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.13429932, g: 0.23438688, b: 0.50735295, a: 1}
+    - _DistanceFogColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ExternalColor: {r: 1, g: 0, b: 0, a: 1}
+    - _GradientTopColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HeightFogColor: {r: 0.11386246, g: 0.12797362, b: 0.19852942, a: 1}
+    - _LightmapColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SimulatedLightPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _WorldDistanceFogPosition: {r: 0, g: 0, b: 0, a: 0}

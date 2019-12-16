@@ -1,0 +1,84 @@
+#File written by LIBUNFOLD3D. Compilation :Apr 13 2018,19:30:35
+mtllib 
+#begin vertices
+v -9.1653 0 38.9425
+v 0 0 40
+v 9.1654 0 38.9425
+v 17.5823 0 35.9309
+v 25.0096 0 31.2062
+v 31.2062 0 25.0096
+v 35.9309 0 17.5823
+v 38.9425 0 9.1653
+v 40 0 -0
+v 38.9425 0 -9.1654
+v 35.9309 0 -17.5823
+v 31.2062 0 -25.0096
+v 25.0096 0 -31.2062
+v 17.5823 0 -35.9309
+v 9.1653 0 -38.9425
+v -0 0 -40
+v -9.1654 0 -38.9425
+v -17.5823 0 -35.9309
+v -25.0096 0 -31.2062
+v -31.2062 0 -25.0096
+v -35.9309 0 -17.5823
+v -38.9425 0 -9.1653
+v -40 0 0
+v -38.9425 0 9.1654
+v -35.9309 0 17.5823
+v -31.2062 0 25.0096
+v -25.0096 0 31.2062
+v -17.5823 0 35.9309
+#end vertices
+
+#begin 28 textures vertices 
+vt 0.9980469 0.4418271 0
+vt 0.9980469 0.5574651 0
+vt 0.9717125 0.6700658 0
+vt 0.9221226 0.7705395 0
+vt 0.8526243 0.8562305 0
+vt 0.7665672 0.9244832 0
+vt 0.667301 0.972641 0
+vt 0.5581729 0.9980469 0
+vt 0.4425349 0.9980469 0
+vt 0.3299342 0.9717125 0
+vt 0.2294605 0.9221226 0
+vt 0.1437695 0.8526243 0
+vt 0.07551678 0.7665672 0
+vt 0.02735899 0.667301 0
+vt 0.001953125 0.5581729 0
+vt 0.001953125 0.4425349 0
+vt 0.0282875 0.3299342 0
+vt 0.07787739 0.2294605 0
+vt 0.1473757 0.1437695 0
+vt 0.2334328 0.07551678 0
+vt 0.332699 0.02735899 0
+vt 0.4418271 0.001953125 0
+vt 0.5574651 0.001953125 0
+vt 0.6700658 0.0282875 0
+vt 0.7705395 0.07787739 0
+vt 0.8562305 0.1473757 0
+vt 0.9244832 0.2334328 0
+vt 0.972641 0.332699 0
+#end 28 textures vertices 
+
+#begin 1 normals 
+vn 0 1 -0
+#end 1 normals 
+
+#begin 1 faces
+o water
+g water
+s 1
+f 1/1/1 2/2/1 3/3/1 4/4/1 5/5/1 6/6/1 7/7/1 8/8/1 9/9/1 10/10/1 11/11/1 12/12/1 13/13/1 14/14/1 15/15/1 16/16/1 17/17/1 18/18/1 19/19/1 20/20/1 21/21/1 22/22/1 23/23/1 24/24/1 25/25/1 26/26/1 27/27/1 28/28/1 
+#end 1 faces
+
+#begin properties
+#U3DPROPERTIES_02 table {Mesh table {SymPlane table {Point vector3d 0 0 0  Normal vector3d 1 0 0  Threshold double 0.01 Enabled bool false UPos double 0.5 LocalMode bool false } RootGroup CSubMeshGroup {Children table {Tile_0_0 CSubMeshGroup {Children table {} IslandIDs ints { 0 } BBoxUV box3d 0 0 0 0 0 0 BBox3D box3d 0 0 0 0 0 0 AreaUV double 0 Area3D double 0 IsRoot bool false TopoStable table {Selected bool false Box box3d 0 1 0 1 0 1 U int 0 V int 0 NU int 0 NV int 0 Tiling vector3d 50 50 1  TileRatioMode string "1:1" } IsTile bool true } } IslandIDs ints { } BBoxUV box3d 0 0 0 0 0 0 BBox3D box3d 0 0 0 0 0 0 AreaUV double 0 Area3D double 0 IsRoot bool true TopoStable table {Selected bool false Box box3d 0 1 0 1 0 1 U int 0 V int 0 NU int 1 NV int 1 Tiling vector3d 50 50 1  TileRatioMode string "1:1" Pack table {Rotate table {Mode int 2 Min double 0 Max double 180 Step double 0 } SpacingSize double 0.00390625 MarginSize double 0.001953125 Resolution int 200 Scaling table {Mode int 0 } LayoutScalingMode int 2 MaxMutations int 1 } } IsTile bool false } Maps table {Density table {PrimType string "Polygon" Size int 1 DefaultValue double 1 ScaleType string "Log" MinValue double 0.1 MaxValue double 4 Data doubles { 1 } } Pin table {PrimType string "Vertex" Size int 1 DefaultValue double 0 ScaleType string "Normalized" MinValue double 0 MaxValue double 1 Data doubles { r 28 0 } } Protect table {PrimType string "Vertex" Size int 1 DefaultValue double 0 ScaleType string "Normalized" MinValue double -1 MaxValue double 1 Data doubles { r 28 0 } } } } }
+#end properties
+
+#begin 0 fatal error vertex (that Unfold3D cannot handle)
+#end 0 fatal error vertex (that Unfold3D cannot handle)
+
+#begin 0 error vertex
+#end 0 error vertex
