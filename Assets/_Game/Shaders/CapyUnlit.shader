@@ -3,6 +3,7 @@
     Properties
     {
 		_MainTex("Texture", 2D) = "white" {}
+		_Colour("Colour", Color) = (255,255,255,255)
     }
 
     SubShader
@@ -34,6 +35,7 @@
 			};
 
 			sampler2D _MainTex;
+			float4 _Colour;
 			float4 _MainTex_ST;
 
 			v2f vert(appdata_t v)
@@ -50,6 +52,7 @@
 			fixed4 frag(v2f i) : COLOR
 			{
 				fixed4 col = tex2D(_MainTex, i.texcoord);
+				col *= _Colour;
 
 				 float attenuation = LIGHT_ATTENUATION(i);
 				 return col * clamp(attenuation, 0, 1);
