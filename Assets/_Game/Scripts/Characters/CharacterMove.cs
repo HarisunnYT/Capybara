@@ -4,8 +4,9 @@ using UnityEngine;
 
 public enum AnimationState
 {
-    Walk,
-    Idle
+    Run,
+    Idle,
+    Walk
 }
 
 public class CharacterMove : MonoBehaviour
@@ -15,7 +16,13 @@ public class CharacterMove : MonoBehaviour
     public Transform[] Bones { get { return bones; } }
 
     [SerializeField]
+    private Transform rootBone;
+
+    [Space()]
+    [SerializeField]
     private AnimationKeyFrame walkAnimation;
+    [SerializeField]
+    private AnimationKeyFrame runAnimation;
     [SerializeField]
     private AnimationKeyFrame idleAnimation;
 
@@ -36,19 +43,22 @@ public class CharacterMove : MonoBehaviour
     private float normalizedTime = 0;
     private float timer = 0;
 
+    private float animationDurationMultiplier; //this is modified based on input vector
+
     private bool transitioning = false;
+
+    private Vector3 originalRootBonePosition;
     private Vector3 moveVector;
 
     private AnimationKeyFrame.Frame[] previousFrames;
+    private Vector3 previousRootBonePosition;
 
     protected Rigidbody rigidbody;
-
-    [Range(0, 1)]
-    public float Slider = 0;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        originalRootBonePosition = rootBone.localPosition;
 
         SetIdle();
     }
@@ -59,7 +69,7 @@ public class CharacterMove : MonoBehaviour
         {
             //get time
             timer += Time.deltaTime;
-            normalizedTime = timer / (transitioning ? transitionDuration : currentAnimation.Duration);
+            normalizedTime = timer / (transitioning ? transitionDuration : currentAnimation.Duration / animationDurationMultiplier);
 
             if (transitioning && normalizedTime > 0.99f)
             {
@@ -112,19 +122,48 @@ public class CharacterMove : MonoBehaviour
                 }
             }
 
+            animationDurationMultiplier = moveVector.magnitude;
+
             //move if in move animation
-            if (currentAnimation.AnimState == AnimationState.Walk)
+            if (currentAnimation.AnimState == AnimationState.Run)
             {
                 rigidbody.velocity = new Vector3(moveVector.x * moveSpeed, rigidbody.velocity.y, moveVector.z * moveSpeed);
-                if (faceMoveDirection)
-                {
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(rigidbody.velocity, transform.up), rotationSpeed * Time.deltaTime);
-                }
+                RotateTowardsVelocity();
+            }
+            else if (currentAnimation.AnimState == AnimationState.Walk)
+            {
+                rigidbody.velocity = new Vector3(moveVector.x * (moveSpeed / 2), rigidbody.velocity.y, moveVector.z * moveSpeed);
+                RotateTowardsVelocity();
             }
             else if (currentAnimation.AnimState == AnimationState.Idle)
             {
                 rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, 0);
             }
+
+            //modify height of spine
+            if (transitioning)
+            {
+                Vector3 targetPosition = new Vector3(originalRootBonePosition.x, originalRootBonePosition.y + currentAnimation.HeightCurve.Evaluate(0), originalRootBonePosition.z);
+                rootBone.localPosition = Vector3.Lerp(previousRootBonePosition, targetPosition, normalizedTime);
+            }
+            else
+            {
+                float heightCurve = currentAnimation.HeightCurve.Evaluate(normalizedTime);
+                rootBone.localPosition = new Vector3(originalRootBonePosition.x, originalRootBonePosition.y + heightCurve, originalRootBonePosition.z);
+            }
+        }
+    }
+
+    private void RotateTowardsVelocity()
+    {
+        if (faceMoveDirection)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(rigidbody.velocity, transform.up);
+
+            Quaternion rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            rotation.eulerAngles = new Vector3(rotation.eulerAngles.x, rotation.eulerAngles.y, 0);
+
+            transform.rotation = rotation;
         }
     }
 
@@ -138,7 +177,6 @@ public class CharacterMove : MonoBehaviour
         }
 
         previousAnimation = currentAnimation;
-
         if (previousAnimation != null)
         {
             previousFrames = new AnimationKeyFrame.Frame[previousAnimation.CharacterMove.Bones.Length];
@@ -150,9 +188,16 @@ public class CharacterMove : MonoBehaviour
             }
         }
 
+        previousRootBonePosition = rootBone.localPosition;
         currentAnimation = anim;
         transitioning = true;
         timer = 0;
+    }
+
+    protected void SetRunning(Vector3 moveVector)
+    {
+        SetAnimation(runAnimation);
+        this.moveVector = moveVector;
     }
 
     protected void SetWalking(Vector3 moveVector)

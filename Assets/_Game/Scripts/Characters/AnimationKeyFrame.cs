@@ -31,14 +31,18 @@ public class AnimationKeyFrame : MonoBehaviour
 
     public AnimationState AnimState;
     public float Duration;
-
-    [SerializeField]
-    private CharacterMove characterMove;
-    public CharacterMove CharacterMove { get { return characterMove; } }
+    public AnimationCurve HeightCurve;
 
     [SerializeField]
     private FrameSet[] animationFrames;
     public FrameSet[] AnimationFrames { get { return animationFrames; } }
+
+    public CharacterMove CharacterMove { get; protected set; }
+
+    private void Start()
+    {
+        CharacterMove = GetComponent<CharacterMove>();
+    }
 
     public PosAndRot GetBonePosAndRot(int frameIndex, int boneIndex, float normalizedTime)
     {
