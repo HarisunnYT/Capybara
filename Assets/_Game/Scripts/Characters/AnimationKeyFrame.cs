@@ -37,7 +37,7 @@ public class AnimationKeyFrame : MonoBehaviour
     private FrameSet[] animationFrames;
     public FrameSet[] AnimationFrames { get { return animationFrames; } }
 
-    public CharacterMove CharacterMove { get; protected set; }
+    public CharacterMove CharacterMove { get; set; }
 
     private void Start()
     {

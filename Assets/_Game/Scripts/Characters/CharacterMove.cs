@@ -6,7 +6,8 @@ public enum AnimationState
 {
     Run,
     Idle,
-    Walk
+    Walk,
+    WalkBackwards
 }
 
 public class CharacterMove : MonoBehaviour
@@ -25,17 +26,19 @@ public class CharacterMove : MonoBehaviour
     private AnimationKeyFrame runAnimation;
     [SerializeField]
     private AnimationKeyFrame idleAnimation;
+    [SerializeField]
+    private AnimationKeyFrame walkBackwardsAnimation;
 
     [SerializeField]
     private float transitionDuration = 0.5f;
 
     [Space()]
     [SerializeField]
-    private float moveSpeed = 10;
+    private float runSpeed = 10;
+    [SerializeField]
+    private float walkSpeed = 5;
     [SerializeField]
     private float rotationSpeed = 10;
-    [SerializeField]
-    private bool faceMoveDirection = true;
 
     private AnimationKeyFrame previousAnimation;
     private AnimationKeyFrame currentAnimation;
@@ -54,6 +57,8 @@ public class CharacterMove : MonoBehaviour
     private Vector3 previousRootBonePosition;
 
     protected Rigidbody rigidbody;
+
+    private bool rotationDisabled = false;
 
     private void Start()
     {
@@ -127,12 +132,17 @@ public class CharacterMove : MonoBehaviour
             //move if in move animation
             if (currentAnimation.AnimState == AnimationState.Run)
             {
-                rigidbody.velocity = new Vector3(moveVector.x * moveSpeed, rigidbody.velocity.y, moveVector.z * moveSpeed);
+                rigidbody.velocity = new Vector3(moveVector.x * runSpeed, rigidbody.velocity.y, moveVector.z * runSpeed);
                 RotateTowardsVelocity();
             }
             else if (currentAnimation.AnimState == AnimationState.Walk)
             {
-                rigidbody.velocity = new Vector3(moveVector.x * (moveSpeed / 2), rigidbody.velocity.y, moveVector.z * moveSpeed);
+                rigidbody.velocity = new Vector3(moveVector.x * walkSpeed, rigidbody.velocity.y, moveVector.z * runSpeed);
+                RotateTowardsVelocity();
+            }
+            else if (currentAnimation.AnimState == AnimationState.WalkBackwards)
+            {
+                rigidbody.velocity = new Vector3(moveVector.x * walkSpeed, rigidbody.velocity.y, moveVector.z * runSpeed);
                 RotateTowardsVelocity();
             }
             else if (currentAnimation.AnimState == AnimationState.Idle)
@@ -156,20 +166,20 @@ public class CharacterMove : MonoBehaviour
 
     private void RotateTowardsVelocity()
     {
-        if (faceMoveDirection)
+        if (!rotationDisabled)
         {
-            Quaternion toRotation = Quaternion.LookRotation(rigidbody.velocity, transform.up);
-
+            Quaternion toRotation = Quaternion.LookRotation(moveVector, Vector3.up);
             Quaternion rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-            rotation.eulerAngles = new Vector3(rotation.eulerAngles.x, rotation.eulerAngles.y, 0);
 
+            rotation.eulerAngles = new Vector3(rotation.eulerAngles.x, rotation.eulerAngles.y, 0);
             transform.rotation = rotation;
         }
     }
 
-    private void SetAnimation(AnimationKeyFrame anim)
+    private void SetAnimation(AnimationKeyFrame anim, bool rotationDisabled)
     {
         moveVector = Vector3.zero;
+        this.rotationDisabled = rotationDisabled;
 
         if (currentAnimation == anim)
         {
@@ -194,20 +204,26 @@ public class CharacterMove : MonoBehaviour
         timer = 0;
     }
 
-    protected void SetRunning(Vector3 moveVector)
+    protected void SetRunning(Vector3 moveVector, bool rotationDisabled = false)
     {
-        SetAnimation(runAnimation);
+        SetAnimation(runAnimation, rotationDisabled);
         this.moveVector = moveVector;
     }
 
-    protected void SetWalking(Vector3 moveVector)
+    protected void SetWalking(Vector3 moveVector, bool rotationDisabled = false)
     {
-        SetAnimation(walkAnimation);
+        SetAnimation(walkAnimation, rotationDisabled);
         this.moveVector = moveVector;
     }
 
-    protected void SetIdle()
+    protected void SetWalkingBackwards(Vector3 moveVector, bool rotationDisabled = false)
     {
-        SetAnimation(idleAnimation);
+        SetAnimation(walkAnimation, rotationDisabled);
+        this.moveVector = moveVector;
+    }
+
+    protected void SetIdle(bool rotationDisabled = false)
+    {
+        SetAnimation(idleAnimation, rotationDisabled);
     }
 }

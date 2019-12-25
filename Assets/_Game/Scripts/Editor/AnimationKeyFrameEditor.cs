@@ -11,6 +11,10 @@ public class AnimationKeyFrameEditor : Editor
         base.OnInspectorGUI();
 
         AnimationKeyFrame anim = target as AnimationKeyFrame;
+        if (anim.CharacterMove == null)
+        {
+            anim.CharacterMove = anim.transform.GetComponent<CharacterMove>();
+        }
 
         GUILayout.BeginVertical();
         if (anim.AnimationFrames != null)

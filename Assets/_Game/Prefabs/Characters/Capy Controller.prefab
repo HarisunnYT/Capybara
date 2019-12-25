@@ -150,7 +150,7 @@ Transform:
   m_LocalPosition: {x: 1.09025886e-10, y: 0.0035303077, z: 0.00022864445}
   m_LocalScale: {x: 0.99999994, y: 1.0000001, z: 1}
   m_Children:
-  - {fileID: 4730958170869911370}
+  - {fileID: 6562452583061804846}
   m_Father: {fileID: 5551125806299902992}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -208,16 +208,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651962621731364493}
-  m_LocalRotation: {x: 0.006131018, y: -0.00012275636, z: 0.014461296, w: 0.9998766}
-  m_LocalPosition: {x: -2.9103829e-12, y: 0.003073975, z: 3.6659797e-10}
-  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_LocalRotation: {x: 0.745026, y: -0.0056047747, z: 0.0050998647, w: 0.66699237}
+  m_LocalPosition: {x: 0.000042315798, y: -0.00030119112, z: 0.0030588896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6054123602526460368}
   - {fileID: 1688163680590419624}
   - {fileID: 3229740625877330573}
   - {fileID: 5979172941054700139}
   - {fileID: 8263577604497226831}
-  m_Father: {fileID: 100746113007323157}
+  m_Father: {fileID: 6562452583061804846}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729268126215476209
@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 1896235781727656759}
   - component: {fileID: 3838277143864154675}
   - component: {fileID: 1896235781727656758}
+  - component: {fileID: 2407647010748230738}
   - component: {fileID: 1896235781727656757}
   - component: {fileID: 1896235781727656755}
   - component: {fileID: 7388204015001660781}
@@ -319,10 +320,14 @@ MonoBehaviour:
   walkAnimation: {fileID: 3838277143864154675}
   runAnimation: {fileID: 1896235781727656758}
   idleAnimation: {fileID: 1896235781727656757}
+  walkBackwardsAnimation: {fileID: 1896235781727656757}
   transitionDuration: 0.25
-  moveSpeed: 20
+  runSpeed: 10
+  walkSpeed: 5
   rotationSpeed: 10
-  faceMoveDirection: 1
+  headBone: {fileID: 1488544889192912933}
+  deadzone: 0.1
+  checkRadius: 2
 --- !u!114 &3838277143864154675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2425,6 +2430,1057 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+--- !u!114 &2407647010748230738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896235781727656756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11eaf80714e19214eb7034981e553bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimState: 3
+  Duration: 0.5
+  HeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.29158303
+      outSlope: 0.29158303
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.10835215
+    - serializedVersion: 3
+      time: 0.9998199
+      value: -0.0021678505
+      inSlope: -0.49868467
+      outSlope: -0.49868467
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18058692
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animationFrames:
+  - Frames:
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.25193492, y: 0.023386028, z: -0.15528138, w: 0.9549187}
+      Bone: {fileID: 8579838024786841256}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -5.4086815e-11, y: 0.0035318052, z: -0.0000753916}
+      Rotation: {x: 0.4580832, y: -0.012547158, z: -0.103557676, w: 0.8827673}
+      Bone: {fileID: 6241697102256436380}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -3.3760442e-11, y: 0.0021914027, z: 2.561137e-11}
+      Rotation: {x: -0.01988896, y: 0.7133463, z: -0.6991228, w: 0.04437146}
+      Bone: {fileID: 3360288948337918047}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.30376568, y: -0.024806112, z: 0.18046738, w: 0.9351699}
+      Bone: {fileID: 1901028548637406968}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 9.459137e-11, y: 0.00353101, z: -0.000075257085}
+      Rotation: {x: -0.15050183, y: -0.01650377, z: 0.039694145, w: 0.98767465}
+      Bone: {fileID: 3055089890945855198}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -6.519258e-11, y: 0.0021921997, z: 2.7241184e-10}
+      Rotation: {x: 0.012844663, y: 0.74966776, z: -0.66041654, w: -0.04102845}
+      Bone: {fileID: 2467162725798117284}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00125, y: 0.0006, z: 0.00055}
+      Rotation: {x: 0.9094859, y: -0.06491231, z: 0.034018617, w: 0.40922436}
+      Bone: {fileID: 9139041556840730367}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -4.8998902e-11, y: 0.0036003531, z: -0.000025123729}
+      Rotation: {x: 0.6004948, y: -0.015638884, z: -0.07682099, w: 0.79577637}
+      Bone: {fileID: 6940524623392003450}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.820766e-11, y: 0.0021927333, z: -9.778887e-11}
+      Rotation: {x: -0.012907561, y: 0.7769531, z: -0.62799007, w: 0.04249456}
+      Bone: {fileID: 884473678699882006}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 0.0012490004, y: 0.0008501626, z: 0.0011844211}
+      Rotation: {x: 0.9821229, y: 0.00000006918744, z: -0.00000011743578, w: 0.18824077}
+      Bone: {fileID: 5820273881586804369}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -2.4998297e-11, y: 0.0036003531, z: -0.000025123507}
+      Rotation: {x: -0.26761383, y: -0.0141793955, z: 0.042084783, w: 0.9625023}
+      Bone: {fileID: 8308106103577122707}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.8207657e-12, y: 0.002192733, z: 1.3737007e-10}
+      Rotation: {x: 0.012907561, y: 0.7769531, z: -0.62799007, w: -0.04249456}
+      Bone: {fileID: 2548929113808299296}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - Frames:
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.2501768, y: 0.01660316, z: -0.16002035, w: 0.9547405}
+      Bone: {fileID: 8579838024786841256}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -5.4086815e-11, y: 0.0035318052, z: -0.0000753916}
+      Rotation: {x: 0.40008056, y: 0.014389302, z: -0.028701454, w: 0.91591746}
+      Bone: {fileID: 6241697102256436380}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -3.3760442e-11, y: 0.0021914027, z: 2.561137e-11}
+      Rotation: {x: -0.01988896, y: 0.7133463, z: -0.6991228, w: 0.04437146}
+      Bone: {fileID: 3360288948337918047}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.17673528, y: -0.04857944, z: 0.17556722, w: 0.9672543}
+      Bone: {fileID: 1901028548637406968}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 9.459137e-11, y: 0.00353101, z: -0.000075257085}
+      Rotation: {x: -0.35003766, y: -0.008003556, z: 0.04223683, w: 0.93574876}
+      Bone: {fileID: 3055089890945855198}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -6.519258e-11, y: 0.0021921997, z: 2.7241184e-10}
+      Rotation: {x: 0.012844663, y: 0.74966776, z: -0.66041654, w: -0.04102845}
+      Bone: {fileID: 2467162725798117284}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00125, y: 0.0006, z: 0.00055}
+      Rotation: {x: 0.95309293, y: -0.072985776, z: -0.0066310265, w: 0.29367155}
+      Bone: {fileID: 9139041556840730367}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -4.8998902e-11, y: 0.0036003531, z: -0.000025123729}
+      Rotation: {x: 0.25245202, y: -0.0012350442, z: -0.10110148, w: 0.9623123}
+      Bone: {fileID: 6940524623392003450}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.820766e-11, y: 0.0021927333, z: -9.778887e-11}
+      Rotation: {x: -0.012907561, y: 0.7769531, z: -0.62799007, w: 0.04249456}
+      Bone: {fileID: 884473678699882006}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 0.0012490004, y: 0.0008501626, z: 0.0011844211}
+      Rotation: {x: 0.93928117, y: 0.025096107, z: 0.029165916, w: 0.34098446}
+      Bone: {fileID: 5820273881586804369}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -2.4998297e-11, y: 0.0036003531, z: -0.000025123507}
+      Rotation: {x: -0.26761383, y: -0.0141793955, z: 0.042084783, w: 0.9625023}
+      Bone: {fileID: 8308106103577122707}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.8207657e-12, y: 0.002192733, z: 1.3737007e-10}
+      Rotation: {x: 0.012907561, y: 0.7769531, z: -0.62799007, w: -0.04249456}
+      Bone: {fileID: 2548929113808299296}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - Frames:
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.21811108, y: 0.03057441, z: -0.15354721, w: 0.963284}
+      Bone: {fileID: 8579838024786841256}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -5.4086815e-11, y: 0.0035318052, z: -0.0000753916}
+      Rotation: {x: 0.0015654265, y: 0.022354651, z: -0.036733367, w: 0.99907386}
+      Bone: {fileID: 6241697102256436380}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -3.3760442e-11, y: 0.0021914027, z: 2.561137e-11}
+      Rotation: {x: -0.01988896, y: 0.7133463, z: -0.6991228, w: 0.04437146}
+      Bone: {fileID: 3360288948337918047}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.13998842, y: -0.055191834, z: 0.17360227, w: 0.973252}
+      Bone: {fileID: 1901028548637406968}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 9.459137e-11, y: 0.00353101, z: -0.000075257085}
+      Rotation: {x: 0.59957534, y: -0.03989197, z: 0.016020015, w: 0.799163}
+      Bone: {fileID: 3055089890945855198}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -6.519258e-11, y: 0.0021921997, z: 2.7241184e-10}
+      Rotation: {x: 0.012844663, y: 0.74966776, z: -0.66041654, w: -0.04102845}
+      Bone: {fileID: 2467162725798117284}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00125, y: 0.0006, z: 0.00055}
+      Rotation: {x: 0.9583062, y: -0.069078654, z: 0.024474638, w: 0.2761854}
+      Bone: {fileID: 9139041556840730367}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -4.8998902e-11, y: 0.0036003531, z: -0.000025123729}
+      Rotation: {x: -0.13587266, y: 0.013443998, z: -0.110256076, w: 0.9844804}
+      Bone: {fileID: 6940524623392003450}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.820766e-11, y: 0.0021927333, z: -9.778887e-11}
+      Rotation: {x: -0.012907561, y: 0.7769531, z: -0.62799007, w: 0.04249456}
+      Bone: {fileID: 884473678699882006}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 0.0012490004, y: 0.0008501626, z: 0.0011844211}
+      Rotation: {x: 0.85565585, y: -0.015580125, z: -0.016738573, w: 0.51703984}
+      Bone: {fileID: 5820273881586804369}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -2.4998297e-11, y: 0.0036003531, z: -0.000025123507}
+      Rotation: {x: 0.74410367, y: 0.010038354, z: -0.03324112, w: 0.66716117}
+      Bone: {fileID: 8308106103577122707}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.8207657e-12, y: 0.002192733, z: 1.3737007e-10}
+      Rotation: {x: 0.012907561, y: 0.7769531, z: -0.62799007, w: -0.04249456}
+      Bone: {fileID: 2548929113808299296}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - Frames:
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.15279421, y: 0.07346205, z: -0.14327614, w: 0.9750534}
+      Bone: {fileID: 8579838024786841256}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -5.4086815e-11, y: 0.0035318052, z: -0.0000753916}
+      Rotation: {x: -0.35381597, y: 0.035714883, z: -0.033627428, w: 0.9340278}
+      Bone: {fileID: 6241697102256436380}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -3.3760442e-11, y: 0.0021914027, z: 2.561137e-11}
+      Rotation: {x: -0.01988896, y: 0.7133463, z: -0.6991228, w: 0.04437146}
+      Bone: {fileID: 3360288948337918047}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00004746774, y: 0.0016826974, z: 0.0009914872}
+      Rotation: {x: 0.31017834, y: -0.056873363, z: 0.19392543, w: 0.92894983}
+      Bone: {fileID: 1901028548637406968}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 9.459137e-11, y: 0.00353101, z: -0.000075257085}
+      Rotation: {x: 0.20702392, y: -0.052763566, z: 0.04910921, w: 0.9756769}
+      Bone: {fileID: 3055089890945855198}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -6.519258e-11, y: 0.0021921997, z: 2.7241184e-10}
+      Rotation: {x: 0.012844663, y: 0.74966776, z: -0.66041654, w: -0.04102845}
+      Bone: {fileID: 2467162725798117284}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -0.00125, y: 0.0006, z: 0.00055}
+      Rotation: {x: 0.9016938, y: -0.04140456, z: 0.06046952, w: 0.42611906}
+      Bone: {fileID: 9139041556840730367}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -4.8998902e-11, y: 0.0036003531, z: -0.000025123729}
+      Rotation: {x: -0.13587266, y: 0.013443998, z: -0.110256076, w: 0.9844804}
+      Bone: {fileID: 6940524623392003450}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.820766e-11, y: 0.0021927333, z: -9.778887e-11}
+      Rotation: {x: -0.012907561, y: 0.7769531, z: -0.62799007, w: 0.04249456}
+      Bone: {fileID: 884473678699882006}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 0.0012490004, y: 0.0008501626, z: 0.0011844211}
+      Rotation: {x: 0.9914522, y: 0.005335925, z: 0.061732896, w: 0.114818156}
+      Bone: {fileID: 5820273881586804369}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: -2.4998297e-11, y: 0.0036003531, z: -0.000025123507}
+      Rotation: {x: 0.059664927, y: -0.023869697, z: 0.09011301, w: 0.99385613}
+      Bone: {fileID: 8308106103577122707}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Position: {x: 5.8207657e-12, y: 0.002192733, z: 1.3737007e-10}
+      Rotation: {x: 0.012907561, y: 0.7769531, z: -0.62799007, w: -0.04249456}
+      Bone: {fileID: 2548929113808299296}
+      xCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      yCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      zCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
 --- !u!114 &1896235781727656757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3196,12 +4252,43 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2685367619246850941}
-  m_LocalRotation: {x: 0.30357534, y: -0.0000009081714, z: -0.0000003609714, w: 0.9528075}
-  m_LocalPosition: {x: 7.9936054e-17, y: 0.0016945314, z: -2.9802322e-10}
-  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_LocalRotation: {x: 0.77076924, y: -0.00000072478934, z: -0.00000087882916, w: 0.63711435}
+  m_LocalPosition: {x: 0, y: 0.0007026788, z: 0.0015419726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1488544889192912933}
-  m_Father: {fileID: 6054123602526460368}
+  m_Father: {fileID: 2642625291436247343}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 35.345, y: 0, z: 0}
+--- !u!1 &2806946977492785623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7309483626702711256}
+  m_Layer: 0
+  m_Name: MainSpine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7309483626702711256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2806946977492785623}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0.005216168, z: 0.0058780797}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5551125806299902992}
+  m_Father: {fileID: 8892438013390321500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3195965191033867540
@@ -3312,6 +4399,7 @@ GameObject:
   - component: {fileID: 3605464689189128088}
   - component: {fileID: 3605464689189128095}
   - component: {fileID: 3605464689189128094}
+  - component: {fileID: 1319126463807977454}
   m_Layer: 2
   m_Name: Character Camera
   m_TagString: MainCamera
@@ -3426,9 +4514,9 @@ MonoBehaviour:
   rotateOnLeftButton: 0
   rotateOnRightButton: 0
   rotateOnMiddleButton: 0
-  distance: 20
-  minDistance: 20
-  maxDistance: 40
+  distance: 10
+  minDistance: 10
+  maxDistance: 20
   zoomSpeed: 10
   zoomSensitivity: 1
   blockingLayers:
@@ -3437,6 +4525,66 @@ MonoBehaviour:
   blockingRadius: 1
   blockingSmoothTime: 0.1
   blockedOffset: 0.5
+--- !u!114 &1319126463807977454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3605464689189128093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 3605464689189128091}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 768
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 3
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.5
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &3887712688636493899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,7 +4612,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.0000008251007, z: -0.67246777}
   m_LocalScale: {x: 485.40353, y: 485.40353, z: 485.40353}
   m_Children:
-  - {fileID: 5551125806299902992}
+  - {fileID: 7309483626702711256}
   m_Father: {fileID: 3173790605425109287}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3560,6 +4708,37 @@ Transform:
   m_Father: {fileID: 8579838024786841256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 53.723003, y: -11.408001, z: -19.174002}
+--- !u!1 &5649782345133145927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2642625291436247343}
+  m_Layer: 0
+  m_Name: HeadSpine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2642625291436247343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649782345133145927}
+  m_LocalRotation: {x: -0.54098254, y: 0.00000010151417, z: 0.000000064726926, w: 0.8410339}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8116278124408079082}
+  m_Father: {fileID: 6054123602526460368}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5659338076182969409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,7 +4766,7 @@ Transform:
   m_LocalPosition: {x: 0.0000022342765, y: 0.0029395272, z: -0.000016330741}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children:
-  - {fileID: 8116278124408079082}
+  - {fileID: 2642625291436247343}
   m_Father: {fileID: 4730958170869911370}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3676,16 +4855,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6277769292419561263}
-  m_LocalRotation: {x: 0.9174954, y: -0.00000009483006, z: -0.00000021874784, w: 0.39774635}
-  m_LocalPosition: {x: -0, y: 0.0052161682, z: 0.0058780806}
-  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999976}
+  m_LocalRotation: {x: 0.367518, y: -0.00000022173305, z: -0.000000087623086, w: 0.9300164}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 100746113007323157}
   - {fileID: 4842204540531868283}
   - {fileID: 8395765499000277573}
   - {fileID: 9139041556840730367}
   - {fileID: 5820273881586804369}
-  m_Father: {fileID: 8892438013390321500}
+  m_Father: {fileID: 7309483626702711256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6304781370028493681
@@ -3719,6 +4898,37 @@ Transform:
   m_Father: {fileID: 5551125806299902992}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 140.275, y: -5.3640137, z: -5}
+--- !u!1 &6573337518307953546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6562452583061804846}
+  m_Layer: 0
+  m_Name: BodySpine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6562452583061804846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573337518307953546}
+  m_LocalRotation: {x: -0.7409252, y: -0.005220568, z: 0.004489244, w: 0.6715523}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4730958170869911370}
+  m_Father: {fileID: 100746113007323157}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7241687009549178558
 GameObject:
   m_ObjectHideFlags: 0
