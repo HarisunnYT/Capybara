@@ -9,3 +9,15 @@ public interface IPullable
 
     GameObject GetObject();
 }
+
+public interface IPickupable
+{
+    void OnPickedUp();
+    void OnDropped();
+
+    Vector3 GetOrientation();
+
+    GameObject GetObject();
+
+    Rigidbody GetRigidbody();
+}

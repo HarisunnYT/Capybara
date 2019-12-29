@@ -8,12 +8,15 @@ public class CapybaraMove : CharacterMove
 
     [Space()]
     [SerializeField]
-    private Transform headBone;
+    private Transform mouthBone;
+
+    [SerializeField]
+    private CapybaraHead head;
 
     [SerializeField]
     private float deadzone = 0.1f;
 
-    [Header("Pullable")]
+    [Header("Interactable")]
     [SerializeField]
     private float checkRadius = 0.25f;
 
@@ -23,6 +26,7 @@ public class CapybaraMove : CharacterMove
     private bool interactPressed = false;
 
     private IPullable currentPullable;
+    private IPickupable currentPickupable;
 
     public Vector3 InputAxis { get { return new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); } }
     public Collider Collider { get; private set; }
@@ -80,7 +84,7 @@ public class CapybaraMove : CharacterMove
             if (!interactPressed)
             {
                 interactPressed = true;
-                FindPullableObject();
+                FindInteractableObjects();
             }
         }
         else if (interactPressed)
@@ -88,40 +92,52 @@ public class CapybaraMove : CharacterMove
             interactPressed = false;
             if (currentPullable != null)
             {
-                OnDrop();
+                OnPullableDropped();
+            }
+            else if (currentPickupable != null)
+            {
+                PickUpObject(currentPickupable.GetObject().transform, currentPickupable.GetOrientation(), false);
             }
         }
     }
 
-    private void FindPullableObject()
+    private void FindInteractableObjects()
     {
-        Collider[] hitCols = Physics.OverlapSphere(headBone.transform.position, checkRadius);
-        GameObject pullableObject = null;
+        Collider[] hitCols = Physics.OverlapSphere(mouthBone.transform.position, checkRadius);
+        GameObject closestObject = null;
 
         if (hitCols.Length > 0)
         {
             for (int i = 0; i < hitCols.Length; i++)
             {
-                if (hitCols[i].GetComponent(typeof(IPullable)))
+                if (hitCols[i].GetComponent(typeof(IPullable)) || hitCols[i].GetComponent(typeof(IPickupable)))
                 {
-                    if (pullableObject == null || Vector3.Distance(hitCols[i].transform.position, headBone.transform.position) < Vector3.Distance(hitCols[i].transform.position, pullableObject.transform.position))
+                    if (closestObject == null || Vector3.Distance(hitCols[i].transform.position, mouthBone.transform.position) < Vector3.Distance(hitCols[i].transform.position, closestObject.transform.position))
                     {
-                        pullableObject = hitCols[i].gameObject;
+                        closestObject = hitCols[i].gameObject;
                     }
                 }
             }
         }
 
-        if (pullableObject != null)
+        if (closestObject != null)
         {
-            IPullable pullable = pullableObject.GetComponent(typeof(IPullable)) as IPullable;
-            currentPullable = pullable;
-
-            OnPull();
+            IPullable pullable = closestObject.GetComponent(typeof(IPullable)) as IPullable;
+            IPickupable pickupable = closestObject.GetComponent(typeof(IPickupable)) as IPickupable;
+            if (pullable != null)
+            {
+                currentPullable = pullable;
+                OnPullableBegan();
+            }
+            else if (pickupable != null)
+            {
+                currentPickupable = pickupable;
+                PickUpObject(currentPickupable.GetObject().transform, currentPickupable.GetOrientation(), true);
+            }
         }
     }
 
-    private void OnPull()
+    private void OnPullableBegan()
     {
         currentPullable.OnPulled();
 
@@ -130,7 +146,7 @@ public class CapybaraMove : CharacterMove
         Debug.Log("starting pulling " + currentPullable.GetObject().name);
     }
 
-    private void OnDrop()
+    private void OnPullableDropped()
     {
         Debug.Log("dropped " + currentPullable.GetObject().name);
 
@@ -145,12 +161,37 @@ public class CapybaraMove : CharacterMove
         rootTransform.parent = parent;
     }
 
+    private void PickUpObject(Transform obj, Vector3 orientation, bool pickedUp)
+    {
+        if (pickedUp)
+        {
+            head.MoveToObject(currentPickupable.GetObject().transform, () =>
+            {
+                currentPickupable.OnPickedUp();
+
+                obj.parent = mouthBone;
+                obj.transform.localPosition = Vector3.zero;
+                obj.transform.localRotation = Quaternion.Euler(orientation);
+
+                Debug.Log("grabbed " + currentPickupable.GetObject().name);
+            });
+        }
+        else
+        {
+            obj.parent = null;
+
+            currentPickupable.OnDropped();
+
+            Debug.Log("dropped " + currentPickupable.GetObject().name);
+        }
+    }
+
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        if (headBone != null)
+        if (mouthBone != null)
         {
-            Gizmos.DrawWireSphere(headBone.transform.position, checkRadius);
+            Gizmos.DrawWireSphere(mouthBone.transform.position, checkRadius);
         }
     }
 #endif
