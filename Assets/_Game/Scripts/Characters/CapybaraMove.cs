@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CapybaraMove : CharacterMove
 {
+    public static CapybaraMove Instance;
+
     [Space()]
     [SerializeField]
     private Transform headBone;
@@ -15,14 +17,29 @@ public class CapybaraMove : CharacterMove
     [SerializeField]
     private float checkRadius = 0.25f;
 
+    private Transform rootTransform;
+
     private Vector3 inputAxis;
     private bool interactPressed = false;
 
     private IPullable currentPullable;
 
+    public Vector3 InputAxis { get { return new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")); } }
+    public Collider Collider { get; private set; }
+
+    protected override void Start()
+    {
+        Instance = this;
+        rootTransform = transform.parent;
+
+        Collider = transform.GetComponent<Collider>();
+
+        base.Start();
+    }
+
     private void Update()
     {
-        inputAxis = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        inputAxis = InputAxis;
         if (inputAxis != Vector3.zero && inputAxis.magnitude > deadzone)
         {
             Vector3 newInputAxis = CameraController.Instance.transform.TransformDirection(inputAxis);
@@ -31,30 +48,31 @@ public class CapybaraMove : CharacterMove
             //pulling object
             if (currentPullable != null)
             {
-                if (inputAxis.x < 0)
+                Vector3 modelAxis = transform.TransformDirection(inputAxis);
+                if (modelAxis.x < 0)
                 {
-                    SetWalkingBackwards(inputAxis, true);
+                    SetAnimation(AnimationState.Walk, newInputAxis, true);
                 }
                 else
                 {
-                    SetWalking(inputAxis, true);
+                    SetAnimation(AnimationState.WalkBackwards, newInputAxis, true);
                 }
             }
             else
             {
                 if (newInputAxis.magnitude > 0.5f)
                 {
-                    SetRunning(newInputAxis);
+                    SetAnimation(AnimationState.Run, newInputAxis);
                 }
                 else
                 {
-                    SetWalking(newInputAxis);
+                    SetAnimation(AnimationState.Walk, newInputAxis);
                 }
             }
         }
         else
         {
-            SetIdle();
+            SetAnimation(AnimationState.Idle, Vector3.zero);
         }
 
         if (Input.GetAxisRaw("Interact") != 0)
@@ -106,7 +124,8 @@ public class CapybaraMove : CharacterMove
     private void OnPull()
     {
         currentPullable.OnPulled();
-        currentPullable.GetObject().GetComponent<SpringJoint>().connectedBody = headBone.GetComponent<Rigidbody>();
+
+        rigidbody.isKinematic = true;
 
         Debug.Log("starting pulling " + currentPullable.GetObject().name);
     }
@@ -115,10 +134,15 @@ public class CapybaraMove : CharacterMove
     {
         Debug.Log("dropped " + currentPullable.GetObject().name);
 
-        currentPullable.GetObject().GetComponent<SpringJoint>().connectedBody = null;
+        rigidbody.isKinematic = false;
 
         currentPullable.OnDropped();
         currentPullable = null;
+    }
+
+    public void SetParent(Transform parent)
+    {
+        rootTransform.parent = parent;
     }
 
 #if UNITY_EDITOR

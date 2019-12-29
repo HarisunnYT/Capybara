@@ -7,7 +7,8 @@ public enum AnimationState
     Run,
     Idle,
     Walk,
-    WalkBackwards
+    WalkBackwards,
+    Overriden,
 }
 
 public class CharacterMove : MonoBehaviour
@@ -20,15 +21,6 @@ public class CharacterMove : MonoBehaviour
     private Transform rootBone;
 
     [Space()]
-    [SerializeField]
-    private AnimationKeyFrame walkAnimation;
-    [SerializeField]
-    private AnimationKeyFrame runAnimation;
-    [SerializeField]
-    private AnimationKeyFrame idleAnimation;
-    [SerializeField]
-    private AnimationKeyFrame walkBackwardsAnimation;
-
     [SerializeField]
     private float transitionDuration = 0.5f;
 
@@ -57,15 +49,17 @@ public class CharacterMove : MonoBehaviour
     private Vector3 previousRootBonePosition;
 
     protected Rigidbody rigidbody;
+    private AnimationKeyFrame[] animations;
 
     private bool rotationDisabled = false;
 
-    private void Start()
+    protected virtual void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        animations = GetComponents<AnimationKeyFrame>();
         originalRootBonePosition = rootBone.localPosition;
 
-        SetIdle();
+        SetAnimation(AnimationState.Idle, Vector3.zero);
     }
 
     protected virtual void LateUpdate()
@@ -176,9 +170,11 @@ public class CharacterMove : MonoBehaviour
         }
     }
 
-    private void SetAnimation(AnimationKeyFrame anim, bool rotationDisabled)
+    protected void SetAnimation(AnimationState animState, Vector3 moveVector, bool rotationDisabled = false)
     {
-        moveVector = Vector3.zero;
+        AnimationKeyFrame anim = GetAnimation(animState);
+
+        this.moveVector = moveVector;
         this.rotationDisabled = rotationDisabled;
 
         if (currentAnimation == anim)
@@ -204,26 +200,16 @@ public class CharacterMove : MonoBehaviour
         timer = 0;
     }
 
-    protected void SetRunning(Vector3 moveVector, bool rotationDisabled = false)
+    public AnimationKeyFrame GetAnimation(AnimationState animState)
     {
-        SetAnimation(runAnimation, rotationDisabled);
-        this.moveVector = moveVector;
-    }
+        foreach(var animation in animations)
+        {
+            if (animation.AnimState == animState)
+            {
+                return animation;
+            }
+        }
 
-    protected void SetWalking(Vector3 moveVector, bool rotationDisabled = false)
-    {
-        SetAnimation(walkAnimation, rotationDisabled);
-        this.moveVector = moveVector;
-    }
-
-    protected void SetWalkingBackwards(Vector3 moveVector, bool rotationDisabled = false)
-    {
-        SetAnimation(walkAnimation, rotationDisabled);
-        this.moveVector = moveVector;
-    }
-
-    protected void SetIdle(bool rotationDisabled = false)
-    {
-        SetAnimation(idleAnimation, rotationDisabled);
+        return null;
     }
 }
