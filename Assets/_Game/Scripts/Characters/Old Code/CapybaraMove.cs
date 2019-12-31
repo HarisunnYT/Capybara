@@ -10,8 +10,9 @@ public class CapybaraMove : CharacterMove
     [SerializeField]
     private Transform mouthBone;
 
-    [SerializeField]
-    private CapybaraHead head;
+    public CapybaraHead Head;
+
+    public Transform Hand;
 
     [SerializeField]
     private float deadzone = 0.1f;
@@ -41,8 +42,10 @@ public class CapybaraMove : CharacterMove
         base.Start();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         inputAxis = InputAxis;
         if (inputAxis != Vector3.zero && inputAxis.magnitude > deadzone)
         {
@@ -62,6 +65,10 @@ public class CapybaraMove : CharacterMove
                     SetAnimation(AnimationState.WalkBackwards, newInputAxis, true);
                 }
             }
+            else if (currentPickupable != null)
+            {
+                SetAnimation(AnimationState.RifleWalking, newInputAxis);
+            }
             else
             {
                 if (newInputAxis.magnitude > 0.5f)
@@ -76,7 +83,14 @@ public class CapybaraMove : CharacterMove
         }
         else
         {
-            SetAnimation(AnimationState.Idle, Vector3.zero);
+            if (currentPickupable != null)
+            {
+                SetAnimation(AnimationState.RifleIdle, Vector3.zero);
+            }
+            else
+            {
+                SetAnimation(AnimationState.Idle, Vector3.zero);
+            }
         }
 
         if (Input.GetAxisRaw("Interact") != 0)
@@ -165,11 +179,11 @@ public class CapybaraMove : CharacterMove
     {
         if (pickedUp)
         {
-            head.MoveToObject(currentPickupable.GetObject().transform, () =>
+            Head.MoveToObject(currentPickupable.GetObject().transform, () =>
             {
                 currentPickupable.OnPickedUp();
 
-                obj.parent = mouthBone;
+                obj.parent = currentPickupable.GetBone();
                 obj.transform.localPosition = Vector3.zero;
                 obj.transform.localRotation = Quaternion.Euler(orientation);
 
@@ -178,11 +192,12 @@ public class CapybaraMove : CharacterMove
         }
         else
         {
+            Debug.Log("dropped " + currentPickupable.GetObject().name);
+
             obj.parent = null;
 
             currentPickupable.OnDropped();
-
-            Debug.Log("dropped " + currentPickupable.GetObject().name);
+            currentPickupable = null;
         }
     }
 

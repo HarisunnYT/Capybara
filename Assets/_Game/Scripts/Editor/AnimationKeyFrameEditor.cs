@@ -36,9 +36,12 @@ public class AnimationKeyFrameEditor : Editor
                 {
                     for (int b = 0; b < anim.CharacterMove.Bones.Length; b++)
                     {
-                        anim.CharacterMove.Bones[b] = anim.AnimationFrames[i].Frames[b].Bone;
-                        anim.CharacterMove.Bones[b].localPosition = anim.AnimationFrames[i].Frames[b].Position;
-                        anim.CharacterMove.Bones[b].localRotation = anim.AnimationFrames[i].Frames[b].Rotation;
+                        if (anim.AnimationFrames[i].Frames.Length > b)
+                        {
+                            anim.CharacterMove.Bones[b] = anim.AnimationFrames[i].Frames[b].Bone;
+                            anim.CharacterMove.Bones[b].localPosition = anim.AnimationFrames[i].Frames[b].Position;
+                            anim.CharacterMove.Bones[b].localRotation = anim.AnimationFrames[i].Frames[b].Rotation;
+                        }
                     }
                 }
                 GUILayout.EndHorizontal();

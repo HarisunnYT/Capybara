@@ -44,8 +44,13 @@ public class AnimationKeyFrame : MonoBehaviour
         CharacterMove = GetComponent<CharacterMove>();
     }
 
-    public PosAndRot GetBonePosAndRot(int frameIndex, int boneIndex, float normalizedTime)
+    public PosAndRot? GetBonePosAndRot(int frameIndex, int boneIndex, float normalizedTime)
     {
+        if (animationFrames[frameIndex].Frames.Length <= boneIndex)
+        {
+            return null;
+        }
+
         Frame frame = animationFrames[frameIndex].Frames[boneIndex];
         Vector3 position = frame.Position;
         Quaternion rotation = frame.Rotation;

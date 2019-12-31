@@ -20,4 +20,6 @@ public interface IPickupable
     GameObject GetObject();
 
     Rigidbody GetRigidbody();
+
+    Transform GetBone();
 }

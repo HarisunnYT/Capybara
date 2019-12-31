@@ -9,6 +9,8 @@ public enum AnimationState
     Walk,
     WalkBackwards,
     Overriden,
+    RifleIdle,
+    RifleWalking
 }
 
 public class CharacterMove : MonoBehaviour
@@ -62,7 +64,7 @@ public class CharacterMove : MonoBehaviour
         SetAnimation(AnimationState.Idle, Vector3.zero);
     }
 
-    protected virtual void LateUpdate()
+    protected virtual void Update()
     {
         if (currentAnimation)
         {
@@ -106,18 +108,23 @@ public class CharacterMove : MonoBehaviour
                 //transitioning
                 if (transitioning && previousAnimation != null)
                 {
-                    PosAndRot from = currentAnimation.GetBonePosAndRot(0, i, 0);
-
-                    currentAnimation.CharacterMove.Bones[i].localPosition = Vector3.Lerp(previousFrames[i].Position, from.Position, normalizedTime);
-                    currentAnimation.CharacterMove.Bones[i].localRotation = Quaternion.Lerp(previousFrames[i].Rotation, from.Rotation, normalizedTime);
+                    PosAndRot? from = currentAnimation.GetBonePosAndRot(0, i, 0);
+                    if (from != null)
+                    {
+                        currentAnimation.CharacterMove.Bones[i].localPosition = Vector3.Lerp(previousFrames[i].Position, from.Value.Position, normalizedTime);
+                        currentAnimation.CharacterMove.Bones[i].localRotation = Quaternion.Lerp(previousFrames[i].Rotation, from.Value.Rotation, normalizedTime);
+                    }
                 }
                 else //normal
                 {
-                    PosAndRot from = currentAnimation.GetBonePosAndRot(firstCounter, i, normalizedTime);
-                    PosAndRot target = currentAnimation.GetBonePosAndRot(secondCounter, i, normalizedTime);
+                    PosAndRot? from = currentAnimation.GetBonePosAndRot(firstCounter, i, normalizedTime);
+                    PosAndRot? target = currentAnimation.GetBonePosAndRot(secondCounter, i, normalizedTime);
 
-                    currentAnimation.CharacterMove.Bones[i].localPosition = Vector3.Lerp(from.Position, target.Position, offset);
-                    currentAnimation.CharacterMove.Bones[i].localRotation = Quaternion.Lerp(from.Rotation, target.Rotation, offset);
+                    if (from.HasValue && target.HasValue)
+                    {
+                        currentAnimation.CharacterMove.Bones[i].localPosition = Vector3.Lerp(from.Value.Position, target.Value.Position, offset);
+                        currentAnimation.CharacterMove.Bones[i].localRotation = Quaternion.Lerp(from.Value.Rotation, target.Value.Rotation, offset);
+                    }
                 }
             }
 
@@ -129,7 +136,7 @@ public class CharacterMove : MonoBehaviour
                 rigidbody.velocity = new Vector3(moveVector.x * runSpeed, rigidbody.velocity.y, moveVector.z * runSpeed);
                 RotateTowardsVelocity();
             }
-            else if (currentAnimation.AnimState == AnimationState.Walk)
+            else if (currentAnimation.AnimState == AnimationState.Walk || currentAnimation.AnimState == AnimationState.RifleWalking)
             {
                 rigidbody.velocity = new Vector3(moveVector.x * walkSpeed, rigidbody.velocity.y, moveVector.z * runSpeed);
                 RotateTowardsVelocity();
@@ -139,7 +146,7 @@ public class CharacterMove : MonoBehaviour
                 rigidbody.velocity = new Vector3(moveVector.x * walkSpeed, rigidbody.velocity.y, moveVector.z * runSpeed);
                 RotateTowardsVelocity();
             }
-            else if (currentAnimation.AnimState == AnimationState.Idle)
+            else if (currentAnimation.AnimState == AnimationState.Idle || currentAnimation.AnimState == AnimationState.RifleIdle)
             {
                 rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, 0);
             }
