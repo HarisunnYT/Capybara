@@ -612,10 +612,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ff2274859d4d04db646154bccb6cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnFromRagdollDuration: 0.5
+  returnFromRagdollDuration: 1
   spineBody: {fileID: 7533845371126763220}
   metaRig: {fileID: 8832953338511576563}
   moveableBones:
+  - {fileID: 5545394054815567551}
   - {fileID: 43154797151892154}
   - {fileID: 4637300676730615269}
   - {fileID: 6194750036505518975}
