@@ -18,7 +18,8 @@ public enum BodyPartType
 public enum MovementState
 {
     Moving,
-    Idle
+    Idle,
+    Ragdoll
 }
 
 public enum MovementStyle
@@ -44,10 +45,10 @@ public class CapybaraController : MonoBehaviour
     public BodyPart[] BodyParts { get; private set; }
     public Collider[] Colliders { get; private set; }
 
-    private Vector3 lastInputVec;
+    public MovementState CurrentMovementState { get; private set; }
+    public MovementStyle CurrentMovementStyle { get; private set; }
 
-    private MovementState currentMovementState;
-    private MovementStyle currentMovementStyle;
+    private Vector3 lastInputVec;
 
     private void Awake()
     {
@@ -64,7 +65,10 @@ public class CapybaraController : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if (CurrentMovementState != MovementState.Ragdoll)
+        {
+            Move();
+        }
     }
 
     #region Movement
@@ -74,9 +78,10 @@ public class CapybaraController : MonoBehaviour
         Vector3 inputVec = GetInputVector();
         Vector3 gravity = GetGravity();
 
+        inputVec = GetMovement();
+
         if (inputVec.x != 0 || inputVec.z != 0)
         {
-            inputVec = GetMovement();
             lastInputVec = inputVec;
 
             SetMovementState(MovementState.Moving);
@@ -104,7 +109,7 @@ public class CapybaraController : MonoBehaviour
         movementVector.y = MainBody.velocity.y;
 
         //movement style specific
-        if (currentMovementStyle == MovementStyle.Flying)
+        if (CurrentMovementStyle == MovementStyle.Flying)
         {
             movementVector = new Vector3(movementVector.x * movementSpeed, inputVec.y * movementSpeed, movementVector.z * movementSpeed);
         }
@@ -119,10 +124,15 @@ public class CapybaraController : MonoBehaviour
 
     private Quaternion GetRotation()
     {
+        if (lastInputVec == Vector3.zero)
+        {
+            return transform.rotation;
+        }
+
         Quaternion toRotation = Quaternion.LookRotation(lastInputVec, Vector3.up);
         Quaternion rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
-        if (currentMovementStyle == MovementStyle.Flying)
+        if (CurrentMovementStyle == MovementStyle.Flying)
         {
             rotation.eulerAngles = new Vector3(rotation.eulerAngles.x, rotation.eulerAngles.y, 0);
         }
@@ -181,18 +191,18 @@ public class CapybaraController : MonoBehaviour
         return gravity;
     }
 
-    private void SetMovementState(MovementState movementState)
+    public void SetMovementState(MovementState movementState)
     {
-        AnimationController.Instance.SetBool(currentMovementState.ToString(), false);
+        AnimationController.Instance.SetBool(CurrentMovementState.ToString(), false);
 
-        currentMovementState = movementState;
+        CurrentMovementState = movementState;
 
         AnimationController.Instance.SetBool(movementState.ToString(), true);
     }
 
     public void SetMovementStyle(MovementStyle movementStyle)
     {
-        currentMovementStyle = movementStyle;
+        CurrentMovementStyle = movementStyle;
 
         Animator.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
         Animator.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);

@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 1994097811412033951}
   - component: {fileID: 1994097811412033920}
   - component: {fileID: 1994097811412033921}
+  - component: {fileID: 4581520771052920361}
   - component: {fileID: 1994097811412033950}
   - component: {fileID: 1994097811412033949}
   m_Layer: 9
@@ -612,6 +613,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnFromRagdollDuration: 0.5
+  spineBody: {fileID: 7533845371126763220}
+  metaRig: {fileID: 8832953338511576563}
+  moveableBones:
+  - {fileID: 43154797151892154}
+  - {fileID: 4637300676730615269}
+  - {fileID: 6194750036505518975}
+  - {fileID: 8169093160543467589}
+  - {fileID: 1537102626104746634}
+  - {fileID: 1626136934962490375}
+  - {fileID: 4598546128192640118}
+  - {fileID: 3255797955781382178}
+  - {fileID: 6878614387252631423}
+  - {fileID: 5982740859050479812}
+  - {fileID: 8569514705336742919}
+  - {fileID: 6296678176299830835}
+  - {fileID: 3413334891587205872}
+  - {fileID: 785581378733219848}
+  - {fileID: 8309876945591731936}
+  - {fileID: 1989872392539901015}
+  - {fileID: 3141648940146676849}
+  - {fileID: 2576519046952240395}
+  - {fileID: 2168787917238345518}
+  - {fileID: 4813866821523716308}
+  - {fileID: 2443481626514800514}
+  - {fileID: 8466623523240964330}
+  - {fileID: 9066142356285553221}
+  - {fileID: 9162811904574125136}
+  - {fileID: 7038298690007330773}
+  - {fileID: 989372579721305273}
+  - {fileID: 8206340098391008647}
+  - {fileID: 5852842521355164734}
+  - {fileID: 8264368626830814524}
+  - {fileID: 2495874384144359311}
+  - {fileID: 108685081465073985}
 --- !u!114 &1994097811412033920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,6 +672,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b669bc1b474fc5b4792e44ab21bf32fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4581520771052920361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994097811412033947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c119fd15a0a249b4296b30de61dba6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HittableLayers:
+    serializedVersion: 2
+    m_Bits: 2305
+  forceToRagdoll: 50
 --- !u!54 &1994097811412033950
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -64,6 +64,12 @@ public class CameraController : MonoBehaviour
     private Vector3 lastUp;
     private float blockedDistance = 10f, blockedDistanceV;
 
+    public void SetTarget(Transform target, bool smoothFollow)
+    {
+        this.target = target;
+        this.smoothFollow = smoothFollow;
+    }
+
     public void SetAngles(Quaternion rotation)
     {
         Vector3 euler = rotation.eulerAngles;
