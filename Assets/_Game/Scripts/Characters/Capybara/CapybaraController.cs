@@ -204,6 +204,11 @@ public class CapybaraController : MonoBehaviour
 
     public void SetMovementStyle(MovementStyle movementStyle)
     {
+        if (movementStyle == MovementStyle.None)
+        {
+            return;
+        }
+
         CurrentMovementStyle = movementStyle;
 
         AnimationController.Instance.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);

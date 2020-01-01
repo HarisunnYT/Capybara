@@ -57,13 +57,6 @@ public class InteractionController : MonoBehaviour
                 AssignItem(bodyPart, item);
                 break;
             }
-
-            //if the item is two handed, an either hand slot will work
-            if (item.PickupableItemData.ItemSlotType == BodyPartType.TwoHand && bodyPart.ItemSlotType == BodyPartType.EitherHand)
-            {
-                AssignItem(bodyPart, item);
-                break;
-            }
         }
     }
 
