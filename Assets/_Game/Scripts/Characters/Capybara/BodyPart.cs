@@ -8,28 +8,27 @@ public class BodyPart : MonoBehaviour
     protected BodyPartType itemSlotType;
     public BodyPartType ItemSlotType { get { return itemSlotType; } }
 
-    private PickupableItem currentItemObject;
+    protected PickupableItem currentItemObject;
     public PickupableItem CurrentItemObject { get { return currentItemObject; } }
 
-    public void AssignItem(PickupableItem newItem)
+    public virtual void AssignItem(PickupableItem newItem)
     {
-        if (currentItemObject != null)
-        {
-            DropCurrentItem();
-        }
-
-        currentItemObject = newItem;
-        ConnectItem();
+        DropCurrentItem();
+        ConnectItem(newItem);
     }
 
     public void DropCurrentItem()
     {
-        currentItemObject.DropItem();
-        currentItemObject = null;
+        if (currentItemObject != null)
+        {
+            currentItemObject.DropItem();
+            currentItemObject = null;
+        }
     }
 
-    private void ConnectItem()
-    {        
+    public void ConnectItem(PickupableItem newItem)
+    {
+        currentItemObject = newItem;
         currentItemObject.PickUpItem(transform); 
     }
 

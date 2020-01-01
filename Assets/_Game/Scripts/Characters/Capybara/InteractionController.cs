@@ -57,6 +57,13 @@ public class InteractionController : MonoBehaviour
                 AssignItem(bodyPart, item);
                 break;
             }
+
+            //if the item is two handed, an either hand slot will work
+            if (item.PickupableItemData.ItemSlotType == BodyPartType.TwoHand && bodyPart.ItemSlotType == BodyPartType.EitherHand)
+            {
+                AssignItem(bodyPart, item);
+                break;
+            }
         }
     }
 
@@ -72,6 +79,24 @@ public class InteractionController : MonoBehaviour
                 {
                     //if the movement style is not none and does not equal the new items movement style, we will need to drop it
                     if (part.GetMovementData().MovementStyle != MovementStyle.None && part.GetMovementData().MovementStyle != item.PickupableItemData.MovementData.MovementStyle)
+                    {
+                        part.DropCurrentItem();
+                    }
+                }
+            }
+        }
+
+        //if the item has a single arm or both arms, check if it needs to drop others
+        if (item.PickupableItemData.ItemSlotType == BodyPartType.EitherHand || item.PickupableItemData.ItemSlotType == BodyPartType.TwoHand)
+        {
+            //we need to check if an object needs to be dropped
+            foreach (var part in CapybaraController.Instance.BodyParts)
+            {
+                if (part.CurrentItemObject != null)
+                {
+                    //if the new part is two handed and there are single handers, drop them, and vice versa
+                    if ((item.PickupableItemData.ItemSlotType == BodyPartType.TwoHand && part.CurrentItemObject.PickupableItemData.ItemSlotType == BodyPartType.EitherHand) ||
+                        (part.CurrentItemObject.PickupableItemData.ItemSlotType == BodyPartType.TwoHand && item.PickupableItemData.ItemSlotType == BodyPartType.EitherHand))
                     {
                         part.DropCurrentItem();
                     }

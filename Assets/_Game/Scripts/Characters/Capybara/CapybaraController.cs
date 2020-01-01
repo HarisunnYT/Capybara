@@ -9,10 +9,9 @@ public enum BodyPartType
     Torso,
     Mouth,
     TwoHand,
-    LeftHand,
-    RightHand,
+    EitherHand,
     BackLegs,
-    Bum
+    Bum,
 }
 
 public enum MovementState

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39c637925552924caefc34260a83d29, type: 3}
+  m_Name: Rocket Launcher
+  m_EditorClassIdentifier: 
+  ItemSlotType: 4
+  Position: {x: 0.00098, y: 0.00054, z: 0.00048}
+  EulerRotation: {x: 52.024, y: -73.44601, z: 92.49001}
+  MovementData: {fileID: 11400000, guid: 025a0aa7ae460ff419157fcd6a4c822d, type: 2}
+  BoneWeights:
+  - bodyPartType: 1
+    Weight: 1
+  - bodyPartType: 2
+    Weight: 0
+  - bodyPartType: 3
+    Weight: 0
+  AnimatorBools: []

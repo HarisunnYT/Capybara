@@ -32,8 +32,13 @@ public class PickupableItem : MonoBehaviour
 
         if (pickupableItemData.MovementData)
         {
+            //set bools and weights for movement data
             AnimationController.Instance.SetAnimatorLayerWeights(pickupableItemData.MovementData.BoneWeights);
             AnimationController.Instance.SetAnimatorBools(pickupableItemData.MovementData.AnimatorBools);
+
+            //set bools and weights for pickupable item data
+            AnimationController.Instance.SetAnimatorLayerWeights(pickupableItemData.BoneWeights);
+            AnimationController.Instance.SetAnimatorBools(pickupableItemData.AnimatorBools);
 
             CapybaraController.Instance.SetMovementStyle(pickupableItemData.MovementData.MovementStyle);
         }
