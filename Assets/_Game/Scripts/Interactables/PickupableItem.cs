@@ -29,6 +29,14 @@ public class PickupableItem : MonoBehaviour
         Equiped = true;
 
         InteractionController.Instance.IgnoreCollisions(collider, true);
+
+        if (pickupableItemData.MovementData)
+        {
+            AnimationController.Instance.SetAnimatorLayerWeights(pickupableItemData.MovementData.BoneWeights);
+            AnimationController.Instance.SetAnimatorBools(pickupableItemData.MovementData.AnimatorBools);
+
+            CapybaraController.Instance.SetMovementStyle(pickupableItemData.MovementData.MovementStyle);
+        }
     }
 
     public virtual void DropItem()

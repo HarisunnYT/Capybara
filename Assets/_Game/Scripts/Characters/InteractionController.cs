@@ -54,10 +54,32 @@ public class InteractionController : MonoBehaviour
         {
             if (bodyPart.ItemSlotType == item.PickupableItemData.ItemSlotType)
             {
-                bodyPart.AssignItem(item);
+                AssignItem(bodyPart, item);
                 break;
             }
         }
+    }
+
+    private void AssignItem(BodyPart bodyPart, PickupableItem item)
+    {
+        //if there is no movement data or the style is none, move on
+        if (item.PickupableItemData.MovementData != null && item.PickupableItemData.MovementData.MovementStyle != MovementStyle.None)
+        {
+            //we need to check if an other item is modifying the movement style, if so drop that item
+            foreach (var part in CapybaraController.Instance.BodyParts)
+            {
+                if (part.GetMovementData())
+                {
+                    //if the movement style is not none and does not equal the new items movement style, we will need to drop it
+                    if (part.GetMovementData().MovementStyle != MovementStyle.None && part.GetMovementData().MovementStyle != item.PickupableItemData.MovementData.MovementStyle)
+                    {
+                        part.DropCurrentItem();
+                    }
+                }
+            }
+        }
+        
+        bodyPart.AssignItem(item);
     }
 
     public void IgnoreCollisions(Collider collider, bool ignore)

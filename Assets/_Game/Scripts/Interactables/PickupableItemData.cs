@@ -5,9 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Capybara/Pickupable Item")]
 public class PickupableItemData : ScriptableObject
 {
-    public ItemSlotType ItemSlotType;
+    public BodyPartType ItemSlotType;
 
     [Space()]
     public Vector3 EulerRotation;
     public Vector3 Position;
+
+    [Space()]
+    public MovementData MovementData;
 }

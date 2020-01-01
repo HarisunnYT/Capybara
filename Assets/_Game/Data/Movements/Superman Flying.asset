@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f39c637925552924caefc34260a83d29, type: 3}
-  m_Name: Key
+  m_Script: {fileID: 11500000, guid: 97bad1b3c15d7c74fb26b434e79fac00, type: 3}
+  m_Name: Superman Flying
   m_EditorClassIdentifier: 
-  ItemSlotType: 3
-  EulerRotation: {x: 0, y: 0, z: 0}
-  Position: {x: 0, y: 0, z: 0}
-  MovementData: {fileID: 11400000, guid: 5f68d0aa62a5c4647a4af12160c7962a, type: 2}
+  MovementStyle: 2
+  MovementSpeedMultiplier: 10
+  GravityMultiplier: {x: 0, y: 0, z: 0}
+  BoneWeights: []
+  AnimatorBools:
+  - Name: Standing
+    Result: 0
