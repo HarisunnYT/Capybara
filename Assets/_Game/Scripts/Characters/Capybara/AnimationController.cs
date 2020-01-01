@@ -22,19 +22,42 @@ public class AnimationController : MonoBehaviour
 {
     public static AnimationController Instance;
 
-    private Animator animator;
+    public Animator Animator { get; private set; }
+
+    [SerializeField]
+    private Transform[] movingBones;
+    public Transform[] MovingBones { get { return movingBones; } }
+
+    [SerializeField]
+    private Transform[] animationBones;
+    public Transform[] AnimationBones { get { return animationBones; } }
+
+    private float lerpDuration = 10f;
+    private float timer = 0;
 
     private void Awake()
     {
         Instance = this;
 
-        animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
+    }
+
+    private void LateUpdate()
+    {
+        if (CapybaraController.Instance.CurrentMovementState != MovementState.Ragdoll)
+        {
+            for (int i = 0; i < movingBones.Length; i++)
+            {
+                movingBones[i].localPosition = animationBones[i].localPosition;
+                movingBones[i].localRotation = animationBones[i].localRotation;
+            }
+        }
     }
 
     public void SetAnimatorLayerWeight(AnimatorBodyPartLayer layer, float weight)
     {
         //we add 1 to the layer as 0 is full body which can't be modified
-        animator.SetLayerWeight((int)layer + 1, weight);
+        Animator.SetLayerWeight((int)layer + 1, weight);
     }
 
     public void SetAnimatorLayerWeights(BoneWeight[] boneWeights)
@@ -47,7 +70,12 @@ public class AnimationController : MonoBehaviour
 
     public void SetBool(string name, bool result)
     {
-        animator.SetBool(name, result);
+        Animator.SetBool(name, result);
+    }
+
+    public void SetFloat(string name, float value)
+    {
+        Animator.SetFloat(name, value);
     }
 
     public void SetAnimatorBools(AnimatorBool[] bools)

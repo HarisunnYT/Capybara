@@ -40,7 +40,6 @@ public class CapybaraController : MonoBehaviour
     private float rotationSpeed = 5;
 
     public Rigidbody MainBody { get; private set; }
-    public Animator Animator { get; private set; }
 
     public BodyPart[] BodyParts { get; private set; }
     public Collider[] Colliders { get; private set; }
@@ -55,16 +54,20 @@ public class CapybaraController : MonoBehaviour
         Instance = this;
 
         MainBody = GetComponent<Rigidbody>();
-        Animator = GetComponent<Animator>();
 
         BodyParts = GetComponentsInChildren<BodyPart>();
         Colliders = GetComponentsInChildren<Collider>();
+
+        //we don't use this animator, this is just for creating animations
+        GetComponent<Animator>().enabled = false;
 
         SetMovementState(MovementState.Idle);
     }
 
     private void Update()
     {
+        AnimationController.Instance.SetFloat("MovementSpeed", GetInputVector().magnitude);
+
         if (CurrentMovementState != MovementState.Ragdoll)
         {
             Move();
@@ -146,7 +149,7 @@ public class CapybaraController : MonoBehaviour
 
     private Vector3 GetInputVector()
     {
-        Vector3 inputVec = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Vector3 inputVec = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         inputVec = CameraController.Instance.transform.TransformDirection(inputVec);
 
         return inputVec;
@@ -204,8 +207,8 @@ public class CapybaraController : MonoBehaviour
     {
         CurrentMovementStyle = movementStyle;
 
-        Animator.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
-        Animator.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);
+        AnimationController.Instance.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
+        AnimationController.Instance.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);
     }
 
     #endregion

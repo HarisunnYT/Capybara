@@ -6,13 +6,13 @@ public class RagdollController : MonoBehaviour
 {
     struct BoneData
     {
-        public Vector3 LocalPosition;
-        public Quaternion LocalRotation;
+        public Vector3 Position;
+        public Quaternion Rotation;
 
         public BoneData (Vector3 localPosition, Quaternion localRotation)
         {
-            LocalPosition = localPosition;
-            LocalRotation = localRotation;
+            Position = localPosition;
+            Rotation = localRotation;
         }
     }
 
@@ -21,6 +21,9 @@ public class RagdollController : MonoBehaviour
     [SerializeField]
     private float returnFromRagdollDuration;
 
+    [SerializeField]
+    private float minRagdollTime = 2;
+
     [Space()]
     [SerializeField]
     private Rigidbody spineBody;
@@ -28,16 +31,13 @@ public class RagdollController : MonoBehaviour
     [SerializeField]
     private Transform metaRig;
 
-    [SerializeField]
-    private Transform[] moveableBones;
-
     private Rigidbody[] bodies;
 
-    //int == child index, quaternion == child rotation
-    private List<BoneData> lastAnimationBoneData = new List<BoneData>();
     private List<BoneData> lastRagdollBoneData = new List<BoneData>();
 
     private float timer = 0;
+    private float ragdollTime;
+
     private bool returningFromRagdoll = false;
     private MovementState previousMovementState;
 
@@ -58,33 +58,35 @@ public class RagdollController : MonoBehaviour
             timer += Time.deltaTime;
             float normalizedTime = timer / returnFromRagdollDuration;
 
+            Transform[] bones = AnimationController.Instance.MovingBones;
+            Transform[] animatingBones = AnimationController.Instance.AnimationBones;
+
             //loop through every bone and move to target
-            for (int i = 0; i < moveableBones.Length; i++)
+            for (int i = 0; i < bones.Length; i++)
             {
-                Quaternion fromRotation = lastRagdollBoneData[i].LocalRotation;
-                Quaternion toRotation = lastAnimationBoneData[i].LocalRotation * transform.rotation;
+                Quaternion fromRotation = lastRagdollBoneData[i].Rotation;
+                Quaternion toRotation = animatingBones[i].rotation;
 
-                moveableBones[i].rotation = Quaternion.Lerp(fromRotation, toRotation, normalizedTime);
+                Vector3 fromPosition = lastRagdollBoneData[i].Position;
+                Vector3 toPosition = animatingBones[i].transform.position;
 
-                if (moveableBones[i].parent != null)
-                {
-                    Vector3 fromPosition = lastRagdollBoneData[i].LocalPosition;
-                    Vector3 toPosition = moveableBones[i].parent.TransformPoint(lastAnimationBoneData[i].LocalPosition);
-
-                    moveableBones[i].position = Vector3.Lerp(fromPosition, toPosition, normalizedTime);
-                }
+                bones[i].rotation = Quaternion.Lerp(fromRotation, toRotation, normalizedTime);
+                bones[i].position = Vector3.Lerp(fromPosition, toPosition, normalizedTime);
             }
 
             if (normalizedTime > 0.99f)
             {
                 returningFromRagdoll = false;
-                CapybaraController.Instance.Animator.enabled = true;
+                CapybaraController.Instance.SetMovementState(previousMovementState);
+                AnimationController.Instance.Animator.enabled = true;
+
+                spineBody.transform.parent = metaRig;
             }
         }
         else if (CapybaraController.Instance.CurrentMovementState == MovementState.Ragdoll)
         {
             //check if the spine has stopped moving
-            if (spineBody.velocity.magnitude < 0.1f)
+            if (spineBody.velocity.magnitude < 0.1f && Time.time > ragdollTime)
             {
                 SetRagdoll(false);
             }
@@ -93,6 +95,8 @@ public class RagdollController : MonoBehaviour
 
     public void SetRagdoll(bool ragdoll)
     {
+        Transform[] bones = AnimationController.Instance.MovingBones;
+
         //if we are trying to ragdoll and it's already ragdolling, or stop ragdoll and it isn't ragdolling, do nothing
         if ((ragdoll && CapybaraController.Instance.CurrentMovementState == MovementState.Ragdoll) ||
            (!ragdoll && CapybaraController.Instance.CurrentMovementState != MovementState.Ragdoll))
@@ -100,21 +104,13 @@ public class RagdollController : MonoBehaviour
             return;
         }
 
-        //save all the bone rotations first
-        if (ragdoll)
-        {
-            lastAnimationBoneData.Clear();
-            for (int i = 0; i < moveableBones.Length; i++)
-            {
-                lastAnimationBoneData.Add(new BoneData(moveableBones[i].localPosition, moveableBones[i].rotation));
-            }
-        }
-        else
+        //save the last ragdoll positions
+        if (!ragdoll)
         {
             lastRagdollBoneData.Clear();
-            for (int i = 0; i < moveableBones.Length; i++)
+            for (int i = 0; i < bones.Length; i++)
             {
-                lastRagdollBoneData.Add(new BoneData(moveableBones[i].position, moveableBones[i].rotation));
+                lastRagdollBoneData.Add(new BoneData(bones[i].position, bones[i].rotation));
             }
         }
 
@@ -139,19 +135,19 @@ public class RagdollController : MonoBehaviour
             //set spine velocity
             spineBody.velocity = CapybaraController.Instance.MainBody.velocity;
 
-            CapybaraController.Instance.Animator.enabled = false;
+            AnimationController.Instance.Animator.enabled = false;
+
             CapybaraController.Instance.MainBody.velocity = Vector3.zero;
             CapybaraController.Instance.SetMovementState(MovementState.Ragdoll);
 
+            ragdollTime = Time.time + minRagdollTime;
         }
         else
         {
             //set camera target
             CameraController.Instance.SetTarget(transform, false);
-            CapybaraController.Instance.SetMovementState(previousMovementState);
 
             CapybaraController.Instance.transform.position = spineBody.transform.position;
-            //spineBody.transform.parent = metaRig;
         }
     }
 }
