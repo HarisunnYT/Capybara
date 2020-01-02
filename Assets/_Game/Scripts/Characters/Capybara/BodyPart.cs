@@ -17,7 +17,7 @@ public class BodyPart : MonoBehaviour
         ConnectItem(newItem);
     }
 
-    public void DropCurrentItem()
+    public virtual void DropCurrentItem()
     {
         if (currentItemObject != null)
         {
@@ -26,10 +26,10 @@ public class BodyPart : MonoBehaviour
         }
     }
 
-    public void ConnectItem(PickupableItem newItem)
+    public virtual void ConnectItem(PickupableItem newItem)
     {
         currentItemObject = newItem;
-        currentItemObject.PickUpItem(transform); 
+        currentItemObject.PickUpItem(transform, this);
     }
 
     public PickupableItemData GetPickupableItemData()

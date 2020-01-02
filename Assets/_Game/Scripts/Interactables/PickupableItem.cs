@@ -10,6 +10,8 @@ public class PickupableItem : MonoBehaviour
 
     public bool Equiped { get; private set; }
 
+    public BodyPart CurrentBodyPart { get; private set; }
+
     private Collider collider;
     private Rigidbody rigidbody;
 
@@ -19,11 +21,13 @@ public class PickupableItem : MonoBehaviour
         collider = GetComponent<Collider>();
     }
 
-    public virtual void PickUpItem(Transform parent)
+    public virtual void PickUpItem(Transform parent, BodyPart currentBodyPart)
     {
         transform.parent = parent;
         transform.localPosition = pickupableItemData.Position;
         transform.localRotation = Quaternion.Euler(pickupableItemData.EulerRotation);
+
+        CurrentBodyPart = currentBodyPart;
 
         rigidbody.isKinematic = true;
         Equiped = true;

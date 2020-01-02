@@ -826,6 +826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4abcd790fea91b04b95212fbd44c7287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHand: {fileID: 5738115425222900966}
+  rightHand: {fileID: 5638794715821735596}
+  twoHand: {fileID: 2258129062823623214}
 --- !u!54 &1994097811412033950
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1361,6 +1364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 5
+  handType: 1
   otherHand: {fileID: 5738115425222900966}
 --- !u!1 &3323344184502172062
 GameObject:
@@ -2373,6 +2377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 5
+  handType: 0
   otherHand: {fileID: 5638794715821735596}
 --- !u!1 &6097380891180572561
 GameObject:
@@ -3455,7 +3460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5425730740359228653}
-  - component: {fileID: 49633413253217476}
+  - component: {fileID: 2258129062823623214}
   m_Layer: 9
   m_Name: TwoHandedBone
   m_TagString: Untagged
@@ -3477,7 +3482,7 @@ Transform:
   m_Father: {fileID: 4637300676730615269}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &49633413253217476
+--- !u!114 &2258129062823623214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3486,10 +3491,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8222193913469924418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 446dfb7f05120b446a6cf1d0bd9ef4d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ac5c26e3ba8f3345b7e3398ca8919e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 4
+  handType: 2
+  otherHand: {fileID: 0}
 --- !u!1 &8273461474459950308
 GameObject:
   m_ObjectHideFlags: 0

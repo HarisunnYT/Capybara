@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4262021242308435322}
-  - component: {fileID: 972465696084619118}
   - component: {fileID: 972465696084619119}
   - component: {fileID: 972465696084619116}
+  - component: {fileID: 6647436591510689166}
   m_Layer: 0
   m_Name: Rocket Launcher
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &972465696084619118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972465696084619113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7dd62c289df2645b8e0ba47bf8d6a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupableItemData: {fileID: 11400000, guid: d2115f2a042828947bf156a3d8c2b6d3, type: 2}
 --- !u!65 &972465696084619119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76,6 +63,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6647436591510689166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972465696084619113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed09d043055c874e8de704f132b4d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupableItemData: {fileID: 11400000, guid: d2115f2a042828947bf156a3d8c2b6d3, type: 2}
 --- !u!1 &6733636576743033588
 GameObject:
   m_ObjectHideFlags: 0

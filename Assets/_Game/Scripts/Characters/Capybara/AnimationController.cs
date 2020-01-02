@@ -78,6 +78,11 @@ public class AnimationController : MonoBehaviour
         Animator.SetFloat(name, value);
     }
 
+    public void SetTrigger(string name)
+    {
+        Animator.SetTrigger(name);
+    }
+
     public void SetAnimatorBools(AnimatorBool[] bools)
     {
         foreach(var b in bools)
