@@ -6,9 +6,9 @@ public class AttackController : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Joystick1Button1))
+        if (InputController.InputManager.Attack.WasPressed)
         {
-            Debug.Log("hi");
+            
         }
     }
 }

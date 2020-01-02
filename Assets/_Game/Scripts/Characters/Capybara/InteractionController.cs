@@ -16,7 +16,7 @@ public class InteractionController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.E))
+        if (InputController.InputManager.Interact.WasPressed)
         {
             FindInteractableObjects();
         }
