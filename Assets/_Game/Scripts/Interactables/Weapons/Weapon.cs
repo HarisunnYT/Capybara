@@ -6,6 +6,10 @@ public class Weapon : PickupableItem
 {
     public virtual bool Attack()
     {
+        OnAttack();
+
         return true;
     }
+
+    protected virtual void OnAttack() { }
 }

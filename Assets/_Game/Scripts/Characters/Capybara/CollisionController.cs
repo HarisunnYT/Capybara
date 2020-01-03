@@ -15,6 +15,7 @@ public class CollisionController : MonoBehaviour
         //ragdoll collision
         if (Util.CheckInsideLayer(HittableLayers, collision.gameObject.layer) && collision.relativeVelocity.magnitude >= forceToRagdoll)
         {
+            Debug.Log(collision.relativeVelocity.magnitude);
             RagdollController.Instance.SetRagdoll(true);
         }
     }

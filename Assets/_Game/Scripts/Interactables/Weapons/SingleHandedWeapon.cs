@@ -13,6 +13,7 @@ public class SingleHandedWeapon : Weapon
         }
         else
         {
+            OnAttack();
             return true;
         }
     }

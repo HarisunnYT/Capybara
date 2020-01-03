@@ -24,6 +24,10 @@ public class RagdollController : MonoBehaviour
     [SerializeField]
     private float minRagdollTime = 2;
 
+    [SerializeField]
+    private float requiredKnockBackForceToRagdoll = 15;
+    public float RequiredKnockBackForceToRagdoll { get { return requiredKnockBackForceToRagdoll; } }
+
     [Space()]
     [SerializeField]
     private Rigidbody spineBody;
@@ -93,7 +97,15 @@ public class RagdollController : MonoBehaviour
         }
     }
 
-    public void SetRagdoll(bool ragdoll)
+    public void AddForceToBodies(Vector3 direction, float force)
+    {
+        foreach(var body in bodies)
+        {
+            body.AddForce(direction * force, ForceMode.Impulse);
+        }
+    }
+
+    public void SetRagdoll(bool ragdoll, bool setVelocityFromMainBody = true)
     {
         Transform[] bones = AnimationController.Instance.MovingBones;
 
@@ -133,7 +145,10 @@ public class RagdollController : MonoBehaviour
             previousMovementState = CapybaraController.Instance.CurrentMovementState;
 
             //set spine velocity
-            spineBody.velocity = CapybaraController.Instance.MainBody.velocity;
+            if (setVelocityFromMainBody)
+            {
+                spineBody.velocity = CapybaraController.Instance.MainBody.velocity;
+            }
 
             AnimationController.Instance.Animator.enabled = false;
 

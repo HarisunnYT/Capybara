@@ -12,6 +12,7 @@ public class TwoHandedWeapon : Weapon
         }
         else
         {
+            OnAttack();
             return true;
         }
     }

@@ -36,6 +36,9 @@ public class CapybaraController : MonoBehaviour
     private float baseMovementSpeed = 10;
 
     [SerializeField]
+    private float maxVelocity = 100;
+
+    [SerializeField]
     private float rotationSpeed = 5;
 
     public Rigidbody MainBody { get; private set; }
@@ -62,7 +65,7 @@ public class CapybaraController : MonoBehaviour
         SetMovementState(MovementState.Idle);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         AnimationController.Instance.SetFloat("MovementSpeed", GetInputVector().magnitude);
 
@@ -70,6 +73,9 @@ public class CapybaraController : MonoBehaviour
         {
             Move();
         }
+
+        Vector3 gravity = GetGravity();
+        MainBody.AddForce(gravity, ForceMode.Force);
     }
 
     #region Movement
@@ -77,50 +83,40 @@ public class CapybaraController : MonoBehaviour
     private void Move()
     {
         Vector3 inputVec = GetInputVector();
-        Vector3 gravity = GetGravity();
-
-        inputVec = GetMovement();
-
         if (inputVec.x != 0 || inputVec.z != 0)
         {
             lastInputVec = inputVec;
+            transform.rotation = GetRotation();
 
             SetMovementState(MovementState.Moving);
         }
         else
         {
+            MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
             SetMovementState(MovementState.Idle);
         }
 
-        transform.rotation = GetRotation();
-
-        //move rigidbody
-        MainBody.velocity = inputVec;
-
-        //apply gravity multiplier
-        MainBody.AddForce(gravity, ForceMode.Acceleration);
-    }
-
-    private Vector3 GetMovement()
-    {
-        Vector3 inputVec = GetInputVector();
         float movementSpeed = GetMovementSpeed();
 
         Vector3 movementVector = inputVec;
-        movementVector.y = MainBody.velocity.y;
+        movementVector.y = 0;
+
+        float fixedDTime = Time.fixedDeltaTime;
 
         //movement style specific
         if (CurrentMovementStyle == MovementStyle.Flying)
         {
-            movementVector = new Vector3(movementVector.x * movementSpeed, inputVec.y * movementSpeed, movementVector.z * movementSpeed);
+            movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, inputVec.y * movementSpeed * fixedDTime, movementVector.z * movementSpeed * fixedDTime);
         }
         else
         {
             //set input vector based on movement speed
-            movementVector = new Vector3(movementVector.x * movementSpeed, movementVector.y, movementVector.z * movementSpeed);
+            movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, 0, movementVector.z * movementSpeed * fixedDTime);
+            if (MainBody.velocity.magnitude < maxVelocity)
+            {
+                MainBody.AddForce(movementVector, ForceMode.VelocityChange);
+            }
         }
-
-        return movementVector;
     }
 
     private Quaternion GetRotation()
@@ -190,6 +186,19 @@ public class CapybaraController : MonoBehaviour
         }
 
         return gravity;
+    }
+
+    public void AddKnockBackForce(Vector3 direction, float force)
+    {
+        if (force < RagdollController.Instance.RequiredKnockBackForceToRagdoll)
+        {
+            MainBody.AddForce(direction * force, ForceMode.Impulse);
+        }
+        if (force > RagdollController.Instance.RequiredKnockBackForceToRagdoll)
+        {
+            RagdollController.Instance.SetRagdoll(true, false);
+            RagdollController.Instance.AddForceToBodies(direction, force);
+        }
     }
 
     public void SetMovementState(MovementState movementState)
