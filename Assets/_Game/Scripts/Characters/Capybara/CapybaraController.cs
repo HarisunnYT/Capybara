@@ -51,6 +51,8 @@ public class CapybaraController : MonoBehaviour
 
     private Vector3 lastInputVec;
 
+    private float knockBackSlerpDuration;
+
     private void Awake()
     {
         Instance = this;
@@ -92,7 +94,12 @@ public class CapybaraController : MonoBehaviour
         }
         else
         {
-            MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
+            if (Time.time > knockBackSlerpDuration)
+            {
+                //could do sliding animation here
+                MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
+            }
+
             SetMovementState(MovementState.Idle);
         }
 
@@ -188,11 +195,12 @@ public class CapybaraController : MonoBehaviour
         return gravity;
     }
 
-    public void AddKnockBackForce(Vector3 direction, float force)
+    public void AddKnockBackForce(Vector3 direction, float force, float knockBackSlerpDuration = 1)
     {
         if (force < RagdollController.Instance.RequiredKnockBackForceToRagdoll)
         {
             MainBody.AddForce(direction * force, ForceMode.Impulse);
+            this.knockBackSlerpDuration = Time.time + knockBackSlerpDuration;
         }
         if (force > RagdollController.Instance.RequiredKnockBackForceToRagdoll)
         {

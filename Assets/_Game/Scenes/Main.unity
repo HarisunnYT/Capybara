@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 6327824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.11, y: 0.679, z: 0.221}
-  m_LocalScale: {x: 7.142679, y: 1, z: 5.807403}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 179975145}
   m_RootOrder: 0
@@ -1706,7 +1706,7 @@ Transform:
   - {fileID: 1196942802}
   - {fileID: 874593355}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &466257285
 GameObject:
@@ -7173,75 +7173,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2c1bd6474c8b2d4d84ea0717880af87, type: 3}
---- !u!1001 &1583435586231730312
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 344300177138899595, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_Name
-      value: Rocket
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.089754
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5185766
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.7711372
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926056075554292565, guid: 7c8717f25a2f6de41a00f56116015e2a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7c8717f25a2f6de41a00f56116015e2a, type: 3}
 --- !u!1001 &2485602138284413723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7595,6 +7526,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541180936335868225, guid: 929f620c87b8c4e40b7c222e58bb2ecb,
+        type: 3}
+      propertyPath: knockBackForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541180936335868225, guid: 929f620c87b8c4e40b7c222e58bb2ecb,
+        type: 3}
+      propertyPath: force
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929f620c87b8c4e40b7c222e58bb2ecb, type: 3}

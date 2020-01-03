@@ -26,14 +26,15 @@ public class ProjectileLauncher : TwoHandedWeapon
 
     private void LaunchProjectile()
     {
-        GameObject projectile = ObjectPooler.GetPooledObject(projectileData.ProjectilePrefab);
+        Projectile projectile = ObjectPooler.GetPooledObject(projectileData.ProjectilePrefab).GetComponent<Projectile>();
 
         Vector3 worldPosition = transform.GetChild(0).TransformPoint(transform.GetChild(0).transform.localPosition + spawnPosition);
 
         projectile.transform.position = worldPosition;
+        projectile.transform.rotation = Quaternion.LookRotation(Util.GetDirection(transform, shootDirection), Vector3.up);
 
         //shoot it 
-        projectile.GetComponent<Rigidbody>().AddForce(Util.GetDirection(transform, shootDirection) * force * projectileData.ForceMultiplier, ForceMode.Impulse);
+        projectile.Rigidbody.AddForce(projectile.transform.forward * force * projectileData.ForceMultiplier, ForceMode.Impulse);
 
         //add knock back force to our player
         CapybaraController.Instance.AddKnockBackForce(-Util.GetDirection(transform, shootDirection), knockBackForce * projectileData.KnockBackForceMultiplier);

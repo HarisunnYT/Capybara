@@ -784,7 +784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnFromRagdollDuration: 0.2
   minRagdollTime: 2
-  requiredKnockBackForceToRagdoll: 15
+  requiredKnockBackForceToRagdoll: 45
   spineBody: {fileID: 7533845371126763220}
   metaRig: {fileID: 8832953338511576563}
 --- !u!114 &1994097811412033920
@@ -3187,7 +3187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 3312165237440893832}
   rotationSpace: {fileID: 0}
-  updateMode: 2
+  updateMode: 3
   lockCursor: 1
   smoothFollow: 0
   offset: {x: 0, y: 3, z: 0.5}
