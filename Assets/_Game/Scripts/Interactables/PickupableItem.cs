@@ -10,6 +10,10 @@ public class PickupableItem : MonoBehaviour
 
     public bool Equiped { get; private set; }
 
+    public BodyPart CurrentBodyPart { get; private set; }
+
+    public CharacterController CurrentController { get; private set; }
+
     private Collider collider;
     private Rigidbody rigidbody;
 
@@ -19,38 +23,43 @@ public class PickupableItem : MonoBehaviour
         collider = GetComponent<Collider>();
     }
 
-    public virtual void PickUpItem(Transform parent)
+    public virtual void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
     {
+        CurrentController = controller;
+
         transform.parent = parent;
         transform.localPosition = pickupableItemData.Position;
         transform.localRotation = Quaternion.Euler(pickupableItemData.EulerRotation);
 
+        CurrentBodyPart = currentBodyPart;
+
         rigidbody.isKinematic = true;
         Equiped = true;
 
-        InteractionController.Instance.IgnoreCollisions(collider, true);
+        CurrentController.InteractionController.IgnoreCollisions(collider, true);
 
         if (pickupableItemData.MovementData)
         {
             //set bools and weights for movement data
-            AnimationController.Instance.SetAnimatorLayerWeights(pickupableItemData.MovementData.BoneWeights);
-            AnimationController.Instance.SetAnimatorBools(pickupableItemData.MovementData.AnimatorBools);
+            controller.AnimationController.SetAnimatorLayerWeights(pickupableItemData.MovementData.BoneWeights);
+            controller.AnimationController.SetAnimatorBools(pickupableItemData.MovementData.AnimatorBools);
 
             //set bools and weights for pickupable item data
-            AnimationController.Instance.SetAnimatorLayerWeights(pickupableItemData.BoneWeights);
-            AnimationController.Instance.SetAnimatorBools(pickupableItemData.AnimatorBools);
+            controller.AnimationController.SetAnimatorLayerWeights(pickupableItemData.BoneWeights);
+            controller.AnimationController.SetAnimatorBools(pickupableItemData.AnimatorBools);
 
-            CapybaraController.Instance.SetMovementStyle(pickupableItemData.MovementData.MovementStyle);
+            controller.MovementController.SetMovementStyle(pickupableItemData.MovementData.MovementStyle);
         }
     }
 
     public virtual void DropItem()
     {
+        CurrentController.InteractionController.IgnoreCollisions(collider, false);
+
+        CurrentController = null;
         transform.parent = null;
         rigidbody.isKinematic = false;
 
         Equiped = false;
-
-        InteractionController.Instance.IgnoreCollisions(collider, false);
     }
 }
