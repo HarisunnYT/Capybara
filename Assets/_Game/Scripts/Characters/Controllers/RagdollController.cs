@@ -28,7 +28,7 @@ public class RagdollController : Controller
 
     [Space()]
     [SerializeField]
-    private Rigidbody spineBody;
+    protected Rigidbody spineBody;
 
     [SerializeField]
     private Transform metaRig;
@@ -46,6 +46,8 @@ public class RagdollController : Controller
     private void Start()
     {
         bodies = gameObject.GetComponentsInChildrenExcludingRoot<Rigidbody>();
+
+        SetRagdoll(false);
     }
 
     private void Update()
@@ -132,8 +134,7 @@ public class RagdollController : Controller
         {
             spineBody.transform.parent = null;
 
-            //set camera target
-            CameraController.Instance.SetTarget(spineBody.transform, true);
+            OnRagdollBegin();
 
             previousMovementState = MovementController.CurrentMovementState;
 
@@ -152,10 +153,13 @@ public class RagdollController : Controller
         }
         else
         {
-            //set camera target
-            CameraController.Instance.SetTarget(transform, false);
+            OnRagdollEnd();
 
             MovementController.transform.position = spineBody.transform.position;
         }
     }
+
+    protected virtual void OnRagdollBegin() { }
+    protected virtual void OnRagdollEnd() { }
+
 }

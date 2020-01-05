@@ -31,10 +31,10 @@ public enum MovementStyle
 public class MovementController : Controller
 {
     [SerializeField]
-    private float baseMovementSpeed = 10;
+    protected float baseMovementSpeed = 10;
 
     [SerializeField]
-    private float maxVelocity = 100;
+    protected float maxVelocity = 100;
 
     [SerializeField]
     private float rotationSpeed = 5;
@@ -47,6 +47,8 @@ public class MovementController : Controller
     public MovementState CurrentMovementState { get; private set; }
     public MovementStyle CurrentMovementStyle { get; private set; }
 
+    protected virtual bool MoveWithRigidbody { get { return true; } }
+
     private Vector3 lastInputVec;
 
     private float knockBackSlerpDuration;
@@ -58,9 +60,6 @@ public class MovementController : Controller
         MainBody = GetComponent<Rigidbody>();
         BodyParts = GetComponentsInChildren<BodyPart>();
         Colliders = GetComponentsInChildren<Collider>();
-
-        //we don't use this animator, this is just for creating animations
-        GetComponent<Animator>().enabled = false;
     }
 
     private void Start()
@@ -112,18 +111,21 @@ public class MovementController : Controller
         float fixedDTime = Time.fixedDeltaTime;
 
         //movement style specific
-        if (CurrentMovementStyle == MovementStyle.Flying)
+        if (MoveWithRigidbody)
         {
-            movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, inputVec.y * movementSpeed * fixedDTime, movementVector.z * movementSpeed * fixedDTime);
-            MainBody.velocity = movementVector;
-        }
-        else
-        {
-            //set input vector based on movement speed
-            movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, 0, movementVector.z * movementSpeed * fixedDTime);
-            if (MainBody.velocity.magnitude < maxVelocity)
+            if (CurrentMovementStyle == MovementStyle.Flying)
             {
-                MainBody.AddForce(movementVector, ForceMode.VelocityChange);
+                movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, inputVec.y * movementSpeed * fixedDTime, movementVector.z * movementSpeed * fixedDTime);
+                MainBody.velocity = movementVector;
+            }
+            else
+            {
+                //set input vector based on movement speed
+                movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, 0, movementVector.z * movementSpeed * fixedDTime);
+                if (MainBody.velocity.magnitude < maxVelocity)
+                {
+                    MainBody.AddForce(movementVector, ForceMode.VelocityChange);
+                }
             }
         }
     }
@@ -150,12 +152,9 @@ public class MovementController : Controller
         return rotation;
     }
 
-    private Vector3 GetInputVector()
+    protected virtual Vector3 GetInputVector()
     {
-        Vector3 inputVec = new Vector3(InputController.InputManager.Move.Value.x, 0, InputController.InputManager.Move.Value.y);
-        inputVec = CameraController.Instance.transform.TransformDirection(inputVec);
-
-        return inputVec;
+        return Vector3.zero;
     }
 
     private float GetMovementSpeed()

@@ -7,15 +7,7 @@ public class InteractionController : Controller
     [SerializeField]
     private float interactionRadius;
 
-    private void Update()
-    {
-        if (InputController.InputManager.Interact.WasPressed)
-        {
-            FindInteractableObjects();
-        }
-    }
-
-    private void FindInteractableObjects()
+    protected void FindInteractableObjects()
     {
         Collider[] hitCols = Physics.OverlapSphere(transform.position, interactionRadius);
         PickupableItem closestObject = null;

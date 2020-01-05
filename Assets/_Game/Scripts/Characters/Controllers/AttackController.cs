@@ -13,15 +13,12 @@ public class AttackController : Controller
     [SerializeField]
     private Hand twoHand;
 
-    private void Update()
+    protected void Attack()
     {
-        if (InputController.InputManager.Attack.WasPressed)
+        //if the two hand can't attack (eg no weapon) try attacking with single hands instead
+        if (twoHand.Attack() || leftHand.Attack() || rightHand.Attack())
         {
-            //if the two hand can't attack (eg no weapon) try attacking with single hands instead
-            if (twoHand.Attack() || leftHand.Attack() || rightHand.Attack()) 
-            {
-                AnimationController.SetTrigger("Attack");
-            }
+            AnimationController.SetTrigger("Attack");
         }
     }
 }

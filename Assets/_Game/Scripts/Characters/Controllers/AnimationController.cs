@@ -21,6 +21,9 @@ public struct AnimatorBool
 public class AnimationController : Controller
 {
     [SerializeField]
+    private Animator editorAnimator;
+
+    [SerializeField]
     private Animator boneAnimator;
     public Animator Animator { get { return boneAnimator; } }
 
@@ -34,6 +37,14 @@ public class AnimationController : Controller
 
     private float lerpDuration = 10f;
     private float timer = 0;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        //we don't use this animator, this is just for creating animations
+        editorAnimator.enabled = false;
+    }
 
     private void LateUpdate()
     {

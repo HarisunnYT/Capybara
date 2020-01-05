@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    public CharacterController CharacterController { get; private set; }
     public AnimationController AnimationController { get; private set; }
     public RagdollController RagdollController { get; private set; }
     public AttackController AttackController { get; private set; }
@@ -13,6 +14,7 @@ public class Controller : MonoBehaviour
 
     protected virtual void Awake()
     {
+        CharacterController = GetComponent<CharacterController>();
         AnimationController = GetComponent<AnimationController>();
         RagdollController = GetComponent<RagdollController>();
         AttackController = GetComponent<AttackController>();
