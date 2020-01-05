@@ -1,0 +1,37 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ExplosionProjectile : Projectile
+{
+    [SerializeField]
+    private float explosionRadius = 50;
+
+    [SerializeField]
+    private float force;
+
+    [SerializeField]
+    private float hideDelay = 1;
+
+    [SerializeField]
+    protected LayerMask explosionLayers;
+
+    protected override void OnCollision(Collision collision)
+    {
+        Vector3 collisionPoint = collision.GetContact(0).point;
+        Collider[] colliders = Physics.OverlapSphere(collisionPoint, explosionRadius, explosionLayers);
+
+        Vector3 direction = Vector3.one;
+
+        foreach(var col in colliders)
+        {
+            Rigidbody rBody = col.GetComponent<Rigidbody>();
+            if (rBody)
+            {
+                rBody.AddExplosionForce(force, collisionPoint, explosionRadius, 1, ForceMode.Impulse);
+            }
+        }
+
+        OnDestroyed(collisionPoint, hideDelay);
+    }
+}
