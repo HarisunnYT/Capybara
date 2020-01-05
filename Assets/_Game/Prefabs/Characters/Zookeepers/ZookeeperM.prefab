@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2753114144114173775}
-  - component: {fileID: 9163740562190384962}
+  - component: {fileID: 4055573860654896264}
   - component: {fileID: 1060903665}
   - component: {fileID: 1060903666}
   - component: {fileID: 1060903667}
@@ -156,6 +156,8 @@ GameObject:
   - component: {fileID: 1060903664}
   - component: {fileID: 1060903662}
   - component: {fileID: 2529800189828885328}
+  - component: {fileID: 472358105}
+  - component: {fileID: 472358106}
   m_Layer: 9
   m_Name: ZookeeperM
   m_TagString: Untagged
@@ -181,7 +183,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9163740562190384962
+--- !u!114 &4055573860654896264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,7 +192,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183988630139540828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50601018679035458eb76720adf9a0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 673299394be63544abf6f29a56cc5a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1060903665
@@ -388,6 +390,39 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &472358105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183988630139540828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{}}'
+  _objectReferences: []
+--- !u!114 &472358106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183988630139540828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad115aca74ce3c4891b3f6de0b4aae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundGraphSerialization: 
+  boundGraphObjectReferences: []
+  firstActivation: 0
+  enableAction: 0
+  disableAction: 0
+  _graph: {fileID: 11400000, guid: 03a080d5587a4064ca4a9996b73ccb3e, type: 2}
+  _blackboard: {fileID: 472358105}
 --- !u!1 &1237927575031754831
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,16 @@ public class InteractionController : Controller
     [SerializeField]
     private float interactionRadius;
 
-    protected void FindInteractableObjects()
+    public void TryPickUpObject()
+    {
+        PickupableItem closestObject = FindClosestObject();
+        if (closestObject != null)
+        {
+            PickupItem(closestObject);
+        }
+    }
+
+    public PickupableItem FindClosestObject()
     {
         Collider[] hitCols = Physics.OverlapSphere(transform.position, interactionRadius);
         PickupableItem closestObject = null;
@@ -29,8 +38,10 @@ public class InteractionController : Controller
 
         if (closestObject != null)
         {
-            PickupItem(closestObject);
+            return closestObject;
         }
+
+        return null;
     }
 
     private void PickupItem(PickupableItem item)

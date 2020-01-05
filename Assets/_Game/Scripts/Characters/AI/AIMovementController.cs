@@ -13,6 +13,7 @@ public enum AIMovementState
 public class AIMovementController : MovementController
 {
     private NavMeshAgent agent;
+    public NavMeshAgent Agent { get { return agent; } }
 
     [SerializeField]
     private float runSpeed;
@@ -26,11 +27,6 @@ public class AIMovementController : MovementController
         base.Awake();
 
         agent = GetComponent<NavMeshAgent>();
-    }
-
-    private void Start()
-    {
-        SetDestination(Vector3.zero);
     }
 
     private void Update()
@@ -61,7 +57,7 @@ public class AIMovementController : MovementController
         }
     }
 
-    private void SetDestination(Vector3 position)
+    public void SetDestination(Vector3 position)
     {
         agent.SetDestination(position);
         SetMovementState(AIMovementState.Walk);
