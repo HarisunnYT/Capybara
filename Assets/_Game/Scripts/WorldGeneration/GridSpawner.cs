@@ -27,7 +27,7 @@ public class GridSpawner : MonoBehaviour
         {
             for (int z = 0; z < zWidth; z++)
             {
-                Vector3 spawnPos = new Vector3(x * collection[index].bounds, 0, z * collection[index].bounds) + origin;
+                Vector3 spawnPos = new Vector3(x * collection[index].bounds.x, 0, z * collection[index].bounds.z) + origin;
                 SpawnTile(collection[index].gameObject, spawnPos, Quaternion.identity);
             }
         }

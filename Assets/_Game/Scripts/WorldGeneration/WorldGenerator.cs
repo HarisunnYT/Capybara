@@ -6,24 +6,32 @@ public class WorldGenerator : MonoBehaviour
 {
     public static WorldGenerator instance;
 
+    [SerializeField]
+    private GameObject loadingCanvas;
+
     public int mapSize;
 
     private void Awake()
     {
         instance = this;
+        loadingCanvas.SetActive(true);
     }
 
     void Start()
     {
-        PathSpawner.instance.SpawnPath();
+        Invoke("DelayedLoadIn", .2f);
+    }
+
+    private void DelayedLoadIn()
+    {
         GridSpawner.instance.SpawnGrid();
 
         for (int i = 0; i < EnclosureSpawner.instance.spawnCount; i++)
         {
             EnclosureSpawner.instance.SpawnEnclosure();
         }
-        
-        Invoke("DelayedObjectSpawn", .5f);
+
+        Invoke("DelayedObjectSpawn", .2f);
     }
 
     private void DelayedObjectSpawn()
@@ -33,7 +41,7 @@ public class WorldGenerator : MonoBehaviour
             ObjectSpawner.instance.SpreadItem();
         }
 
-        Invoke("DelayedEnemySpawn", .5f);
+        Invoke("DelayedEnemySpawn", .2f);
     }
 
     private void DelayedEnemySpawn()
@@ -42,5 +50,17 @@ public class WorldGenerator : MonoBehaviour
         {
             EnemySpawner.instance.SpreadEnemy();
         }
+
+        Invoke("DelayedPathSpawn", .2f);
+    }
+
+    private void DelayedPathSpawn()
+    {
+        PathSpawner.instance.AssignPathNodes();
+    }
+
+    public void CompletedGeneration()
+    {
+        loadingCanvas.SetActive(false);
     }
 }
