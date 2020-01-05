@@ -50,7 +50,7 @@ public class InteractionController : MonoBehaviour
 
     private void PickupItem(PickupableItem item)
     {
-        foreach (var bodyPart in CapybaraController.Instance.BodyParts)
+        foreach (var bodyPart in MovementController.Instance.BodyParts)
         {
             if (bodyPart.ItemSlotType == item.PickupableItemData.ItemSlotType)
             {
@@ -66,7 +66,7 @@ public class InteractionController : MonoBehaviour
         if (item.PickupableItemData.MovementData != null && item.PickupableItemData.MovementData.MovementStyle != MovementStyle.None)
         {
             //we need to check if an other item is modifying the movement style, if so drop that item
-            foreach (var part in CapybaraController.Instance.BodyParts)
+            foreach (var part in MovementController.Instance.BodyParts)
             {
                 if (part.GetMovementData())
                 {
@@ -83,7 +83,7 @@ public class InteractionController : MonoBehaviour
         if (item.PickupableItemData.ItemSlotType == BodyPartType.EitherHand || item.PickupableItemData.ItemSlotType == BodyPartType.TwoHand)
         {
             //we need to check if an object needs to be dropped
-            foreach (var part in CapybaraController.Instance.BodyParts)
+            foreach (var part in MovementController.Instance.BodyParts)
             {
                 if (part.CurrentItemObject != null)
                 {
@@ -102,7 +102,7 @@ public class InteractionController : MonoBehaviour
 
     public void IgnoreCollisions(Collider collider, bool ignore)
     {
-        foreach(var col in CapybaraController.Instance.Colliders)
+        foreach(var col in MovementController.Instance.Colliders)
         {
             Physics.IgnoreCollision(col, collider, ignore);
         }

@@ -67,6 +67,8 @@ public class Projectile : MonoBehaviour
         destroyed = true;
 
         meshRenderer.enabled = false;
+        Rigidbody.velocity = Vector3.zero;
+
         Invoke("DisableWithDelay", disableDelay);
     }
 

@@ -44,7 +44,7 @@ public class AnimationController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (CapybaraController.Instance.CurrentMovementState != MovementState.Ragdoll)
+        if (MovementController.Instance.CurrentMovementState != MovementState.Ragdoll)
         {
             for (int i = 0; i < movingBones.Length; i++)
             {

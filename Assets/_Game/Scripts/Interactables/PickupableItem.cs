@@ -44,7 +44,7 @@ public class PickupableItem : MonoBehaviour
             AnimationController.Instance.SetAnimatorLayerWeights(pickupableItemData.BoneWeights);
             AnimationController.Instance.SetAnimatorBools(pickupableItemData.AnimatorBools);
 
-            CapybaraController.Instance.SetMovementStyle(pickupableItemData.MovementData.MovementStyle);
+            MovementController.Instance.SetMovementStyle(pickupableItemData.MovementData.MovementStyle);
         }
     }
 

@@ -28,9 +28,9 @@ public enum MovementStyle
     Flying
 }
 
-public class CapybaraController : MonoBehaviour
+public class MovementController : MonoBehaviour
 {
-    public static CapybaraController Instance;
+    public static MovementController Instance;
 
     [SerializeField]
     private float baseMovementSpeed = 10;
@@ -63,7 +63,10 @@ public class CapybaraController : MonoBehaviour
 
         //we don't use this animator, this is just for creating animations
         GetComponent<Animator>().enabled = false;
+    }
 
+    private void Start()
+    {
         SetMovementState(MovementState.Idle);
     }
 
@@ -94,7 +97,7 @@ public class CapybaraController : MonoBehaviour
         }
         else
         {
-            if (Time.time > knockBackSlerpDuration)
+            if (CurrentMovementStyle != MovementStyle.Flying && Time.time > knockBackSlerpDuration)
             {
                 //could do sliding animation here
                 MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
@@ -114,6 +117,7 @@ public class CapybaraController : MonoBehaviour
         if (CurrentMovementStyle == MovementStyle.Flying)
         {
             movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, inputVec.y * movementSpeed * fixedDTime, movementVector.z * movementSpeed * fixedDTime);
+            MainBody.velocity = movementVector;
         }
         else
         {

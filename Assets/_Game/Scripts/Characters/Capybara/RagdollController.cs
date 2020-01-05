@@ -81,13 +81,13 @@ public class RagdollController : MonoBehaviour
             if (normalizedTime > 0.99f)
             {
                 returningFromRagdoll = false;
-                CapybaraController.Instance.SetMovementState(previousMovementState);
+                MovementController.Instance.SetMovementState(previousMovementState);
                 AnimationController.Instance.Animator.enabled = true;
 
                 spineBody.transform.parent = metaRig;
             }
         }
-        else if (CapybaraController.Instance.CurrentMovementState == MovementState.Ragdoll)
+        else if (MovementController.Instance.CurrentMovementState == MovementState.Ragdoll)
         {
             //check if the spine has stopped moving
             if (spineBody.velocity.magnitude < 0.1f && Time.time > ragdollTime)
@@ -110,8 +110,8 @@ public class RagdollController : MonoBehaviour
         Transform[] bones = AnimationController.Instance.MovingBones;
 
         //if we are trying to ragdoll and it's already ragdolling, or stop ragdoll and it isn't ragdolling, do nothing
-        if ((ragdoll && CapybaraController.Instance.CurrentMovementState == MovementState.Ragdoll) ||
-           (!ragdoll && CapybaraController.Instance.CurrentMovementState != MovementState.Ragdoll))
+        if ((ragdoll && MovementController.Instance.CurrentMovementState == MovementState.Ragdoll) ||
+           (!ragdoll && MovementController.Instance.CurrentMovementState != MovementState.Ragdoll))
         {
             return;
         }
@@ -142,18 +142,18 @@ public class RagdollController : MonoBehaviour
             //set camera target
             CameraController.Instance.SetTarget(spineBody.transform, true);
 
-            previousMovementState = CapybaraController.Instance.CurrentMovementState;
+            previousMovementState = MovementController.Instance.CurrentMovementState;
 
             //set spine velocity
             if (setVelocityFromMainBody)
             {
-                spineBody.velocity = CapybaraController.Instance.MainBody.velocity;
+                spineBody.velocity = MovementController.Instance.MainBody.velocity;
             }
 
             AnimationController.Instance.Animator.enabled = false;
 
-            CapybaraController.Instance.MainBody.velocity = Vector3.zero;
-            CapybaraController.Instance.SetMovementState(MovementState.Ragdoll);
+            MovementController.Instance.MainBody.velocity = Vector3.zero;
+            MovementController.Instance.SetMovementState(MovementState.Ragdoll);
 
             ragdollTime = Time.time + minRagdollTime;
         }
@@ -162,7 +162,7 @@ public class RagdollController : MonoBehaviour
             //set camera target
             CameraController.Instance.SetTarget(transform, false);
 
-            CapybaraController.Instance.transform.position = spineBody.transform.position;
+            MovementController.Instance.transform.position = spineBody.transform.position;
         }
     }
 }
