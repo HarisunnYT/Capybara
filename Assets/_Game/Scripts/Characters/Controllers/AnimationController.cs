@@ -18,11 +18,11 @@ public struct AnimatorBool
     public bool Result;
 }
 
-public class AnimationController : MonoBehaviour
+public class AnimationController : Controller
 {
-    public static AnimationController Instance;
-
-    public Animator Animator { get; private set; }
+    [SerializeField]
+    private Animator boneAnimator;
+    public Animator Animator { get { return boneAnimator; } }
 
     [SerializeField]
     private Transform[] movingBones;
@@ -35,16 +35,9 @@ public class AnimationController : MonoBehaviour
     private float lerpDuration = 10f;
     private float timer = 0;
 
-    private void Awake()
-    {
-        Instance = this;
-
-        Animator = GetComponent<Animator>();
-    }
-
     private void LateUpdate()
     {
-        if (MovementController.Instance.CurrentMovementState != MovementState.Ragdoll)
+        if (MovementController.CurrentMovementState != MovementState.Ragdoll)
         {
             for (int i = 0; i < movingBones.Length; i++)
             {

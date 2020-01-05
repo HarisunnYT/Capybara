@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackController : MonoBehaviour
+public class AttackController : Controller
 {
     [SerializeField]
     private Hand leftHand;
@@ -20,7 +20,7 @@ public class AttackController : MonoBehaviour
             //if the two hand can't attack (eg no weapon) try attacking with single hands instead
             if (twoHand.Attack() || leftHand.Attack() || rightHand.Attack()) 
             {
-                AnimationController.Instance.SetTrigger("Attack");
+                AnimationController.SetTrigger("Attack");
             }
         }
     }

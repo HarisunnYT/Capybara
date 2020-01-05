@@ -11,6 +11,13 @@ public class BodyPart : MonoBehaviour
     protected PickupableItem currentItemObject;
     public PickupableItem CurrentItemObject { get { return currentItemObject; } }
 
+    protected CharacterController controller;
+
+    private void Start()
+    {
+        controller = GetComponentInParent<CharacterController>();
+    }
+
     public virtual void AssignItem(PickupableItem newItem)
     {
         DropCurrentItem();
@@ -29,7 +36,7 @@ public class BodyPart : MonoBehaviour
     public virtual void ConnectItem(PickupableItem newItem)
     {
         currentItemObject = newItem;
-        currentItemObject.PickUpItem(transform, this);
+        currentItemObject.PickUpItem(transform, this, controller);
     }
 
     public PickupableItemData GetPickupableItemData()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RagdollController : MonoBehaviour
+public class RagdollController : Controller
 {
     struct BoneData
     {
@@ -15,8 +15,6 @@ public class RagdollController : MonoBehaviour
             Rotation = localRotation;
         }
     }
-
-    public static RagdollController Instance;
 
     [SerializeField]
     private float returnFromRagdollDuration;
@@ -45,11 +43,6 @@ public class RagdollController : MonoBehaviour
     private bool returningFromRagdoll = false;
     private MovementState previousMovementState;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-
     private void Start()
     {
         bodies = gameObject.GetComponentsInChildrenExcludingRoot<Rigidbody>();
@@ -62,8 +55,8 @@ public class RagdollController : MonoBehaviour
             timer += Time.deltaTime;
             float normalizedTime = timer / returnFromRagdollDuration;
 
-            Transform[] bones = AnimationController.Instance.MovingBones;
-            Transform[] animatingBones = AnimationController.Instance.AnimationBones;
+            Transform[] bones = AnimationController.MovingBones;
+            Transform[] animatingBones = AnimationController.AnimationBones;
 
             //loop through every bone and move to target
             for (int i = 0; i < bones.Length; i++)
@@ -81,13 +74,13 @@ public class RagdollController : MonoBehaviour
             if (normalizedTime > 0.99f)
             {
                 returningFromRagdoll = false;
-                MovementController.Instance.SetMovementState(previousMovementState);
-                AnimationController.Instance.Animator.enabled = true;
+                MovementController.SetMovementState(previousMovementState);
+                AnimationController.Animator.enabled = true;
 
                 spineBody.transform.parent = metaRig;
             }
         }
-        else if (MovementController.Instance.CurrentMovementState == MovementState.Ragdoll)
+        else if (MovementController.CurrentMovementState == MovementState.Ragdoll)
         {
             //check if the spine has stopped moving
             if (spineBody.velocity.magnitude < 0.1f && Time.time > ragdollTime)
@@ -107,11 +100,11 @@ public class RagdollController : MonoBehaviour
 
     public void SetRagdoll(bool ragdoll, bool setVelocityFromMainBody = true)
     {
-        Transform[] bones = AnimationController.Instance.MovingBones;
+        Transform[] bones = AnimationController.MovingBones;
 
         //if we are trying to ragdoll and it's already ragdolling, or stop ragdoll and it isn't ragdolling, do nothing
-        if ((ragdoll && MovementController.Instance.CurrentMovementState == MovementState.Ragdoll) ||
-           (!ragdoll && MovementController.Instance.CurrentMovementState != MovementState.Ragdoll))
+        if ((ragdoll && MovementController.CurrentMovementState == MovementState.Ragdoll) ||
+           (!ragdoll && MovementController.CurrentMovementState != MovementState.Ragdoll))
         {
             return;
         }
@@ -142,18 +135,18 @@ public class RagdollController : MonoBehaviour
             //set camera target
             CameraController.Instance.SetTarget(spineBody.transform, true);
 
-            previousMovementState = MovementController.Instance.CurrentMovementState;
+            previousMovementState = MovementController.CurrentMovementState;
 
             //set spine velocity
             if (setVelocityFromMainBody)
             {
-                spineBody.velocity = MovementController.Instance.MainBody.velocity;
+                spineBody.velocity = MovementController.MainBody.velocity;
             }
 
-            AnimationController.Instance.Animator.enabled = false;
+            AnimationController.Animator.enabled = false;
 
-            MovementController.Instance.MainBody.velocity = Vector3.zero;
-            MovementController.Instance.SetMovementState(MovementState.Ragdoll);
+            MovementController.MainBody.velocity = Vector3.zero;
+            MovementController.SetMovementState(MovementState.Ragdoll);
 
             ragdollTime = Time.time + minRagdollTime;
         }
@@ -162,7 +155,7 @@ public class RagdollController : MonoBehaviour
             //set camera target
             CameraController.Instance.SetTarget(transform, false);
 
-            MovementController.Instance.transform.position = spineBody.transform.position;
+            MovementController.transform.position = spineBody.transform.position;
         }
     }
 }

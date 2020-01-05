@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionController : MonoBehaviour
+public class CollisionController : Controller
 {
     [SerializeField]
     private LayerMask HittableLayers;
@@ -15,8 +15,7 @@ public class CollisionController : MonoBehaviour
         //ragdoll collision
         if (Util.CheckInsideLayer(HittableLayers, collision.gameObject.layer) && collision.relativeVelocity.magnitude >= forceToRagdoll)
         {
-            Debug.Log(collision.relativeVelocity.magnitude);
-            RagdollController.Instance.SetRagdoll(true);
+            RagdollController.SetRagdoll(true);
         }
     }
 }

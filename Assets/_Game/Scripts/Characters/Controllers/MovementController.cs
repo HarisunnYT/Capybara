@@ -28,10 +28,8 @@ public enum MovementStyle
     Flying
 }
 
-public class MovementController : MonoBehaviour
+public class MovementController : Controller
 {
-    public static MovementController Instance;
-
     [SerializeField]
     private float baseMovementSpeed = 10;
 
@@ -53,9 +51,9 @@ public class MovementController : MonoBehaviour
 
     private float knockBackSlerpDuration;
 
-    private void Awake()
+    protected override void Awake()
     {
-        Instance = this;
+        base.Awake();
 
         MainBody = GetComponent<Rigidbody>();
         BodyParts = GetComponentsInChildren<BodyPart>();
@@ -72,7 +70,7 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        AnimationController.Instance.SetFloat("MovementSpeed", GetInputVector().magnitude);
+        AnimationController.SetFloat("MovementSpeed", GetInputVector().magnitude);
 
         if (CurrentMovementState != MovementState.Ragdoll)
         {
@@ -201,25 +199,25 @@ public class MovementController : MonoBehaviour
 
     public void AddKnockBackForce(Vector3 direction, float force, float knockBackSlerpDuration = 1)
     {
-        if (force < RagdollController.Instance.RequiredKnockBackForceToRagdoll)
+        if (force < RagdollController.RequiredKnockBackForceToRagdoll)
         {
             MainBody.AddForce(direction * force, ForceMode.Impulse);
             this.knockBackSlerpDuration = Time.time + knockBackSlerpDuration;
         }
-        if (force > RagdollController.Instance.RequiredKnockBackForceToRagdoll)
+        if (force > RagdollController.RequiredKnockBackForceToRagdoll)
         {
-            RagdollController.Instance.SetRagdoll(true, false);
-            RagdollController.Instance.AddForceToBodies(direction, force);
+            RagdollController.SetRagdoll(true, false);
+            RagdollController.AddForceToBodies(direction, force);
         }
     }
 
     public void SetMovementState(MovementState movementState)
     {
-        AnimationController.Instance.SetBool(CurrentMovementState.ToString(), false);
+        AnimationController.SetBool(CurrentMovementState.ToString(), false);
 
         CurrentMovementState = movementState;
 
-        AnimationController.Instance.SetBool(movementState.ToString(), true);
+        AnimationController.SetBool(movementState.ToString(), true);
     }
 
     public void SetMovementStyle(MovementStyle movementStyle)
@@ -231,8 +229,8 @@ public class MovementController : MonoBehaviour
 
         CurrentMovementStyle = movementStyle;
 
-        AnimationController.Instance.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
-        AnimationController.Instance.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);
+        AnimationController.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
+        AnimationController.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);
     }
 
     #endregion

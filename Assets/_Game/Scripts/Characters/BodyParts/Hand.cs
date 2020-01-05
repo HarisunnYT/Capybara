@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hand : BodyPart
 {
-    public enum CapyHandType
+    public enum HandType
     {
         Left,
         Right,
@@ -12,8 +12,8 @@ public class Hand : BodyPart
     }
 
     [SerializeField]
-    private CapyHandType handType;
-    public CapyHandType HandType { get { return handType; } }
+    private HandType currentHandType;
+    public HandType CurrentHandType { get { return currentHandType; } }
 
     [Header("Leave unassigned if two handed")]
     [SerializeField]
@@ -51,14 +51,14 @@ public class Hand : BodyPart
 
     private void SetAnims()
     {
-        if (HandType != CapyHandType.Both)
+        if (CurrentHandType != HandType.Both)
         {
-            AnimationController.Instance.SetBool(handType == CapyHandType.Right ? "RightHandEquiped" : "LeftHandEquiped", CurrentItemObject != null);
+            controller.AnimationController.SetBool(currentHandType == HandType.Right ? "RightHandEquiped" : "LeftHandEquiped", CurrentItemObject != null);
         }
         else
         {
-            AnimationController.Instance.SetBool("RightHandEquiped", CurrentItemObject != null);
-            AnimationController.Instance.SetBool("LeftHandEquiped", CurrentItemObject != null);
+            controller.AnimationController.SetBool("RightHandEquiped", CurrentItemObject != null);
+            controller.AnimationController.SetBool("LeftHandEquiped", CurrentItemObject != null);
         }
     }
 

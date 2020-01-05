@@ -37,7 +37,7 @@ public class ProjectileLauncher : TwoHandedWeapon
         projectile.Rigidbody.AddForce(projectile.transform.forward * force * projectileData.ForceMultiplier, ForceMode.Impulse);
 
         //add knock back force to our player
-        MovementController.Instance.AddKnockBackForce(-Util.GetDirection(transform, shootDirection), knockBackForce * projectileData.KnockBackForceMultiplier);
+        CurrentController.MovementController.AddKnockBackForce(-Util.GetDirection(transform, shootDirection), knockBackForce * projectileData.KnockBackForceMultiplier);
     }
 
     private void OnDrawGizmosSelected()

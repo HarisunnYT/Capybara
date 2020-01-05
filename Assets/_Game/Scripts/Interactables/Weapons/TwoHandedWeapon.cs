@@ -6,7 +6,8 @@ public class TwoHandedWeapon : Weapon
 {
     public override bool Attack()
     {
-        if (AnimationController.Instance.Animator.GetCurrentAnimatorStateInfo(AnimationController.Instance.Animator.GetLayerIndex("Both Arms Layer")).tagHash == Animator.StringToHash("Attacking"))
+        Animator animator = CurrentController.AnimationController.Animator;
+        if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("Both Arms Layer")).tagHash == Animator.StringToHash("Attacking"))
         {
             return false;
         }
