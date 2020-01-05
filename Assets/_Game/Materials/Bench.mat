@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bench
-  m_Shader: {fileID: 4800000, guid: 8412d4af48a63e64e9fc60340a5dba31, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 3a5fa6261ba88c746bdfe10d5d64aa09,
+    type: 3}
   m_ShaderKeywords: _BACKGRADIENTCHANGEDIRECTION_ON _BOTTOMGRADIENTCHANGEDIRECTION_ON
     _DESATURATELIGHTCOLOR_ON _FRONTGRADIENTCHANGEDIRECTION_ON _LEFTGRADIENTCHANGEDIRECTION_ON
     _RIGHTGRADIENTCHANGEDIRECTION_ON _RIMGRADIENTCHANGEDIRECTION_ON _TOPGRADIENTCHANGEDIRECTION_ON
@@ -23,6 +24,10 @@ Material:
     m_TexEnvs:
     - _BackTexture:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 8d1d00fe368bd154a9640c479dd2f148, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BottomTexture:
@@ -85,6 +90,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ShadedBaseMap:
+        m_Texture: {fileID: 2800000, guid: 8d1d00fe368bd154a9640c479dd2f148, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SimulatedLightRampTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -124,6 +133,8 @@ Material:
     - _Cutoff: 0.616
     - _DesaturateLightColor: 1
     - _DetailNormalMapScale: 1
+    - _DiffuseFallOff: 0.01
+    - _DiffuseStep: 0
     - _DirectionalLight: 0
     - _DistanceFog: 0
     - _DistanceFogDensity: 1
@@ -160,6 +171,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _MultiplyLightmap: 0
+    - _Occlusion: 1
     - _OcclusionStrength: 1
     - _OpacityLevel: 1
     - _Parallax: 0.02
@@ -172,19 +184,26 @@ Material:
     - _RightGradientRotation: 0
     - _RightGradientWidth: 0.5
     - _RightTextureLevel: 1
+    - _RimAttenuation: 1
+    - _RimFallOff: 0
     - _RimGradient: 0
     - _RimGradientCenter: 0.5
     - _RimGradientChangeDirection: 1
     - _RimGradientRevert: 0
     - _RimGradientRotation: 0
     - _RimGradientWidth: 0.5
+    - _RimPower: 0.9
     - _RimTextureLevel: 1
+    - _ShadowFallOff: 1
     - _ShadowLevel: 0
     - _SimulatedLight: 0
     - _SimulatedLightDistance: 10
     - _SimulatedLightLevel: 1
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
+    - _SpecularFallOff: 0.4
     - _SpecularHighlights: 1
+    - _SpecularStep: 0.45
     - _SrcBlend: 1
     - _Steps: 2
     - _TopGradient: 0
@@ -204,6 +223,7 @@ Material:
     m_Colors:
     - _BackColor: {r: 1, g: 0.64071095, b: 0.0990566, a: 1}
     - _BackTopColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
     - _BottomColor: {r: 0, g: 0, b: 1, a: 1}
     - _BottomTopColor: {r: 0, g: 0, b: 0, a: 1}
     - _CenterColor: {r: 1, g: 1, b: 1, a: 1}
@@ -219,9 +239,11 @@ Material:
     - _LightmapColor: {r: 0, g: 0, b: 0, a: 1}
     - _RightColor: {r: 0.9528302, g: 0.68105185, b: 0.48989856, a: 1}
     - _RightTopColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 0, b: 1, a: 1}
+    - _RimColor: {r: 0.5764706, g: 0.46274513, b: 0.3254902, a: 1}
     - _RimTopColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ShadedBaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _SimulatedLightPosition: {r: 0, g: 0, b: -1, a: 0}
+    - _Specular: {r: 0.2, g: 0.2, b: 0.2, a: 0}
     - _TopColor: {r: 0.4528302, g: 0.43332785, b: 0.42933428, a: 1}
     - _TopTopColor: {r: 0, g: 0, b: 0, a: 1}
     - _WorldDistanceFogPosition: {r: 0, g: 0, b: 0, a: 0}
