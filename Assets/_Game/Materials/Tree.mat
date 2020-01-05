@@ -8,8 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Tree
-  m_Shader: {fileID: 4800000, guid: 8412d4af48a63e64e9fc60340a5dba31, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: -6465566751694194690, guid: 3a5fa6261ba88c746bdfe10d5d64aa09,
+    type: 3}
+  m_ShaderKeywords: _ENABLEBASEMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,6 +20,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_892E9E22:
+        m_Texture: {fileID: 2800000, guid: 9e80e4e90890b264ea92c40c0a285bd2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_EA9E7315:
+        m_Texture: {fileID: 2800000, guid: cc0c5ea441de63c45862d65190ef84e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: cc0c5ea441de63c45862d65190ef84e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -55,23 +68,67 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ShadedBaseMap:
+        m_Texture: {fileID: 2800000, guid: cc0c5ea441de63c45862d65190ef84e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_1894FC56: 0
+    - _AlphaClip: 0
     - _BumpScale: 1
-    - _Cutoff: 0.5
+    - _Cull: 2
+    - _Culling: 0
+    - _Cutoff: 0.457
     - _DetailNormalMapScale: 1
+    - _DiffuseFallOff: 0.019
+    - _DiffuseStep: 0
     - _DstBlend: 0
+    - _EnableBaseMap: 1
+    - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Help: 0
     - _Metallic: 0
     - _Mode: 0
+    - _Occlusion: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueOffset: 0
+    - _ReadMask: 255
+    - _ReceiveShadows: 1
+    - _Rim: 0
+    - _RimAttenuation: 0.45
+    - _RimFallOff: 0
+    - _RimFrequency: 1
+    - _RimMinPower: 1
+    - _RimPerPositionFrequency: 1
+    - _RimPower: 0.9
+    - _ShadowFallOff: 0
+    - _Shadows: 0
+    - _Smoothness: 0.061
     - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
+    - _SpecularFallOff: 0
+    - _SpecularHighlights: 0
+    - _SpecularStep: 0.45
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilFail: 0
+    - _StencilOp: 0
+    - _StencilZFail: 0
     - _UVSec: 0
+    - _WriteMask: 255
     - _ZWrite: 1
     m_Colors:
+    - Color_100A0BE9: {r: 0, g: 0, b: 0, a: 0}
+    - Color_4AB87862: {r: 1, g: 1, b: 1, a: 0}
+    - Color_5B620AF3: {r: 0, g: 0, b: 0, a: 0}
+    - Color_EF633858: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.46173096, g: 0.4811321, b: 0.32453722, a: 1}
+    - _ShadedBaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Specular: {r: 1, g: 1, b: 1, a: 0}

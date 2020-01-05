@@ -35,9 +35,10 @@ public class EnclosureSpawner : MonoBehaviour
         xWidth = Random.Range(minSize, maxSize);
         zWidth = Random.Range(minSize, maxSize);
 
-        Vector3 origin = new Vector3(Random.Range(-WorldGenerator.instance.mapSize, WorldGenerator.instance.mapSize), 0, Random.Range(-WorldGenerator.instance.mapSize, WorldGenerator.instance.mapSize));
+        Node node = NodeManager.instance.nodes[Random.Range(0, NodeManager.instance.nodes.Count)];
+        Vector3 origin = node.pos;
 
-        if(Physics.OverlapSphere(origin, maxSize * 2, conflictLayer).Length > 0)
+        if(Physics.OverlapSphere(origin, maxSize * 2, conflictLayer).Length > 0 || node.used)
         {
             SpawnEnclosure();
         }
@@ -46,36 +47,49 @@ public class EnclosureSpawner : MonoBehaviour
             Vector3 pos = origin;
             for (int i = 0; i < xWidth; i++)
             {
-                pos = new Vector3(pos.x + collection[index].bounds, pos.y, pos.z);
-                SpawnFence(collection[index].gameObject, pos, Quaternion.Euler(0, 0, 0));
+                pos = new Vector3(pos.x + collection[index].bounds.x, pos.y, pos.z);
+                SpawnFence(index, false, collection[index].gameObject, pos, Quaternion.Euler(0, 0, 0));            
             }
 
-            pos = new Vector3(pos.x + (collection[index].bounds / 2), pos.y, pos.z + (collection[index].bounds / 2));
+            //rotated
+            pos = new Vector3(pos.x + (collection[index].GetRotatedBounds().x / 2), pos.y, pos.z + (collection[index].GetRotatedBounds().z / 2));
             for (int i = 0; i < zWidth; i++)
             {
-                SpawnFence(collection[index].gameObject, pos, Quaternion.Euler(0, -90, 0));
-                pos = new Vector3(pos.x, pos.y, pos.z + collection[index].bounds);
+                SpawnFence(index, true, collection[index].gameObject, pos, Quaternion.Euler(0, -90, 0));
+                pos = new Vector3(pos.x, pos.y, pos.z + collection[index].GetRotatedBounds().z);
             }
 
-            pos = new Vector3(pos.x - (collection[index].bounds / 2), pos.y, pos.z - (collection[index].bounds / 2));
+            pos = new Vector3(pos.x - (collection[index].bounds.x / 2), pos.y, pos.z - (collection[index].bounds.z / 2));
             for (int i = 0; i < xWidth; i++)
             {
-                SpawnFence(collection[index].gameObject, pos, Quaternion.Euler(0, 180, 0));
-                pos = new Vector3(pos.x - collection[index].bounds, pos.y, pos.z);
+                SpawnFence(index, false, collection[index].gameObject, pos, Quaternion.Euler(0, 180, 0));
+                pos = new Vector3(pos.x - collection[index].bounds.x, pos.y, pos.z);
             }
 
-            pos = new Vector3(pos.x + (collection[index].bounds / 2), pos.y, pos.z - (collection[index].bounds / 2));
+            //rotated
+            pos = new Vector3(pos.x + (collection[index].GetRotatedBounds().x / 2), pos.y, pos.z - (collection[index].GetRotatedBounds().z / 2));
             for (int i = 0; i < zWidth; i++)
             {
-                SpawnFence(collection[index].gameObject, pos, Quaternion.Euler(0, 90, 0));
-                pos = new Vector3(pos.x, pos.y, pos.z - collection[index].bounds);
+                SpawnFence(index, true, collection[index].gameObject, pos, Quaternion.Euler(0, 90, 0));
+                pos = new Vector3(pos.x, pos.y, pos.z - collection[index].GetRotatedBounds().z);
             }
         }     
     }
 
-    private void SpawnFence(GameObject obj, Vector3 pos, Quaternion rot)
+    private void SpawnFence(int index, bool zAxis, GameObject obj, Vector3 pos, Quaternion rot)
     {
         GameObject fence = Instantiate(obj, pos, rot, parent);
         SpawnLibrary.instance.spawnedFences.Add(fence.GetComponent<SpawnObject>());
+
+        List<Node> nodes = zAxis ? NodeManager.instance.GetNodesInRange(new Vector3(pos.x, 0, pos.z - collection[index].GetRotatedBounds().z / 2), new Vector3(pos.x + collection[index].GetRotatedBounds().x / 2, 0, pos.z + collection[index].GetRotatedBounds().z)) :
+            NodeManager.instance.GetNodesInRange(new Vector3(pos.x - collection[index].bounds.x / 2, 0, pos.z), new Vector3(pos.x + collection[index].bounds.x / 2, 0, pos.z));
+            
+        foreach (Node nodeInList in nodes)
+        {
+            if(nodeInList != null)
+            {
+                nodeInList.used = true;
+            }         
+        }
     }
 }

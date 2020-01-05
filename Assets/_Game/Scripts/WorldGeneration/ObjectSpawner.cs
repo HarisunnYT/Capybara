@@ -17,7 +17,6 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField]
     private LayerMask conflictLayer;
 
-    // Start is called before the first frame update
     void Awake()
     {
         instance = this;      
@@ -25,8 +24,7 @@ public class ObjectSpawner : MonoBehaviour
 
     public void SpreadItem()
     {
-        Vector3 pos = new Vector3(transform.position.x + Random.Range(-WorldGenerator.instance.mapSize, WorldGenerator.instance.mapSize), transform.position.y, transform.position.z + Random.Range(-WorldGenerator.instance.mapSize, WorldGenerator.instance.mapSize));
-        //Debug.Log(pos);
+        Vector3 pos = NodeManager.instance.GetRandomUnusedNode().pos;
         PickObject(pos);
     }
 
@@ -37,7 +35,7 @@ public class ObjectSpawner : MonoBehaviour
         SpawnObject spawnObject = collection[index];
 
         // check for object overlap
-        if (Physics.OverlapBox(pos, new Vector3(spawnObject.bounds, Mathf.Infinity, spawnObject.bounds), rot, conflictLayer).Length > 0)
+        if (Physics.OverlapBox(pos, new Vector3(spawnObject.MaxBounds(), Mathf.Infinity, spawnObject.MaxBounds()), rot, conflictLayer).Length > 0)
         {
             Debug.Log("Colliders found, rerunning spawn for object");
             SpreadItem();
