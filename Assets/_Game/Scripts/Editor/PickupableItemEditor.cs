@@ -14,8 +14,12 @@ public class PickupableItemEditor : Editor
 
         if (GUILayout.Button("Set Transform"))
         {
-            pickupableItem.PickupableItemData.Position = pickupableItem.transform.localPosition;
-            pickupableItem.PickupableItemData.EulerRotation = pickupableItem.transform.localRotation.eulerAngles;
+            SerializedObject serializedObject = new SerializedObject(pickupableItem.PickupableItemData);
+
+            serializedObject.FindProperty("Position").vector3Value = pickupableItem.transform.localPosition;
+            serializedObject.FindProperty("EulerRotation").vector3Value = pickupableItem.transform.localRotation.eulerAngles;
+
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }
