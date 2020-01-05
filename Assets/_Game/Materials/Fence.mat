@@ -88,13 +88,13 @@ Material:
     - _Occlusion: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAttenuation: 0
-    - _RimFallOff: 1
-    - _RimPower: 0.5
-    - _ShadowFallOff: 0
+    - _RimAttenuation: 1
+    - _RimFallOff: 0
+    - _RimPower: 0.9
+    - _ShadowFallOff: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
-    - _SpecularFallOff: 0.01
+    - _SpecularFallOff: 0.4
     - _SpecularHighlights: 1
     - _SpecularStep: 0.45
     - _SrcBlend: 1
@@ -108,6 +108,6 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
+    - _RimColor: {r: 0.5471698, g: 0.4565182, b: 0.3484336, a: 1}
     - _ShadedBaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Specular: {r: 0.2, g: 0.2, b: 0.2, a: 0}

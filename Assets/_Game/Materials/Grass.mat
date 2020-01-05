@@ -116,17 +116,17 @@ Material:
     - _ReadMask: 255
     - _ReceiveShadows: 1
     - _Rim: 0
-    - _RimAttenuation: 0
-    - _RimFallOff: 1
+    - _RimAttenuation: 1
+    - _RimFallOff: 0.2
     - _RimFrequency: 0
     - _RimMinPower: 1
     - _RimPerPositionFrequency: 1
-    - _RimPower: 0.5
-    - _ShadowFallOff: 1
+    - _RimPower: 0.9
+    - _ShadowFallOff: 0
     - _Shadows: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 1
-    - _SpecularFallOff: 0.01
+    - _SpecularFallOff: 0.4
     - _SpecularHighlights: 1
     - _SpecularStep: 0.45
     - _SrcBlend: 1
@@ -146,10 +146,10 @@ Material:
     - Color_5B620AF3: {r: 0, g: 0, b: 0, a: 0}
     - Color_77B4D621: {r: 0, g: 0, b: 0, a: 0}
     - Color_EF633858: {r: 1, g: 1, b: 1, a: 0}
-    - _BaseColor: {r: 0.6552599, g: 0.8962264, b: 0.70764387, a: 1}
+    - _BaseColor: {r: 0.7076807, g: 0.8773585, b: 0.7408785, a: 1}
     - _Color: {r: 0.6552599, g: 0.8962264, b: 0.7076439, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
-    - _ShadedBaseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.6762638, g: 0.8584906, b: 0.71191686, a: 1}
+    - _ShadedBaseColor: {r: 0.6039216, g: 0.7843138, b: 0.6392157, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 0.2, g: 0.2, b: 0.2, a: 0}
