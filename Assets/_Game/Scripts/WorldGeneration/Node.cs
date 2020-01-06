@@ -7,6 +7,7 @@ public class Node
 {
     public Vector3 pos;
     public bool used;
+    public bool path;
     public bool enclosure;
 
     public float distanceToDest;

@@ -9,10 +9,16 @@ public class NodeManager : MonoBehaviour
     int mapSize;
     public List<Node> nodes = new List<Node>();
 
-    private void Start()
+    [SerializeField]
+    public List<Node> pathDests = new List<Node>();
+
+    private void Awake()
     {
         instance = this;
+    }
 
+    private void Start()
+    {
         mapSize = WorldGenerator.instance.mapSize;
         DrawNodes();
     }
@@ -40,9 +46,19 @@ public class NodeManager : MonoBehaviour
     {
         foreach (Node node in nodes)
         {
-            if (!node.used)
+            if (!node.used && !node.path)
             {
                 Gizmos.color = Color.blue;
+                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
+            }
+            else if (node.enclosure)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
+            }
+            else if (node.path)
+            {
+                Gizmos.color = Color.yellow;
                 Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
             }
             else
@@ -55,7 +71,7 @@ public class NodeManager : MonoBehaviour
 
     public Node GetNodeAtPosition(Vector3 pos)
     {
-        Node node = nodes.Find(x => x.pos == pos);
+        Node node = nodes.Find(opt => opt.pos == pos);
         return node;
     }
 
@@ -69,9 +85,6 @@ public class NodeManager : MonoBehaviour
         int lowest = Mathf.RoundToInt(Mathf.Min(lowerX, lowerZ));
         int highest = Mathf.RoundToInt(Mathf.Max(upperX, upperZ));
 
-        //int xMod = maxX < xPos ? xPos *= -1 : xPos *= 1;
-        //int zMod = maxZ < zPos ? zPos *= -1 : zPos *= 1;
-
         List<Node> nodes = new List<Node>();
 
         for (int x = lowest; x < highest; x++)
@@ -84,7 +97,6 @@ public class NodeManager : MonoBehaviour
                 }
             }
         }
-
         return nodes;
     }
 
@@ -93,13 +105,49 @@ public class NodeManager : MonoBehaviour
         GetNodeAtPosition(pos).used = true;
     }
 
+    public void SetNodeAsPath(Vector3 pos)
+    {
+        GetNodeAtPosition(pos).path = true;
+    }
+
+    public void SetNodesUsed(List<Vector3> positions)
+    {
+        foreach (Vector3 pos in positions)
+        {
+            SetNodeUsed(pos);
+        }
+    }
+
+    public void SetEnclosure(List<Vector3> positions)
+    {
+        foreach (Vector3 pos in positions)
+        {
+            if (GetNodeAtPosition(pos) != null && !GetNodeAtPosition(pos).used)
+            {
+                SetNodeUsed(pos);
+                GetNodeAtPosition(pos).enclosure = true;
+            }           
+        }
+    }
+
+    public void SetExistingNodesUsed(List<Node> nodes)
+    {
+        foreach (Node node in nodes)
+        {
+            if(node != null)
+            {
+                node.used = true;
+            }
+        }
+    }
+
     public Node GetRandomUnusedNode()
     {
         Node node = null;
 
         do
         {
-            node = NodeManager.instance.nodes[Random.Range(0, NodeManager.instance.nodes.Count)];
+            node = nodes[Random.Range(0, nodes.Count)];
         }
         while (node != null && node.used);
 

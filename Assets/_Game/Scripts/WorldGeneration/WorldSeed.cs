@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class WorldSeed : MonoBehaviour
 {
+    public static WorldSeed instance;
+
     [SerializeField]
     private string strSeed;
 
-    [SerializeField]
-    private int seed;
+    public int seed;
 
     [SerializeField]
     private int maxSeed = 99999999;
 
     void Awake()
     {
-        if (strSeed.Length >= 3)
+        instance = this;
+        SetSeed();
+    }
+
+    public void SetSeed(bool forceRandom = false)
+    {
+        if (strSeed.Length >= 3 && !forceRandom)
         {
             seed = strSeed.GetHashCode();
         }

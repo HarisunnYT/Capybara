@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1370333301169493496}
   - component: {fileID: 3741975647140293187}
   - component: {fileID: 7955399454243516601}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Tree (SpawnObj)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 0
-  bounds: 3
+  bounds: {x: 1, y: 0, z: 1}
 --- !u!1 &3216192775688722685
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 1737822740637144096}
   - component: {fileID: 6429456412921158660}
   - component: {fileID: 3423049336082127594}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: tree01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

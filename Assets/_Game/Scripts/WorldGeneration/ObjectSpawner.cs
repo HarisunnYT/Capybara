@@ -6,8 +6,7 @@ public class ObjectSpawner : MonoBehaviour
 {
     public static ObjectSpawner instance;
 
-    [SerializeField]
-    private Transform parent;
+    public Transform parent;
 
     public int spawnCount = 5;
 

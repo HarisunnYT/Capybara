@@ -709,7 +709,7 @@ Animator:
   m_GameObject: {fileID: 6688670164631593880}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4261eab0f98b7ff45bcfef1ce0fc23ad, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2a3d85c16ec403b468e7fdb8dd987df7, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 1
-  bounds: 3
+  bounds: {x: 1, y: 0, z: 1}
 --- !u!1 &6764979779516784321
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner instance;
 
-    [SerializeField]
-    private Transform parent;
+    public Transform parent;
 
     public int spawnCount = 5;
 
@@ -25,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpreadEnemy()
     {
-        Vector3 pos = new Vector3(transform.position.x + Random.Range(-WorldGenerator.instance.mapSize, WorldGenerator.instance.mapSize), transform.position.y, transform.position.z + Random.Range(-WorldGenerator.instance.mapSize, WorldGenerator.instance.mapSize));
+        Vector3 pos = NodeManager.instance.GetRandomUnusedNode().pos;
         SpawnEnemy(pos);
     }
 
