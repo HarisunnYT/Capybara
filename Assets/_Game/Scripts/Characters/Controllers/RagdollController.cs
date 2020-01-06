@@ -43,9 +43,18 @@ public class RagdollController : Controller
     private bool returningFromRagdoll = false;
     private MovementState previousMovementState;
 
+    private Collider mainCollider;
+
     private void Start()
     {
         bodies = gameObject.GetComponentsInChildrenExcludingRoot<Rigidbody>();
+        mainCollider = GetComponent<Collider>();
+
+        //ignore collisions between child colliders;
+        foreach(var col in gameObject.GetComponentsInChildrenExcludingRoot<Collider>())
+        {
+            Physics.IgnoreCollision(col, mainCollider, true);
+        }
 
         SetRagdoll(false);
     }

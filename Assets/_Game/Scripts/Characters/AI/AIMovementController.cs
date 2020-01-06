@@ -31,9 +31,13 @@ public class AIMovementController : MovementController
 
     private void Update()
     {
-        if (agent.remainingDistance < 0.1f && MovementController.CurrentMovementState == MovementState.Moving)
+        if (agent.remainingDistance < 0.1f && CurrentMovementState == MovementState.Moving)
         {
             SetMovementState(AIMovementState.Idle);
+        }
+        else if (CurrentMovementState == MovementState.Ragdoll)
+        {
+            agent.ResetPath();
         }
     }
 
@@ -53,12 +57,17 @@ public class AIMovementController : MovementController
         }
         else if (movementState == AIMovementState.Idle)
         {
-            SetMovementState(AIMovementState.Idle);
+            SetMovementState(MovementState.Idle);
         }
     }
 
     public void SetDestination(Vector3 position)
     {
+        if (CurrentMovementState == MovementState.Ragdoll)
+        {
+            return;
+        }
+
         agent.SetDestination(position);
         SetMovementState(AIMovementState.Walk);
     }
