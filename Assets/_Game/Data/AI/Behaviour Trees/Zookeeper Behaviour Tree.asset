@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
   m_Name: Zookeeper Behaviour Tree
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-51.0,"y":-140.0},"nodes":[{"_position":{"x":525.0,"y":264.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":314.0,"y":362.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"functionWrapper":{"p1":{"_value":1},"_targetMethod":{"_baseInfo":"AIController|BeginObjective|System.Void","_paramsInfo":"ObjectiveData"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[ObjectiveData,
-    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},"_position":{"x":451.0,"y":364.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
+  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":36.0,"y":-112.0},"nodes":[{"_position":{"x":525.0,"y":264.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":314.0,"y":362.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"functionWrapper":{"p1":{},"_targetMethod":{"_baseInfo":"AIMovementController|SetDestination|System.Void","_paramsInfo":"UnityEngine.Vector3"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction"},"_position":{"x":451.0,"y":364.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local
     Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 3bdeee46d8512da47a66f3fdf8baf04b, type: 2}
+  _objectReferences: []
   _deserializationFailed: 0
   repeat: 1
   updateInterval: 0

@@ -37,7 +37,7 @@ public class AIMovementController : MovementController
         }
     }
 
-    public void SetMovementState(AIMovementState movementState)
+    private void SetMovementState(AIMovementState movementState)
     {
         currentMovementState = movementState;
 
