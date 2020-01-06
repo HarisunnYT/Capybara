@@ -58,6 +58,14 @@ public class AnimationController : Controller
         }
     }
 
+    public void DisableAllLayers()
+    {
+        for (int i = 0; i < System.Enum.GetNames(typeof(AnimatorBodyPartLayer)).Length; i++)
+        {
+            SetAnimatorLayerWeight((AnimatorBodyPartLayer)i, 0);
+        }
+    }
+
     public void SetAnimatorLayerWeight(AnimatorBodyPartLayer layer, float weight)
     {
         //we add 1 to the layer as 0 is full body which can't be modified

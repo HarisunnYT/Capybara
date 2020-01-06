@@ -9,23 +9,30 @@ public class InteractionController : Controller
 
     public void TryPickUpObject()
     {
-        PickupableItem closestObject = FindClosestObject();
+        Interactable closestObject = FindClosestObject();
         if (closestObject != null)
         {
-            PickupItem(closestObject);
+            if (closestObject is PickupableItem)
+            {
+                PickupItem(closestObject as PickupableItem);
+            }
+            else if (closestObject is Vehicle)
+            {
+                GetInVehicle(closestObject as Vehicle);
+            }
         }
     }
 
-    public PickupableItem FindClosestObject()
+    public Interactable FindClosestObject()
     {
         Collider[] hitCols = Physics.OverlapSphere(transform.position, interactionRadius);
-        PickupableItem closestObject = null;
+        Interactable closestObject = null;
 
         if (hitCols.Length > 0)
         {
             for (int i = 0; i < hitCols.Length; i++)
             {
-                PickupableItem item = hitCols[i].GetComponent<PickupableItem>();
+                Interactable item = hitCols[i].GetComponent<Interactable>();
                 if (item != null && !item.Equiped)
                 {
                     if (closestObject == null || Vector3.Distance(hitCols[i].transform.position, transform.position) < Vector3.Distance(hitCols[i].transform.position, closestObject.transform.position))
@@ -54,6 +61,18 @@ public class InteractionController : Controller
                 break;
             }
         }
+    }
+
+    private void GetInVehicle(Vehicle vehicle)
+    {
+        //drop all items first
+        foreach (var bodyPart in MovementController.BodyParts)
+        {
+            bodyPart.DropCurrentItem();
+        }
+
+        MovementController.SetMovementStyle(MovementStyle.Driving);
+        vehicle.GetInVehicle(CharacterController);
     }
 
     private void AssignItem(BodyPart bodyPart, PickupableItem item)

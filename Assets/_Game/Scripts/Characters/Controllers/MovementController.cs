@@ -25,7 +25,8 @@ public enum MovementStyle
 {
     None,
     Grounded,
-    Flying
+    Flying,
+    Driving
 }
 
 public class MovementController : Controller
@@ -230,6 +231,12 @@ public class MovementController : Controller
 
         AnimationController.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
         AnimationController.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);
+        AnimationController.SetBool(MovementStyle.Driving.ToString(), movementStyle == MovementStyle.Driving);
+    }
+
+    public void SetKinematic(bool kinematic)
+    {
+        MainBody.isKinematic = kinematic;
     }
 
     #endregion

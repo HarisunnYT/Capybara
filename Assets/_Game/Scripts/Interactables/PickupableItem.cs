@@ -2,26 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupableItem : MonoBehaviour
+public class PickupableItem : Interactable
 {
     [SerializeField]
     private PickupableItemData pickupableItemData;
     public PickupableItemData PickupableItemData { get { return pickupableItemData; } }
 
-    public bool Equiped { get; private set; }
-
     public BodyPart CurrentBodyPart { get; private set; }
-
-    public CharacterController CurrentController { get; private set; }
-
-    private Collider collider;
-    private Rigidbody rigidbody;
-
-    private void Start()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-        collider = GetComponent<Collider>();
-    }
 
     public virtual void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
     {
