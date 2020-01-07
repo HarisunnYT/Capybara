@@ -43,7 +43,6 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             GameObject obj = Instantiate(collection[index].gameObject, pos, rot, parent);
-            SpawnLibrary.instance.spawnedEnemies.Add(obj.GetComponent<SpawnObject>());
         }
     }
 }

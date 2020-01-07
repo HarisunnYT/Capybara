@@ -36,6 +36,5 @@ public class GridSpawner : MonoBehaviour
     private void SpawnTile(GameObject obj, Vector3 pos, Quaternion rot)
     {
         GameObject tile = Instantiate(obj, pos, rot);
-        SpawnLibrary.instance.spawnedTiles.Add(tile.GetComponent<SpawnObject>());
     }
 }

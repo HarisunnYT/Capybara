@@ -43,14 +43,14 @@ public class WorldGenerator : MonoBehaviour
         }
 
         ground.position = new Vector3(mapSize / 2, 0, mapSize / 2);
-        ground.localScale = new Vector3(mapSize / 10, 1, mapSize / 10);
+        ground.localScale = new Vector3(mapSize / 9, 1, mapSize / 9);
         
         Invoke("DelayedLoadIn", .2f);
     }
 
     private void DelayedLoadIn()
     {
-        PathSpawner.instance.AddCentralAreaToPathDest();
+        PathGenerator.Instance.AddCentralAreaToPathDest();
 
         for (int i = 0; i < EnclosureSpawner.instance.spawnCount; i++)
         {
@@ -82,7 +82,7 @@ public class WorldGenerator : MonoBehaviour
 
     private void DelayedPathSpawn()
     {
-        PathSpawner.instance.AssignPathNodes();
+        PathGenerator.Instance.DrawPath();
     }
 
     public void CompletedGeneration()
@@ -100,34 +100,6 @@ public class WorldGenerator : MonoBehaviour
         if (isDebug)
         {
             Application.LoadLevel(Application.loadedLevel);
-
-            //foreach (Transform child in EnclosureSpawner.instance.parent)
-            //{
-            //    Destroy(child.gameObject);
-            //}
-
-            //foreach (Transform child in PathSpawner.instance.parent)
-            //{
-            //    Destroy(child.gameObject);
-            //}
-
-            //foreach (Transform child in ObjectSpawner.instance.parent)
-            //{
-            //    Destroy(child.gameObject);
-            //}
-
-            //foreach (Transform child in EnemySpawner.instance.parent)
-            //{
-            //    Destroy(child.gameObject);
-            //}
-
-
-            //loadingCanvas.SetActive(true);
-
-            //WorldSeed.instance.SetSeed(true);
-            //seed.text = WorldSeed.instance.seed.ToString();
-
-            //Invoke("DelayedLoadIn", .2f);
         }       
     }
 }

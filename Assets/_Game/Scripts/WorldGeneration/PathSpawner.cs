@@ -2,24 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathSpawner : MonoBehaviour
+public class PathSpawner : Singleton<PathSpawner>
 {
-    public static PathSpawner instance;
-
-    public Transform parent;
-
-    [SerializeField]
-    private SpawnObject[] collection;
-
-    [SerializeField]
-    private SpawnObject[] zooEntrances;
-
-    [SerializeField]
-    private int pathCount = 3;
-
-    //private List<Vector3> pathDests = new List<Vector3>();
-
-    private Node currentNode;
     private List<Node> confirmedPathNodes = new List<Node>();
     private List<Node> pathNodeCandidates = new List<Node>();
 
@@ -40,7 +24,6 @@ public class PathSpawner : MonoBehaviour
                 }
             }
         }
-
         return bestNode;
     }
 
@@ -49,25 +32,25 @@ public class PathSpawner : MonoBehaviour
         List<Node> nodeCandidates = new List<Node>();
 
         Node nodeCandidate;
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(currentNode.pos.x, 0, currentNode.pos.z + 1));
+        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x, 0, PathGenerator.Instance.currentNode.pos.z + 1));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
         }
 
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(currentNode.pos.x + 1, 0, currentNode.pos.z));
+        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x + 1, 0, PathGenerator.Instance.currentNode.pos.z));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
         }
 
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(currentNode.pos.x, 0, currentNode.pos.z - 1));
+        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x, 0, PathGenerator.Instance.currentNode.pos.z - 1));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
         }
 
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(currentNode.pos.x - 1, 0, currentNode.pos.z));
+        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x - 1, 0, PathGenerator.Instance.currentNode.pos.z));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
@@ -76,84 +59,50 @@ public class PathSpawner : MonoBehaviour
         return nodeCandidates;
     }
 
-    void Awake()
+    public bool DrawPath(Node destinationNode, SpawnObject pathPiece, Transform parent)
     {
-        instance = this;        
-    }
-
-    public void AddCentralAreaToPathDest()
-    {
-        NodeManager.instance.pathDests.Add(NodeManager.instance.GetNodeAtPosition(new Vector3(WorldGenerator.instance.mapSize / 2, 0, WorldGenerator.instance.mapSize / 2)));
-    }
-
-    public void AssignPathNodes()
-    {
-        currentNode = NodeManager.instance.GetRandomUnusedNode();    
-        StartCoroutine(DrawPath());   
-    }
-
-    private IEnumerator DrawPath()
-    {
-        yield return null;
-        Instantiate(zooEntrances[Random.Range(0, zooEntrances.Length)], new Vector3(currentNode.pos.x - 2, currentNode.pos.y, currentNode.pos.z), Quaternion.identity);
-
-        SpawnObject pathPiece = collection[Random.Range(0, collection.Length)];
-        confirmedPathNodes.Clear();
-        
-        foreach (Node destNode in NodeManager.instance.pathDests)
+        if(PathGenerator.Instance.currentNode.pos != null && destinationNode.pos != null)
         {
-            do
+            while (Vector3.Distance(PathGenerator.Instance.currentNode.pos, destinationNode.pos) > 12)
             {
+                confirmedPathNodes.Clear();
+
                 pathNodeCandidates.Clear();
                 pathNodeCandidates = GetPathNodeCandidates();
 
-                yield return new WaitUntil(() => pathNodeCandidates.Count >= 0);
-
-                if ((pathNodeCandidates[0].used || pathNodeCandidates[0] == null) && (pathNodeCandidates[1].used || pathNodeCandidates[1] == null) && 
-                    (pathNodeCandidates[2].used || pathNodeCandidates[2] == null) && (pathNodeCandidates[3].used || pathNodeCandidates[3] == null))
-                {
-                    break;
-                }
-
                 List<Node> pathNodeCadidatesCopy = pathNodeCandidates;
-                List<Node> goodNodes = new List<Node>(); 
+                List<Node> goodNodes = new List<Node>();
                 foreach (Node node in pathNodeCadidatesCopy)
                 {
-                    if (node != null && !node.used || node != null && confirmedPathNodes.Count > 0 && !confirmedPathNodes.Contains(node))
+                    if (node != null && !node.used && !node.enclosure)
                     {
                         goodNodes.Add(node);
                     }
                 }
 
-                Node nextNode;
-                if (goodNodes != null || destNode != null)
+                Node nextNode = destinationNode;
+                if (goodNodes != null)
                 {
-                    nextNode = GetBestNodeForPath(goodNodes, destNode.pos);
-                }
-                else
-                {
-                    break;
+                    nextNode = GetBestNodeForPath(goodNodes, destinationNode.pos);
                 }
 
                 confirmedPathNodes.Add(nextNode);
-                currentNode = nextNode;                   
-              
-                PlacePath(confirmedPathNodes, pathPiece);
+                PathGenerator.Instance.currentNode = nextNode;
+
+                PlacePath(confirmedPathNodes, pathPiece, parent);
                 confirmedPathNodes.Clear();
             }
-            while (Vector3.Distance(currentNode.pos, destNode.pos) > 10);
-        }
-        WorldGenerator.instance.CompletedGeneration();
+        }       
+        return true;
     }
 
-    private void PlacePath(List<Node> nodesToPlace, SpawnObject pathPiece)
+    private void PlacePath(List<Node> nodesToPlace, SpawnObject pathPiece, Transform parent)
     {
         foreach (Node node in nodesToPlace)
         {
             // draw path on node
             Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
             NodeManager.instance.SetNodeAsPath(node.pos);
-            SpawnLibrary.instance.spawnedPaths.Add(pathPiece);
         }     
     }
 }

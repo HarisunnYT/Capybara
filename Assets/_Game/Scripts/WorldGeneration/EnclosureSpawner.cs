@@ -74,14 +74,20 @@ public class EnclosureSpawner : MonoBehaviour
                 pos = new Vector3(pos.x, pos.y, pos.z - fencePiece.GetRotatedBounds().z);
             }
             SetEnclosureNodes(initPos, fencePiece);
-            NodeManager.instance.pathDests.Add(enclosurePathNodes[Random.Range(0, enclosurePathNodes.Count)]);
+
+            Node pathDest = enclosurePathNodes[Random.Range(0, enclosurePathNodes.Count)];
+            if (pathDest != null && (pathDest.enclosure || pathDest.used))
+            {
+                pathDest.used = false;
+                pathDest.enclosure = false;
+            }
+            NodeManager.instance.pathDests.Add(pathDest);
         }     
     }
 
     private void SpawnFenceOnX(SpawnObject obj, Vector3 pos, Quaternion rot)
     {
         GameObject fence = Instantiate(obj.gameObject, new Vector3((pos.x + obj.bounds.x + pos.x) / 2, pos.y, pos.z), rot, parent);
-        SpawnLibrary.instance.spawnedFences.Add(fence.GetComponent<SpawnObject>());
 
         List<Node> nodes = new List<Node>();
         for (int i = 0; i < obj.bounds.x; i++)
@@ -97,7 +103,6 @@ public class EnclosureSpawner : MonoBehaviour
     private void SpawnFenceOnZ(SpawnObject obj, Vector3 pos, Quaternion rot)
     {
         GameObject fence = Instantiate(obj.gameObject, new Vector3(pos.x, pos.y, (pos.z + obj.GetRotatedBounds().z + pos.z) / 2), rot, parent);
-        SpawnLibrary.instance.spawnedFences.Add(fence.GetComponent<SpawnObject>());
 
         List<Node> nodes = new List<Node>();
         for (int i = 0; i < obj.GetRotatedBounds().z; i++)

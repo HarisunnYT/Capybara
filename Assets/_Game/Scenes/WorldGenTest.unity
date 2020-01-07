@@ -350,11 +350,12 @@ GameObject:
   - component: {fileID: 89903611}
   - component: {fileID: 89903612}
   - component: {fileID: 89903616}
-  - component: {fileID: 89903614}
   - component: {fileID: 89903609}
   - component: {fileID: 89903613}
   - component: {fileID: 89903615}
   - component: {fileID: 89903608}
+  - component: {fileID: 89903614}
+  - component: {fileID: 89903610}
   m_Layer: 0
   m_Name: _WorldGenerator
   m_TagString: Untagged
@@ -385,14 +386,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 89903606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc3eede734ad7044baef867efb3352d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 523cbfe088e5eab4bb9b2ad4d0f977c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnedObjects: []
-  spawnedTiles: []
-  spawnedFences: []
-  spawnedPaths: []
-  spawnedEnemies: []
+  parent: {fileID: 5865397}
+  collection:
+  - {fileID: 4780512777863051030, guid: e2b9c8146013e16419a776c7b709d961, type: 3}
+  zooEntrances:
+  - {fileID: 7201924213403866274, guid: e7a225a5aa8b37e4cb15744109ffea7a, type: 3}
+  currentNode:
+    name: 
+    pos: {x: 0, y: 0, z: 0}
+    used: 0
+    path: 0
+    enclosure: 0
+    distanceToDest: 0
+    gCost: 2147483647
+    hCost: 2147483647
+    fCost: 2147483647
 --- !u!114 &89903609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,12 +417,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 61793571}
-  spawnCount: 100
+  spawnCount: 15
   collection:
   - {fileID: 7955399454243516601, guid: 4fb856aa486383949b74976effc019fd, type: 3}
   conflictLayer:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &89903610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89903606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6ad98aa62d1f240b035981eeb4b09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &89903611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 1
   loadingCanvas: {fileID: 715611836}
-  mapSize: 200
+  mapSize: 75
   player: {fileID: 0}
   debugCanvas: {fileID: 986716333}
   ground: {fileID: 1272296752}
@@ -459,11 +482,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1848722286}
-  spawnCount: 3
+  spawnCount: 2
   collection:
   - {fileID: 848930544644408192, guid: 081f38600f00c2f40acbb95cc596445b, type: 3}
-  minFencesPerSide: 3
-  maxFencesPerSide: 9
+  minFencesPerSide: 2
+  maxFencesPerSide: 4
   conflictLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -479,12 +502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a334a1ebcd9f55e4c983acddc04c32d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 5865397}
-  collection:
-  - {fileID: 4780512777863051030, guid: e2b9c8146013e16419a776c7b709d961, type: 3}
-  zooEntrances:
-  - {fileID: 7201924213403866274, guid: e7a225a5aa8b37e4cb15744109ffea7a, type: 3}
-  pathCount: 20
 --- !u!114 &89903615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 775292085}
-  spawnCount: 20
+  spawnCount: 5
   collection:
   - {fileID: 5529489542169120618, guid: 7dc2a31d86d682045bb0e35fdad0e5d4, type: 3}
   conflictLayer:
@@ -1103,7 +1120,7 @@ Transform:
   m_GameObject: {fileID: 1272296748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 1, z: 25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

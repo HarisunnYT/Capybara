@@ -35,6 +35,7 @@ public class NodeManager : MonoBehaviour
 
                 Node node = new Node();
                 node.pos = nodePos;
+                node.name = nodePos.ToString();
                 node.used = false;
 
                 nodes.Add(node);
@@ -72,6 +73,12 @@ public class NodeManager : MonoBehaviour
     public Node GetNodeAtPosition(Vector3 pos)
     {
         Node node = nodes.Find(opt => opt.pos == pos);
+        return node;
+    }
+
+    public Node GetNodeAtPositionWithString(string pos)
+    {
+        Node node = nodes.Find(opt => opt.name == pos);
         return node;
     }
 

@@ -42,7 +42,6 @@ public class ObjectSpawner : MonoBehaviour
         else
         {
             GameObject obj = Instantiate(collection[index].gameObject, pos, rot, parent);
-            SpawnLibrary.instance.spawnedObjects.Add(obj.GetComponent<SpawnObject>());
         }
     }
 }
