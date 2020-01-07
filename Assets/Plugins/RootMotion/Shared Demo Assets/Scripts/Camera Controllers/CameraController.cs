@@ -64,6 +64,8 @@ public class CameraController : MonoBehaviour
     private Vector3 lastUp;
     private float blockedDistance = 10f, blockedDistanceV;
 
+    private Vector2 originalMinDistance;
+
     public void SetTarget(Transform target, bool smoothFollow)
     {
         this.target = target;
@@ -97,6 +99,7 @@ public class CameraController : MonoBehaviour
         Instance = this;
 
         lastUp = rotationSpace != null ? rotationSpace.up : Vector3.up;
+        originalMinDistance = new Vector2(minDistance, maxDistance);
     }
 
     protected virtual void Update()
@@ -223,6 +226,18 @@ public class CameraController : MonoBehaviour
         if (angle < -360) angle += 360;
         if (angle > 360) angle -= 360;
         return Mathf.Clamp(angle, min, max);
+    }
+
+    public void SetMinMaxDistance(float min, float max)
+    {
+        minDistance = min;
+        maxDistance = max;
+    }
+
+    public void ResetMinMaxDistance()
+    {
+        minDistance = originalMinDistance.x;
+        maxDistance = originalMinDistance.y;
     }
 
 }

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265394c88a6774d409c7500e1576c3d4, type: 3}
   m_Name: Golf Cart
   m_EditorClassIdentifier: 
-  Speed: 5
-  RotationSpeed: 5
+  Speed: 1500000
+  MaxAngle: 25
+  cameraMinDistance: 20
+  cameraMaxDistance: 30

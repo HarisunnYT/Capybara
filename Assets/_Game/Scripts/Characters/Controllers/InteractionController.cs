@@ -65,11 +65,7 @@ public class InteractionController : Controller
 
     private void GetInVehicle(Vehicle vehicle)
     {
-        //drop all items first
-        foreach (var bodyPart in MovementController.BodyParts)
-        {
-            bodyPart.DropCurrentItem();
-        }
+        DropAllItems();
 
         MovementController.SetMovementStyle(MovementStyle.Driving);
         vehicle.GetInVehicle(CharacterController);
@@ -113,6 +109,26 @@ public class InteractionController : Controller
         }
         
         bodyPart.AssignItem(item);
+    }
+
+    public void DropItem(BodyPartType bodySlot)
+    {
+        foreach (var part in MovementController.BodyParts)
+        {
+            if (part.ItemSlotType == bodySlot && part.GetPickupableItemData() != null)
+            {
+                part.DropCurrentItem();
+                return;
+            }
+        }
+    }
+
+    public void DropAllItems()
+    {
+        foreach (var bodyPart in MovementController.BodyParts)
+        {
+            bodyPart.DropCurrentItem();
+        }
     }
 
     public void IgnoreCollisions(Collider collider, bool ignore)

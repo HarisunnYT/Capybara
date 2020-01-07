@@ -6,5 +6,9 @@ using UnityEngine;
 public class VehicleData : ScriptableObject
 {
     public float Speed;
-    public float RotationSpeed;
+    public float MaxAngle;
+
+    [Space()]
+    public float cameraMinDistance = 10;
+    public float cameraMaxDistance = 15;
 }

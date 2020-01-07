@@ -54,6 +54,8 @@ public class MovementController : Controller
 
     private float knockBackSlerpDuration;
 
+    private bool rotateTowardsVelocity = true;
+
     protected override void Awake()
     {
         base.Awake();
@@ -66,6 +68,7 @@ public class MovementController : Controller
     private void Start()
     {
         SetMovementState(MovementState.Idle);
+        SetMovementStyle(MovementStyle.Grounded);
     }
 
     private void FixedUpdate()
@@ -85,17 +88,20 @@ public class MovementController : Controller
 
     private void Move()
     {
-        Vector3 inputVec = GetInputVector();
+        Vector3 inputVec = GetInputVector(true);
         if (inputVec.x != 0 || inputVec.z != 0)
         {
-            lastInputVec = inputVec;
-            transform.rotation = GetRotation();
+            if (rotateTowardsVelocity)
+            {
+                transform.rotation = GetRotation();
+            }
 
+            lastInputVec = inputVec;
             SetMovementState(MovementState.Moving);
         }
         else
         {
-            if (CurrentMovementStyle != MovementStyle.Flying && Time.time > knockBackSlerpDuration)
+            if (CurrentMovementStyle == MovementStyle.Grounded && Time.time > knockBackSlerpDuration)
             {
                 //could do sliding animation here
                 MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
@@ -119,7 +125,7 @@ public class MovementController : Controller
                 movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, inputVec.y * movementSpeed * fixedDTime, movementVector.z * movementSpeed * fixedDTime);
                 MainBody.velocity = movementVector;
             }
-            else
+            else if (CurrentMovementStyle == MovementStyle.Grounded)
             {
                 //set input vector based on movement speed
                 movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, 0, movementVector.z * movementSpeed * fixedDTime);
@@ -153,7 +159,7 @@ public class MovementController : Controller
         return rotation;
     }
 
-    protected virtual Vector3 GetInputVector()
+    public virtual Vector3 GetInputVector(bool includeYAxis = false)
     {
         return Vector3.zero;
     }
@@ -232,6 +238,8 @@ public class MovementController : Controller
         AnimationController.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
         AnimationController.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);
         AnimationController.SetBool(MovementStyle.Driving.ToString(), movementStyle == MovementStyle.Driving);
+
+        rotateTowardsVelocity = CurrentMovementStyle != MovementStyle.Driving;
     }
 
     public void SetKinematic(bool kinematic)

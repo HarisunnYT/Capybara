@@ -72,7 +72,19 @@ public class AIMovementController : MovementController
         SetMovementState(AIMovementState.Walk);
     }
 
-    protected override Vector3 GetInputVector()
+    public void SetDestinationInArea(Vector3 position, float radius)
+    {
+        Vector3 randomPosition = Random.insideUnitSphere * radius;
+        randomPosition += position;
+
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomPosition, out hit, radius, 1);
+
+        Vector3 finalPosition = hit.position;
+        SetDestination(finalPosition);
+    }
+
+    public override Vector3 GetInputVector(bool includeYAxis = false)
     {
         return agent.velocity / maxVelocity;
     }
