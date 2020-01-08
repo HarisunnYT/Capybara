@@ -8,12 +8,13 @@ public class Interactable : MonoBehaviour
 
     public CharacterController CurrentController { get; protected set; }
 
-    protected Collider collider;
-    protected Rigidbody rigidbody;
+    public Rigidbody Rigidbody { get; protected set; }
 
-    private void Start()
+    protected Collider collider;
+
+    protected virtual void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        Rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
     }
 }

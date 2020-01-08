@@ -7,25 +7,42 @@ public class InteractionController : Controller
     [SerializeField]
     private float interactionRadius;
 
-    public void TryPickUpObject()
+    private Mouth mouth;
+
+    private void Start()
     {
-        Interactable closestObject = FindClosestObject();
+        mouth = GetComponentInChildren<Mouth>();
+    }
+
+    public bool TryPickUpObject(bool includeRagdollCharacters = false)
+    {
+        Interactable closestObject = FindClosestObject(-1, includeRagdollCharacters);
         if (closestObject != null)
         {
             if (closestObject is PickupableItem)
             {
                 PickupItem(closestObject as PickupableItem);
+                return true;
+            }
+            else if (closestObject is GrabbleBodyPiece)
+            {
+                mouth.GrabRagdoll(closestObject as GrabbleBodyPiece);
             }
             else if (closestObject is Vehicle)
             {
                 GetInVehicle(closestObject as Vehicle);
+                return true;
             }
         }
+
+        return false;
     }
 
-    public Interactable FindClosestObject()
+    public Interactable FindClosestObject(float radius = -1, bool includeRagdollCharacters = false)
     {
-        Collider[] hitCols = Physics.OverlapSphere(transform.position, interactionRadius);
+        radius = radius == -1 ? interactionRadius : radius;
+
+        Collider[] hitCols = Physics.OverlapSphere(transform.position, radius);
         Interactable closestObject = null;
 
         if (hitCols.Length > 0)
@@ -37,7 +54,18 @@ public class InteractionController : Controller
                 {
                     if (closestObject == null || Vector3.Distance(hitCols[i].transform.position, transform.position) < Vector3.Distance(hitCols[i].transform.position, closestObject.transform.position))
                     {
-                        closestObject = item;
+                        if (item is GrabbleBodyPiece)
+                        {
+                            //check if the grabble piece character is in ragdoll mode
+                            if (includeRagdollCharacters && ((GrabbleBodyPiece)item).CurrentController.MovementController.CurrentMovementState == MovementState.Ragdoll)
+                            {
+                                closestObject = item;
+                            }
+                        }
+                        else
+                        {
+                            closestObject = item;
+                        }
                     }
                 }
             }

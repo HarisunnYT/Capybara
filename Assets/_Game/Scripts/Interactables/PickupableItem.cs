@@ -20,7 +20,7 @@ public class PickupableItem : Interactable
 
         CurrentBodyPart = currentBodyPart;
 
-        rigidbody.isKinematic = true;
+        Rigidbody.isKinematic = true;
         Equiped = true;
 
         CurrentController.InteractionController.IgnoreCollisions(collider, true);
@@ -45,7 +45,7 @@ public class PickupableItem : Interactable
 
         CurrentController = null;
         transform.parent = null;
-        rigidbody.isKinematic = false;
+        Rigidbody.isKinematic = false;
 
         Equiped = false;
     }

@@ -8,7 +8,7 @@ public class CapyInteractionController : InteractionController
     {
         if (InputController.InputManager.Interact.WasPressed)
         {
-            TryPickUpObject();
+            TryPickUpObject(true);
         }
     }
 }
