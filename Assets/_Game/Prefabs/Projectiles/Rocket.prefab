@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2629420515619161356}
   - component: {fileID: -6825234325921795873}
   - component: {fileID: 138515998524317650}
+  - component: {fileID: -4315427416977633990}
   m_Layer: 13
   m_Name: Rocket
   m_TagString: Untagged
@@ -81,12 +82,42 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 15159
+  onCollisionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4315427416977633990}
+        m_MethodName: PlayParticle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   explosionRadius: 50
   force: 100
   hideDelay: 1
   explosionLayers:
     serializedVersion: 2
     m_Bits: 7991
+--- !u!114 &-4315427416977633990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344300177138899595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8deb9b2917bd7c748a8f0e17fa5c5f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 7527888699604583515, guid: a94db5180865e894f8cf1f31f6cb536f, type: 3}
 --- !u!1 &753856813546793229
 GameObject:
   m_ObjectHideFlags: 0

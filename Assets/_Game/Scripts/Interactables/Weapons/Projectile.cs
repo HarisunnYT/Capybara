@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class Projectile : MonoBehaviour
 
     [SerializeField]
     protected LayerMask collisionLayers;
+
+    [Space()]
+    [SerializeField]
+    protected UnityEvent onCollisionEvent;
 
     public Rigidbody Rigidbody { get; private set; }
 
@@ -57,6 +62,7 @@ public class Projectile : MonoBehaviour
         if (!destroyed && Util.CheckInsideLayer(collisionLayers, collision.gameObject.layer))
         {
             OnCollision(collision);
+            onCollisionEvent?.Invoke();
         }
     }
 

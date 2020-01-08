@@ -21,8 +21,17 @@ public class ExplosionProjectile : Projectile
         Vector3 collisionPoint = collision.GetContact(0).point;
         Collider[] colliders = Physics.OverlapSphere(collisionPoint, explosionRadius, explosionLayers);
 
-        Vector3 direction = Vector3.one;
+        //ragdoll characters first
+        foreach(var col in colliders)
+        {
+            RagdollController ragdollController = col.GetComponent<RagdollController>();
+            if (ragdollController && !GameManager.Instance.IsPlayer(ragdollController.CharacterController))
+            {
+                ragdollController.SetRagdoll(true);
+            }
+        }
 
+        //add force to rigidbodies
         foreach(var col in colliders)
         {
             Rigidbody rBody = col.GetComponent<Rigidbody>();
