@@ -147,11 +147,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2753114144114173775}
   - component: {fileID: 4055573860654896264}
-  - component: {fileID: 1060903665}
+  - component: {fileID: 8487964829568392775}
   - component: {fileID: 1060903666}
   - component: {fileID: 1060903667}
   - component: {fileID: 1060903668}
-  - component: {fileID: 1060903670}
+  - component: {fileID: 1992219785691483235}
   - component: {fileID: 2554728552083519075}
   - component: {fileID: 1060903664}
   - component: {fileID: 1060903662}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673299394be63544abf6f29a56cc5a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1060903665
+--- !u!114 &8487964829568392775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,13 +204,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183988630139540828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c119fd15a0a249b4296b30de61dba6c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d622691ba2766f49992a2899ce4e01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HittableLayers:
     serializedVersion: 2
-    m_Bits: 15159
+    m_Bits: 4294967295
   forceToRagdoll: 45
+  minForceToKnockOut: 0
 --- !u!114 &1060903666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +306,7 @@ MonoBehaviour:
   - {fileID: 444737943067097792}
   - {fileID: 4450902140459711500}
   - {fileID: 4744998616559284380}
---- !u!114 &1060903670
+--- !u!114 &1992219785691483235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183988630139540828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ff2274859d4d04db646154bccb6cb1, type: 3}
+  m_Script: {fileID: 11500000, guid: a0cf804c8d909074f9560d3d6b50c0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   returnFromRagdollDuration: 0.5

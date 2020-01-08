@@ -79,6 +79,11 @@ public class InteractionController : Controller
         return null;
     }
 
+    public bool ObjectInArea(float radius)
+    {
+        return FindClosestObject(radius) != null;
+    }
+
     private void PickupItem(PickupableItem item)
     {
         foreach (var bodyPart in MovementController.BodyParts)

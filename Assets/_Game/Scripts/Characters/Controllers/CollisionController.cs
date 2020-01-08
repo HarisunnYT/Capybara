@@ -5,17 +5,22 @@ using UnityEngine;
 public class CollisionController : Controller
 {
     [SerializeField]
-    private LayerMask HittableLayers;
+    protected LayerMask HittableLayers;
 
     [SerializeField]
-    private float forceToRagdoll = 10;
+    protected float forceToRagdoll = 10;
 
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         //ragdoll collision
         if (Util.CheckInsideLayer(HittableLayers, collision.gameObject.layer) && collision.relativeVelocity.magnitude >= forceToRagdoll)
         {
-            RagdollController.SetRagdoll(true);
+            DoRagdoll(collision.relativeVelocity.magnitude);
         }
+    }
+
+    protected virtual void DoRagdoll(float collisionForce)
+    {
+        RagdollController.SetRagdoll(true);
     }
 }
