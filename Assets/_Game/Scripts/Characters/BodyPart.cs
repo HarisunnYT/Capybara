@@ -12,6 +12,7 @@ public class BodyPart : MonoBehaviour
     public PickupableItem CurrentItemObject { get { return currentItemObject; } }
 
     protected CharacterController controller;
+    public CharacterController Controller { get { return controller; } }
 
     private void Start()
     {
@@ -48,7 +49,8 @@ public class BodyPart : MonoBehaviour
     {
         if (GetPickupableItemData() != null)
         {
-            return currentItemObject.PickupableItemData.MovementData == null ? null : currentItemObject.PickupableItemData.MovementData;
+            MovementData movementData = currentItemObject.PickupableItemData.GetMovementData(controller.CharacterType);
+            return movementData == null ? null : movementData;
         }
 
         return null;

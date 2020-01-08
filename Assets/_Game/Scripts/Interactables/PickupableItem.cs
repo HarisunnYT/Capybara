@@ -15,8 +15,8 @@ public class PickupableItem : Interactable
         CurrentController = controller;
 
         transform.parent = parent;
-        transform.localPosition = pickupableItemData.Position;
-        transform.localRotation = Quaternion.Euler(pickupableItemData.EulerRotation);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
 
         CurrentBodyPart = currentBodyPart;
 
@@ -25,17 +25,19 @@ public class PickupableItem : Interactable
 
         CurrentController.InteractionController.IgnoreCollisions(collider, true);
 
-        if (pickupableItemData.MovementData)
+        MovementData movementData = pickupableItemData.GetMovementData(controller.CharacterType);
+
+        if (movementData)
         {
             //set bools and weights for movement data
-            controller.AnimationController.SetAnimatorLayerWeights(pickupableItemData.MovementData.BoneWeights);
-            controller.AnimationController.SetAnimatorBools(pickupableItemData.MovementData.AnimatorBools);
+            controller.AnimationController.SetAnimatorLayerWeights(movementData.BoneWeights);
+            controller.AnimationController.SetAnimatorBools(movementData.AnimatorBools);
 
             //set bools and weights for pickupable item data
-            controller.AnimationController.SetAnimatorLayerWeights(pickupableItemData.BoneWeights);
-            controller.AnimationController.SetAnimatorBools(pickupableItemData.AnimatorBools);
+            controller.AnimationController.SetAnimatorLayerWeights(pickupableItemData.GetBoneWeights(controller.CharacterType));
+            controller.AnimationController.SetAnimatorBools(pickupableItemData.GetAnimatorBools(controller.CharacterType));
 
-            controller.MovementController.SetMovementStyle(pickupableItemData.MovementData.MovementStyle);
+            controller.MovementController.SetMovementStyle(movementData.MovementStyle);
         }
     }
 
