@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CharacterType
+{
+    Capybara,
+    Zookeeper
+}
+
 public class GameManager : Singleton<GameManager>
 {
     public CharacterController CapyController;

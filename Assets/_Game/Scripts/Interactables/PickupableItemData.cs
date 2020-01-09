@@ -5,23 +5,31 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Capybara/Pickupable Item")]
 public class PickupableItemData : ScriptableObject
 {
-    public BodyPartType ItemSlotType;
-
-    [Space()]
-    public Vector3 Position;
-    public Vector3 EulerRotation;
-
-    [Space()]
-    public MovementData MovementData;
-
-    [Space()]
-    public BoneWeight[] BoneWeights;
-
-    public AnimatorBool[] AnimatorBools;
-
-    public float GetWeight(AnimatorBodyPartLayer bodyPartLayer)
+    [System.Serializable]
+    struct ItemData
     {
-        foreach (var part in BoneWeights)
+        public BodyPartType ItemSlotType;
+
+        [Space()]
+        public MovementData MovementData;
+
+        [Space()]
+        public BoneWeight[] BoneWeights;
+
+        public AnimatorBool[] AnimatorBools;
+    }
+
+    [EnumList(typeof(CharacterType)), SerializeField]
+    private ItemData[] dataPerCharacter;
+
+    private ItemData GetData(CharacterType characterType)
+    {
+        return dataPerCharacter[(int)characterType];
+    }
+
+    public float GetWeight(AnimatorBodyPartLayer bodyPartLayer, CharacterType characterType)
+    {
+        foreach (var part in GetData(characterType).BoneWeights)
         {
             if (bodyPartLayer == part.bodyPartType)
             {
@@ -30,5 +38,25 @@ public class PickupableItemData : ScriptableObject
         }
 
         return 0;
+    }
+
+    public BoneWeight[] GetBoneWeights(CharacterType characterType)
+    {
+        return GetData(characterType).BoneWeights;
+    }
+
+    public AnimatorBool[] GetAnimatorBools(CharacterType characterType)
+    {
+        return GetData(characterType).AnimatorBools;
+    }
+
+    public MovementData GetMovementData(CharacterType characterType)
+    {
+        return GetData(characterType).MovementData;
+    }
+
+    public BodyPartType GetBodyPartSlotType(CharacterType characterType)
+    {
+        return GetData(characterType).ItemSlotType;
     }
 }

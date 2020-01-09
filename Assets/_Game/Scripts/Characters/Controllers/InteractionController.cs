@@ -7,7 +7,7 @@ public class InteractionController : Controller
     [SerializeField]
     private float interactionRadius;
 
-    private Mouth mouth;
+    protected Mouth mouth;
 
     private void Start()
     {
@@ -88,7 +88,7 @@ public class InteractionController : Controller
     {
         foreach (var bodyPart in MovementController.BodyParts)
         {
-            if (bodyPart.ItemSlotType == item.PickupableItemData.ItemSlotType)
+            if (bodyPart.ItemSlotType == item.PickupableItemData.GetBodyPartSlotType(CharacterController.CharacterType))
             {
                 AssignItem(bodyPart, item);
                 break;
@@ -106,8 +106,11 @@ public class InteractionController : Controller
 
     private void AssignItem(BodyPart bodyPart, PickupableItem item)
     {
+        MovementData movementData = item.PickupableItemData.GetMovementData(CharacterController.CharacterType);
+        BodyPartType bodyPartSlotType = item.PickupableItemData.GetBodyPartSlotType(CharacterController.CharacterType);
+
         //if there is no movement data or the style is none, move on
-        if (item.PickupableItemData.MovementData != null && item.PickupableItemData.MovementData.MovementStyle != MovementStyle.None)
+        if (movementData != null && movementData.MovementStyle != MovementStyle.None)
         {
             //we need to check if an other item is modifying the movement style, if so drop that item
             foreach (var part in MovementController.BodyParts)
@@ -115,7 +118,7 @@ public class InteractionController : Controller
                 if (part.GetMovementData())
                 {
                     //if the movement style is not none and does not equal the new items movement style, we will need to drop it
-                    if (part.GetMovementData().MovementStyle != MovementStyle.None && part.GetMovementData().MovementStyle != item.PickupableItemData.MovementData.MovementStyle)
+                    if (part.GetMovementData().MovementStyle != MovementStyle.None && part.GetMovementData().MovementStyle != movementData.MovementStyle)
                     {
                         part.DropCurrentItem();
                     }
@@ -124,16 +127,17 @@ public class InteractionController : Controller
         }
 
         //if the item has a single arm or both arms, check if it needs to drop others
-        if (item.PickupableItemData.ItemSlotType == BodyPartType.EitherHand || item.PickupableItemData.ItemSlotType == BodyPartType.TwoHand)
+        if (bodyPartSlotType == BodyPartType.EitherHand || bodyPartSlotType == BodyPartType.TwoHand)
         {
             //we need to check if an object needs to be dropped
             foreach (var part in MovementController.BodyParts)
             {
                 if (part.CurrentItemObject != null)
                 {
+                    BodyPartType partSlotType = part.CurrentItemObject.PickupableItemData.GetBodyPartSlotType(part.Controller.CharacterType);
                     //if the new part is two handed and there are single handers, drop them, and vice versa
-                    if ((item.PickupableItemData.ItemSlotType == BodyPartType.TwoHand && part.CurrentItemObject.PickupableItemData.ItemSlotType == BodyPartType.EitherHand) ||
-                        (part.CurrentItemObject.PickupableItemData.ItemSlotType == BodyPartType.TwoHand && item.PickupableItemData.ItemSlotType == BodyPartType.EitherHand))
+                    if ((bodyPartSlotType == BodyPartType.TwoHand && partSlotType == BodyPartType.EitherHand) ||
+                        (partSlotType == BodyPartType.TwoHand && bodyPartSlotType == BodyPartType.EitherHand))
                     {
                         part.DropCurrentItem();
                     }

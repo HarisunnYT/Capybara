@@ -7,19 +7,23 @@ public class Mouth : BodyPart
     [SerializeField]
     private float spring = 1000;
 
+    public bool HoldingRagdoll { get; private set; }
+
     public void GrabRagdoll(GrabbleBodyPiece bodyPiece)
     {
         DropCurrentItem();
 
         bodyPiece.transform.position = transform.position;
-        //bodyPiece.Rigidbody.isKinematic = true;
+        HoldingRagdoll = true;
 
         CreateJoint(bodyPiece);
     }
 
     public void DropRagdoll()
     {
+        DropCurrentItem();
 
+        Destroy(GetComponent<SpringJoint>());
     }
 
     private void CreateJoint(GrabbleBodyPiece bodyPiece)

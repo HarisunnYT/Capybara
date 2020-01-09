@@ -11,6 +11,8 @@ public class AICollisionController : CollisionController
     {
         base.DoRagdoll(collisionForce);
 
+        Debug.Log(collisionForce);
+
         if (collisionForce >= minForceToKnockOut)
         {
             ((AIRagdollController)RagdollController).KnockOut();

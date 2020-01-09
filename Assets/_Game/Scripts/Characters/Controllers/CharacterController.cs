@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CharacterController : Controller
 {
+    [SerializeField]
+    private CharacterType characterType;
+    public CharacterType CharacterType { get { return characterType; } }
+
     public Transform Parent { get; private set; }
 
     private void Start()

@@ -676,7 +676,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Legs Layer
     m_StateMachine: {fileID: -8880266354245557631}
-    m_Mask: {fileID: 31900000, guid: df833c4cfa17d424fa1a8140ea188b7c, type: 2}
+    m_Mask: {fileID: 31900000, guid: 34a265f4a03b4794eab0f41ba893d5be, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -688,7 +688,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Both Arms Layer
     m_StateMachine: {fileID: -2993487482161310349}
-    m_Mask: {fileID: 31900000, guid: 87844e97455586a42ae14106f6d0345a, type: 2}
+    m_Mask: {fileID: 31900000, guid: eac7efd673cb6bf4984aca0d30c126f6, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -700,7 +700,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Left Arm Layer
     m_StateMachine: {fileID: 2715586518346508615}
-    m_Mask: {fileID: 31900000, guid: 40e0c831cdab61643a35adc0d055d626, type: 2}
+    m_Mask: {fileID: 31900000, guid: 7b9b0a39e9b6d4b4599e2bb8d807f559, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -712,7 +712,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Right Arm Layer
     m_StateMachine: {fileID: -2948378693213116717}
-    m_Mask: {fileID: 31900000, guid: e09a9224294714348ab8b8053202c2cb, type: 2}
+    m_Mask: {fileID: 31900000, guid: 3e174654743c2d34c88e580a038b9fef, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -724,7 +724,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Head Layer
     m_StateMachine: {fileID: -5476160190984986603}
-    m_Mask: {fileID: 31900000, guid: b653dc3f465918649b0abe08e3044ea0, type: 2}
+    m_Mask: {fileID: 31900000, guid: 97aa95c5df431fd4f87882639cd06f74, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -981,6 +981,14 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 21fcec38a41983946a0366d05c23b2db, type: 2}
+    m_Threshold: 0.5
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: MovementSpeed
+    m_Mirror: 0
+  - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 4e877ee3e5afe2c469b3f2a833328559, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
@@ -992,7 +1000,7 @@ BlendTree:
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1101 &8730560181595997035

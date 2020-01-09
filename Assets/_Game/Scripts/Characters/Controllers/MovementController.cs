@@ -171,7 +171,7 @@ public class MovementController : Controller
         {
             if (bodyPart.GetMovementData())
             {
-                movementSpeed *= bodyPart.CurrentItemObject.PickupableItemData.MovementData.MovementSpeedMultiplier;
+                movementSpeed *= bodyPart.CurrentItemObject.PickupableItemData.GetMovementData(CharacterController.CharacterType).MovementSpeedMultiplier;
             }
         }
 
@@ -187,7 +187,7 @@ public class MovementController : Controller
         {
             if (bodyPart.GetMovementData())
             {
-                Vector3 multiplier = bodyPart.CurrentItemObject.PickupableItemData.MovementData.GravityMultiplier;
+                Vector3 multiplier = bodyPart.CurrentItemObject.PickupableItemData.GetMovementData(CharacterController.CharacterType).GravityMultiplier;
                 gravity = new Vector3(gravity.x * multiplier.x, gravity.y * multiplier.y, gravity.z * multiplier.z);
 
                 modifiedGravity = true;
