@@ -7,7 +7,15 @@ public class Mouth : BodyPart
     [SerializeField]
     private float spring = 1000;
 
+    [SerializeField]
+    private float breakForce = 20000;
+
+    [SerializeField]
+    private float breakTorque = 20000;
+
     public bool HoldingRagdoll { get; private set; }
+
+    private SpringJoint springJoint;
 
     public void GrabRagdoll(GrabbleBodyPiece bodyPiece)
     {
@@ -23,16 +31,26 @@ public class Mouth : BodyPart
     {
         DropCurrentItem();
 
-        Destroy(GetComponent<SpringJoint>());
+        if (springJoint != null)
+        {
+            Destroy(springJoint);
+        }
     }
 
     private void CreateJoint(GrabbleBodyPiece bodyPiece)
     {
         Vector3 direction = bodyPiece.transform.position - transform.position;
 
-        SpringJoint joint = gameObject.AddComponent<SpringJoint>();
-        joint.anchor = direction;
-        joint.connectedBody = bodyPiece.Rigidbody;
-        joint.spring = spring;
+        springJoint = gameObject.AddComponent<SpringJoint>();
+        springJoint.anchor = direction;
+        springJoint.connectedBody = bodyPiece.Rigidbody;
+
+        springJoint.spring = spring;
+        springJoint.breakForce = breakForce;
+    }
+
+    private void OnJointBreak(float breakForce)
+    {
+        DropRagdoll();
     }
 }

@@ -55,4 +55,9 @@ public class BodyPart : MonoBehaviour
 
         return null;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Controller.CollisionController.BodyPartCollisionEvent(collision);
+    }
 }

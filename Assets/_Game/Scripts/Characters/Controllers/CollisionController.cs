@@ -12,10 +12,24 @@ public class CollisionController : Controller
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
+        CollisionCheck(collision);
+    }
+
+    public void BodyPartCollisionEvent(Collision collision)
+    {
+        CollisionCheck(collision);
+    }
+
+    private void CollisionCheck(Collision collision)
+    {
         //ragdoll collision
-        if (Util.CheckInsideLayer(HittableLayers, collision.gameObject.layer) && collision.relativeVelocity.magnitude >= forceToRagdoll)
+        if (Util.CheckInsideLayer(HittableLayers, collision.gameObject.layer))
         {
-            DoRagdoll(collision.relativeVelocity.magnitude);
+            if (collision.relativeVelocity.magnitude >= forceToRagdoll)
+            {
+                DoRagdoll(collision.relativeVelocity.magnitude);
+            }
+            CheckKnockoutForce(collision.relativeVelocity.magnitude);
         }
     }
 
@@ -23,4 +37,6 @@ public class CollisionController : Controller
     {
         RagdollController.SetRagdoll(true);
     }
+
+    protected virtual void CheckKnockoutForce(float force) { }
 }

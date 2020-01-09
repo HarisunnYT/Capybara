@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 2529800189828885328}
   - component: {fileID: 472358105}
   - component: {fileID: 1267917556}
+  - component: {fileID: 2734097753985670957}
   m_Layer: 9
   m_Name: ZookeeperM
   m_TagString: Untagged
@@ -212,7 +213,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   forceToRagdoll: 45
-  minForceToKnockOut: 0
+  minForceToKnockOut: 10
 --- !u!114 &1060903666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +415,33 @@ MonoBehaviour:
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
 --- !u!114 &1267917556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183988630139540828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7dbb6bbdf4ffb46ab7dd87ba8191e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":110.0,"y":30.0},"zoomFactor":0.7500094,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":223.0,"y":170.0},"_name":"Wander","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"2"},{"_position":{"x":722.0,"y":338.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"4"},{"_nestedBT":{"_value":2},"_position":{"x":610.0,"y":426.0},"_name":"Flee","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"5"},{"_position":{"x":443.0,"y":538.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"7"},{"_position":{"x":426.0,"y":-110.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"8"},{"_nestedBT":{"_value":3},"executionMode":"Once","_transitionEvaluation":"CheckAfterStateFinished","_position":{"x":437.0,"y":6.0},"$type":"NodeCanvas.StateMachines.NestedBTState","$id":"9"}],"connections":[{"_condition":{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":10.0},"awarnessDistance":{"_value":1.0},"viewAngle":{"_value":70.0},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"_value":true,"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}}}'
+  boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 4c7f38a9f0e361945a8ef4f6f119f443, type: 2}
+  - {fileID: 11400000, guid: 7dfa1dfd947679a4fb5e7bc486bbdccb, type: 2}
+  - {fileID: 11400000, guid: 7712f43409b9f9948afb96a7feb9ff5d, type: 2}
+  firstActivation: 0
+  enableAction: 0
+  disableAction: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 472358105}
+--- !u!114 &2734097753985670957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
