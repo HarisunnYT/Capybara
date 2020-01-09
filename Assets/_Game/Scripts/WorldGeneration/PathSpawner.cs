@@ -7,6 +7,8 @@ public class PathSpawner : Singleton<PathSpawner>
     private List<Node> confirmedPathNodes = new List<Node>();
     private List<Node> pathNodeCandidates = new List<Node>();
 
+    private const int distUntilPrecisePlacement = 12;
+
     private Node GetBestNodeForPath(List<Node> nodesToCheck, Vector3 target)
     {
         Node bestNode = null;
@@ -32,25 +34,25 @@ public class PathSpawner : Singleton<PathSpawner>
         List<Node> nodeCandidates = new List<Node>();
 
         Node nodeCandidate;
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x, 0, PathGenerator.Instance.currentNode.pos.z + 1));
+        nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x, 0, PathGenerator.Instance.currentNode.pos.z + 1));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
         }
 
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x + 1, 0, PathGenerator.Instance.currentNode.pos.z));
+        nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x + 1, 0, PathGenerator.Instance.currentNode.pos.z));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
         }
 
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x, 0, PathGenerator.Instance.currentNode.pos.z - 1));
+        nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x, 0, PathGenerator.Instance.currentNode.pos.z - 1));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
         }
 
-        nodeCandidate = NodeManager.instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x - 1, 0, PathGenerator.Instance.currentNode.pos.z));
+        nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(PathGenerator.Instance.currentNode.pos.x - 1, 0, PathGenerator.Instance.currentNode.pos.z));
         if (nodeCandidate != null)
         {
             nodeCandidates.Add(nodeCandidate);
@@ -61,9 +63,9 @@ public class PathSpawner : Singleton<PathSpawner>
 
     public bool DrawPath(Node destinationNode, SpawnObject pathPiece, Transform parent)
     {
-        if(PathGenerator.Instance.currentNode.pos != null && destinationNode.pos != null)
+        if(PathGenerator.Instance.currentNode != null && destinationNode != null)
         {
-            while (Vector3.Distance(PathGenerator.Instance.currentNode.pos, destinationNode.pos) > 12)
+            while (Vector3.Distance(PathGenerator.Instance.currentNode.pos, destinationNode.pos) > distUntilPrecisePlacement)
             {
                 confirmedPathNodes.Clear();
 
@@ -102,7 +104,7 @@ public class PathSpawner : Singleton<PathSpawner>
         {
             // draw path on node
             Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
-            NodeManager.instance.SetNodeAsPath(node.pos);
+            NodeManager.Instance.SetNodeAsPath(node.pos);
         }     
     }
 }

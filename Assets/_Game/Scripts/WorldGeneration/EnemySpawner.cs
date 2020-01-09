@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : Singleton<EnemySpawner>
 {
-    public static EnemySpawner instance;
-
     public Transform parent;
 
     public int spawnCount = 5;
@@ -16,15 +14,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private LayerMask conflictLayer;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        instance = this;
-    }
-
     public void SpreadEnemy()
     {
-        Vector3 pos = NodeManager.instance.GetRandomUnusedNode().pos;
+        Vector3 pos = NodeManager.Instance.GetRandomUnusedNode().pos;
         SpawnEnemy(pos);
     }
 

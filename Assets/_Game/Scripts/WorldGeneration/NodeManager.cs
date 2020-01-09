@@ -2,20 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NodeManager : MonoBehaviour
+public class NodeManager : Singleton<NodeManager>
 {
-    public static NodeManager instance;
-
     int mapSize;
     public List<Node> nodes = new List<Node>();
 
     [SerializeField]
     public List<Node> pathDests = new List<Node>();
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     private void Start()
     {
@@ -156,7 +149,21 @@ public class NodeManager : MonoBehaviour
         {
             node = nodes[Random.Range(0, nodes.Count)];
         }
-        while (node != null && node.used);
+        while (node == null && node.used);
+
+        return node;
+    }
+
+    public Node GetRandomUnusedNodeInRange(Vector3 lowerPos, Vector3 upperPos)
+    {
+        Node node = null;
+
+        int x = Random.Range(Mathf.RoundToInt(lowerPos.x), Mathf.RoundToInt(upperPos.x));
+        int z = Random.Range(Mathf.RoundToInt(lowerPos.z), Mathf.RoundToInt(upperPos.z));
+
+        Debug.Log("Node: " + new Vector3(x, 0, z));
+
+        node = GetNodeAtPosition(new Vector3(x, 0, z));  
 
         return node;
     }

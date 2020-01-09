@@ -2,20 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridSpawner : MonoBehaviour
+public class GridSpawner : Singleton<GridSpawner>
 {
-    public static GridSpawner instance;
-
     [SerializeField]
     private SpawnObject[] collection;
 
     [SerializeField]
     private int xWidth, zWidth;
-
-    void Awake()
-    {
-        instance = this;
-    }
 
     public void SpawnGrid()
     {

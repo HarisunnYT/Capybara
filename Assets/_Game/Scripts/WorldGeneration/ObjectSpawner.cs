@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour
+public class ObjectSpawner : Singleton<ObjectSpawner>
 {
-    public static ObjectSpawner instance;
-
     public Transform parent;
 
     public int spawnCount = 5;
@@ -16,14 +14,9 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField]
     private LayerMask conflictLayer;
 
-    void Awake()
-    {
-        instance = this;      
-    }
-
     public void SpreadItem()
     {
-        Vector3 pos = NodeManager.instance.GetRandomUnusedNode().pos;
+        Vector3 pos = NodeManager.Instance.GetRandomUnusedNode().pos;
         PickObject(pos);
     }
 

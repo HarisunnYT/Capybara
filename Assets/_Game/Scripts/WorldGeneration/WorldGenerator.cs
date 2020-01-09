@@ -5,10 +5,12 @@ using TMPro;
 
 public class WorldGenerator : MonoBehaviour
 {
+    public static WorldGenerator instance;
+
     [SerializeField]
     private bool isDebug;
 
-    public static WorldGenerator instance;
+    private bool genComplete = false;
 
     [SerializeField]
     private GameObject loadingCanvas;
@@ -25,7 +27,7 @@ public class WorldGenerator : MonoBehaviour
     private Transform ground;
 
     [SerializeField]
-    private TextMeshProUGUI seed;
+    private TextMeshProUGUI seed, genTime;
 
     private void Awake()
     {
@@ -45,39 +47,55 @@ public class WorldGenerator : MonoBehaviour
         ground.position = new Vector3(mapSize / 2, 0, mapSize / 2);
         ground.localScale = new Vector3(mapSize / 9, 1, mapSize / 9);
         
-        Invoke("DelayedLoadIn", .2f);
+        Invoke("DelayedLoadIn", .1f);
+    }
+
+    private void Update()
+    {
+        if (isDebug && !genComplete)
+        {
+            genTime.text = "Gen time: " + Time.timeSinceLevelLoad.ToString("F2") + "s";
+        }
     }
 
     private void DelayedLoadIn()
     {
         PathGenerator.Instance.AddCentralAreaToPathDest();
 
-        for (int i = 0; i < EnclosureSpawner.instance.spawnCount; i++)
+        for (int i = 0; i < EnclosureSpawner.Instance.spawnCount; i++)
         {
-            EnclosureSpawner.instance.SpawnEnclosure();
+            Debug.Log(new Vector3(Mathf.Clamp(EnclosureSpawner.Instance.zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - i)), 1, mapSize * .75f), 0,
+                1 + Mathf.Clamp(EnclosureSpawner.Instance.zooBorder, 1, mapSize)));
+            Debug.Log(new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - i), 1, mapSize), 0, Mathf.Clamp(mapSize - EnclosureSpawner.Instance.zooBorder, 1, mapSize)));
+
+            Node node = NodeManager.Instance.GetRandomUnusedNodeInRange(new Vector3(Mathf.Clamp(EnclosureSpawner.Instance.zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - i)), 1, mapSize * .75f), 0, 
+                1 + Mathf.Clamp(EnclosureSpawner.Instance.zooBorder, 1, mapSize)), 
+                    new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - i), 1, mapSize), 0, Mathf.Clamp(mapSize - EnclosureSpawner.Instance.zooBorder, 1, mapSize)));      
+            
+            EnclosureSpawner.Instance.SpawnEnclosure(node);
         }
 
-        Invoke("DelayedObjectSpawn", .2f);
+        DelayedObjectSpawn();
     }
 
     private void DelayedObjectSpawn()
     {
-        for (int i = 0; i < ObjectSpawner.instance.spawnCount; i++)
+        for (int i = 0; i < ObjectSpawner.Instance.spawnCount; i++)
         {
-            ObjectSpawner.instance.SpreadItem();
+            ObjectSpawner.Instance.SpreadItem();
         }
 
-        Invoke("DelayedEnemySpawn", .2f);
+        DelayedEnemySpawn();
     }
 
     private void DelayedEnemySpawn()
     {
-        for (int i = 0; i < EnemySpawner.instance.spawnCount; i++)
+        for (int i = 0; i < EnemySpawner.Instance.spawnCount; i++)
         {
-            EnemySpawner.instance.SpreadEnemy();
+            EnemySpawner.Instance.SpreadEnemy();
         }
 
-        Invoke("DelayedPathSpawn", .2f);
+        DelayedPathSpawn();
     }
 
     private void DelayedPathSpawn()
@@ -87,9 +105,11 @@ public class WorldGenerator : MonoBehaviour
 
     public void CompletedGeneration()
     {
+        genComplete = true;
+
         if (player != null)
         {
-            Instantiate(player, NodeManager.instance.GetRandomUnusedNode().pos, Quaternion.identity);
+            Instantiate(player, NodeManager.Instance.GetRandomUnusedNode().pos, Quaternion.identity);
         }
 
         loadingCanvas.SetActive(false);
