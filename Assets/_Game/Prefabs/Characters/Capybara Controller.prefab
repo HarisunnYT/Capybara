@@ -400,7 +400,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0012489969, y: 0.0008501611, z: 0.0011844235}
+  m_ConnectedAnchor: {x: -0.0012490014, y: 0.000850157, z: 0.0011844183}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSpeed: 200
-  maxVelocity: 20
+  maxVelocity: 15
   rotationSpeed: 5
 --- !u!114 &6097527206904810559
 MonoBehaviour:
@@ -1538,7 +1538,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -6.984918e-10, y: 0.003531009, z: -0.000075260294}
+  m_ConnectedAnchor: {x: -0.000000004889443, y: 0.0035310094, z: -0.00007525273}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2472,7 +2472,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000010352744, y: 0.003600355, z: -0.000025121666}
+  m_ConnectedAnchor: {x: 0.0000000054590528, y: 0.0036003527, z: -0.000025128069}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2863,7 +2863,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0012526669, y: 0.002574689, z: 0.0018512685}
+  m_ConnectedAnchor: {x: -0.0012526714, y: 0.0025746825, z: 0.0018512699}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3529,13 +3529,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8222193913469924418}
-  m_LocalRotation: {x: -0.20664126, y: 0.6464587, z: -0.106928535, w: 0.7266064}
-  m_LocalPosition: {x: 0.00182, y: 0.0036, z: 0.00304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4637300676730615269}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -9.326, y: 85.421005, z: -25.355001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2258129062823623214
 MonoBehaviour:
   m_ObjectHideFlags: 0

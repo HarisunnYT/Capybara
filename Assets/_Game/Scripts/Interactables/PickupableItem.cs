@@ -15,8 +15,8 @@ public class PickupableItem : Interactable
         CurrentController = controller;
 
         transform.parent = parent;
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
+        transform.localPosition = pickupableItemData.GetPosition(controller.CharacterType);
+        transform.localRotation = Quaternion.Euler(pickupableItemData.GetEulerRotation(controller.CharacterType));
 
         CurrentBodyPart = currentBodyPart;
 

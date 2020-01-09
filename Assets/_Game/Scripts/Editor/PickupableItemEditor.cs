@@ -14,12 +14,15 @@ public class PickupableItemEditor : Editor
 
         if (GUILayout.Button("Set Transform"))
         {
-            SerializedObject serializedObject = new SerializedObject(pickupableItem.PickupableItemData);
-
-            serializedObject.FindProperty("Position").vector3Value = pickupableItem.transform.localPosition;
-            serializedObject.FindProperty("EulerRotation").vector3Value = pickupableItem.transform.localRotation.eulerAngles;
-
-            serializedObject.ApplyModifiedProperties();
+            int index = 0;
+            for (int i = 0; i < pickupableItem.PickupableItemData.DataPerCharacter.Length; i++)
+            {
+                if (i == (int)pickupableItem.CurrentController.CharacterType)
+                {
+                    pickupableItem.PickupableItemData.DataPerCharacter[i].Position = pickupableItem.transform.localPosition;
+                    pickupableItem.PickupableItemData.DataPerCharacter[i].EulerRotation = pickupableItem.transform.localRotation.eulerAngles;
+                }
+            }
         }
     }
 }

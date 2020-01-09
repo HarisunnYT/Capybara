@@ -6,9 +6,13 @@ using UnityEngine;
 public class PickupableItemData : ScriptableObject
 {
     [System.Serializable]
-    struct ItemData
+    public class ItemData
     {
         public BodyPartType ItemSlotType;
+
+        [Space()]
+        public Vector3 Position;
+        public Vector3 EulerRotation;
 
         [Space()]
         public MovementData MovementData;
@@ -20,11 +24,11 @@ public class PickupableItemData : ScriptableObject
     }
 
     [EnumList(typeof(CharacterType)), SerializeField]
-    private ItemData[] dataPerCharacter;
+    public ItemData[] DataPerCharacter;
 
     private ItemData GetData(CharacterType characterType)
     {
-        return dataPerCharacter[(int)characterType];
+        return DataPerCharacter[(int)characterType];
     }
 
     public float GetWeight(AnimatorBodyPartLayer bodyPartLayer, CharacterType characterType)
@@ -38,6 +42,16 @@ public class PickupableItemData : ScriptableObject
         }
 
         return 0;
+    }
+
+    public Vector3 GetPosition(CharacterType characterType)
+    {
+        return GetData(characterType).Position;
+    }
+
+    public Vector3 GetEulerRotation(CharacterType characterType)
+    {
+        return GetData(characterType).EulerRotation;
     }
 
     public BoneWeight[] GetBoneWeights(CharacterType characterType)
