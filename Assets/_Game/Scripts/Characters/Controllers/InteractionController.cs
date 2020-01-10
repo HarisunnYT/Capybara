@@ -7,11 +7,11 @@ public class InteractionController : Controller
     [SerializeField]
     private float interactionRadius;
 
-    protected Mouth mouth;
+    public Mouth Mouth { get; private set; }
 
     private void Start()
     {
-        mouth = GetComponentInChildren<Mouth>();
+        Mouth = GetComponentInChildren<Mouth>();
     }
 
     public bool TryPickUpObject(bool includeRagdollCharacters = false)
@@ -26,7 +26,7 @@ public class InteractionController : Controller
             }
             else if (closestObject is GrabbleBodyPiece)
             {
-                mouth.GrabRagdoll(closestObject as GrabbleBodyPiece);
+                Mouth.GrabRagdoll(closestObject as GrabbleBodyPiece);
             }
             else if (closestObject is Vehicle)
             {
@@ -144,7 +144,7 @@ public class InteractionController : Controller
                 }
             }
         }
-        
+
         bodyPart.AssignItem(item);
     }
 
@@ -170,7 +170,7 @@ public class InteractionController : Controller
 
     public void IgnoreCollisions(Collider collider, bool ignore)
     {
-        foreach(var col in MovementController.Colliders)
+        foreach (var col in MovementController.Colliders)
         {
             Physics.IgnoreCollision(col, collider, ignore);
         }

@@ -10,6 +10,13 @@ public class CollisionController : Controller
     [SerializeField]
     protected float forceToRagdoll = 10;
 
+    public Collider MainCollider { get; private set; }
+
+    private void Start()
+    {
+        MainCollider = GetComponent<Collider>();
+    }
+
     protected virtual void OnCollisionEnter(Collision collision)
     {
         CollisionCheck(collision);

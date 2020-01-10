@@ -80,8 +80,8 @@ public class MovementController : Controller
             Move();
         }
 
-        Vector3 gravity = GetGravity();
-        MainBody.AddForce(gravity, ForceMode.Force);
+        Vector3 gravity = GetGravity() * MainBody.mass;
+        MainBody.AddForce(gravity, ForceMode.Acceleration);
     }
 
     #region Movement
@@ -110,7 +110,7 @@ public class MovementController : Controller
             SetMovementState(MovementState.Idle);
         }
 
-        float movementSpeed = GetMovementSpeed();
+        float movementSpeed = GetMaxVelocity();
 
         Vector3 movementVector = inputVec;
         movementVector.y = 0;
@@ -128,8 +128,8 @@ public class MovementController : Controller
             else if (CurrentMovementStyle == MovementStyle.Grounded)
             {
                 //set input vector based on movement speed
-                movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, 0, movementVector.z * movementSpeed * fixedDTime);
-                if (MainBody.velocity.magnitude < maxVelocity)
+                movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, MainBody.velocity.y, movementVector.z * baseMovementSpeed * fixedDTime);
+                if (MainBody.velocity.magnitude < GetMaxVelocity())
                 {
                     MainBody.AddForce(movementVector, ForceMode.VelocityChange);
                 }
@@ -145,7 +145,7 @@ public class MovementController : Controller
         }
 
         Quaternion toRotation = Quaternion.LookRotation(lastInputVec, Vector3.up);
-        Quaternion rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        Quaternion rotation = Quaternion.Lerp(transform.rotation, toRotation, GetRotationSpeed() * Time.deltaTime);
 
         if (CurrentMovementStyle == MovementStyle.Flying)
         {
@@ -164,15 +164,32 @@ public class MovementController : Controller
         return Vector3.zero;
     }
 
-    private float GetMovementSpeed()
+    private float GetRotationSpeed()
     {
-        float movementSpeed = baseMovementSpeed;
-        foreach(var bodyPart in BodyParts)
+        float rotSpeed = rotationSpeed;
+
+        if (InteractionController.Mouth.CurrentHeldController != null)
+        {
+            rotSpeed /= InteractionController.Mouth.CurrentHeldController.MovementController.MainBody.mass;
+        }
+
+        return rotSpeed;
+    }
+
+    private float GetMaxVelocity()
+    {
+        float movementSpeed = maxVelocity;
+        foreach (var bodyPart in BodyParts)
         {
             if (bodyPart.GetMovementData())
             {
                 movementSpeed *= bodyPart.CurrentItemObject.PickupableItemData.GetMovementData(CharacterController.CharacterType).MovementSpeedMultiplier;
             }
+        }
+
+        if (InteractionController.Mouth.CurrentHeldController != null)
+        {
+            movementSpeed /= InteractionController.Mouth.CurrentHeldController.MovementController.MainBody.mass;
         }
 
         return movementSpeed;

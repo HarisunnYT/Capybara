@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class AIRagdollController : RagdollController
 {
+    protected override void OnRagdollBegin()
+    {
+        base.OnRagdollBegin();
+
+        InteractionController.DropAllItems();
+    }
+
     public void KnockOut()
     {
         isKnockedOut = true;

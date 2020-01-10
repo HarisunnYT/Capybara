@@ -9,7 +9,7 @@ public class RagdollController : Controller
         public Vector3 Position;
         public Quaternion Rotation;
 
-        public BoneData (Vector3 localPosition, Quaternion localRotation)
+        public BoneData(Vector3 localPosition, Quaternion localRotation)
         {
             Position = localPosition;
             Rotation = localRotation;
@@ -33,6 +33,8 @@ public class RagdollController : Controller
     [SerializeField]
     private Transform metaRig;
 
+    public Collider[] Colliders { get; private set; }
+
     private Rigidbody[] bodies;
 
     private List<BoneData> lastRagdollBoneData = new List<BoneData>();
@@ -52,8 +54,10 @@ public class RagdollController : Controller
         bodies = gameObject.GetComponentsInChildrenExcludingRoot<Rigidbody>();
         mainCollider = GetComponent<Collider>();
 
+        Colliders = gameObject.GetComponentsInChildrenExcludingRoot<Collider>();
+
         //ignore collisions between child colliders;
-        foreach(var col in gameObject.GetComponentsInChildrenExcludingRoot<Collider>())
+        foreach (var col in Colliders)
         {
             Physics.IgnoreCollision(col, mainCollider, true);
         }
@@ -105,7 +109,7 @@ public class RagdollController : Controller
 
     public void AddForceToBodies(Vector3 direction, float force)
     {
-        foreach(var body in bodies)
+        foreach (var body in bodies)
         {
             body.AddForce(direction * force, ForceMode.Impulse);
         }
@@ -140,6 +144,9 @@ public class RagdollController : Controller
         timer = 0;
         returningFromRagdoll = !ragdoll;
 
+        mainCollider.enabled = !ragdoll;
+        MovementController.MainBody.isKinematic = ragdoll;
+
         //only disable if going into ragdoll, transition back to animation will enable animator
         if (ragdoll)
         {
@@ -167,6 +174,14 @@ public class RagdollController : Controller
             OnRagdollEnd();
 
             MovementController.transform.position = spineBody.transform.position;
+        }
+    }
+
+    public void IgnoreRagdollAgainstCollider(Collider ignoreCollider, bool ignore)
+    {
+        foreach (var col in Colliders)
+        {
+            Physics.IgnoreCollision(col, ignoreCollider, ignore);
         }
     }
 
