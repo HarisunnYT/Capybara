@@ -12,10 +12,8 @@ public class PickupableItem : Interactable
 
     private Animator animator;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-
         animator = GetComponent<Animator>();
     }
 

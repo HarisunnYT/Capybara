@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5287922797376484149
+--- !u!1 &1855032892488056368
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3610827202676020482}
-  - component: {fileID: 3738434955333829989}
-  - component: {fileID: 3745717717985357346}
+  - component: {fileID: 8847718112774709457}
+  - component: {fileID: 8852316029373301779}
+  - component: {fileID: 4897601326081837490}
+  - component: {fileID: 3138350507014461974}
   m_Layer: 0
-  m_Name: Hat
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3610827202676020482
+--- !u!4 &8847718112774709457
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287922797376484149}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1855032892488056368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.38, y: 0.165, z: 1}
   m_Children: []
-  m_Father: {fileID: 9011722120558148724}
+  m_Father: {fileID: 7654280424012107178}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3738434955333829989
+--- !u!33 &8852316029373301779
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287922797376484149}
-  m_Mesh: {fileID: 6657998009922166292, guid: 7fd8e10276f5c3047b6057485a5b19f6, type: 3}
---- !u!23 &3745717717985357346
+  m_GameObject: {fileID: 1855032892488056368}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4897601326081837490
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287922797376484149}
+  m_GameObject: {fileID: 1855032892488056368}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 166bea988465060408159d1cb4035444, type: 2}
+  - {fileID: 2100000, guid: 005e6bc8cc1559643b7605fc2253ef23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &5425509741137956455
+--- !u!65 &3138350507014461974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855032892488056368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2984915717230325020
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,38 +100,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9011722120558148724}
-  - component: {fileID: 1710335537}
-  - component: {fileID: 1710335539}
+  - component: {fileID: 7654280424012107178}
+  - component: {fileID: 4971083540868406082}
+  - component: {fileID: 3061034374599411679}
+  - component: {fileID: 3209494827193860231}
   m_Layer: 0
-  m_Name: ZookeeperHat
+  m_Name: Taser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9011722120558148724
+--- !u!4 &7654280424012107178
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5425509741137956455}
+  m_GameObject: {fileID: 2984915717230325020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 56.60504, y: 4.8820467, z: -62.61274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3610827202676020482}
+  - {fileID: 8847718112774709457}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1710335537
+--- !u!114 &4971083540868406082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984915717230325020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35b787ec71767d4b8c641757c4a7c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupableItemData: {fileID: 11400000, guid: dae7c758703b8604b99e25eef03be836, type: 2}
+  stunDuration: 2
+  strength: 15
+  vibrato: 50
+  randomness: 150
+--- !u!54 &3061034374599411679
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5425509741137956455}
+  m_GameObject: {fileID: 2984915717230325020}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -127,16 +159,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1710335539
-MonoBehaviour:
+--- !u!65 &3209494827193860231
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5425509741137956455}
+  m_GameObject: {fileID: 2984915717230325020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7dd62c289df2645b8e0ba47bf8d6a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupableItemData: {fileID: 11400000, guid: a06727ccd5a221c4f82fb3899cc932a7, type: 2}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

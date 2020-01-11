@@ -66,7 +66,7 @@ public class InteractionController : Controller
                 {
                     if (closestObject == null || Vector3.Distance(hitCols[i].transform.position, transform.position) < Vector3.Distance(hitCols[i].transform.position, closestObject.transform.position))
                     {
-                        if (item is GrabbleBodyPiece)
+                        if (item is GrabbleBodyPiece && MovementController.CurrentMovementStyle == MovementStyle.Grounded)
                         {
                             //check if the grabble piece character is in ragdoll mode
                             if (includeRagdollCharacters && ((GrabbleBodyPiece)item).CurrentController.MovementController.CurrentMovementState == MovementState.Ragdoll)

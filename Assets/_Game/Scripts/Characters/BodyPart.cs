@@ -8,6 +8,7 @@ public class BodyPart : MonoBehaviour
     protected BodyPartType itemSlotType;
     public BodyPartType ItemSlotType { get { return itemSlotType; } }
 
+    [SerializeField]
     protected PickupableItem currentItemObject;
     public PickupableItem CurrentItemObject { get { return currentItemObject; } }
 
@@ -20,6 +21,11 @@ public class BodyPart : MonoBehaviour
     {
         controller = GetComponentInParent<CharacterController>();
         Rigidbody = GetComponent<Rigidbody>();
+
+        if (currentItemObject != null)
+        {
+            ConnectItem(currentItemObject);
+        }
     }
 
     public virtual void AssignItem(PickupableItem newItem)
