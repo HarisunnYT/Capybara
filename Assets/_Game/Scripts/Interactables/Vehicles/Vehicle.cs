@@ -19,7 +19,7 @@ public class Vehicle : Interactable
         characterController.transform.rotation = Quaternion.LookRotation(seatBone.forward, seatBone.up);
 
         characterController.MovementController.SetKinematic(true);
-        characterController.AnimationController.DisableAllLayers();
+        characterController.AnimationController.DisableAllAnimationLayers();
 
         CurrentController.InteractionController.IgnoreCollisions(collider, true);
 

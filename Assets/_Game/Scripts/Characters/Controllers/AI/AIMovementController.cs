@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 
 public enum AIMovementState
 {
@@ -87,5 +88,13 @@ public class AIMovementController : MovementController
     public override Vector3 GetInputVector(bool includeYAxis = false)
     {
         return agent.velocity / maxVelocity;
+    }
+
+    public void RotateTowardsTransform(Transform target, float duration)
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+
+        transform.DORotate(targetRotation.eulerAngles, duration);
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +11,12 @@ public enum AnimatorBodyPartLayer
     Head
 }
 
+public enum SimplifiedBodyLayer
+{
+    LowerBody,
+    UpperBody
+}
+
 [System.Serializable]
 public struct AnimatorBool
 {
@@ -20,6 +26,16 @@ public struct AnimatorBool
 
 public class AnimationController : Controller
 {
+    [System.Serializable]
+    struct Layer
+    {
+        [HideInInspector]
+        public bool Active;
+
+        public Transform[] MovingBones;
+        public Transform[] AnimatingBones;
+    }
+
     [SerializeField]
     private Animator editorAnimator;
 
@@ -35,6 +51,9 @@ public class AnimationController : Controller
     private Transform[] animationBones;
     public Transform[] AnimationBones { get { return animationBones; } }
 
+    [EnumList(typeof(SimplifiedBodyLayer)), SerializeField]
+    private Layer[] boneLayers;
+
     private float lerpDuration = 10f;
     private float timer = 0;
 
@@ -46,21 +65,48 @@ public class AnimationController : Controller
 
         //we don't use this animator, this is just for creating animations
         editorAnimator.enabled = false;
+
+        DisableAllBoneLayers(false);
     }
 
     private void LateUpdate()
     {
         if (MovementController.CurrentMovementState != MovementState.Ragdoll && isAnimating)
         {
-            for (int i = 0; i < movingBones.Length; i++)
+            foreach(var layer in boneLayers)
             {
-                movingBones[i].localPosition = animationBones[i].localPosition;
-                movingBones[i].localRotation = animationBones[i].localRotation;
+                if (layer.Active)
+                {
+                    for (int i = 0; i < layer.MovingBones.Length; i++)
+                    {
+                        layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, 10 * Time.deltaTime);
+                        layer.MovingBones[i].localRotation = Quaternion.Lerp(layer.MovingBones[i].localRotation, layer.AnimatingBones[i].localRotation, 10 * Time.deltaTime);
+                    }
+                }
             }
         }
     }
 
-    public void DisableAllLayers()
+    public void DisableAllBoneLayers(bool disable)
+    {
+        for (int i = 0; i < boneLayers.Length; i++)
+        {
+            boneLayers[i].Active = !disable;
+        }
+    }
+
+    public void DisableBoneLayer(SimplifiedBodyLayer bodyLayer, bool disable)
+    {
+        for (int i = 0; i < boneLayers.Length; i++)
+        {
+            if (i == (int)bodyLayer)
+            {
+                boneLayers[i].Active = !disable;
+            }
+        }
+    }
+
+    public void DisableAllAnimationLayers()
     {
         for (int i = 0; i < System.Enum.GetNames(typeof(AnimatorBodyPartLayer)).Length; i++)
         {
@@ -70,8 +116,12 @@ public class AnimationController : Controller
 
     public void SetAnimatorLayerWeight(AnimatorBodyPartLayer layer, float weight)
     {
-        //we add 1 to the layer as 0 is full body which can't be modified
-        Animator.SetLayerWeight((int)layer + 1, weight);
+        Animator.SetLayerWeight(Animator.GetLayerIndex(layer.ToString()), weight);
+    }
+
+    public void SetAnimatorLayerWeight(string layerName, float weight)
+    {
+        Animator.SetLayerWeight(Animator.GetLayerIndex(layerName), weight);
     }
 
     public void SetAnimatorLayerWeights(BoneWeight[] boneWeights)

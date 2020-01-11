@@ -16,6 +16,7 @@ public class CharacterController : Controller
     private Rigidbody[] spines;
     public Rigidbody[] Spines { get { return spines; } }
 
+
     private void Start()
     {
         Parent = transform.parent;

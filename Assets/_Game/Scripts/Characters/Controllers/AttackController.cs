@@ -5,13 +5,13 @@ using UnityEngine;
 public class AttackController : Controller
 {
     [SerializeField]
-    private Hand leftHand;
+    protected Hand leftHand;
 
     [SerializeField]
-    private Hand rightHand;
+    protected Hand rightHand;
 
     [SerializeField]
-    private Hand twoHand;
+    protected Hand twoHand;
 
     protected void Attack()
     {

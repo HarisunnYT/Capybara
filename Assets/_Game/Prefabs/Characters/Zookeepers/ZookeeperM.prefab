@@ -148,11 +148,11 @@ GameObject:
   - component: {fileID: 2753114144114173775}
   - component: {fileID: 4055573860654896264}
   - component: {fileID: 8487964829568392775}
-  - component: {fileID: 1060903666}
   - component: {fileID: 1060903667}
   - component: {fileID: 1060903668}
   - component: {fileID: 1992219785691483235}
   - component: {fileID: 2554728552083519075}
+  - component: {fileID: 4658554968930583296}
   - component: {fileID: 1060903664}
   - component: {fileID: 1060903662}
   - component: {fileID: 2529800189828885328}
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 1
+  spines: []
 --- !u!114 &8487964829568392775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,21 +214,6 @@ MonoBehaviour:
     m_Bits: 4294967295
   forceToRagdoll: 45
   minForceToKnockOut: 10
---- !u!114 &1060903666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183988630139540828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4abcd790fea91b04b95212fbd44c7287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHand: {fileID: 3769008566833505482}
-  rightHand: {fileID: 6184490081809555723}
-  twoHand: {fileID: 7774714797335576976}
 --- !u!114 &1060903667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +293,61 @@ MonoBehaviour:
   - {fileID: 444737943067097792}
   - {fileID: 4450902140459711500}
   - {fileID: 4744998616559284380}
+  boneLayers:
+  - Active: 0
+    MovingBones:
+    - {fileID: 6633607702087604512}
+    - {fileID: 4220641721648816544}
+    - {fileID: 8497837383008869687}
+    - {fileID: 8493568111886815756}
+    - {fileID: 1882910469561348472}
+    - {fileID: 1098036896552758440}
+    - {fileID: 7678095940790175976}
+    - {fileID: 5363430623375869001}
+    - {fileID: 2274208629624405472}
+    - {fileID: 721590250014999989}
+    AnimatingBones:
+    - {fileID: 667966017180165515}
+    - {fileID: 4776861780453457813}
+    - {fileID: 6732834692333097538}
+    - {fileID: 3123279875255548820}
+    - {fileID: 7626383822397254171}
+    - {fileID: 9146178341900168074}
+    - {fileID: 7482136828958065470}
+    - {fileID: 8881484363494144183}
+    - {fileID: 7788044827826694199}
+    - {fileID: 1296926820669563402}
+  - Active: 0
+    MovingBones:
+    - {fileID: 2442962589455843439}
+    - {fileID: 1568492764676143133}
+    - {fileID: 4222183465028469304}
+    - {fileID: 8087330654273781418}
+    - {fileID: 1518043800336030196}
+    - {fileID: 984812513948416047}
+    - {fileID: 6307275052417774583}
+    - {fileID: 3982642802117195480}
+    - {fileID: 5346405898028794296}
+    - {fileID: 2886162373092282173}
+    - {fileID: 8962461218625454671}
+    - {fileID: 4129920226351958568}
+    - {fileID: 429794662852663216}
+    - {fileID: 3458925100468379692}
+    AnimatingBones:
+    - {fileID: 169806334138779717}
+    - {fileID: 2458041548072003412}
+    - {fileID: 3542058907045735352}
+    - {fileID: 5511148824727445364}
+    - {fileID: 6247589304057224067}
+    - {fileID: 6612108590390000303}
+    - {fileID: 6848257012017549366}
+    - {fileID: 5635791729472094375}
+    - {fileID: 1426324495797582260}
+    - {fileID: 4934622999136901875}
+    - {fileID: 4300726153898064546}
+    - {fileID: 444737943067097792}
+    - {fileID: 4450902140459711500}
+    - {fileID: 4744998616559284380}
 --- !u!114 &1992219785691483235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +381,24 @@ MonoBehaviour:
   maxVelocity: 20
   rotationSpeed: 5
   runSpeed: 0
+--- !u!114 &4658554968930583296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183988630139540828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a5a0ea6c30c4b4387b8073d0a77711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 3769008566833505482}
+  rightHand: {fileID: 6184490081809555723}
+  twoHand: {fileID: 7774714797335576976}
+  hips: {fileID: 2442962589455843439}
+  head: {fileID: 5346405898028794296}
+  maxAimHipRotation: 50
 --- !u!136 &1060903664
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -404,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serializedBlackboard: '{"_variables":{"_pathNodes":{"_value":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"_name":"_pathNodes","_id":"6dcb8681-a4f0-46e5-bbcc-9f64211d85d2","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject,
+  _serializedBlackboard: '{"_variables":{"_pathNodes":{"_value":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"_name":"_pathNodes","_id":"6dcb8681-a4f0-46e5-bbcc-9f64211d85d2","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_waitTime":{"_name":"_waitTime","_id":"6788f3b8-f924-4ec5-8e58-93eb809f2e26","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_capySeen":{"_name":"_capySeen","_id":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
@@ -425,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7dbb6bbdf4ffb46ab7dd87ba8191e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":110.0,"y":30.0},"zoomFactor":0.7500094,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":223.0,"y":170.0},"_name":"Wander","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"2"},{"_position":{"x":722.0,"y":338.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"4"},{"_nestedBT":{"_value":2},"_position":{"x":610.0,"y":426.0},"_name":"Flee","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"5"},{"_position":{"x":443.0,"y":538.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"7"},{"_position":{"x":426.0,"y":-110.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"8"},{"_nestedBT":{"_value":3},"executionMode":"Once","_transitionEvaluation":"CheckAfterStateFinished","_position":{"x":437.0,"y":6.0},"$type":"NodeCanvas.StateMachines.NestedBTState","$id":"9"}],"connections":[{"_condition":{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":10.0},"awarnessDistance":{"_value":1.0},"viewAngle":{"_value":70.0},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":121.0,"y":81.0},"zoomFactor":0.7500094,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":223.0,"y":170.0},"_name":"Wander","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"2"},{"_position":{"x":722.0,"y":338.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"4"},{"_nestedBT":{"_value":2},"_position":{"x":610.0,"y":426.0},"_name":"Flee","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"5"},{"_position":{"x":443.0,"y":538.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"7"},{"_position":{"x":426.0,"y":-110.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"8"},{"_nestedBT":{"_value":3},"executionMode":"Once","_transitionEvaluation":"CheckAfterStateFinished","_position":{"x":437.0,"y":6.0},"$type":"NodeCanvas.StateMachines.NestedBTState","$id":"9"}],"connections":[{"_condition":{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":10.0},"awarnessDistance":{"_value":1.0},"viewAngle":{"_value":70.0},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"_value":true,"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"localBlackboard":{"_name":"Local

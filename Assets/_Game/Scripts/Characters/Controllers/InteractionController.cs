@@ -179,7 +179,7 @@ public class InteractionController : Controller
             bodyPart.DropCurrentItem();
         }
 
-        AnimationController.DisableAllLayers();
+        AnimationController.DisableAllAnimationLayers();
     }
 
     public void IgnoreCollisions(Collider collider, bool ignore)

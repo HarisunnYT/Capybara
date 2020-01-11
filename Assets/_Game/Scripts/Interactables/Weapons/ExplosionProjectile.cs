@@ -25,7 +25,7 @@ public class ExplosionProjectile : Projectile
         foreach(var col in colliders)
         {
             RagdollController ragdollController = col.GetComponent<RagdollController>();
-            if (ragdollController && !GameManager.Instance.IsPlayer(ragdollController.CharacterController))
+            if (ragdollController)
             {
                 ragdollController.SetRagdoll(true);
             }
