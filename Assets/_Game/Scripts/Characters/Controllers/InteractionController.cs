@@ -16,6 +16,11 @@ public class InteractionController : Controller
 
     public bool TryPickUpObject(bool includeRagdollCharacters = false)
     {
+        if (MovementController.CurrentMovementState == MovementState.Ragdoll)
+        {
+            return false;
+        }
+
         Interactable closestObject = FindClosestObject(-1, includeRagdollCharacters);
         if (closestObject != null)
         {
@@ -173,6 +178,8 @@ public class InteractionController : Controller
         {
             bodyPart.DropCurrentItem();
         }
+
+        AnimationController.DisableAllLayers();
     }
 
     public void IgnoreCollisions(Collider collider, bool ignore)
@@ -184,7 +191,7 @@ public class InteractionController : Controller
     }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, interactionRadius);
     }

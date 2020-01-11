@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Mouth : BodyPart
 {
     [SerializeField]
     private float spring = 1000;
+
+    [SerializeField]
+    private float snapDuration = 1;
 
     [SerializeField]
     private float breakForce = 20000;
@@ -55,7 +59,7 @@ public class Mouth : BodyPart
         springJoint.anchor = direction;
         springJoint.connectedBody = bodyPiece.Rigidbody;
 
-        springJoint.spring = 0;
+        springJoint.spring = spring;
         springJoint.breakForce = breakForce;
     }
 
