@@ -41,8 +41,6 @@ public class MovementController : Controller
     private float rotationSpeed = 5;
 
     public Rigidbody MainBody { get; private set; }
-
-    public BodyPart[] BodyParts { get; private set; }
     public Collider[] Colliders { get; private set; }
 
     public MovementState CurrentMovementState { get; private set; }
@@ -61,7 +59,6 @@ public class MovementController : Controller
         base.Awake();
 
         MainBody = GetComponent<Rigidbody>();
-        BodyParts = GetComponentsInChildren<BodyPart>();
         Colliders = GetComponentsInChildren<Collider>();
     }
 
@@ -180,7 +177,7 @@ public class MovementController : Controller
     private float GetMaxVelocity()
     {
         float movementSpeed = maxVelocity;
-        foreach (var bodyPart in BodyParts)
+        foreach (var bodyPart in CharacterController.BodyParts)
         {
             if (bodyPart.GetMovementData())
             {
@@ -201,7 +198,7 @@ public class MovementController : Controller
         Vector3 gravity = new Vector3(1, Physics.gravity.y, 1);
         bool modifiedGravity = false;
 
-        foreach (var bodyPart in BodyParts)
+        foreach (var bodyPart in CharacterController.BodyParts)
         {
             if (bodyPart.GetMovementData())
             {

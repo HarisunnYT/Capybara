@@ -10,6 +10,15 @@ public class PickupableItem : Interactable
 
     public BodyPart CurrentBodyPart { get; private set; }
 
+    private Animator animator;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        animator = GetComponent<Animator>();
+    }
+
     public virtual void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
     {
         CurrentController = controller;
@@ -39,6 +48,11 @@ public class PickupableItem : Interactable
 
             controller.MovementController.SetMovementStyle(movementData.MovementStyle);
         }
+
+        if (animator)
+        {
+            animator.SetTrigger("OnPickUp");
+        }
     }
 
     public virtual void DropItem()
@@ -50,5 +64,10 @@ public class PickupableItem : Interactable
         Rigidbody.isKinematic = false;
 
         Equiped = false;
+
+        if (animator)
+        {
+            animator.SetTrigger("OnDrop");
+        }
     }
 }

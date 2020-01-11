@@ -14,9 +14,12 @@ public class BodyPart : MonoBehaviour
     protected CharacterController controller;
     public CharacterController Controller { get { return controller; } }
 
+    public Rigidbody Rigidbody { get; private set; }
+
     private void Start()
     {
         controller = GetComponentInParent<CharacterController>();
+        Rigidbody = GetComponent<Rigidbody>();
     }
 
     public virtual void AssignItem(PickupableItem newItem)

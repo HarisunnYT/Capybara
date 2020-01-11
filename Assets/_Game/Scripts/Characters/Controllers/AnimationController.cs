@@ -38,6 +38,8 @@ public class AnimationController : Controller
     private float lerpDuration = 10f;
     private float timer = 0;
 
+    private bool isAnimating = true;
+
     protected override void Awake()
     {
         base.Awake();
@@ -48,7 +50,7 @@ public class AnimationController : Controller
 
     private void LateUpdate()
     {
-        if (MovementController.CurrentMovementState != MovementState.Ragdoll)
+        if (MovementController.CurrentMovementState != MovementState.Ragdoll && isAnimating)
         {
             for (int i = 0; i < movingBones.Length; i++)
             {
@@ -101,5 +103,10 @@ public class AnimationController : Controller
         {
             SetBool(b.Name, b.Result);
         }
+    }
+
+    public void DisableAnimation(bool disable)
+    {
+        isAnimating = !disable;
     }
 }

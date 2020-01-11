@@ -177,6 +177,19 @@ public class RagdollController : Controller
         }
     }
 
+    /// <summary>
+    /// Setting all the bones to kinematic or not, not using proper ragdoll system
+    /// </summary>
+    public void FakeRagdoll(bool ragdoll)
+    {
+        foreach(var rigidbody in bodies)
+        {
+            rigidbody.isKinematic = !ragdoll;
+        }
+
+        AnimationController.DisableAnimation(ragdoll);
+    }
+
     public void IgnoreRagdollAgainstCollider(Collider ignoreCollider, bool ignore)
     {
         foreach (var col in Colliders)

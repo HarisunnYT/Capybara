@@ -98,7 +98,7 @@ public class InteractionController : Controller
 
     private void PickupItem(PickupableItem item)
     {
-        foreach (var bodyPart in MovementController.BodyParts)
+        foreach (var bodyPart in CharacterController.BodyParts)
         {
             if (bodyPart.ItemSlotType == item.PickupableItemData.GetBodyPartSlotType(CharacterController.CharacterType))
             {
@@ -125,7 +125,7 @@ public class InteractionController : Controller
         if (movementData != null && movementData.MovementStyle != MovementStyle.None)
         {
             //we need to check if an other item is modifying the movement style, if so drop that item
-            foreach (var part in MovementController.BodyParts)
+            foreach (var part in CharacterController.BodyParts)
             {
                 if (part.GetMovementData())
                 {
@@ -142,7 +142,7 @@ public class InteractionController : Controller
         if (bodyPartSlotType == BodyPartType.EitherHand || bodyPartSlotType == BodyPartType.TwoHand)
         {
             //we need to check if an object needs to be dropped
-            foreach (var part in MovementController.BodyParts)
+            foreach (var part in CharacterController.BodyParts)
             {
                 if (part.CurrentItemObject != null)
                 {
@@ -162,7 +162,7 @@ public class InteractionController : Controller
 
     public void DropItem(BodyPartType bodySlot)
     {
-        foreach (var part in MovementController.BodyParts)
+        foreach (var part in CharacterController.BodyParts)
         {
             if (part.ItemSlotType == bodySlot && part.GetPickupableItemData() != null)
             {
@@ -174,7 +174,7 @@ public class InteractionController : Controller
 
     public void DropAllItems()
     {
-        foreach (var bodyPart in MovementController.BodyParts)
+        foreach (var bodyPart in CharacterController.BodyParts)
         {
             bodyPart.DropCurrentItem();
         }
