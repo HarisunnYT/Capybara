@@ -103,8 +103,11 @@ public class PathSpawner : Singleton<PathSpawner>
         foreach (Node node in nodesToPlace)
         {
             // draw path on node
-            Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
-            NodeManager.Instance.SetNodeAsPath(node.pos);
+            if(node != null)
+            {
+                Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
+                NodeManager.Instance.SetNodeAsPath(node.pos);
+            }            
         }     
     }
 }

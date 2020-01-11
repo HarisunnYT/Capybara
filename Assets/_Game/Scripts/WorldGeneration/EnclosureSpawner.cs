@@ -38,27 +38,27 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
         Vector3 pos = initPos;
         for (int i = 0; i < xWidth; i++)
         {                             
-            SpawnFenceOnX(fencePiece, pos, Quaternion.Euler(0, 0, 0));               
+            SpawnFenceOnX(fencePiece, pos, Quaternion.Euler(0, 0, 0), false);               
             pos = new Vector3(pos.x + fencePiece.bounds.x, pos.y, pos.z);
         }
 
         for (int i = 0; i < zWidth; i++)
         {
-            SpawnFenceOnZ(fencePiece, pos, Quaternion.Euler(0, -90, 0));
+            SpawnFenceOnZ(fencePiece, pos, Quaternion.Euler(0, -90, 0), false);
             pos = new Vector3(pos.x, pos.y, pos.z + fencePiece.GetRotatedBounds().z);
         }
 
         pos = new Vector3(pos.x - fencePiece.bounds.x, pos.y, pos.z);
         for (int i = 0; i < xWidth; i++)
         {
-            SpawnFenceOnX(fencePiece, pos, Quaternion.Euler(0, 180, 0));
+            SpawnFenceOnX(fencePiece, pos, Quaternion.Euler(0, 180, 0), true);
             pos = new Vector3(pos.x - fencePiece.bounds.x, pos.y, pos.z);
         }
 
         pos = new Vector3(pos.x + fencePiece.bounds.x, pos.y, pos.z - fencePiece.GetRotatedBounds().z);
         for (int i = 0; i < zWidth; i++)
         {
-            SpawnFenceOnZ(fencePiece, pos, Quaternion.Euler(0, -90, 0));                
+            SpawnFenceOnZ(fencePiece, pos, Quaternion.Euler(0, -90, 0), true);                
             pos = new Vector3(pos.x, pos.y, pos.z - fencePiece.GetRotatedBounds().z);
         }
         SetEnclosureNodes(initPos, fencePiece);
@@ -73,7 +73,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
             
     }
 
-    private void SpawnFenceOnX(SpawnObject obj, Vector3 pos, Quaternion rot)
+    private void SpawnFenceOnX(SpawnObject obj, Vector3 pos, Quaternion rot, bool top)
     {
         GameObject fence = Instantiate(obj.gameObject, new Vector3((pos.x + obj.bounds.x + pos.x) / 2, pos.y, pos.z), rot, parent);
 
@@ -82,13 +82,32 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
         {
             Node node = NodeManager.Instance.GetNodeAtPosition(new Vector3(pos.x + i, 0, pos.z));
             nodes.Add(node);
-            enclosurePathNodes.Add(node);
+
+            if (node != null)
+            {
+                if (!top)
+                {
+                    Vector3 pathNodePos = new Vector3(node.pos.x, 0, node.pos.z - 1);
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    {
+                        enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
+                    }
+                }
+                else
+                {
+                    Vector3 pathNodePos = new Vector3(node.pos.x, 0, node.pos.z + 1);
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    {
+                        enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
+                    }
+                }
+            }
         }
 
         NodeManager.Instance.SetExistingNodesUsed(nodes);
     }
 
-    private void SpawnFenceOnZ(SpawnObject obj, Vector3 pos, Quaternion rot)
+    private void SpawnFenceOnZ(SpawnObject obj, Vector3 pos, Quaternion rot, bool left)
     {
         GameObject fence = Instantiate(obj.gameObject, new Vector3(pos.x, pos.y, (pos.z + obj.GetRotatedBounds().z + pos.z) / 2), rot, parent);
 
@@ -97,8 +116,28 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
         {
             Node node = NodeManager.Instance.GetNodeAtPosition(new Vector3(pos.x, 0, pos.z + i));
             nodes.Add(node);
-            enclosurePathNodes.Add(node);
+
+            if (node != null)
+            {
+                if (!left)
+                {
+                    Vector3 pathNodePos = new Vector3(node.pos.x + 1, 0, node.pos.z);
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    {
+                        enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
+                    }
+                }
+                else
+                {
+                    Vector3 pathNodePos = new Vector3(node.pos.x - 1, 0, node.pos.z);
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    {
+                        enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
+                    }
+                }
+            }
         }
+
         NodeManager.Instance.SetExistingNodesUsed(nodes);
     }
 

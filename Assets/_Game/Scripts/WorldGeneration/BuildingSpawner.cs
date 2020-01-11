@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : Singleton<ObjectSpawner>
+public class BuildingSpawner : Singleton<BuildingSpawner>
 {
     public Transform parent;
 
     [SerializeField]
-    private int spawnCount = 5;
+    private int spawnCount = 3;
 
     [SerializeField]
     private SpawnObject[] collection;
@@ -15,31 +15,31 @@ public class ObjectSpawner : Singleton<ObjectSpawner>
     [SerializeField]
     private LayerMask conflictLayer;
 
-    public void SpawnObjects()
+    public void SpawnBuildings()
     {
         for (int i = 0; i < spawnCount; i++)
         {
-            SpreadItem();
+            SpreadBuilding();
         }
     }
 
-    private void SpreadItem()
+    private void SpreadBuilding()
     {
         Vector3 pos = NodeManager.Instance.GetRandomUnusedNode().pos;
-        PickObject(pos);
+        PickBuilding(pos);
     }
 
-    private void PickObject(Vector3 pos)
+    private void PickBuilding(Vector3 pos)
     {
         int index = Random.Range(0, collection.Length);
-        Quaternion rot = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        Quaternion rot = Quaternion.Euler(-90, Random.Range(0, 360), 0);
         SpawnObject spawnObject = collection[index];
 
         // check for object overlap
         if (Physics.OverlapBox(pos, new Vector3(spawnObject.MaxBounds(), Mathf.Infinity, spawnObject.MaxBounds()), rot, conflictLayer).Length > 0)
         {
-            Debug.Log("Colliders found, rerunning spawn for object");
-            SpreadItem();
+            Debug.Log("Colliders found, rerunning spawn for building");
+            SpreadBuilding();
         }
         else
         {

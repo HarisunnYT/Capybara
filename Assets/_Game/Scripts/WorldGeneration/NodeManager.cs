@@ -65,7 +65,9 @@ public class NodeManager : Singleton<NodeManager>
 
     public Node GetNodeAtPosition(Vector3 pos)
     {
-        Node node = nodes.Find(opt => opt.pos == pos);
+        Node node = null;
+        node = nodes.Find(opt => opt.pos == pos);
+       
         return node;
     }
 
@@ -82,16 +84,13 @@ public class NodeManager : Singleton<NodeManager>
         int upperX = Mathf.RoundToInt(Mathf.Max(posOne.x, posTwo.x));
         int upperZ = Mathf.RoundToInt(Mathf.Max(posOne.z, posTwo.z));
 
-        int lowest = Mathf.RoundToInt(Mathf.Min(lowerX, lowerZ));
-        int highest = Mathf.RoundToInt(Mathf.Max(upperX, upperZ));
-
         List<Node> nodes = new List<Node>();
 
-        for (int x = lowest; x < highest; x++)
+        for (int x = lowerX; x < upperX; x++)
         {
-            for (int z = lowest; z < highest; z++)
+            for (int z = lowerZ; z < upperZ; z++)
             {
-                if (x >= lowerX && x <= upperX && z >= lowerZ && z <= upperZ)
+                if (x > lowerX && x < upperX && z > lowerZ && z < upperZ)
                 {
                     nodes.Add(GetNodeAtPosition(new Vector3(x, 0, z)));
                 }
@@ -161,7 +160,7 @@ public class NodeManager : Singleton<NodeManager>
         int x = Random.Range(Mathf.RoundToInt(lowerPos.x), Mathf.RoundToInt(upperPos.x));
         int z = Random.Range(Mathf.RoundToInt(lowerPos.z), Mathf.RoundToInt(upperPos.z));
 
-        Debug.Log("Node: " + new Vector3(x, 0, z));
+        //Debug.Log("Node: " + new Vector3(x, 0, z));
 
         node = GetNodeAtPosition(new Vector3(x, 0, z));  
 

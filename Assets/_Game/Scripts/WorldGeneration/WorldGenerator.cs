@@ -64,9 +64,9 @@ public class WorldGenerator : MonoBehaviour
 
         for (int i = 0; i < EnclosureSpawner.Instance.spawnCount; i++)
         {
-            Debug.Log(new Vector3(Mathf.Clamp(EnclosureSpawner.Instance.zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - i)), 1, mapSize * .75f), 0,
-                1 + Mathf.Clamp(EnclosureSpawner.Instance.zooBorder, 1, mapSize)));
-            Debug.Log(new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - i), 1, mapSize), 0, Mathf.Clamp(mapSize - EnclosureSpawner.Instance.zooBorder, 1, mapSize)));
+            //Debug.Log(new Vector3(Mathf.Clamp(EnclosureSpawner.Instance.zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - i)), 1, mapSize * .75f), 0,
+            //    1 + Mathf.Clamp(EnclosureSpawner.Instance.zooBorder, 1, mapSize)));
+            //Debug.Log(new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - i), 1, mapSize), 0, Mathf.Clamp(mapSize - EnclosureSpawner.Instance.zooBorder, 1, mapSize)));
 
             Node node = NodeManager.Instance.GetRandomUnusedNodeInRange(new Vector3(Mathf.Clamp(EnclosureSpawner.Instance.zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - i)), 1, mapSize * .75f), 0, 
                 1 + Mathf.Clamp(EnclosureSpawner.Instance.zooBorder, 1, mapSize)), 
@@ -80,10 +80,8 @@ public class WorldGenerator : MonoBehaviour
 
     private void DelayedObjectSpawn()
     {
-        for (int i = 0; i < ObjectSpawner.Instance.spawnCount; i++)
-        {
-            ObjectSpawner.Instance.SpreadItem();
-        }
+        BuildingSpawner.Instance.SpawnBuildings();
+        ObjectSpawner.Instance.SpawnObjects();
 
         DelayedEnemySpawn();
     }

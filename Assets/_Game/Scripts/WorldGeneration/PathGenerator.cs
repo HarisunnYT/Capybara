@@ -36,17 +36,17 @@ public class PathGenerator : Singleton<PathGenerator>
         {
             yield return new WaitUntil(() => PathSpawner.Instance.DrawPath(destNode, pathPiece, parent));
 
-            //List<Node> path = Pathfinding.Instance.FindNodePath(currentNode, destNode);           
+            List<Node> path = Pathfinding.Instance.FindNodePath(currentNode, destNode);
 
-            //if (path != null)
-            //{
-            //    foreach (Node node in path)
-            //    {
-            //        Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
-            //        NodeManager.instance.SetNodeAsPath(node.pos);
-            //        currentNode = node;
-            //    }
-            //}            
+            if (path != null)
+            {
+                foreach (Node node in path)
+                {
+                    Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
+                    NodeManager.Instance.SetNodeAsPath(node.pos);
+                    currentNode = node;
+                }
+            }
         }
         WorldGenerator.instance.CompletedGeneration();
     }
