@@ -26,7 +26,14 @@ public class InteractionController : Controller
             }
             else if (closestObject is GrabbleBodyPiece)
             {
-                Mouth.GrabRagdoll(closestObject as GrabbleBodyPiece);
+                if (Mouth.HoldingRagdoll)
+                {
+                    Mouth.DropRagdoll();
+                }
+                else
+                {
+                    Mouth.GrabRagdoll(closestObject as GrabbleBodyPiece);
+                }
             }
             else if (closestObject is Vehicle)
             {

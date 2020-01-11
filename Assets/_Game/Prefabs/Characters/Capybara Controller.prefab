@@ -782,8 +782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb387a1383520a4e812081c98914cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 600
-  maxVelocity: 30
+  baseMovementSpeed: 200
+  maxVelocity: 15
   rotationSpeed: 5
 --- !u!114 &6097527206904810559
 MonoBehaviour:
@@ -934,7 +934,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994097811412033947}
   serializedVersion: 2
-  m_Mass: 7
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -3136,8 +3136,8 @@ GameObject:
   - component: {fileID: 7533845369540800358}
   - component: {fileID: 7533845369540800357}
   - component: {fileID: 7533845369540800356}
-  - component: {fileID: 7533845369540800355}
   - component: {fileID: 157268315}
+  - component: {fileID: 790827784975384058}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -3210,43 +3210,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7533845369540800354}
   m_Enabled: 1
---- !u!114 &7533845369540800355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7533845369540800354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ef3e8d5c77f405d8ab70a643d6a2f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 3312165237440893832}
-  rotationSpace: {fileID: 0}
-  updateMode: 3
-  lockCursor: 1
-  smoothFollow: 0
-  offset: {x: 0, y: 3, z: 0.5}
-  followSpeed: 10
-  rotationSensitivity: 3.5
-  yMinLimit: -20
-  yMaxLimit: 80
-  rotateAlways: 1
-  rotateOnLeftButton: 0
-  rotateOnRightButton: 0
-  rotateOnMiddleButton: 0
-  distance: 12.5
-  minDistance: 10
-  maxDistance: 15
-  zoomSpeed: 10
-  zoomSensitivity: 1
-  blockingLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  blockingRadius: 1
-  blockingSmoothTime: 0.1
-  blockedOffset: 0.5
 --- !u!114 &157268315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3264,6 +3227,43 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &790827784975384058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7533845369540800354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e484b04a743fe594d8384634d78ae6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 3312165237440893832}
+  rotationSpace: {fileID: 0}
+  updateMode: 3
+  lockCursor: 1
+  smoothFollow: 0
+  offset: {x: 0, y: 1.5, z: 0.5}
+  followSpeed: 10
+  rotationSensitivity: 3.5
+  yMinLimit: -20
+  yMaxLimit: 80
+  rotateAlways: 1
+  rotateOnLeftButton: 0
+  rotateOnRightButton: 0
+  rotateOnMiddleButton: 0
+  distance: 10
+  minDistance: 12.5
+  maxDistance: 15
+  zoomSpeed: 10
+  zoomSensitivity: 1
+  blockingLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  blockingRadius: 1
+  blockingSmoothTime: 0.1
+  blockedOffset: 0.5
 --- !u!1 &7533845370532946597
 GameObject:
   m_ObjectHideFlags: 0

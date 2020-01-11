@@ -43,6 +43,7 @@ public class Mouth : BodyPart
             CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(Controller.CollisionController.MainCollider, false);
         }
 
+        HoldingRagdoll = false;
         CurrentHeldController = null;
     }
 
@@ -54,7 +55,7 @@ public class Mouth : BodyPart
         springJoint.anchor = direction;
         springJoint.connectedBody = bodyPiece.Rigidbody;
 
-        springJoint.spring = spring;
+        springJoint.spring = 0;
         springJoint.breakForce = breakForce;
     }
 

@@ -105,6 +105,7 @@ public class MovementController : Controller
             {
                 //could do sliding animation here
                 MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
+                knockBackSlerpDuration = float.MaxValue;
             }
 
             SetMovementState(MovementState.Idle);
@@ -128,7 +129,7 @@ public class MovementController : Controller
             else if (CurrentMovementStyle == MovementStyle.Grounded)
             {
                 //set input vector based on movement speed
-                movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, MainBody.velocity.y, movementVector.z * baseMovementSpeed * fixedDTime);
+                movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, 0, movementVector.z * baseMovementSpeed * fixedDTime);
                 if (MainBody.velocity.magnitude < GetMaxVelocity())
                 {
                     MainBody.AddForce(movementVector, ForceMode.VelocityChange);
