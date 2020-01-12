@@ -20,6 +20,7 @@ public class Mouth : BodyPart
     public bool HoldingRagdoll { get; private set; }
 
     public CharacterController CurrentHeldController { get; private set; }
+    public Transform CurrentHeldBone { get; private set; }
 
     private SpringJoint springJoint;
 
@@ -28,11 +29,13 @@ public class Mouth : BodyPart
         DropCurrentItem();
 
         bodyPiece.transform.position = transform.position;
-
         HoldingRagdoll = true;
-        CurrentHeldController = bodyPiece.CurrentController;
+        CurrentHeldBone = bodyPiece.transform;
 
+        CurrentHeldController = bodyPiece.CurrentController;
         CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(Controller.CollisionController.MainCollider, true);
+
+        controller.MovementController.SetMovementStyle(MovementStyle.Dragging);
 
         CreateJoint(bodyPiece);
     }
@@ -47,8 +50,12 @@ public class Mouth : BodyPart
             CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(Controller.CollisionController.MainCollider, false);
         }
 
+        controller.MovementController.SetMovementStyle(MovementStyle.Grounded);
+
         HoldingRagdoll = false;
         CurrentHeldController = null;
+
+        CurrentHeldBone = null;
     }
 
     private void CreateJoint(GrabbleBodyPiece bodyPiece)

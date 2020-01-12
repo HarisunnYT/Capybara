@@ -653,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 2
+  currentItemObject: {fileID: 0}
 --- !u!1 &1763321874734488965
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +775,7 @@ MonoBehaviour:
   - {fileID: 7533845371126763220}
   - {fileID: 7533845371253174802}
   - {fileID: 7533845371287467902}
+  skeleton: {fileID: 0}
 --- !u!114 &6057441757747358320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,6 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 0
+  currentItemObject: {fileID: 0}
 --- !u!1 &2769332033886201379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 5
+  currentItemObject: {fileID: 0}
   currentHandType: 0
   otherHand: {fileID: 5738115425222900966}
 --- !u!54 &1963263910
@@ -2429,6 +2433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 1
+  currentItemObject: {fileID: 0}
 --- !u!1 &6004749537712293957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,6 +2543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 5
+  currentItemObject: {fileID: 0}
   currentHandType: 0
   otherHand: {fileID: 5638794715821735596}
 --- !u!54 &1312855275
@@ -2899,6 +2905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 7
+  currentItemObject: {fileID: 0}
 --- !u!1 &6339186451188047128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +2982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 3
+  currentItemObject: {fileID: 0}
   spring: 10000
   snapDuration: 1
   breakForce: 20000
@@ -3639,6 +3647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 6
+  currentItemObject: {fileID: 0}
 --- !u!54 &226172945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3747,6 +3756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 6
+  currentItemObject: {fileID: 0}
 --- !u!54 &410718018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3882,6 +3892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotType: 4
+  currentItemObject: {fileID: 0}
   currentHandType: 0
   otherHand: {fileID: 0}
 --- !u!1 &8273461474459950308

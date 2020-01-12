@@ -6,6 +6,10 @@ using DG.Tweening;
 public class Taser : Weapon
 {
     [SerializeField]
+    private bool ragdollAfterStun = false;
+
+    [Space()]
+    [SerializeField]
     private float stunDuration = 2;
 
     [SerializeField]
@@ -79,6 +83,8 @@ public class Taser : Weapon
         character.AnimationController.SetTrigger("Star", true);
         character.InteractionController.DropAllItems();
 
+        character.MovementController.SetMovementState(MovementState.Stunned);
+
         yield return new WaitForEndOfFrame();
 
         character.AnimationController.DisableAllBoneLayers(true);
@@ -102,6 +108,16 @@ public class Taser : Weapon
 
         tasingCharacter.CharacterController.Skeleton.gameObject.SetActive(false);
         tasingCharacter.AnimationController.DisableAllBoneLayers(false);
+
+        if (ragdollAfterStun)
+        {
+            tasingCharacter.RagdollController.SetRagdoll(true);
+        }
+        else
+        {
+            tasingCharacter.MovementController.SetMovementState(MovementState.Idle);
+        }
+
         tasingCharacter = null;
     }
 }

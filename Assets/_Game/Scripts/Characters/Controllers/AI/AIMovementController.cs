@@ -8,7 +8,7 @@ public enum AIMovementState
 {
     Idle,
     Walk,
-    Running
+    Running,
 }
 
 public class AIMovementController : MovementController

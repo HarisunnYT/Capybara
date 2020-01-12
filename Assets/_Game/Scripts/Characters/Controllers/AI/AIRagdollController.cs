@@ -13,6 +13,6 @@ public class AIRagdollController : RagdollController
 
     public void KnockOut()
     {
-        isKnockedOut = true;
+        MovementController.SetMovementState(MovementState.KnockedOut);
     }
 }

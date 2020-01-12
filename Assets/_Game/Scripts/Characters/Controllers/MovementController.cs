@@ -18,7 +18,9 @@ public enum MovementState
 {
     Moving,
     Idle,
-    Ragdoll
+    Ragdoll,
+    Stunned,
+    KnockedOut
 }
 
 public enum MovementStyle
@@ -26,7 +28,8 @@ public enum MovementStyle
     None,
     Grounded,
     Flying,
-    Driving
+    Driving,
+    Dragging
 }
 
 public class MovementController : Controller
@@ -52,8 +55,6 @@ public class MovementController : Controller
 
     private float knockBackSlerpDuration;
 
-    private bool rotateTowardsVelocity = true;
-
     protected override void Awake()
     {
         base.Awake();
@@ -70,7 +71,7 @@ public class MovementController : Controller
 
     private void FixedUpdate()
     {
-        AnimationController.SetFloat("MovementSpeed", GetInputVector().magnitude);
+        AnimationController.SetFloat("MovementSpeed", MainBody.velocity.magnitude);
 
         if (CurrentMovementState != MovementState.Ragdoll)
         {
@@ -88,10 +89,7 @@ public class MovementController : Controller
         Vector3 inputVec = GetInputVector(true);
         if (inputVec.x != 0 || inputVec.z != 0)
         {
-            if (rotateTowardsVelocity)
-            {
-                transform.rotation = GetRotation();
-            }
+            DoRotation();
 
             lastInputVec = inputVec;
             SetMovementState(MovementState.Moving);
@@ -132,6 +130,29 @@ public class MovementController : Controller
                     MainBody.AddForce(movementVector, ForceMode.VelocityChange);
                 }
             }
+            else if (CurrentMovementStyle == MovementStyle.Dragging)
+            {
+                movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, 0, movementVector.z * baseMovementSpeed * fixedDTime);
+                if (MainBody.velocity.magnitude < GetMaxVelocity())
+                {
+                    MainBody.AddForce(movementVector, ForceMode.VelocityChange);
+                }
+            }
+        }
+    }
+
+    private void DoRotation()
+    {
+        if (CurrentMovementStyle == MovementStyle.Dragging)
+        {
+            Quaternion cameraRotation = CameraController.Instance.transform.rotation;
+            Vector3 angle = new Vector3(0, 5, 0);
+
+            transform.RotateAround(InteractionController.Mouth.CurrentHeldBone.transform.position, Vector3.up, 1);
+        }
+        else if (CurrentMovementStyle != MovementStyle.Driving)
+        {
+            transform.rotation = GetRotation();
         }
     }
 
@@ -250,11 +271,9 @@ public class MovementController : Controller
 
         CurrentMovementStyle = movementStyle;
 
+        AnimationController.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded || movementStyle == MovementStyle.Dragging);
         AnimationController.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
-        AnimationController.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded);
         AnimationController.SetBool(MovementStyle.Driving.ToString(), movementStyle == MovementStyle.Driving);
-
-        rotateTowardsVelocity = CurrentMovementStyle != MovementStyle.Driving;
     }
 
     public void SetKinematic(bool kinematic)

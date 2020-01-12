@@ -903,7 +903,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   forceToRagdoll: 45
-  minForceToKnockOut: 10
+  minForceToKnockOut: 0
 --- !u!114 &1060903667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7843,6 +7843,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5346405898028794296}
     m_Modifications:
+    - target: {fileID: 5075546582602331919, guid: f1e6205500cc34744a9eb6757be97d1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Zookeeper Hat
+      objectReference: {fileID: 0}
     - target: {fileID: 4400495434908782904, guid: f1e6205500cc34744a9eb6757be97d1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7912,11 +7917,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5075546582602331919, guid: f1e6205500cc34744a9eb6757be97d1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Zookeeper Hat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e6205500cc34744a9eb6757be97d1e, type: 3}

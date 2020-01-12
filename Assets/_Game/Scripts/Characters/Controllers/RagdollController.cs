@@ -47,8 +47,6 @@ public class RagdollController : Controller
 
     private Collider mainCollider;
 
-    protected bool isKnockedOut = false;
-
     private void Start()
     {
         bodies = gameObject.GetComponentsInChildrenExcludingRoot<Rigidbody>();
@@ -100,7 +98,7 @@ public class RagdollController : Controller
         else if (MovementController.CurrentMovementState == MovementState.Ragdoll)
         {
             //check if the spine has stopped moving
-            if (!isKnockedOut && spineBody.velocity.magnitude < 0.1f && Time.time > ragdollTime)
+            if (MovementController.CurrentMovementState != MovementState.KnockedOut && spineBody.velocity.magnitude < 0.1f && Time.time > ragdollTime)
             {
                 SetRagdoll(false);
             }
