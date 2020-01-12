@@ -35,6 +35,8 @@ public class Taser : Weapon
     private int materialSwap = 0;
     private float stunTimer = 0;
 
+    private Quaternion pickUpRotation;
+
     public override void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
     {
         base.PickUpItem(parent, currentBodyPart, controller);
@@ -43,6 +45,8 @@ public class Taser : Weapon
         Rigidbody.isKinematic = false;
 
         Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+
+        pickUpRotation = transform.localRotation;
     }
 
     public override void DropItem()
@@ -65,6 +69,14 @@ public class Taser : Weapon
             tasingCharacter.Skeleton.gameObject.SetActive(materialSwap == 0);
 
             materialSwap = materialSwap == 0 ? 1 : 0;
+        }
+    }
+
+    private void Update()
+    {
+        if (Equiped)
+        {
+            transform.localRotation = pickUpRotation;
         }
     }
 
