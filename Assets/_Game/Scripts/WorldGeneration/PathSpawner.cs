@@ -68,9 +68,14 @@ public class PathSpawner : Singleton<PathSpawner>
             while (Vector3.Distance(PathGenerator.Instance.currentNode.pos, destinationNode.pos) > distUntilPrecisePlacement)
             {
                 confirmedPathNodes.Clear();
-
                 pathNodeCandidates.Clear();
+
                 pathNodeCandidates = GetPathNodeCandidates();
+
+                if(pathNodeCandidates == null)
+                {
+                    break;
+                }
 
                 List<Node> pathNodeCadidatesCopy = pathNodeCandidates;
                 List<Node> goodNodes = new List<Node>();
@@ -82,17 +87,24 @@ public class PathSpawner : Singleton<PathSpawner>
                     }
                 }
 
-                Node nextNode = destinationNode;
+                Node nextNode = null;
                 if (goodNodes != null)
                 {
                     nextNode = GetBestNodeForPath(goodNodes, destinationNode.pos);
                 }
 
-                confirmedPathNodes.Add(nextNode);
-                PathGenerator.Instance.currentNode = nextNode;
+                if (nextNode != null && Vector3.Distance(nextNode.pos, destinationNode.pos) < Vector3.Distance(PathGenerator.Instance.currentNode.pos, destinationNode.pos))
+                {
+                    confirmedPathNodes.Add(nextNode);
+                    PathGenerator.Instance.currentNode = nextNode;
 
-                PlacePath(confirmedPathNodes, pathPiece, parent);
-                confirmedPathNodes.Clear();
+                    PlacePath(confirmedPathNodes, pathPiece, parent);
+                    confirmedPathNodes.Clear();
+                }
+                else
+                {
+                    break;
+                }
             }
         }       
         return true;

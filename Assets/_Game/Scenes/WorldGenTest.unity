@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 89903616}
   - component: {fileID: 89903617}
   - component: {fileID: 89903609}
+  - component: {fileID: 89903618}
   - component: {fileID: 89903613}
   - component: {fileID: 89903615}
   - component: {fileID: 89903608}
@@ -450,7 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 1
   loadingCanvas: {fileID: 715611836}
-  mapSize: 50
+  mapSize: 100
   player: {fileID: 0}
   debugCanvas: {fileID: 986716333}
   ground: {fileID: 1272296752}
@@ -484,12 +485,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1848722286}
-  spawnCount: 2
+  spawnCount: 5
   collection:
   - {fileID: 848930544644408192, guid: 081f38600f00c2f40acbb95cc596445b, type: 3}
   minFencesPerSide: 2
   maxFencesPerSide: 4
-  zooBorder: 10
   conflictLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -554,6 +554,24 @@ MonoBehaviour:
   spawnCount: 5
   collection:
   - {fileID: 6788289808921904610, guid: 20e7feaeb9df86f499fd0f75ce9fbbdc, type: 3}
+  conflictLayer:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &89903618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89903606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a839550f996d464e840a1fc76d2a346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enclosures:
+  - {fileID: 5011567379467080404, guid: 5fd9b9e62d9dc104e955cfe76c60527a, type: 3}
+  zooBorder: 5
   conflictLayer:
     serializedVersion: 2
     m_Bits: 1

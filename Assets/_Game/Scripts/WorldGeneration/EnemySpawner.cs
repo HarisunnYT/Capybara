@@ -29,7 +29,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
         // check for object overlap
         if (Physics.OverlapBox(pos, new Vector3(spawnObject.MaxBounds(), Mathf.Infinity, spawnObject.MaxBounds()), rot, conflictLayer).Length > 0)
         {
-            Debug.Log("Colliders found, rerunning spawn for enemy");
+            //Debug.Log("Colliders found, rerunning spawn for enemy");
             SpreadEnemy();
         }
         else

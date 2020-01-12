@@ -38,7 +38,7 @@ public class ObjectSpawner : Singleton<ObjectSpawner>
         // check for object overlap
         if (Physics.OverlapBox(pos, new Vector3(spawnObject.MaxBounds(), Mathf.Infinity, spawnObject.MaxBounds()), rot, conflictLayer).Length > 0)
         {
-            Debug.Log("Colliders found, rerunning spawn for object");
+            //Debug.Log("Colliders found, rerunning spawn for object");
             SpreadItem();
         }
         else

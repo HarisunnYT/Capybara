@@ -38,7 +38,7 @@ public class BuildingSpawner : Singleton<BuildingSpawner>
         // check for object overlap
         if (Physics.OverlapBox(pos, new Vector3(spawnObject.MaxBounds(), Mathf.Infinity, spawnObject.MaxBounds()), rot, conflictLayer).Length > 0)
         {
-            Debug.Log("Colliders found, rerunning spawn for building");
+            //Debug.Log("Colliders found, rerunning spawn for building");
             SpreadBuilding();
         }
         else

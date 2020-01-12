@@ -26,11 +26,16 @@ public class WorldSeed : MonoBehaviour
         {
             seed = strSeed.GetHashCode();
         }
+        else if(seed.ToString().Length >= 3 && !forceRandom)
+        {
+
+        }
         else
         {
             seed = Random.Range(0, maxSeed);
         }
 
         Random.InitState(seed);
+        Debug.Log("Currently using the seed: " + seed);
     }
 }
