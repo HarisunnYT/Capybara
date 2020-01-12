@@ -36,7 +36,7 @@ public class AIMovementController : MovementController
         {
             SetMovementState(AIMovementState.Idle);
         }
-        else if (CurrentMovementState == MovementState.Ragdoll)
+        else if ((int)CurrentMovementState >= 3)
         {
             agent.ResetPath();
         }
@@ -64,7 +64,7 @@ public class AIMovementController : MovementController
 
     public void SetDestination(Vector3 position)
     {
-        if (CurrentMovementState == MovementState.Ragdoll)
+        if ((int)CurrentMovementState >= 3)
         {
             return;
         }

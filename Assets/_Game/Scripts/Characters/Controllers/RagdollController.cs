@@ -101,7 +101,7 @@ public class RagdollController : Controller
                 spineBody.transform.parent = metaRig;
             }
         }
-        else if (MovementController.CurrentMovementState == MovementState.Ragdoll)
+        else if ((int)MovementController.CurrentMovementState >= 3)
         {
             //check if the spine has stopped moving
             if (MovementController.CurrentMovementState != MovementState.KnockedOut && spineBody.velocity.magnitude < 0.1f && Time.time > ragdollTime)

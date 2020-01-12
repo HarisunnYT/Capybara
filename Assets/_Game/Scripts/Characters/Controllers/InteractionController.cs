@@ -16,7 +16,7 @@ public class InteractionController : Controller
 
     public bool TryPickUpObject(bool includeRagdollCharacters = false)
     {
-        if (MovementController.CurrentMovementState == MovementState.Ragdoll)
+        if ((int)MovementController.CurrentMovementState >= 2)
         {
             return false;
         }
@@ -52,6 +52,11 @@ public class InteractionController : Controller
 
     public Interactable FindClosestObject(float radius = -1, bool includeRagdollCharacters = false)
     {
+        if (MovementController == null)
+        {
+            return null;
+        }
+
         radius = radius == -1 ? interactionRadius : radius;
 
         Collider[] hitCols = Physics.OverlapSphere(transform.position, radius);
@@ -69,7 +74,7 @@ public class InteractionController : Controller
                         if (item is GrabbleBodyPiece && MovementController.CurrentMovementStyle == MovementStyle.Grounded)
                         {
                             //check if the grabble piece character is in ragdoll mode
-                            if (includeRagdollCharacters && ((GrabbleBodyPiece)item).CurrentController.MovementController.CurrentMovementState == MovementState.Ragdoll)
+                            if (includeRagdollCharacters && (int)((GrabbleBodyPiece)item).CurrentController.MovementController.CurrentMovementState >= 3)
                             {
                                 closestObject = item;
                             }

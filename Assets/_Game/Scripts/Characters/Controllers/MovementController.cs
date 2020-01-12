@@ -18,9 +18,9 @@ public enum MovementState
 {
     Moving,
     Idle,
-    Ragdoll,
     Stunned,
-    KnockedOut
+    Ragdoll,
+    KnockedOut,
 }
 
 public enum MovementStyle
@@ -89,10 +89,13 @@ public class MovementController : Controller
         Vector3 inputVec = GetInputVector(true);
         if (inputVec.x != 0 || inputVec.z != 0)
         {
-            DoRotation();
+            if ((int)CurrentMovementState < 2)
+            {
+                DoRotation();
 
-            lastInputVec = inputVec;
-            SetMovementState(MovementState.Moving);
+                lastInputVec = inputVec;
+                SetMovementState(MovementState.Moving);
+            }
         }
         else
         {
@@ -103,7 +106,10 @@ public class MovementController : Controller
                 knockBackSlerpDuration = float.MaxValue;
             }
 
-            SetMovementState(MovementState.Idle);
+            if ((int)CurrentMovementState < 2)
+            {
+                SetMovementState(MovementState.Idle);
+            }
         }
 
         float movementSpeed = GetMaxVelocity();

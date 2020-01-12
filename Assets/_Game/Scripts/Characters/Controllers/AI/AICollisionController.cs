@@ -9,7 +9,7 @@ public class AICollisionController : CollisionController
 
     protected override void CheckKnockoutForce(float collisionForce)
     {
-        if (collisionForce >= minForceToKnockOut)
+        if (collisionForce >= minForceToKnockOut && MovementController.CurrentMovementState == MovementState.Ragdoll)
         {
             ((AIRagdollController)RagdollController).KnockOut();
         }
