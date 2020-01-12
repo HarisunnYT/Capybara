@@ -16,6 +16,9 @@ public class CharacterController : Controller
     private Rigidbody[] spines;
     public Rigidbody[] Spines { get { return spines; } }
 
+    [SerializeField]
+    private Transform skeleton;
+    public Transform Skeleton { get { return skeleton; } }
 
     private void Start()
     {

@@ -17,7 +17,19 @@ public class Taser : Weapon
     [SerializeField]
     private float randomness = 90;
 
+    [Space()]
+    [SerializeField]
+    private float materialSwapDelay = 0.2f;
+    [SerializeField]
+    private Material stunMaterial;
+
     private CharacterController tasingCharacter;
+
+    private SkinnedMeshRenderer meshRenderer;
+    private Material originalMaterial;
+
+    private int materialSwap = 0;
+    private float stunTimer = 0;
 
     public override void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
     {
@@ -39,17 +51,35 @@ public class Taser : Weapon
         Rigidbody.constraints = RigidbodyConstraints.None;
     }
 
+    private void FixedUpdate()
+    {
+        if (tasingCharacter != null && Time.time > stunTimer)
+        {
+            stunTimer = Time.time + materialSwapDelay;
+
+            meshRenderer.material = materialSwap == 0 ? stunMaterial : originalMaterial;
+            tasingCharacter.Skeleton.gameObject.SetActive(materialSwap == 0);
+
+            materialSwap = materialSwap == 0 ? 1 : 0;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (Equiped && tasingCharacter == null && collision.gameObject.layer == LayerMask.NameToLayer("Character"))
         {
-            TaseCharacter(collision.gameObject.GetComponent<CharacterController>());
+            StartCoroutine(TaseCharacter(collision.gameObject.GetComponent<CharacterController>()));
         }
     }
 
-    private void TaseCharacter(CharacterController character)
+    private IEnumerator TaseCharacter(CharacterController character)
     {
         tasingCharacter = character;
+
+        character.AnimationController.SetTrigger("Star", true);
+        character.InteractionController.DropAllItems();
+
+        yield return new WaitForEndOfFrame();
 
         character.AnimationController.DisableAllBoneLayers(true);
 
@@ -58,11 +88,19 @@ public class Taser : Weapon
             bodyPart.transform.DOShakeRotation(stunDuration, strength, vibrato, randomness);
         }
 
-        Invoke("TaseFinished", stunDuration);
+        meshRenderer = character.GetComponentInChildren<SkinnedMeshRenderer>();
+        originalMaterial = meshRenderer.material;
+
+        yield return new WaitForSeconds(stunDuration);
+
+        TaseFinished();
     }
 
     private void TaseFinished()
     {
+        meshRenderer.material = originalMaterial;
+
+        tasingCharacter.CharacterController.Skeleton.gameObject.SetActive(false);
         tasingCharacter.AnimationController.DisableAllBoneLayers(false);
         tasingCharacter = null;
     }

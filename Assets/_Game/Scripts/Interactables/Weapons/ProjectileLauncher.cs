@@ -19,6 +19,20 @@ public class ProjectileLauncher : TwoHandedWeapon
     [SerializeField]
     private float knockBackForce;
 
+    public override void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
+    {
+        base.PickUpItem(parent, currentBodyPart, controller);
+
+        collider.enabled = false;
+    }
+
+    public override void DropItem()
+    {
+        base.DropItem();
+
+        collider.enabled = true;
+    }
+
     protected override void OnAttack()
     {
         LaunchProjectile();

@@ -58,6 +58,9 @@ public class AnimationController : Controller
     private float timer = 0;
 
     private bool isAnimating = true;
+    private float originalBoneMoveSpeed = 10;
+
+    private float boneMoveSpeed;
 
     protected override void Awake()
     {
@@ -65,6 +68,7 @@ public class AnimationController : Controller
 
         //we don't use this animator, this is just for creating animations
         editorAnimator.enabled = false;
+        boneMoveSpeed = originalBoneMoveSpeed;
 
         DisableAllBoneLayers(false);
     }
@@ -79,8 +83,8 @@ public class AnimationController : Controller
                 {
                     for (int i = 0; i < layer.MovingBones.Length; i++)
                     {
-                        layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, 10 * Time.deltaTime);
-                        layer.MovingBones[i].localRotation = Quaternion.Lerp(layer.MovingBones[i].localRotation, layer.AnimatingBones[i].localRotation, 10 * Time.deltaTime);
+                        layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, boneMoveSpeed * Time.deltaTime);
+                        layer.MovingBones[i].localRotation = Quaternion.Lerp(layer.MovingBones[i].localRotation, layer.AnimatingBones[i].localRotation, boneMoveSpeed * Time.deltaTime);
                     }
                 }
             }
@@ -114,6 +118,13 @@ public class AnimationController : Controller
         }
     }
 
+    public void DisableAnimation(bool disable)
+    {
+        isAnimating = !disable;
+    }
+
+    #region Setters
+
     public void SetAnimatorLayerWeight(AnimatorBodyPartLayer layer, float weight)
     {
         Animator.SetLayerWeight(Animator.GetLayerIndex(layer.ToString()), weight);
@@ -132,31 +143,57 @@ public class AnimationController : Controller
         }
     }
 
-    public void SetBool(string name, bool result)
+    public void SetBool(string name, bool result, bool forceInstantMovement = false)
     {
         Animator.SetBool(name, result);
+
+        if (forceInstantMovement)
+        {
+            StartCoroutine(InstantMovementDelay());
+        }
     }
 
-    public void SetFloat(string name, float value)
+    public void SetFloat(string name, float value, bool forceInstantMovement = false)
     {
         Animator.SetFloat(name, value);
+
+        if (forceInstantMovement)
+        {
+            StartCoroutine(InstantMovementDelay());
+        }
     }
 
-    public void SetTrigger(string name)
+    public void SetTrigger(string name, bool forceInstantMovement = false)
     {
         Animator.SetTrigger(name);
+
+        if (forceInstantMovement)
+        {
+            StartCoroutine(InstantMovementDelay());
+        }
     }
 
-    public void SetAnimatorBools(AnimatorBool[] bools)
+    public void SetAnimatorBools(AnimatorBool[] bools, bool forceInstantMovement = false)
     {
         foreach(var b in bools)
         {
             SetBool(b.Name, b.Result);
         }
+
+        if (forceInstantMovement)
+        {
+            StartCoroutine(InstantMovementDelay());
+        }
     }
 
-    public void DisableAnimation(bool disable)
+    #endregion
+
+    private IEnumerator InstantMovementDelay()
     {
-        isAnimating = !disable;
+        boneMoveSpeed = float.MaxValue;
+
+        yield return new WaitForEndOfFrame();
+
+        boneMoveSpeed = originalBoneMoveSpeed;
     }
 }

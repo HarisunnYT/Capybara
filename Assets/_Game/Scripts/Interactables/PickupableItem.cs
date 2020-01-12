@@ -12,9 +12,21 @@ public class PickupableItem : Interactable
 
     private Animator animator;
 
+    private const float pickUpDelay = 1;
+    private float timer = float.MaxValue;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (Time.time > timer)
+        {
+            Equiped = false;
+            timer = float.MaxValue;
+        }
     }
 
     public virtual void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
@@ -61,7 +73,7 @@ public class PickupableItem : Interactable
         transform.parent = null;
         Rigidbody.isKinematic = false;
 
-        Equiped = false;
+        timer = Time.time + pickUpDelay;
 
         if (animator)
         {
