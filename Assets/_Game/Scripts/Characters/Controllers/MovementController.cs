@@ -19,7 +19,9 @@ public enum MovementState
     Moving,
     Idle,
     Stunned,
-    Ragdoll,
+
+
+    Ragdoll = 100,
     KnockedOut,
 }
 
@@ -106,7 +108,7 @@ public class MovementController : Controller
                 knockBackSlerpDuration = float.MaxValue;
             }
 
-            if ((int)CurrentMovementState < 2)
+            if ((int)CurrentMovementState <= (int)MovementState.Moving)
             {
                 SetMovementState(MovementState.Idle);
             }

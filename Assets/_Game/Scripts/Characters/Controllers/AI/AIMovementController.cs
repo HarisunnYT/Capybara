@@ -64,7 +64,7 @@ public class AIMovementController : MovementController
 
     public void SetDestination(Vector3 position)
     {
-        if ((int)CurrentMovementState >= 3)
+        if ((int)CurrentMovementState >= (int)MovementState.Ragdoll)
         {
             return;
         }

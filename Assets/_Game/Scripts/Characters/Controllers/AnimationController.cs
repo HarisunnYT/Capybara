@@ -75,7 +75,7 @@ public class AnimationController : Controller
 
     private void LateUpdate()
     {
-        if ((int)MovementController.CurrentMovementState < 2 && isAnimating)
+        if ((int)MovementController.CurrentMovementState <= (int)MovementState.Moving && isAnimating)
         {
             foreach(var layer in boneLayers)
             {

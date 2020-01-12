@@ -16,7 +16,7 @@ public class InteractionController : Controller
 
     public bool TryPickUpObject(bool includeRagdollCharacters = false)
     {
-        if ((int)MovementController.CurrentMovementState >= 2)
+        if ((int)MovementController.CurrentMovementState >= (int)MovementState.Stunned)
         {
             return false;
         }
@@ -74,7 +74,7 @@ public class InteractionController : Controller
                         if (item is GrabbleBodyPiece && MovementController.CurrentMovementStyle == MovementStyle.Grounded)
                         {
                             //check if the grabble piece character is in ragdoll mode
-                            if (includeRagdollCharacters && (int)((GrabbleBodyPiece)item).CurrentController.MovementController.CurrentMovementState >= 3)
+                            if (includeRagdollCharacters && (int)((GrabbleBodyPiece)item).CurrentController.MovementController.CurrentMovementState >= (int)MovementState.Ragdoll)
                             {
                                 closestObject = item;
                             }
