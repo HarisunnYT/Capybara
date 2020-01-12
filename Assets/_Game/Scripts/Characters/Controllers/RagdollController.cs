@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RagdollController : Controller
@@ -35,7 +36,7 @@ public class RagdollController : Controller
 
     public Collider[] Colliders { get; private set; }
 
-    private Rigidbody[] bodies;
+    private List<Rigidbody> bodies;
 
     private List<BoneData> lastRagdollBoneData = new List<BoneData>();
 
@@ -49,7 +50,7 @@ public class RagdollController : Controller
 
     private void Start()
     {
-        bodies = gameObject.GetComponentsInChildrenExcludingRoot<Rigidbody>();
+        bodies = gameObject.GetComponentsInChildrenExcludingRoot<Rigidbody>().ToList();
         mainCollider = GetComponent<Collider>();
 
         Colliders = gameObject.GetComponentsInChildrenExcludingRoot<Collider>();
@@ -58,6 +59,11 @@ public class RagdollController : Controller
         foreach (var col in Colliders)
         {
             Physics.IgnoreCollision(col, mainCollider, true);
+        }
+
+        if (InteractionController.Mouth != null)
+        {
+            bodies.Remove(InteractionController.Mouth.Rigidbody);
         }
 
         SetRagdoll(false);
