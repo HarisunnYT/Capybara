@@ -75,7 +75,7 @@ public class AnimationController : Controller
 
     private void LateUpdate()
     {
-        if ((int)MovementController.CurrentMovementState <= (int)MovementState.Moving && isAnimating)
+        if ((int)MovementController.CurrentMovementState <= (int)MovementState.Stunned && isAnimating)
         {
             foreach(var layer in boneLayers)
             {
@@ -143,56 +143,41 @@ public class AnimationController : Controller
         }
     }
 
-    public void SetBool(string name, bool result, bool forceInstantMovement = false)
+    public void SetBool(string name, bool result)
     {
         Animator.SetBool(name, result);
-
-        if (forceInstantMovement)
-        {
-            StartCoroutine(InstantMovementDelay());
-        }
     }
 
-    public void SetFloat(string name, float value, bool forceInstantMovement = false)
+    public void SetFloat(string name, float value)
     {
         Animator.SetFloat(name, value);
-
-        if (forceInstantMovement)
-        {
-            StartCoroutine(InstantMovementDelay());
-        }
     }
 
-    public void SetTrigger(string name, bool forceInstantMovement = false)
+    public void SetTrigger(string name)
     {
         Animator.SetTrigger(name);
-
-        if (forceInstantMovement)
-        {
-            StartCoroutine(InstantMovementDelay());
-        }
     }
 
-    public void SetAnimatorBools(AnimatorBool[] bools, bool forceInstantMovement = false)
+    public void SetAnimatorBools(AnimatorBool[] bools)
     {
         foreach(var b in bools)
         {
             SetBool(b.Name, b.Result);
         }
-
-        if (forceInstantMovement)
-        {
-            StartCoroutine(InstantMovementDelay());
-        }
     }
 
     #endregion
 
-    private IEnumerator InstantMovementDelay()
+    public void SetInstantBoneMovement(float duration)
+    {
+        StartCoroutine(InstantMovementDelay(duration));
+    }
+
+    private IEnumerator InstantMovementDelay(float duration)
     {
         boneMoveSpeed = float.MaxValue;
 
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(duration);
 
         boneMoveSpeed = originalBoneMoveSpeed;
     }

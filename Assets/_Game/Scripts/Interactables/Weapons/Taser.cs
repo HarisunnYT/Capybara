@@ -92,22 +92,22 @@ public class Taser : Weapon
     {
         tasingCharacter = character;
 
-        character.AnimationController.SetTrigger("Star", true);
+        character.MovementController.SetMovementState(MovementState.Stunned);
         character.InteractionController.DropAllItems();
 
-        character.MovementController.SetMovementState(MovementState.Stunned);
+        meshRenderer = character.GetComponentInChildren<SkinnedMeshRenderer>();
+        originalMaterial = meshRenderer.material;
+
+        character.AnimationController.SetInstantBoneMovement(0);
 
         yield return new WaitForEndOfFrame();
 
         character.AnimationController.DisableAllBoneLayers(true);
 
-        foreach(var bodyPart in character.AnimationController.MovingBones)
+        foreach (var bodyPart in character.AnimationController.MovingBones)
         {
             bodyPart.transform.DOShakeRotation(stunDuration, strength, vibrato, randomness);
         }
-
-        meshRenderer = character.GetComponentInChildren<SkinnedMeshRenderer>();
-        originalMaterial = meshRenderer.material;
 
         yield return new WaitForSeconds(stunDuration);
 

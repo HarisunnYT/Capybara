@@ -16,8 +16,8 @@ public enum BodyPartType
 
 public enum MovementState
 {
-    Moving,
     Idle,
+    Moving,
     Stunned,
 
 

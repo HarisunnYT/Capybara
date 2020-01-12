@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InteractionController : Controller
@@ -9,8 +10,10 @@ public class InteractionController : Controller
 
     public Mouth Mouth { get; private set; }
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
+
         Mouth = GetComponentInChildren<Mouth>();
     }
 
@@ -71,7 +74,7 @@ public class InteractionController : Controller
                 {
                     if (closestObject == null || Vector3.Distance(hitCols[i].transform.position, transform.position) < Vector3.Distance(hitCols[i].transform.position, closestObject.transform.position))
                     {
-                        if (item is GrabbleBodyPiece && MovementController.CurrentMovementStyle == MovementStyle.Grounded)
+                        if (item is GrabbleBodyPiece)
                         {
                             //check if the grabble piece character is in ragdoll mode
                             if (includeRagdollCharacters && (int)((GrabbleBodyPiece)item).CurrentController.MovementController.CurrentMovementState >= (int)MovementState.Ragdoll)
