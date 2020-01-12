@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
   m_Name: BT_ZK_Stunned
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-238.0,"y":-595.0},"zoomFactor":0.6783084,"nodes":[{"_position":{"x":835.0,"y":1159.0},"_comment":"Do
+  _serializedGraph: '{"version":2.97,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-256.0,"y":-609.0},"zoomFactor":0.6783084,"nodes":[{"_position":{"x":835.0,"y":1159.0},"_comment":"Do
     nothing while being stunned, and then have a check to see when no longer stunned,
     then do.. something. Thinking at the moment just end it and have it go right into
     pickup?\n","$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_position":{"x":672.0,"y":1263.0},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"3"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIMovementController|get_CurrentMovementState|MovementState","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[MovementState,
