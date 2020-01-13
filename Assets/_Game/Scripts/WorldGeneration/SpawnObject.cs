@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    public enum ObjectType { Environment, Enemy, Building, Fence, Pickup };
-    public ObjectType objectType;
+    //public enum ObjectType { Environment, Enemy, Building, Fence, Pickup };
+    //public ObjectType objectType;
 
     public Vector3 bounds = new Vector3(1, 0, 1);
 
@@ -18,5 +18,10 @@ public class SpawnObject : MonoBehaviour
     public float MaxBounds()
     {
         return Mathf.Max(bounds.x, bounds.z);
+    }
+
+    public float Barrier()
+    {
+        return MaxBounds() * 2;
     }
 }

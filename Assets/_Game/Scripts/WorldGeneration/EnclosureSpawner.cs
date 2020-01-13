@@ -25,31 +25,15 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
     // NEW SYSTEM
     public void SpawnPrefabbedEnclosure(Vector3 pos)
     {
-        //xWidth = Random.Range(minFencesPerSide, maxFencesPerSide);
-        //zWidth = Random.Range(minFencesPerSide, maxFencesPerSide);
-        xWidth = 4;
-        zWidth = 3;
+        xWidth = Random.Range(minFencesPerSide, maxFencesPerSide + 1);
+        zWidth = Random.Range(minFencesPerSide, maxFencesPerSide + 1);
 
         SpawnObject enclosure = EnclosureManager.Instance.GetRandomEnclosureBySize(xWidth, zWidth);
 
         Instantiate(enclosure, pos, Quaternion.identity, parent);
         NodeManager.Instance.pathDests.Add(NodeManager.Instance.GetNodeAtPosition(new Vector3(pos.x, 0, (pos.z - (zWidth * fenceUnitLength)) - 1)));
 
-        SetEnclosureNodes(new Vector3(pos.x - ((xWidth * fenceUnitLength) / 2), pos.y, pos.z - (zWidth * fenceUnitLength) / 2));
-    }
-
-    private void SetEnclosureNodes(Vector3 pos)
-    {
-        List<Vector3> enclosureNodes = new List<Vector3>();
-
-        for (int i = 0; i < xWidth * fenceUnitLength; i++)
-        {
-            for (int z = 0; z < zWidth * fenceUnitLength; z++)
-            {
-                enclosureNodes.Add(new Vector3(pos.x + i, pos.y, pos.z + z));
-            }
-        }
-        NodeManager.Instance.SetEnclosure(enclosureNodes);
+        NodeManager.Instance.SetEnclosureNodes(new Vector3(pos.x - ((xWidth * fenceUnitLength) / 2), pos.y, pos.z - (zWidth * fenceUnitLength) / 2), xWidth, zWidth, fenceUnitLength);
     }
 
     // OLD SYSTEM
@@ -91,7 +75,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
             SpawnFenceOnZ(fencePiece, pos, Quaternion.Euler(0, -90, 0), true);                
             pos = new Vector3(pos.x, pos.y, pos.z - fencePiece.GetRotatedBounds().z);
         }
-        SetEnclosureNodes(initPos);
+        NodeManager.Instance.SetEnclosureNodes(initPos, xWidth, zWidth, fenceUnitLength);
 
         Node pathDest = enclosurePathNodes[Random.Range(0, enclosurePathNodes.Count)];
         if (pathDest != null && (pathDest.enclosure || pathDest.used))

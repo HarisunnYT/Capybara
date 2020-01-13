@@ -14,15 +14,16 @@ public class EnclosureManager : Singleton<EnclosureManager>
 
     public void EnclosureSpawn(int index, int mapSize)
     {
-        Node node = NodeManager.Instance.GetRandomUnusedNodeInRange(new Vector3(Mathf.Clamp(zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - index)), 1, mapSize * .75f), 0,
-            1 + Mathf.Clamp(zooBorder, 1, mapSize)),
-                new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - index), 1, mapSize), 0, Mathf.Clamp(mapSize - zooBorder, 1, mapSize)));
+        //Node node = NodeManager.Instance.GetRandomUnusedNodeInRange(new Vector3(Mathf.Clamp(zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - index)), 1, mapSize * .75f), 0,
+        //    1 + Mathf.Clamp(zooBorder, 1, mapSize)),
+        //        new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - index), 1, mapSize), 0, Mathf.Clamp(mapSize - zooBorder, 1, mapSize)));
 
-        while (node == null && Physics.OverlapBox(node.pos, new Vector3(EnclosureSpawner.Instance.maxFencesPerSide, Mathf.Infinity, EnclosureSpawner.Instance.maxFencesPerSide), Quaternion.identity, conflictLayer).Length > 0)
+        Node node = NodeManager.Instance.GetRandomUnusedNode();
+
+        while (Physics.OverlapSphere(node.pos, EnclosureSpawner.Instance.maxFencesPerSide * 2, conflictLayer).Length > 0)
         {
-            node = NodeManager.Instance.GetRandomUnusedNodeInRange(new Vector3(Mathf.Clamp(zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - index)), 1, mapSize * .75f), 0,
-            1 + Mathf.Clamp(zooBorder, 1, mapSize)),
-                new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - index), 1, mapSize), 0, Mathf.Clamp(mapSize - zooBorder, 1, mapSize)));
+            Debug.Log("Enclosure collision");
+            node = NodeManager.Instance.GetRandomUnusedNode();
         }
 
         //EnclosureSpawner.Instance.SpawnEnclosure(node);

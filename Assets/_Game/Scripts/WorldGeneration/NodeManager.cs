@@ -71,12 +71,6 @@ public class NodeManager : Singleton<NodeManager>
         return node;
     }
 
-    public Node GetNodeAtPositionWithString(string pos)
-    {
-        Node node = nodes.Find(opt => opt.name == pos);
-        return node;
-    }
-
     public List<Node> GetNodesInRange(Vector3 posOne, Vector3 posTwo)
     {
         int lowerX = Mathf.RoundToInt(Mathf.Min(posOne.x, posTwo.x));
@@ -109,11 +103,15 @@ public class NodeManager : Singleton<NodeManager>
         GetNodeAtPosition(pos).path = true;
     }
 
-    public void SetNodesUsed(List<Vector3> positions)
+    public void SetAreaUsed(List<Vector3> positions)
     {
         foreach (Vector3 pos in positions)
         {
-            SetNodeUsed(pos);
+            if (GetNodeAtPosition(pos) != null && !GetNodeAtPosition(pos).used)
+            {
+                SetNodeUsed(pos);
+                GetNodeAtPosition(pos).used = true;
+            }
         }
     }
 
@@ -165,5 +163,33 @@ public class NodeManager : Singleton<NodeManager>
         node = GetNodeAtPosition(new Vector3(x, 0, z));  
 
         return node;
+    }
+
+    public void SetObjectNodesUsed(Vector3 pos, int xWidth, int zWidth, int unitModifier)
+    {
+        List<Vector3> nodes = new List<Vector3>();
+
+        for (int i = 0; i < xWidth * unitModifier; i++)
+        {
+            for (int z = 0; z < zWidth * unitModifier; z++)
+            {
+                nodes.Add(new Vector3(pos.x + i, pos.y, pos.z + z));
+            }
+        }
+        SetAreaUsed(nodes);
+    }
+
+    public void SetEnclosureNodes(Vector3 pos, int xWidth, int zWidth, int unitModifier)
+    {
+        List<Vector3> enclosureNodes = new List<Vector3>();
+
+        for (int i = 0; i < xWidth * unitModifier; i++)
+        {
+            for (int z = 0; z < zWidth * unitModifier; z++)
+            {
+                enclosureNodes.Add(new Vector3(pos.x + i, pos.y, pos.z + z));
+            }
+        }
+        SetEnclosure(enclosureNodes);
     }
 }

@@ -73,13 +73,14 @@ public class WorldGenerator : MonoBehaviour
     private void DelayedObjectSpawn()
     {
         BuildingSpawner.Instance.SpawnBuildings();
-        ObjectSpawner.Instance.SpawnObjects();
-
+        
         DelayedEnemySpawn();
     }
 
     private void DelayedEnemySpawn()
     {
+        ObjectSpawner.Instance.SpawnObjects();
+
         for (int i = 0; i < EnemySpawner.Instance.spawnCount; i++)
         {
             EnemySpawner.Instance.SpreadEnemy();
@@ -89,7 +90,7 @@ public class WorldGenerator : MonoBehaviour
     }
 
     private void DelayedPathSpawn()
-    {
+    {      
         PathGenerator.Instance.DrawPath();
     }
 

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 5fba5f8ed405760499efedf054493750,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -419,12 +419,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 61793571}
-  spawnCount: 30
+  spawnCount: 120
   collection:
   - {fileID: 7955399454243516601, guid: 4fb856aa486383949b74976effc019fd, type: 3}
   conflictLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32768
 --- !u!114 &89903610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 1
   loadingCanvas: {fileID: 715611836}
-  mapSize: 100
+  mapSize: 200
   player: {fileID: 0}
   debugCanvas: {fileID: 986716333}
   ground: {fileID: 1272296752}
@@ -485,14 +485,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1848722286}
-  spawnCount: 5
+  spawnCount: 10
   collection:
   - {fileID: 848930544644408192, guid: 081f38600f00c2f40acbb95cc596445b, type: 3}
-  minFencesPerSide: 2
+  minFencesPerSide: 3
   maxFencesPerSide: 4
   conflictLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32768
 --- !u!114 &89903614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,12 +518,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 775292085}
-  spawnCount: 5
+  spawnCount: 20
   collection:
   - {fileID: 5529489542169120618, guid: 7dc2a31d86d682045bb0e35fdad0e5d4, type: 3}
   conflictLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32768
 --- !u!114 &89903616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,12 +551,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 880255257}
-  spawnCount: 5
+  spawnCount: 10
   collection:
   - {fileID: 6788289808921904610, guid: 20e7feaeb9df86f499fd0f75ce9fbbdc, type: 3}
   conflictLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32768
 --- !u!114 &89903618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,10 +571,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enclosures:
   - {fileID: 5011567379467080404, guid: 5fd9b9e62d9dc104e955cfe76c60527a, type: 3}
+  - {fileID: 6030442550509953282, guid: e163ef05c14162740802215dd0cc54ce, type: 3}
+  - {fileID: 4764420839156741222, guid: 333a080cf0181314494205d2cab8e1ae, type: 3}
+  - {fileID: 1415457020988730676, guid: 743f5d68fe0654b40b8ed176279f5571, type: 3}
   zooBorder: 5
   conflictLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32768
 --- !u!1 &614753844
 GameObject:
   m_ObjectHideFlags: 0

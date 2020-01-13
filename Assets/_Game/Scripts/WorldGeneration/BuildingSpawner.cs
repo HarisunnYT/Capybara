@@ -15,35 +15,33 @@ public class BuildingSpawner : Singleton<BuildingSpawner>
     [SerializeField]
     private LayerMask conflictLayer;
 
+    private int[] rotations = { 0, 90, 180, 270 };
+
     public void SpawnBuildings()
     {
         for (int i = 0; i < spawnCount; i++)
         {
-            SpreadBuilding();
+            PickBuilding();
         }
     }
 
-    private void SpreadBuilding()
-    {
-        Vector3 pos = NodeManager.Instance.GetRandomUnusedNode().pos;
-        PickBuilding(pos);
-    }
-
-    private void PickBuilding(Vector3 pos)
+    private bool PickBuilding()
     {
         int index = Random.Range(0, collection.Length);
-        Quaternion rot = Quaternion.Euler(-90, Random.Range(0, 360), 0);
         SpawnObject spawnObject = collection[index];
 
-        // check for object overlap
-        if (Physics.OverlapBox(pos, new Vector3(spawnObject.MaxBounds(), Mathf.Infinity, spawnObject.MaxBounds()), rot, conflictLayer).Length > 0)
+        Quaternion rot = Quaternion.Euler(-90, rotations[Random.Range(0, rotations.Length)], 0);
+        Vector3 pos = NodeManager.Instance.GetRandomUnusedNode().pos;
+
+        while (Physics.OverlapBox(pos, new Vector3(spawnObject.Barrier(), 0, spawnObject.Barrier()), Quaternion.identity, conflictLayer).Length > 0)
         {
-            //Debug.Log("Colliders found, rerunning spawn for building");
-            SpreadBuilding();
+            Debug.Log("Building collision");
+            pos = NodeManager.Instance.GetRandomUnusedNode().pos;
         }
-        else
-        {
-            GameObject obj = Instantiate(collection[index].gameObject, pos, rot, parent);
-        }
+
+        GameObject obj = Instantiate(collection[index].gameObject, pos, rot, parent);
+        NodeManager.Instance.SetObjectNodesUsed(new Vector3(pos.x - (spawnObject.MaxBounds() / 2), 0, pos.z - (spawnObject.MaxBounds() / 2)), Mathf.RoundToInt(spawnObject.MaxBounds()), Mathf.RoundToInt(spawnObject.MaxBounds()), 1);
+
+        return true;
     }
 }

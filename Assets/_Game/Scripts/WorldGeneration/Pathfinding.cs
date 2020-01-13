@@ -22,7 +22,7 @@ public class Pathfinding : Singleton<Pathfinding>
         {
             for (int z = 1; z < WorldGenerator.instance.mapSize; z++)
             {
-                Node pathNode = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(x, 0, z).ToString());
+                Node pathNode = NodeManager.Instance.GetNodeAtPosition(new Vector3(x, 0, z));
                 pathNode.gCost = int.MaxValue;
                 pathNode.CalculateFCost();
                 pathNode.cameFromNode = null;
@@ -121,20 +121,20 @@ public class Pathfinding : Singleton<Pathfinding>
         if (node.pos.x - 1 >= 1)
         {
             // left
-            Node nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x - 1, 0, node.pos.z).ToString());
+            Node nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x - 1, 0, node.pos.z));
             if (nodeCandidate != null && !nodeCandidate.used)
                 neighbourList.Add(nodeCandidate);
             // left down
             if (node.pos.z - 1 >= 1)
             {
-                nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x - 1, 0, node.pos.z - 1).ToString());
+                nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x - 1, 0, node.pos.z - 1));
                 if (nodeCandidate != null && !nodeCandidate.used)
                     neighbourList.Add(nodeCandidate);
             }
             // left up
             if (node.pos.z + 1 < WorldGenerator.instance.mapSize)
             {
-                nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x - 1, 0, node.pos.z + 1).ToString());
+                nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x - 1, 0, node.pos.z + 1));
                 if (nodeCandidate != null && !nodeCandidate.used)
                     neighbourList.Add(nodeCandidate);
             }
@@ -142,20 +142,20 @@ public class Pathfinding : Singleton<Pathfinding>
         if (node.pos.x + 1 < WorldGenerator.instance.mapSize)
         {
             // right
-            Node nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x + 1, 0, node.pos.z).ToString());
+            Node nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x + 1, 0, node.pos.z));
             if (nodeCandidate != null && !nodeCandidate.used)
                 neighbourList.Add(nodeCandidate);
             // right down
             if (node.pos.z - 1 >= 1)
             {
-                nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x + 1, 0, node.pos.z - 1).ToString());
+                nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x + 1, 0, node.pos.z - 1));
                 if (nodeCandidate != null && !nodeCandidate.used)
                     neighbourList.Add(nodeCandidate);
             }
             // right up
             if (node.pos.z + 1 < WorldGenerator.instance.mapSize)
             {
-                nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x + 1, 0, node.pos.z + 1).ToString());
+                nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x + 1, 0, node.pos.z + 1));
                 if (nodeCandidate != null && !nodeCandidate.used)
                     neighbourList.Add(nodeCandidate);
             }
@@ -163,14 +163,14 @@ public class Pathfinding : Singleton<Pathfinding>
         // down
         if (node.pos.z - 1 >= 1)
         {
-            Node nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x, 0, node.pos.y - 1).ToString());
+            Node nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x, 0, node.pos.y - 1));
             if (nodeCandidate != null && !nodeCandidate.used)
                 neighbourList.Add(nodeCandidate);
         }
         // up
         if (node.pos.y + 1 < WorldGenerator.instance.mapSize)
         {
-            Node nodeCandidate = NodeManager.Instance.GetNodeAtPositionWithString(new Vector3(node.pos.x, 0, node.pos.y + 1).ToString());
+            Node nodeCandidate = NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x, 0, node.pos.y + 1));
             if (nodeCandidate != null && !nodeCandidate.used)
                 neighbourList.Add(nodeCandidate);
         }
