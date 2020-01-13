@@ -75,7 +75,7 @@ public class MovementController : Controller
     {
         AnimationController.SetFloat("MovementSpeed", MainBody.velocity.magnitude);
 
-        if (CurrentMovementState != MovementState.Ragdoll)
+        if ((int)CurrentMovementState < (int)MovementState.Stunned)
         {
             Move();
         }

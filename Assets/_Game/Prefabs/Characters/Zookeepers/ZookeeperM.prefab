@@ -3830,6 +3830,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c802375d494ff74aafce4e7a9322c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetBones:
+  - {fileID: 2436399384350737865}
+  - {fileID: 6633607702087604512}
+  - {fileID: 4220641721648816544}
+  - {fileID: 8497837383008869687}
+  - {fileID: 8493568111886815756}
+  - {fileID: 1882910469561348472}
+  - {fileID: 1098036896552758440}
+  - {fileID: 7678095940790175976}
+  - {fileID: 5363430623375869001}
+  - {fileID: 2274208629624405472}
+  - {fileID: 721590250014999989}
+  - {fileID: 2442962589455843439}
+  - {fileID: 1568492764676143133}
+  - {fileID: 4222183465028469304}
+  - {fileID: 8087330654273781418}
+  - {fileID: 1518043800336030196}
+  - {fileID: 984812513948416047}
+  - {fileID: 6307275052417774583}
+  - {fileID: 3982642802117195480}
+  - {fileID: 5346405898028794296}
+  - {fileID: 2886162373092282173}
+  - {fileID: 8962461218625454671}
+  - {fileID: 4129920226351958568}
+  - {fileID: 429794662852663216}
+  - {fileID: 3458925100468379692}
   skeletonBones:
   - {fileID: 6293065400583277815}
   - {fileID: 8236890873329470673}
@@ -7847,6 +7873,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5346405898028794296}
     m_Modifications:
+    - target: {fileID: 5075546582602331919, guid: f1e6205500cc34744a9eb6757be97d1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Zookeeper Hat
+      objectReference: {fileID: 0}
     - target: {fileID: 4400495434908782904, guid: f1e6205500cc34744a9eb6757be97d1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7916,11 +7947,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5075546582602331919, guid: f1e6205500cc34744a9eb6757be97d1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Zookeeper Hat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e6205500cc34744a9eb6757be97d1e, type: 3}

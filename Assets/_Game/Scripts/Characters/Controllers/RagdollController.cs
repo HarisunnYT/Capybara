@@ -95,7 +95,7 @@ public class RagdollController : Controller
             if (normalizedTime > 0.99f)
             {
                 returningFromRagdoll = false;
-                MovementController.SetMovementState(previousMovementState);
+                MovementController.SetMovementState(MovementState.Idle);
                 AnimationController.Animator.enabled = true;
 
                 spineBody.transform.parent = metaRig;
@@ -125,7 +125,7 @@ public class RagdollController : Controller
 
         //if we are trying to ragdoll and it's already ragdolling, or stop ragdoll and it isn't ragdolling, do nothing
         if ((ragdoll && MovementController.CurrentMovementState == MovementState.Ragdoll) ||
-           (!ragdoll && MovementController.CurrentMovementState != MovementState.Ragdoll))
+           (!ragdoll && (int)MovementController.CurrentMovementState < (int)MovementState.Ragdoll))
         {
             return;
         }

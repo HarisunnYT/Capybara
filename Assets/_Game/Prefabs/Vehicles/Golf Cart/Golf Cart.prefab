@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &320610737752602217
+--- !u!1 &1410301362383850447
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,155 +8,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4473647778813726435}
-  - component: {fileID: 5677139463858565069}
-  - component: {fileID: 7607859896253143235}
+  - component: {fileID: 2722773717254240732}
   m_Layer: 0
-  m_Name: WheelFrontRight
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4473647778813726435
+--- !u!4 &2722773717254240732
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320610737752602217}
-  m_LocalRotation: {x: -0.6861774, y: 0.0059941076, z: -0.00635405, w: 0.7273819}
-  m_LocalPosition: {x: 1.231, y: 0.401, z: 1.404}
-  m_LocalScale: {x: 1.4, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6756830693064878276}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5677139463858565069
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320610737752602217}
-  m_Mesh: {fileID: 4300046, guid: ed47c5a28308f4d73a626dd8c00027b9, type: 3}
---- !u!23 &7607859896253143235
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320610737752602217}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7019f4a4500e94a4b8f2f3a873bee4e3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!1 &835966607025521595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6540778459565903950}
-  - component: {fileID: 8662582110887869870}
-  - component: {fileID: 7185039127600279196}
-  m_Layer: 0
-  m_Name: WheelFrontLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6540778459565903950
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835966607025521595}
-  m_LocalRotation: {x: 0.88652587, y: -0.010119371, z: -0.005279707, w: 0.4625383}
-  m_LocalPosition: {x: -1.24, y: 0.44, z: 1.4}
-  m_LocalScale: {x: 1.4, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6756830693064878276}
+  m_GameObject: {fileID: 1410301362383850447}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5743601238121605432}
+  m_Father: {fileID: 8390347793774335268}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8662582110887869870
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835966607025521595}
-  m_Mesh: {fileID: 4300048, guid: ed47c5a28308f4d73a626dd8c00027b9, type: 3}
---- !u!23 &7185039127600279196
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835966607025521595}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7019f4a4500e94a4b8f2f3a873bee4e3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!1 &1539513568316590332
+--- !u!1 &3117869202401001207
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,79 +39,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3822373705878884155}
+  - component: {fileID: 4861051521196789522}
+  - component: {fileID: 1866676591842831348}
+  - component: {fileID: 1529869827570008436}
   m_Layer: 0
-  m_Name: WheelControllers
+  m_Name: golf_cart_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3822373705878884155
+--- !u!4 &4861051521196789522
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539513568316590332}
-  m_LocalRotation: {x: 0.005371718, y: 0.7032627, z: 0.010109829, w: 0.71083796}
-  m_LocalPosition: {x: -1.89, y: -4.93, z: -0.12}
-  m_LocalScale: {x: 3, y: 3, z: 3}
-  m_Children:
-  - {fileID: 1626776656670961854}
-  - {fileID: 7507544379639819726}
-  - {fileID: 7168615145712919351}
-  - {fileID: 3998025202700221668}
-  m_Father: {fileID: 8789012702926964354}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2283266788029731084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1267208806888756666}
-  - component: {fileID: 2006009734911295849}
-  - component: {fileID: 7130436193933618585}
-  m_Layer: 0
-  m_Name: default
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1267208806888756666
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2283266788029731084}
+  m_GameObject: {fileID: 3117869202401001207}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.05, y: -1.96, z: 0.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8789012702926964354}
+  m_Father: {fileID: 19685902565048635}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2006009734911295849
+--- !u!33 &1866676591842831348
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2283266788029731084}
-  m_Mesh: {fileID: -2432090755550338912, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
---- !u!23 &7130436193933618585
+  m_GameObject: {fileID: 3117869202401001207}
+  m_Mesh: {fileID: 8773267821845978420, guid: de1b2f278498f934d808dc96e2228a7c, type: 3}
+--- !u!23 &1529869827570008436
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2283266788029731084}
+  m_GameObject: {fileID: 3117869202401001207}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -247,14 +88,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6443035220513836574, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
-  - {fileID: -8911499558433741390, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
-  - {fileID: 6455781528844964010, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
-  - {fileID: -3324096961576636649, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
-  - {fileID: -2669957238963622279, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
-  - {fileID: 269840283077852131, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
-  - {fileID: 2646190618815262879, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
-  - {fileID: -364905699845747727, guid: 386b8e777ef3ea845b900a54d0146cc6, type: 3}
+  - {fileID: 2100000, guid: 4cd12aa7c9808064fadded5714ec5f9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,7 +109,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &2643500734424333264
+--- !u!1 &3899741114184233768
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,1568 +117,76 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3998025202700221668}
-  - component: {fileID: 1349325738356304672}
+  - component: {fileID: 19685902565048635}
   m_Layer: 0
-  m_Name: ControllerRearRight
+  m_Name: BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3998025202700221668
+--- !u!4 &19685902565048635
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2643500734424333264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.131, y: 0.593, z: -1.12}
+  m_GameObject: {fileID: 3899741114184233768}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.76, y: 2, z: -0.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4861051521196789522}
+  m_Father: {fileID: 8390347793340784705}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4633262858548868867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5743601238121605432}
+  - component: {fileID: 7671606541861387124}
+  - component: {fileID: 4000216529241444361}
+  m_Layer: 0
+  m_Name: GolfCart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5743601238121605432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633262858548868867}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3822373705878884155}
-  m_RootOrder: 3
+  m_Father: {fileID: 2722773717254240732}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1349325738356304672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2643500734424333264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1afd4a2ea688de4284077de5dee13e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheel:
-    mass: 25
-    rimOffset: 0.1
-    tireRadius: 1.4
-    width: 0.3
-    rpm: -18.52875
-    prevWorldPosition: {x: -10.170597, y: 0.36047733, z: 0.5748646}
-    worldPosition: {x: -31.30778, y: 1.8381598, z: -57.67811}
-    prevGroundPoint: {x: 0, y: 0, z: 0}
-    worldRotation: {x: 0.037028603, y: -0.93029743, z: 0.35415623, w: 0.08802904}
-    camberCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -8
-        inSlope: 2.6020238
-        outSlope: 2.6020238
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9991455
-        value: 6.3096848
-        inSlope: 32.98027
-        outSlope: 32.98027
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    camberAngle: 0
-    inertia: 3.8024998
-    angularVelocity: -1.9132887
-    freeRollingAngularVelocity: -2.1762736
-    residualAngularVelocity: 0
-    steerAngle: 0
-    rotationAngle: 44.08021
-    visual: {fileID: 4126338562735762551}
-    nonRotating: {fileID: 0}
-    rim: {fileID: 0}
-    rimCollider: {fileID: 0}
-    up: {x: -0.0020419976, y: 0.9999968, z: -0.0015010206}
-    inside: {x: 0.98175985, y: 0.0065431707, z: -0.19001421}
-    forward: {x: 0.000000076781134, y: 0.0015010239, z: 0.99999887}
-    right: {x: 0.9999979, y: 0.0020419953, z: -0.0000031418674}
-    velocity: {x: 0.15432857, y: -0.058518864, z: 0.84025604}
-    prevVelocity: {x: 0.15691555, y: -0.07122882, z: 0.85162157}
-    acceleration: {x: -0.12934878, y: 0.6354976, z: -0.56827664}
-    tireLoad: 6226.334
-    motorTorque: 0
-    brakeTorque: 50
-    nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
-  spring:
-    maxLength: 0.32
-    forceCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    maxForce: 25000
-    length: 0.18078405
-    prevLength: 0.18078405
-    compressionPercent: 0.43504983
-    force: 6052.521
-    velocity: -0.05609989
-    targetPoint: {x: -10.169691, y: 0.3609747, z: 0.57929045}
-    overflow: 0
-    prevOverflow: 0
-    overflowVelocity: 0
-    bottomOutForce: 0
-    bottomedOut: 0
-    overExtended: 0
-  damper:
-    dampingCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 3.8735247
-        outSlope: 3.8735247
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 40
-        inSlope: 4.374663
-        outSlope: 4.374663
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    unitBumpForce: 900
-    unitReboundForce: 900
-    force: 173.81317
-    maxForce: 800
-  fFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
-    maxForce: 0
-    slip: 0.108418435
-    speed: -0.84874666
-    force: 128.20514
-  sFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
-    maxForce: 0
-    slip: 0.0007468706
-    speed: 0.002212747
-    force: 95.698166
-  wheelHits:
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.16198999
-    offset: {x: -0.15, y: -0.3342857}
-    weight: 0.0027028103
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07615715
-    offset: {x: -0.15, y: -0.27857143}
-    weight: 0.009701723
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.031324178
-    offset: {x: -0.15, y: -0.22285715}
-    weight: 0.016550394
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0012879074
-    offset: {x: -0.15, y: -0.16714287}
-    weight: 0.022830328
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.017808974
-    offset: {x: -0.15, y: -0.11142859}
-    weight: 0.0276584
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.02778855
-    offset: {x: -0.15, y: -0.055714305}
-    weight: 0.030466747
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.029510856
-    offset: {x: -0.15, y: -0.000000022351742}
-    weight: 0.03097225
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023233682
-    offset: {x: -0.15, y: 0.05571426}
-    weight: 0.029159682
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.00869894
-    offset: {x: -0.15, y: 0.111428544}
-    weight: 0.025268547
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.014953166
-    offset: {x: -0.15, y: 0.16714282}
-    weight: 0.019785268
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.049544543
-    offset: {x: -0.15, y: 0.2228571}
-    weight: 0.013435107
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09893307
-    offset: {x: -0.15, y: 0.2785714}
-    weight: 0.00717747
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.1996481
-    offset: {x: -0.15, y: 0.33428568}
-    weight: 0.0013128913
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15523565
-    offset: {x: -0.050000004, y: -0.3342857}
-    weight: 0.0030375854
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07551783
-    offset: {x: -0.050000004, y: -0.27857143}
-    weight: 0.009781017
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030684859
-    offset: {x: -0.050000004, y: -0.22285715}
-    weight: 0.01666871
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.00064864755
-    offset: {x: -0.050000004, y: -0.16714287}
-    weight: 0.022980882
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018448234
-    offset: {x: -0.050000004, y: -0.11142859}
-    weight: 0.027832232
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028428167
-    offset: {x: -0.050000004, y: -0.055714305}
-    weight: 0.030653749
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030150473
-    offset: {x: -0.050000004, y: -0.000000022351742}
-    weight: 0.031161573
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023872942
-    offset: {x: -0.050000004, y: 0.05571426}
-    weight: 0.029340537
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.0093381405
-    offset: {x: -0.050000004, y: 0.111428544}
-    weight: 0.025430981
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.014314204
-    offset: {x: -0.050000004, y: 0.16714282}
-    weight: 0.019920444
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.048904926
-    offset: {x: -0.050000004, y: 0.2228571}
-    weight: 0.0135363545
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.098293155
-    offset: {x: -0.050000004, y: 0.2785714}
-    weight: 0.0072407974
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.18293269
-    offset: {x: -0.050000004, y: 0.33428568}
-    weight: 0.0018384255
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.148996
-    offset: {x: 0.049999997, y: -0.3342857}
-    weight: 0.003373626
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.074878514
-    offset: {x: 0.049999997, y: -0.27857143}
-    weight: 0.009860796
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030045658
-    offset: {x: 0.049999997, y: -0.22285715}
-    weight: 0.016787639
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.000009030104
-    offset: {x: 0.049999997, y: -0.16714287}
-    weight: 0.023132265
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.019087851
-    offset: {x: 0.049999997, y: -0.11142859}
-    weight: 0.028006978
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.029067427
-    offset: {x: 0.049999997, y: -0.055714305}
-    weight: 0.030841505
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030789733
-    offset: {x: 0.049999997, y: -0.000000022351742}
-    weight: 0.031351656
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.02451256
-    offset: {x: 0.049999997, y: 0.05571426}
-    weight: 0.029522335
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009977758
-    offset: {x: 0.049999997, y: 0.111428544}
-    weight: 0.025594303
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.013674229
-    offset: {x: 0.049999997, y: 0.16714282}
-    weight: 0.020056529
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.048265368
-    offset: {x: 0.049999997, y: 0.2228571}
-    weight: 0.013638164
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.097653896
-    offset: {x: 0.049999997, y: 0.2785714}
-    weight: 0.0073044775
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.17246588
-    offset: {x: 0.049999997, y: 0.33428568}
-    weight: 0.0022392855
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14529985
-    offset: {x: 0.15, y: -0.3342857}
-    weight: 0.0035853935
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.0742389
-    offset: {x: 0.15, y: -0.27857143}
-    weight: 0.0099411
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.02940604
-    offset: {x: 0.15, y: -0.22285715}
-    weight: 0.016907278
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: -0.0006302893
-    offset: {x: 0.15, y: -0.16714287}
-    weight: 0.023284322
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.01972711
-    offset: {x: 0.15, y: -0.11142859}
-    weight: 0.02818245
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.029706687
-    offset: {x: 0.15, y: -0.055714305}
-    weight: 0.031030122
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.031429052
-    offset: {x: 0.15, y: -0.000000022351742}
-    weight: 0.031542625
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.025152117
-    offset: {x: 0.15, y: 0.05571426}
-    weight: 0.02970496
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.010617316
-    offset: {x: 0.15, y: 0.111428544}
-    weight: 0.025758395
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.013035029
-    offset: {x: 0.15, y: 0.16714282}
-    weight: 0.020193143
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.047626406
-    offset: {x: 0.15, y: 0.2228571}
-    weight: 0.01374045
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09701392
-    offset: {x: 0.15, y: 0.2785714}
-    weight: 0.007368649
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.16469975
-    offset: {x: 0.15, y: 0.33428568}
-    weight: 0.0025765975
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  scanIgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 1048580
-  forwardScanResolution: 15
-  sideToSideScanResolution: 3
-  hasHit: 1
-  prevHasHit: 1
-  debug: 0
-  parent: {fileID: 5194146701604627226}
-  useRimCollider: 1
-  vehicleSide: 1
-  activeFrictionPresetEnum: 0
-  activeFrictionPreset:
-    name: TarmacDry
-    BCDE: {x: 12.5, y: 2.05, z: 0.92, w: 0.97}
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 22.237984
-        outSlope: 22.237984
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.016949153
-        value: 0.37691498
-        inSlope: 19.13816
-        outSlope: 19.13816
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.033898305
-        value: 0.6487512
-        inSlope: 12.548119
-        outSlope: 12.548119
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.050847456
-        value: 0.8022749
-        inSlope: 6.718657
-        outSlope: 6.718657
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.06779661
-        value: 0.8765023
-        inSlope: 3.1222453
-        outSlope: 3.1222453
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.084745765
-        value: 0.9081137
-        inSlope: 1.247359
-        outSlope: 1.247359
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.10169491
-        value: 0.91878563
-        inSlope: 0.33695725
-        outSlope: 0.33695725
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.118644066
-        value: 0.919536
-        inSlope: -0.09050511
-        outSlope: -0.09050511
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.13559322
-        value: 0.91571766
-        inSlope: -0.28383082
-        outSlope: -0.28383082
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.15254237
-        value: 0.9099146
-        inSlope: -0.36400563
-        outSlope: -0.36400563
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.16949153
-        value: 0.9033785
-        inSlope: -0.3894347
-        outSlope: -0.3894347
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.18644068
-        value: 0.89671344
-        inSlope: -0.38863304
-        outSlope: -0.38863304
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.20338982
-        value: 0.8902045
-        inSlope: -0.37572318
-        outSlope: -0.37572318
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.22033899
-        value: 0.88397706
-        inSlope: -0.35778636
-        outSlope: -0.35778636
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.23728813
-        value: 0.87807614
-        inSlope: -0.33837435
-        outSlope: -0.33837435
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.2542373
-        value: 0.87250674
-        inSlope: -0.31922954
-        outSlope: -0.31922954
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.27118644
-        value: 0.8672548
-        inSlope: -0.30116454
-        outSlope: -0.30116454
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.2881356
-        value: 0.8622978
-        inSlope: -0.28451484
-        outSlope: -0.28451484
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.30508474
-        value: 0.8576102
-        inSlope: -0.26936126
-        outSlope: -0.26936126
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.3220339
-        value: 0.8531669
-        inSlope: -0.25566205
-        outSlope: -0.25566205
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.33898306
-        value: 0.8489437
-        inSlope: -0.24332051
-        outSlope: -0.24332051
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.3559322
-        value: 0.8449187
-        inSlope: -0.23221134
-        outSlope: -0.23221134
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.37288135
-        value: 0.84107214
-        inSlope: -0.22221343
-        outSlope: -0.22221343
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.3898305
-        value: 0.8373861
-        inSlope: -0.21320371
-        outSlope: -0.21320371
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.40677965
-        value: 0.8338449
-        inSlope: -0.20506947
-        outSlope: -0.20506947
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.42372882
-        value: 0.83043456
-        inSlope: -0.19771609
-        outSlope: -0.19771609
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.44067797
-        value: 0.82714266
-        inSlope: -0.19104865
-        outSlope: -0.19104865
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.45762712
-        value: 0.82395834
-        inSlope: -0.18499294
-        outSlope: -0.18499294
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.47457626
-        value: 0.8208717
-        inSlope: -0.17947704
-        outSlope: -0.17947704
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.4915254
-        value: 0.8178744
-        inSlope: -0.17443925
-        outSlope: -0.17443925
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5084746
-        value: 0.8149585
-        inSlope: -0.1698343
-        outSlope: -0.1698343
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5254237
-        value: 0.8121173
-        inSlope: -0.16560376
-        outSlope: -0.16560376
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5423729
-        value: 0.8093448
-        inSlope: -0.16171578
-        outSlope: -0.16171578
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.55932206
-        value: 0.8066354
-        inSlope: -0.15813434
-        outSlope: -0.15813434
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5762712
-        value: 0.80398434
-        inSlope: -0.15482163
-        outSlope: -0.15482163
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.59322035
-        value: 0.8013872
-        inSlope: -0.15175508
-        outSlope: -0.15175508
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.6101695
-        value: 0.7988401
-        inSlope: -0.14891186
-        outSlope: -0.14891186
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.62711865
-        value: 0.79633933
-        inSlope: -0.14627057
-        outSlope: -0.14627057
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.6440678
-        value: 0.7938818
-        inSlope: -0.14380388
-        outSlope: -0.14380388
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.66101694
-        value: 0.7914646
-        inSlope: -0.14150047
-        outSlope: -0.14150047
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.6779661
-        value: 0.78908515
-        inSlope: -0.1393465
-        outSlope: -0.1393465
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.69491524
-        value: 0.786741
-        inSlope: -0.13733144
-        outSlope: -0.13733144
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7118644
-        value: 0.78442985
-        inSlope: -0.13543396
-        outSlope: -0.13543396
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7288136
-        value: 0.78215003
-        inSlope: -0.13365124
-        outSlope: -0.13365124
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7457627
-        value: 0.7798993
-        inSlope: -0.13197203
-        outSlope: -0.13197203
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7627119
-        value: 0.7776764
-        inSlope: -0.13038072
-        outSlope: -0.13038072
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.779661
-        value: 0.7754796
-        inSlope: -0.12888615
-        outSlope: -0.12888615
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7966102
-        value: 0.7733074
-        inSlope: -0.12746014
-        outSlope: -0.12746014
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.8135593
-        value: 0.77115893
-        inSlope: -0.12611501
-        outSlope: -0.12611501
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.8305085
-        value: 0.7690323
-        inSlope: -0.124836475
-        outSlope: -0.124836475
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.84745765
-        value: 0.7669272
-        inSlope: -0.123605855
-        outSlope: -0.123605855
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.86440676
-        value: 0.7648423
-        inSlope: -0.12244536
-        outSlope: -0.12244536
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.88135594
-        value: 0.7627765
-        inSlope: -0.121339366
-        outSlope: -0.121339366
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.89830506
-        value: 0.7607291
-        inSlope: -0.12027909
-        outSlope: -0.12027909
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.91525424
-        value: 0.75869924
-        inSlope: -0.11926607
-        outSlope: -0.11926607
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9322034
-        value: 0.75668615
-        inSlope: -0.11829216
-        outSlope: -0.11829216
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9491525
-        value: 0.75468934
-        inSlope: -0.11735849
-        outSlope: -0.11735849
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9661017
-        value: 0.7527079
-        inSlope: -0.11645997
-        outSlope: -0.11645997
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9830508
-        value: 0.75074154
-        inSlope: -0.1155896
-        outSlope: -0.1155896
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0.7487896
-        inSlope: -0.11516388
-        outSlope: -0.11516388
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  wheelHit:
-    angleForward: -0.026044484
-    distanceFromTire: 0
-    offset: {x: 0.00079435017, y: -0.00953764}
-    weight: 0
-    valid: 1
-    curvatureOffset: 0.3873755
-    groundPoint: {x: -10.169205, y: -0.02646172, z: 0.5726441}
-    forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
-    forwardSlip: 0.108418435
-    sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
-    sidewaysSlip: 0.0007468706
-    force: 6226.334
-  singleRay: 0
-  singleWheelHit:
-    angleForward: 0
-    distanceFromTire: 0
-    offset: {x: 0, y: 0}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  trackedVehicle: 0
-  applyForceToOthers: 1
-  maxPutDownForce: 0
---- !u!1 &3164884514099407811
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 993936123553665275}
-  m_Layer: 0
-  m_Name: Seat Bone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &993936123553665275
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3164884514099407811}
-  m_LocalRotation: {x: -0, y: 0.77962387, z: -0, w: 0.6262481}
-  m_LocalPosition: {x: -2.25, y: 0, z: 2.98}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1125608248274806022}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 102.452, z: 0}
---- !u!1 &4126338562735762551
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6109753455495542935}
-  - component: {fileID: 4105589419616733039}
-  - component: {fileID: 2321595356013289596}
-  m_Layer: 0
-  m_Name: WheelRearRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6109753455495542935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4126338562735762551}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.231, y: 0.419, z: -1.12}
-  m_LocalScale: {x: 1.4, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6756830693064878276}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4105589419616733039
+--- !u!33 &7671606541861387124
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4126338562735762551}
-  m_Mesh: {fileID: 4300044, guid: ed47c5a28308f4d73a626dd8c00027b9, type: 3}
---- !u!23 &2321595356013289596
+  m_GameObject: {fileID: 4633262858548868867}
+  m_Mesh: {fileID: -7406680826281123611, guid: 5a2a5d3a47010a14591c2b26984e1911, type: 3}
+--- !u!23 &4000216529241444361
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4126338562735762551}
+  m_GameObject: {fileID: 4633262858548868867}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1852,10 +194,10 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7019f4a4500e94a4b8f2f3a873bee4e3, type: 2}
+  - {fileID: 2100000, guid: fe16fbf2739ef0e42899214225845c64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1867,7 +209,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1876,7 +218,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &4657599987637857327
+--- !u!1 &8390347792468375751
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1884,70 +226,114 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6756830693064878276}
+  - component: {fileID: 8390347792468375752}
+  - component: {fileID: 8390347792468375754}
+  - component: {fileID: 8390347792468375753}
   m_Layer: 0
-  m_Name: WheelVisuals
+  m_Name: golf_cart_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6756830693064878276
+--- !u!4 &8390347792468375752
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657599987637857327}
-  m_LocalRotation: {x: 0.005371718, y: 0.7032627, z: 0.010109829, w: 0.71083796}
-  m_LocalPosition: {x: -1.89, y: -4.93, z: -0.12}
-  m_LocalScale: {x: 3, y: 3, z: 3}
-  m_Children:
-  - {fileID: 6540778459565903950}
-  - {fileID: 4473647778813726435}
-  - {fileID: 7705527887773145239}
-  - {fileID: 6109753455495542935}
-  m_Father: {fileID: 8789012702926964354}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4792369853571164286
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7168615145712919351}
-  - component: {fileID: 3940641694556050317}
-  m_Layer: 0
-  m_Name: ControllerRearLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7168615145712919351
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4792369853571164286}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.14, y: 0.6, z: -1.12}
+  m_GameObject: {fileID: 8390347792468375751}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.05, y: -1.96, z: 0.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3822373705878884155}
-  m_RootOrder: 2
+  m_Father: {fileID: 8390347794224597333}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3940641694556050317
+--- !u!33 &8390347792468375754
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347792468375751}
+  m_Mesh: {fileID: 8773267821845978420, guid: de1b2f278498f934d808dc96e2228a7c, type: 3}
+--- !u!23 &8390347792468375753
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347792468375751}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4cd12aa7c9808064fadded5714ec5f9c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &8390347792484485810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347792484485812}
+  - component: {fileID: 8390347792484485811}
+  m_Layer: 0
+  m_Name: BackRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347792484485812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347792484485810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.64, y: 2.14, z: -0.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8390347794230008717}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8390347792484485811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4792369853571164286}
+  m_GameObject: {fileID: 8390347792484485810}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1afd4a2ea688de4284077de5dee13e7, type: 3}
@@ -1956,11 +342,11 @@ MonoBehaviour:
   wheel:
     mass: 25
     rimOffset: 0.1
-    tireRadius: 1.4
-    width: 0.3
+    tireRadius: 1.41
+    width: 1.15
     rpm: -16.353102
     prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
-    worldPosition: {x: -38.720955, y: 1.9160221, z: -57.678226}
+    worldPosition: {x: 82.808975, y: 3.6799998, z: -44.16}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
     camberCurve:
@@ -1994,14 +380,14 @@ MonoBehaviour:
     residualAngularVelocity: 0
     steerAngle: 0
     rotationAngle: 146.66086
-    visual: {fileID: 9066947795291002571}
+    visual: {fileID: 8390347794224597332}
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: -0.017554848, y: -0.6821081, z: 0.73104113}
+    up: {x: 0, y: 1, z: 0}
     inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
-    forward: {x: -0.018751588, y: -0.73080057, z: -0.68233395}
-    right: {x: 0.99967, y: -0.025686441, z: 0.000038485043}
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
     velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
     prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
     acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
@@ -2010,7 +396,7 @@ MonoBehaviour:
     brakeTorque: 50
     nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
   spring:
-    maxLength: 0.32
+    maxLength: 0.4
     forceCurve:
       serializedVersion: 2
       m_Curve:
@@ -2035,7 +421,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxForce: 25000
+    maxForce: 24000
     length: 0.19014701
     prevLength: 0.19014701
     compressionPercent: 0.40579057
@@ -2073,8 +459,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    unitBumpForce: 900
-    unitReboundForce: 900
+    unitBumpForce: 800
+    unitReboundForce: 800
     force: 139.63052
     maxForce: 800
   fFriction:
@@ -2820,7 +1206,1880 @@ MonoBehaviour:
   hasHit: 1
   prevHasHit: 1
   debug: 0
-  parent: {fileID: 5194146701604627226}
+  parent: {fileID: 8390347793774335264}
+  useRimCollider: 1
+  vehicleSide: 1
+  activeFrictionPresetEnum: 0
+  activeFrictionPreset:
+    name: TarmacDry
+    BCDE: {x: 12.5, y: 2.05, z: 0.92, w: 0.97}
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 22.237984
+        outSlope: 22.237984
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.016949153
+        value: 0.37691498
+        inSlope: 19.13816
+        outSlope: 19.13816
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.033898305
+        value: 0.6487512
+        inSlope: 12.548119
+        outSlope: 12.548119
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.050847456
+        value: 0.8022749
+        inSlope: 6.718657
+        outSlope: 6.718657
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.06779661
+        value: 0.8765023
+        inSlope: 3.1222453
+        outSlope: 3.1222453
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.084745765
+        value: 0.9081137
+        inSlope: 1.247359
+        outSlope: 1.247359
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.10169491
+        value: 0.91878563
+        inSlope: 0.33695725
+        outSlope: 0.33695725
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.118644066
+        value: 0.919536
+        inSlope: -0.09050511
+        outSlope: -0.09050511
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.13559322
+        value: 0.91571766
+        inSlope: -0.28383082
+        outSlope: -0.28383082
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.15254237
+        value: 0.9099146
+        inSlope: -0.36400563
+        outSlope: -0.36400563
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16949153
+        value: 0.9033785
+        inSlope: -0.3894347
+        outSlope: -0.3894347
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.18644068
+        value: 0.89671344
+        inSlope: -0.38863304
+        outSlope: -0.38863304
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.20338982
+        value: 0.8902045
+        inSlope: -0.37572318
+        outSlope: -0.37572318
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.22033899
+        value: 0.88397706
+        inSlope: -0.35778636
+        outSlope: -0.35778636
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.23728813
+        value: 0.87807614
+        inSlope: -0.33837435
+        outSlope: -0.33837435
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2542373
+        value: 0.87250674
+        inSlope: -0.31922954
+        outSlope: -0.31922954
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.27118644
+        value: 0.8672548
+        inSlope: -0.30116454
+        outSlope: -0.30116454
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2881356
+        value: 0.8622978
+        inSlope: -0.28451484
+        outSlope: -0.28451484
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.30508474
+        value: 0.8576102
+        inSlope: -0.26936126
+        outSlope: -0.26936126
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3220339
+        value: 0.8531669
+        inSlope: -0.25566205
+        outSlope: -0.25566205
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.33898306
+        value: 0.8489437
+        inSlope: -0.24332051
+        outSlope: -0.24332051
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3559322
+        value: 0.8449187
+        inSlope: -0.23221134
+        outSlope: -0.23221134
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.37288135
+        value: 0.84107214
+        inSlope: -0.22221343
+        outSlope: -0.22221343
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3898305
+        value: 0.8373861
+        inSlope: -0.21320371
+        outSlope: -0.21320371
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.40677965
+        value: 0.8338449
+        inSlope: -0.20506947
+        outSlope: -0.20506947
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.42372882
+        value: 0.83043456
+        inSlope: -0.19771609
+        outSlope: -0.19771609
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.44067797
+        value: 0.82714266
+        inSlope: -0.19104865
+        outSlope: -0.19104865
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.45762712
+        value: 0.82395834
+        inSlope: -0.18499294
+        outSlope: -0.18499294
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.47457626
+        value: 0.8208717
+        inSlope: -0.17947704
+        outSlope: -0.17947704
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4915254
+        value: 0.8178744
+        inSlope: -0.17443925
+        outSlope: -0.17443925
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5084746
+        value: 0.8149585
+        inSlope: -0.1698343
+        outSlope: -0.1698343
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5254237
+        value: 0.8121173
+        inSlope: -0.16560376
+        outSlope: -0.16560376
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5423729
+        value: 0.8093448
+        inSlope: -0.16171578
+        outSlope: -0.16171578
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.55932206
+        value: 0.8066354
+        inSlope: -0.15813434
+        outSlope: -0.15813434
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5762712
+        value: 0.80398434
+        inSlope: -0.15482163
+        outSlope: -0.15482163
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.59322035
+        value: 0.8013872
+        inSlope: -0.15175508
+        outSlope: -0.15175508
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6101695
+        value: 0.7988401
+        inSlope: -0.14891186
+        outSlope: -0.14891186
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.62711865
+        value: 0.79633933
+        inSlope: -0.14627057
+        outSlope: -0.14627057
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6440678
+        value: 0.7938818
+        inSlope: -0.14380388
+        outSlope: -0.14380388
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.66101694
+        value: 0.7914646
+        inSlope: -0.14150047
+        outSlope: -0.14150047
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6779661
+        value: 0.78908515
+        inSlope: -0.1393465
+        outSlope: -0.1393465
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.69491524
+        value: 0.786741
+        inSlope: -0.13733144
+        outSlope: -0.13733144
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7118644
+        value: 0.78442985
+        inSlope: -0.13543396
+        outSlope: -0.13543396
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7288136
+        value: 0.78215003
+        inSlope: -0.13365124
+        outSlope: -0.13365124
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7457627
+        value: 0.7798993
+        inSlope: -0.13197203
+        outSlope: -0.13197203
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7627119
+        value: 0.7776764
+        inSlope: -0.13038072
+        outSlope: -0.13038072
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.779661
+        value: 0.7754796
+        inSlope: -0.12888615
+        outSlope: -0.12888615
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7966102
+        value: 0.7733074
+        inSlope: -0.12746014
+        outSlope: -0.12746014
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8135593
+        value: 0.77115893
+        inSlope: -0.12611501
+        outSlope: -0.12611501
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8305085
+        value: 0.7690323
+        inSlope: -0.124836475
+        outSlope: -0.124836475
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.84745765
+        value: 0.7669272
+        inSlope: -0.123605855
+        outSlope: -0.123605855
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.86440676
+        value: 0.7648423
+        inSlope: -0.12244536
+        outSlope: -0.12244536
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.88135594
+        value: 0.7627765
+        inSlope: -0.121339366
+        outSlope: -0.121339366
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.89830506
+        value: 0.7607291
+        inSlope: -0.12027909
+        outSlope: -0.12027909
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.91525424
+        value: 0.75869924
+        inSlope: -0.11926607
+        outSlope: -0.11926607
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9322034
+        value: 0.75668615
+        inSlope: -0.11829216
+        outSlope: -0.11829216
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9491525
+        value: 0.75468934
+        inSlope: -0.11735849
+        outSlope: -0.11735849
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9661017
+        value: 0.7527079
+        inSlope: -0.11645997
+        outSlope: -0.11645997
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9830508
+        value: 0.75074154
+        inSlope: -0.1155896
+        outSlope: -0.1155896
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.7487896
+        inSlope: -0.11516388
+        outSlope: -0.11516388
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  wheelHit:
+    angleForward: -0.025920788
+    distanceFromTire: 0
+    offset: {x: 0.0007788782, y: -0.0094924}
+    weight: 0
+    valid: 1
+    curvatureOffset: 0.3873755
+    groundPoint: {x: -8.795623, y: -0.026451647, z: 0.30136243}
+    forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
+    forwardSlip: 0.1227175
+    sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
+    sidewaysSlip: 0.0008023783
+    force: 5619.176
+  singleRay: 0
+  singleWheelHit:
+    angleForward: 0
+    distanceFromTire: 0
+    offset: {x: 0, y: 0}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  trackedVehicle: 0
+  applyForceToOthers: 1
+  maxPutDownForce: 0
+--- !u!1 &8390347793340784704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347793340784705}
+  m_Layer: 0
+  m_Name: WheelVisuals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347793340784705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793340784704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 19685902565048635}
+  - {fileID: 8390347794224597333}
+  - {fileID: 8390347793424179349}
+  - {fileID: 8390347793758225021}
+  m_Father: {fileID: 8390347793774335268}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8390347793424179348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347793424179349}
+  m_Layer: 0
+  m_Name: FrontRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347793424179349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793424179348}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.72, y: 2, z: 6.51}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8390347793872996986}
+  m_Father: {fileID: 8390347793340784705}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8390347793758225020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347793758225021}
+  m_Layer: 0
+  m_Name: FrontLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347793758225021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793758225020}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.76, y: 2, z: 6.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8390347793903242010}
+  m_Father: {fileID: 8390347793340784705}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8390347793774335264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347793774335268}
+  - component: {fileID: 8390347793774335267}
+  - component: {fileID: 8390347793774335266}
+  - component: {fileID: 8390347793774335265}
+  - component: {fileID: 8390347793774335269}
+  - component: {fileID: 8390347793774335270}
+  m_Layer: 2
+  m_Name: Golf Cart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347793774335268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 79.088974, y: 1.68, z: -43.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2722773717254240732}
+  - {fileID: 8390347793340784705}
+  - {fileID: 8390347794230008717}
+  - {fileID: 8390347794188430969}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &8390347793774335267
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  serializedVersion: 2
+  m_Mass: 1900
+  m_Drag: 0.15
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &8390347793774335266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fde3b0a987d9ab4ba8272b85857ae03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerOfMassOffset: {x: 0, y: 2.77, z: 1.95}
+  showCOM: 1
+--- !u!114 &8390347793774335265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6619ad7a3e2969f4abb12f09b96e7db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleData: {fileID: 11400000, guid: e28d0a1ef28579649990de2c7781aebd, type: 2}
+  seatBone: {fileID: 8390347794188430969}
+  wheels:
+  - wc: {fileID: 8390347794364102938}
+    steer: 1
+    power: 1
+  - wc: {fileID: 8390347794306506781}
+    steer: 1
+    power: 1
+  - wc: {fileID: 8390347794054976265}
+    steer: 0
+    power: 1
+  - wc: {fileID: 8390347792484485811}
+    steer: 0
+    power: 1
+  velocity: 0
+  maxSteeringAngle: 34
+  minSteeringAngle: 14
+  maxMotorTorque: 10800
+  maxBrakeTorque: 800
+  antiRollBarForce: 12000
+--- !u!65 &8390347793774335269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.753792, y: 3.2673464, z: 14.628708}
+  m_Center: {x: -0.043468475, y: 4.364727, z: 2.694313}
+--- !u!65 &8390347793774335270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 7.753792, y: 5.5757084, z: 8.783962}
+  m_Center: {x: -0.043468475, y: 8.88263, z: 1.0018368}
+--- !u!1 &8390347793872996985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347793872996986}
+  - component: {fileID: 8390347793872996988}
+  - component: {fileID: 8390347793872996987}
+  m_Layer: 0
+  m_Name: golf_cart_wheel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347793872996986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793872996985}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.05, y: -1.96, z: 0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8390347793424179349}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8390347793872996988
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793872996985}
+  m_Mesh: {fileID: 8773267821845978420, guid: de1b2f278498f934d808dc96e2228a7c, type: 3}
+--- !u!23 &8390347793872996987
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793872996985}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4cd12aa7c9808064fadded5714ec5f9c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &8390347793903242009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347793903242010}
+  - component: {fileID: 8390347793903242012}
+  - component: {fileID: 8390347793903242011}
+  m_Layer: 0
+  m_Name: golf_cart_wheel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347793903242010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793903242009}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.05, y: -1.96, z: 0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8390347793758225021}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8390347793903242012
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793903242009}
+  m_Mesh: {fileID: 8773267821845978420, guid: de1b2f278498f934d808dc96e2228a7c, type: 3}
+--- !u!23 &8390347793903242011
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793903242009}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4cd12aa7c9808064fadded5714ec5f9c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &8390347794054976263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347794054976264}
+  - component: {fileID: 8390347794054976265}
+  m_Layer: 0
+  m_Name: BackLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347794054976264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347794054976263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.64, y: 2.14, z: -0.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8390347794230008717}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8390347794054976265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347794054976263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1afd4a2ea688de4284077de5dee13e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheel:
+    mass: 25
+    rimOffset: 0.1
+    tireRadius: 1.41
+    width: 1.15
+    rpm: -16.353102
+    prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
+    worldPosition: {x: 75.32897, y: 3.6799998, z: -44.16}
+    prevGroundPoint: {x: 0, y: 0, z: 0}
+    worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
+    camberCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -8
+        inSlope: 2.6020238
+        outSlope: 2.6020238
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9991455
+        value: 6.3096848
+        inSlope: 32.98027
+        outSlope: 32.98027
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    camberAngle: 0
+    inertia: 3.8024998
+    angularVelocity: -1.6890569
+    freeRollingAngularVelocity: -1.9520417
+    residualAngularVelocity: 0
+    steerAngle: 0
+    rotationAngle: 146.66086
+    visual: {fileID: 3899741114184233768}
+    nonRotating: {fileID: 0}
+    rim: {fileID: 0}
+    rimCollider: {fileID: 0}
+    up: {x: 0, y: 1, z: 0}
+    inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
+    velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
+    prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
+    acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
+    tireLoad: 5619.176
+    motorTorque: 0
+    brakeTorque: 50
+    nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
+  spring:
+    maxLength: 0.4
+    forceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    maxForce: 24000
+    length: 0.19014701
+    prevLength: 0.19014701
+    compressionPercent: 0.40579057
+    force: 5479.5454
+    velocity: -0.04506558
+    targetPoint: {x: -8.796116, y: 0.3609828, z: 0.30805615}
+    overflow: 0
+    prevOverflow: 0
+    overflowVelocity: 0
+    bottomOutForce: 0
+    bottomedOut: 0
+    overExtended: 0
+  damper:
+    dampingCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 3.8735247
+        outSlope: 3.8735247
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 40
+        inSlope: 4.374663
+        outSlope: 4.374663
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    unitBumpForce: 800
+    unitReboundForce: 800
+    force: 139.63052
+    maxForce: 800
+  fFriction:
+    forceCoefficient: 1
+    slipCoefficient: 1
+    maxForce: 0
+    slip: 0.1227175
+    speed: -0.7612963
+    force: 128.20514
+  sFriction:
+    forceCoefficient: 1
+    slipCoefficient: 1
+    maxForce: 0
+    slip: 0.0008023783
+    speed: 0.0021322658
+    force: 92.82323
+  wheelHits:
+  - angleForward: -1.5685322
+    distanceFromTire: 0
+    offset: {x: -0.15, y: -0.39}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008829976
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -1.0296925
+    distanceFromTire: 0.14558214
+    offset: {x: -0.15, y: -0.3342857}
+    weight: 0.0035688775
+    valid: 0
+    curvatureOffset: 0.20088214
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.79560035
+    distanceFromTire: 0.076305926
+    offset: {x: -0.15, y: -0.27857143}
+    weight: 0.00968334
+    valid: 1
+    curvatureOffset: 0.27294385
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.6082439
+    distanceFromTire: 0.031472355
+    offset: {x: -0.15, y: -0.22285715}
+    weight: 0.016523061
+    valid: 1
+    curvatureOffset: 0.32005456
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.44290987
+    distanceFromTire: 0.0014363229
+    offset: {x: -0.15, y: -0.16714287}
+    weight: 0.02279548
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.289751
+    distanceFromTire: -0.017660499
+    offset: {x: -0.15, y: -0.11142859}
+    weight: 0.027618142
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.14334726
+    distanceFromTire: -0.027639717
+    offset: {x: -0.15, y: -0.055714305}
+    weight: 0.030423356
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.000000057312015
+    distanceFromTire: -0.029362977
+    offset: {x: -0.15, y: -0.000000022351742}
+    weight: 0.030928602
+    valid: 1
+    curvatureOffset: 0.39
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.14334714
+    distanceFromTire: -0.023085147
+    offset: {x: -0.15, y: 0.05571426}
+    weight: 0.02911778
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.28975087
+    distanceFromTire: -0.008550465
+    offset: {x: -0.15, y: 0.111428544}
+    weight: 0.025230927
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.44290978
+    distanceFromTire: 0.015101701
+    offset: {x: -0.15, y: 0.16714282}
+    weight: 0.019753944
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.6082437
+    distanceFromTire: 0.049692422
+    offset: {x: -0.15, y: 0.2228571}
+    weight: 0.01341178
+    valid: 1
+    curvatureOffset: 0.32005462
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.79560024
+    distanceFromTire: 0.09908149
+    offset: {x: -0.15, y: 0.2785714}
+    weight: 0.0071628415
+    valid: 1
+    curvatureOffset: 0.27294388
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.0296924
+    distanceFromTire: 0.1640953
+    offset: {x: -0.15, y: 0.33428568}
+    weight: 0.0026043598
+    valid: 0
+    curvatureOffset: 0.20088218
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.5685061
+    distanceFromTire: 0
+    offset: {x: -0.15, y: 0.38999996}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008931792
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -1.5685322
+    distanceFromTire: 0
+    offset: {x: -0.050000004, y: -0.39}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008829976
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -1.0296925
+    distanceFromTire: 0.14927638
+    offset: {x: -0.050000004, y: -0.3342857}
+    weight: 0.003357954
+    valid: 0
+    curvatureOffset: 0.20088214
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.79560035
+    distanceFromTire: 0.07566631
+    offset: {x: -0.050000004, y: -0.27857143}
+    weight: 0.009762558
+    valid: 1
+    curvatureOffset: 0.27294385
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.6082439
+    distanceFromTire: 0.030833334
+    offset: {x: -0.050000004, y: -0.22285715}
+    weight: 0.016641177
+    valid: 1
+    curvatureOffset: 0.32005456
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.44290987
+    distanceFromTire: 0.0007971823
+    offset: {x: -0.050000004, y: -0.16714287}
+    weight: 0.022945834
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.289751
+    distanceFromTire: -0.018300354
+    offset: {x: -0.050000004, y: -0.11142859}
+    weight: 0.027791947
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.14334726
+    distanceFromTire: -0.028279692
+    offset: {x: -0.050000004, y: -0.055714305}
+    weight: 0.030610263
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.000000057312015
+    distanceFromTire: -0.030001998
+    offset: {x: -0.050000004, y: -0.000000022351742}
+    weight: 0.031117547
+    valid: 1
+    curvatureOffset: 0.39
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.14334714
+    distanceFromTire: -0.023724407
+    offset: {x: -0.050000004, y: 0.05571426}
+    weight: 0.029298441
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.28975087
+    distanceFromTire: -0.009190321
+    offset: {x: -0.050000004, y: 0.111428544}
+    weight: 0.025393346
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.44290978
+    distanceFromTire: 0.01446268
+    offset: {x: -0.050000004, y: 0.16714282}
+    weight: 0.019888973
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.6082437
+    distanceFromTire: 0.0490534
+    offset: {x: -0.050000004, y: 0.2228571}
+    weight: 0.013512801
+    valid: 1
+    curvatureOffset: 0.32005462
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.79560024
+    distanceFromTire: 0.09844163
+    offset: {x: -0.050000004, y: 0.2785714}
+    weight: 0.0072260667
+    valid: 1
+    curvatureOffset: 0.27294388
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.0296924
+    distanceFromTire: 0.16880293
+    offset: {x: -0.050000004, y: 0.33428568}
+    weight: 0.0023939626
+    valid: 0
+    curvatureOffset: 0.20088218
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.5685061
+    distanceFromTire: 0
+    offset: {x: -0.050000004, y: 0.38999996}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008931792
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -1.5685322
+    distanceFromTire: 0
+    offset: {x: 0.049999997, y: -0.39}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008829976
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -1.0296925
+    distanceFromTire: 0.15103447
+    offset: {x: 0.049999997, y: -0.3342857}
+    weight: 0.0032609256
+    valid: 0
+    curvatureOffset: 0.20088214
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.79560035
+    distanceFromTire: 0.07502705
+    offset: {x: 0.049999997, y: -0.27857143}
+    weight: 0.009842218
+    valid: 1
+    curvatureOffset: 0.27294385
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.6082439
+    distanceFromTire: 0.030194074
+    offset: {x: 0.049999997, y: -0.22285715}
+    weight: 0.016759967
+    valid: 1
+    curvatureOffset: 0.32005456
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.44290987
+    distanceFromTire: 0.00015750527
+    offset: {x: 0.049999997, y: -0.16714287}
+    weight: 0.023097057
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.289751
+    distanceFromTire: -0.018939376
+    offset: {x: 0.049999997, y: -0.11142859}
+    weight: 0.027966341
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.14334726
+    distanceFromTire: -0.028918892
+    offset: {x: 0.049999997, y: -0.055714305}
+    weight: 0.030797802
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.000000057312015
+    distanceFromTire: -0.030641258
+    offset: {x: 0.049999997, y: -0.000000022351742}
+    weight: 0.03130743
+    valid: 1
+    curvatureOffset: 0.39
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.14334714
+    distanceFromTire: -0.024364084
+    offset: {x: 0.049999997, y: 0.05571426}
+    weight: 0.02948006
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.28975087
+    distanceFromTire: -0.009829283
+    offset: {x: 0.049999997, y: 0.111428544}
+    weight: 0.02555632
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.44290978
+    distanceFromTire: 0.0138224065
+    offset: {x: 0.049999997, y: 0.16714282}
+    weight: 0.020024959
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.6082437
+    distanceFromTire: 0.0484145
+    offset: {x: 0.049999997, y: 0.2228571}
+    weight: 0.013614373
+    valid: 1
+    curvatureOffset: 0.32005462
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.79560024
+    distanceFromTire: 0.09780237
+    offset: {x: 0.049999997, y: 0.2785714}
+    weight: 0.00728965
+    valid: 1
+    curvatureOffset: 0.27294388
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.0296924
+    distanceFromTire: 0.17538185
+    offset: {x: 0.049999997, y: 0.33428568}
+    weight: 0.0021216103
+    valid: 0
+    curvatureOffset: 0.20088218
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.5685061
+    distanceFromTire: 0
+    offset: {x: 0.049999997, y: 0.38999996}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008931792
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -1.5685322
+    distanceFromTire: 0
+    offset: {x: 0.15, y: -0.39}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008829976
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -1.0296925
+    distanceFromTire: 0.15493792
+    offset: {x: 0.15, y: -0.3342857}
+    weight: 0.0030530237
+    valid: 0
+    curvatureOffset: 0.20088214
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.79560035
+    distanceFromTire: 0.07438743
+    offset: {x: 0.15, y: -0.27857143}
+    weight: 0.009922408
+    valid: 1
+    curvatureOffset: 0.27294385
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.6082439
+    distanceFromTire: 0.029554516
+    offset: {x: 0.15, y: -0.22285715}
+    weight: 0.01687945
+    valid: 1
+    curvatureOffset: 0.32005456
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.44290987
+    distanceFromTire: -0.00048181415
+    offset: {x: 0.15, y: -0.16714287}
+    weight: 0.02324894
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.289751
+    distanceFromTire: -0.019578636
+    offset: {x: 0.15, y: -0.11142859}
+    weight: 0.028141622
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.14334726
+    distanceFromTire: -0.029558152
+    offset: {x: 0.15, y: -0.055714305}
+    weight: 0.03098622
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: -0.000000057312015
+    distanceFromTire: -0.031281173
+    offset: {x: 0.15, y: -0.000000022351742}
+    weight: 0.031498376
+    valid: 1
+    curvatureOffset: 0.39
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.14334714
+    distanceFromTire: -0.025003701
+    offset: {x: 0.15, y: 0.05571426}
+    weight: 0.029662505
+    valid: 1
+    curvatureOffset: 0.3859999
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.28975087
+    distanceFromTire: -0.010468841
+    offset: {x: 0.15, y: 0.111428544}
+    weight: 0.025720231
+    valid: 1
+    curvatureOffset: 0.37374288
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.44290978
+    distanceFromTire: 0.013183504
+    offset: {x: 0.15, y: 0.16714282}
+    weight: 0.020161347
+    valid: 1
+    curvatureOffset: 0.35236827
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.6082437
+    distanceFromTire: 0.04777494
+    offset: {x: 0.15, y: 0.2228571}
+    weight: 0.013716621
+    valid: 1
+    curvatureOffset: 0.32005462
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 0.79560024
+    distanceFromTire: 0.09716305
+    offset: {x: 0.15, y: 0.2785714}
+    weight: 0.007353658
+    valid: 1
+    curvatureOffset: 0.27294388
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.0296924
+    distanceFromTire: 0.18214758
+    offset: {x: 0.15, y: 0.33428568}
+    weight: 0.0018664667
+    valid: 0
+    curvatureOffset: 0.20088218
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  - angleForward: 1.5685061
+    distanceFromTire: 0
+    offset: {x: 0.15, y: 0.38999996}
+    weight: 0
+    valid: 0
+    curvatureOffset: 0.0008931792
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
+  scanIgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 1048580
+  forwardScanResolution: 15
+  sideToSideScanResolution: 3
+  hasHit: 1
+  prevHasHit: 1
+  debug: 1
+  parent: {fileID: 8390347793774335264}
   useRimCollider: 1
   vehicleSide: -1
   activeFrictionPresetEnum: 0
@@ -3403,7 +3662,7 @@ MonoBehaviour:
   trackedVehicle: 0
   applyForceToOthers: 1
   maxPutDownForce: 0
---- !u!1 &5155642363704956172
+--- !u!1 &8390347794188430968
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3411,36 +3670,131 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1626776656670961854}
-  - component: {fileID: 3369074751446500803}
+  - component: {fileID: 8390347794188430969}
   m_Layer: 0
-  m_Name: ControllerFrontLeft
+  m_Name: SeatBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1626776656670961854
+--- !u!4 &8390347794188430969
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5155642363704956172}
+  m_GameObject: {fileID: 8390347794188430968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.14, y: 0.6, z: 1.4}
+  m_LocalPosition: {x: 0, y: 4.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3822373705878884155}
-  m_RootOrder: 0
+  m_Father: {fileID: 8390347793774335268}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3369074751446500803
+--- !u!1 &8390347794224597332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347794224597333}
+  m_Layer: 0
+  m_Name: BackRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347794224597333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347794224597332}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.72, y: 2, z: -0.26}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8390347792468375752}
+  m_Father: {fileID: 8390347793340784705}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8390347794230008716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347794230008717}
+  m_Layer: 0
+  m_Name: WheelControllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347794230008717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347794230008716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8390347794054976264}
+  - {fileID: 8390347792484485812}
+  - {fileID: 8390347794364102937}
+  - {fileID: 8390347794306506780}
+  m_Father: {fileID: 8390347793774335268}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8390347794306506779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8390347794306506780}
+  - component: {fileID: 8390347794306506781}
+  m_Layer: 0
+  m_Name: FrontLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8390347794306506780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347794306506779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.64, y: 2.14, z: 6.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8390347794230008717}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8390347794306506781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5155642363704956172}
+  m_GameObject: {fileID: 8390347794306506779}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1afd4a2ea688de4284077de5dee13e7, type: 3}
@@ -3449,13 +3803,13 @@ MonoBehaviour:
   wheel:
     mass: 25
     rimOffset: 0.1
-    tireRadius: 1.4
-    width: 0.3
-    rpm: -16.304043
-    prevWorldPosition: {x: -9.271905, y: 0.37475333, z: -2.1659544}
-    worldPosition: {x: -38.720894, y: 1.8973699, z: -50.118187}
+    tireRadius: 1.41
+    width: 1.15
+    rpm: -16.353102
+    prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
+    worldPosition: {x: 75.32897, y: 3.6799998, z: -37.39}
     prevGroundPoint: {x: 0, y: 0, z: 0}
-    worldRotation: {x: 0.08972791, y: -0.37280357, z: 0.92298293, w: 0.032697573}
+    worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
     camberCurve:
       serializedVersion: 2
       m_Curve:
@@ -3482,28 +3836,28 @@ MonoBehaviour:
       m_RotationOrder: 0
     camberAngle: 0
     inertia: 3.8024998
-    angularVelocity: -1.6848172
-    freeRollingAngularVelocity: -1.9478021
+    angularVelocity: -1.6890569
+    freeRollingAngularVelocity: -1.9520417
     residualAngularVelocity: 0
     steerAngle: 0
-    rotationAngle: 138.4087
-    visual: {fileID: 835966607025521595}
+    rotationAngle: 146.66086
+    visual: {fileID: 8390347793758225020}
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: -0.011890046, y: -0.57070595, z: 0.82106894}
+    up: {x: 0, y: 1, z: 0}
     inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
-    forward: {x: -0.017048016, y: -0.8208919, z: -0.5708298}
-    right: {x: 0.999784, y: -0.02078478, z: 0.000031043775}
-    velocity: {x: -0.0161945, y: -0.0010582209, z: 0.78488195}
-    prevVelocity: {x: -0.015695244, y: 0.005049579, z: 0.79542124}
-    acceleration: {x: -0.024962798, y: -0.30539, z: -0.52696466}
-    tireLoad: 1313.6191
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
+    velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
+    prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
+    acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
+    tireLoad: 5619.176
     motorTorque: 0
     brakeTorque: 50
     nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
   spring:
-    maxLength: 0.32
+    maxLength: 0.4
     forceCurve:
       serializedVersion: 2
       m_Curve:
@@ -3528,13 +3882,13 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxForce: 25000
-    length: 0.27959555
-    prevLength: 0.27959555
-    compressionPercent: 0.12626387
-    force: 1315.4633
-    velocity: 0.0005289912
-    targetPoint: {x: -9.26862, y: 0.37543216, z: -2.1674883}
+    maxForce: 24000
+    length: 0.19014701
+    prevLength: 0.19014701
+    compressionPercent: 0.40579057
+    force: 5479.5454
+    velocity: -0.04506558
+    targetPoint: {x: -8.796116, y: 0.3609828, z: 0.30805615}
     overflow: 0
     prevOverflow: 0
     overflowVelocity: 0
@@ -3566,24 +3920,24 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    unitBumpForce: 900
-    unitReboundForce: 900
-    force: -1.8441514
-    maxForce: 900
+    unitBumpForce: 800
+    unitReboundForce: 800
+    force: 139.63052
+    maxForce: 800
   fFriction:
     forceCoefficient: 1
     slipCoefficient: 1
     maxForce: 0
-    slip: 0.1234455
-    speed: -0.7596428
+    slip: 0.1227175
+    speed: -0.7612963
     force: 128.20514
   sFriction:
-    forceCoefficient: 1.1
+    forceCoefficient: 1
     slipCoefficient: 1
     maxForce: 0
-    slip: 0.06016451
-    speed: 0.16192305
-    force: 1228.8071
+    slip: 0.0008023783
+    speed: 0.0021322658
+    force: 92.82323
   wheelHits:
   - angleForward: -1.5685322
     distanceFromTire: 0
@@ -3598,9 +3952,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.14682364
+    distanceFromTire: 0.14558214
     offset: {x: -0.15, y: -0.3342857}
-    weight: 0.0034969167
+    weight: 0.0035688775
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3610,10 +3964,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.08663505
+    distanceFromTire: 0.076305926
     offset: {x: -0.15, y: -0.27857143}
-    weight: 0.008469573
-    valid: 0
+    weight: 0.00968334
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3622,10 +3976,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.045949012
+    distanceFromTire: 0.031472355
     offset: {x: -0.15, y: -0.22285715}
-    weight: 0.014011711
-    valid: 0
+    weight: 0.016523061
+    valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3634,9 +3988,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.016880244
+    distanceFromTire: 0.0014363229
     offset: {x: -0.15, y: -0.16714287}
-    weight: 0.019381747
+    weight: 0.02279548
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3646,9 +4000,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.0022169352
+    distanceFromTire: -0.017660499
     offset: {x: -0.15, y: -0.11142859}
-    weight: 0.023664935
+    weight: 0.027618142
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3658,9 +4012,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.012196451
+    distanceFromTire: -0.027639717
     offset: {x: -0.15, y: -0.055714305}
-    weight: 0.026166936
+    weight: 0.030423356
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3670,9 +4024,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.013918817
+    distanceFromTire: -0.029362977
     offset: {x: -0.15, y: -0.000000022351742}
-    weight: 0.026618052
+    weight: 0.030928602
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3682,9 +4036,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.007640928
+    distanceFromTire: -0.023085147
     offset: {x: -0.15, y: 0.05571426}
-    weight: 0.025001395
+    weight: 0.02911778
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3694,9 +4048,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.006893158
+    distanceFromTire: -0.008550465
     offset: {x: -0.15, y: 0.111428544}
-    weight: 0.02154168
+    weight: 0.025230927
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3706,9 +4060,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.030545264
+    distanceFromTire: 0.015101701
     offset: {x: -0.15, y: 0.16714282}
-    weight: 0.01669463
+    weight: 0.019753944
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3718,10 +4072,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.057345837
+    distanceFromTire: 0.049692422
     offset: {x: -0.15, y: 0.2228571}
-    weight: 0.012245366
-    valid: 0
+    weight: 0.01341178
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3730,10 +4084,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.092728525
+    distanceFromTire: 0.09908149
     offset: {x: -0.15, y: 0.2785714}
-    weight: 0.0078093135
-    valid: 0
+    weight: 0.0071628415
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3742,9 +4096,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0.1506799
+    distanceFromTire: 0.1640953
     offset: {x: -0.15, y: 0.33428568}
-    weight: 0.0032803228
+    weight: 0.0026043598
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3778,9 +4132,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.15227836
+    distanceFromTire: 0.14927638
     offset: {x: -0.050000004, y: -0.3342857}
-    weight: 0.0031935575
+    weight: 0.003357954
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3790,10 +4144,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.08751273
+    distanceFromTire: 0.07566631
     offset: {x: -0.050000004, y: -0.27857143}
-    weight: 0.008371983
-    valid: 0
+    weight: 0.009762558
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3802,10 +4156,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.04895392
+    distanceFromTire: 0.030833334
     offset: {x: -0.050000004, y: -0.22285715}
-    weight: 0.013528579
-    valid: 0
+    weight: 0.016641177
+    valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3814,9 +4168,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.016240627
+    distanceFromTire: 0.0007971823
     offset: {x: -0.050000004, y: -0.16714287}
-    weight: 0.01951499
+    weight: 0.022945834
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3826,9 +4180,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.002856493
+    distanceFromTire: -0.018300354
     offset: {x: -0.050000004, y: -0.11142859}
-    weight: 0.023819666
+    weight: 0.027791947
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3838,9 +4192,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.012835473
+    distanceFromTire: -0.028279692
     offset: {x: -0.050000004, y: -0.055714305}
-    weight: 0.026333632
+    weight: 0.030610263
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3850,9 +4204,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.0145584345
+    distanceFromTire: -0.030001998
     offset: {x: -0.050000004, y: -0.000000022351742}
-    weight: 0.026787056
+    weight: 0.031117547
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3862,9 +4216,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.008280784
+    distanceFromTire: -0.023724407
     offset: {x: -0.050000004, y: 0.05571426}
-    weight: 0.025162706
+    weight: 0.029298441
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3874,9 +4228,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.006253898
+    distanceFromTire: -0.009190321
     offset: {x: -0.050000004, y: 0.111428544}
-    weight: 0.02168582
+    weight: 0.025393346
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3886,9 +4240,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.029906303
+    distanceFromTire: 0.01446268
     offset: {x: -0.050000004, y: 0.16714282}
-    weight: 0.01681365
+    weight: 0.019888973
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3898,10 +4252,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.058849126
+    distanceFromTire: 0.0490534
     offset: {x: -0.050000004, y: 0.2228571}
-    weight: 0.012025511
-    valid: 0
+    weight: 0.013512801
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3910,10 +4264,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.09603569
+    distanceFromTire: 0.09844163
     offset: {x: -0.050000004, y: 0.2785714}
-    weight: 0.0074675535
-    valid: 0
+    weight: 0.0072260667
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3922,9 +4276,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0
+    distanceFromTire: 0.16880293
     offset: {x: -0.050000004, y: 0.33428568}
-    weight: 0
+    weight: 0.0023939626
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3958,9 +4312,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.14126492
+    distanceFromTire: 0.15103447
     offset: {x: 0.049999997, y: -0.3342857}
-    weight: 0.0038277898
+    weight: 0.0032609256
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -3970,10 +4324,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.08839053
+    distanceFromTire: 0.07502705
     offset: {x: 0.049999997, y: -0.27857143}
-    weight: 0.008275225
-    valid: 0
+    weight: 0.009842218
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3982,10 +4336,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.048070103
+    distanceFromTire: 0.030194074
     offset: {x: 0.049999997, y: -0.22285715}
-    weight: 0.013669361
-    valid: 0
+    weight: 0.016759967
+    valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -3994,9 +4348,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.015601665
+    distanceFromTire: 0.00015750527
     offset: {x: 0.049999997, y: -0.16714287}
-    weight: 0.01964878
+    weight: 0.023097057
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4006,9 +4360,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.0034958124
+    distanceFromTire: -0.018939376
     offset: {x: 0.049999997, y: -0.11142859}
-    weight: 0.023975099
+    weight: 0.027966341
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4018,9 +4372,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.013475388
+    distanceFromTire: -0.028918892
     offset: {x: 0.049999997, y: -0.055714305}
-    weight: 0.026501358
+    weight: 0.030797802
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4030,9 +4384,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.015197694
+    distanceFromTire: -0.030641258
     offset: {x: 0.049999997, y: -0.000000022351742}
-    weight: 0.026956767
+    weight: 0.03130743
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4042,9 +4396,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.008919805
+    distanceFromTire: -0.024364084
     offset: {x: 0.049999997, y: 0.05571426}
-    weight: 0.025324585
+    weight: 0.02948006
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4054,9 +4408,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.0056142807
+    distanceFromTire: -0.009829283
     offset: {x: 0.049999997, y: 0.111428544}
-    weight: 0.021830764
+    weight: 0.02555632
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4066,9 +4420,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.029266685
+    distanceFromTire: 0.0138224065
     offset: {x: 0.049999997, y: 0.16714282}
-    weight: 0.01693343
+    weight: 0.020024959
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4078,10 +4432,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.06182483
+    distanceFromTire: 0.0484145
     offset: {x: 0.049999997, y: 0.2228571}
-    weight: 0.01159906
-    valid: 0
+    weight: 0.013614373
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -4090,10 +4444,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.10154107
+    distanceFromTire: 0.09780237
     offset: {x: 0.049999997, y: 0.2785714}
-    weight: 0.006923662
-    valid: 0
+    weight: 0.00728965
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -4102,9 +4456,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0
+    distanceFromTire: 0.17538185
     offset: {x: 0.049999997, y: 0.33428568}
-    weight: 0
+    weight: 0.0021216103
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4138,9 +4492,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.14970076
+    distanceFromTire: 0.15493792
     offset: {x: 0.15, y: -0.3342857}
-    weight: 0.003334337
+    weight: 0.0030530237
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4150,10 +4504,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.08926821
+    distanceFromTire: 0.07438743
     offset: {x: 0.15, y: -0.27857143}
-    weight: 0.008179322
-    valid: 0
+    weight: 0.009922408
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -4162,10 +4516,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.04748705
+    distanceFromTire: 0.029554516
     offset: {x: 0.15, y: -0.22285715}
-    weight: 0.013762835
-    valid: 0
+    weight: 0.01687945
+    valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -4174,9 +4528,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.014961749
+    distanceFromTire: -0.00048181415
     offset: {x: 0.15, y: -0.16714287}
-    weight: 0.019783458
+    weight: 0.02324894
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4186,9 +4540,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.004135072
+    distanceFromTire: -0.019578636
     offset: {x: 0.15, y: -0.11142859}
-    weight: 0.024131276
+    weight: 0.028141622
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4198,9 +4552,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.01411435
+    distanceFromTire: -0.029558152
     offset: {x: 0.15, y: -0.055714305}
-    weight: 0.026669633
+    weight: 0.03098622
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4210,9 +4564,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.015837312
+    distanceFromTire: -0.031281173
     offset: {x: 0.15, y: -0.000000022351742}
-    weight: 0.02712738
+    weight: 0.031498376
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4222,9 +4576,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.009559721
+    distanceFromTire: -0.025003701
     offset: {x: 0.15, y: 0.05571426}
-    weight: 0.025487471
+    weight: 0.029662505
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4234,9 +4588,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.004975021
+    distanceFromTire: -0.010468841
     offset: {x: 0.15, y: 0.111428544}
-    weight: 0.02197635
+    weight: 0.025720231
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4246,9 +4600,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.028627425
+    distanceFromTire: 0.013183504
     offset: {x: 0.15, y: 0.16714282}
-    weight: 0.017053781
+    weight: 0.020161347
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4258,10 +4612,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.060611814
+    distanceFromTire: 0.04777494
     offset: {x: 0.15, y: 0.2228571}
-    weight: 0.011771505
-    valid: 0
+    weight: 0.013716621
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -4270,10 +4624,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.109678835
+    distanceFromTire: 0.09716305
     offset: {x: 0.15, y: 0.2785714}
-    weight: 0.0061748084
-    valid: 0
+    weight: 0.007353658
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -4282,9 +4636,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0
+    distanceFromTire: 0.18214758
     offset: {x: 0.15, y: 0.33428568}
-    weight: 0
+    weight: 0.0018664667
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -4313,7 +4667,7 @@ MonoBehaviour:
   hasHit: 1
   prevHasHit: 1
   debug: 0
-  parent: {fileID: 5194146701604627226}
+  parent: {fileID: 8390347793774335264}
   useRimCollider: 1
   vehicleSide: -1
   activeFrictionPresetEnum: 0
@@ -4867,18 +5221,18 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   wheelHit:
-    angleForward: -0.012220808
+    angleForward: -0.025920788
     distanceFromTire: 0
-    offset: {x: 0.0007790267, y: -0.004650914}
+    offset: {x: 0.0007788782, y: -0.0094924}
     weight: 0
     valid: 1
-    curvatureOffset: 0.38800186
-    groundPoint: {x: -9.269048, y: -0.0124286115, z: -2.1789567}
+    curvatureOffset: 0.3873755
+    groundPoint: {x: -8.795623, y: -0.026451647, z: 0.30136243}
     forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
-    forwardSlip: 0.1234455
+    forwardSlip: 0.1227175
     sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
-    sidewaysSlip: 0.06016451
-    force: 1313.6191
+    sidewaysSlip: 0.0008023783
+    force: 5619.176
   singleRay: 0
   singleWheelHit:
     angleForward: 0
@@ -4896,7 +5250,7 @@ MonoBehaviour:
   trackedVehicle: 0
   applyForceToOthers: 1
   maxPutDownForce: 0
---- !u!1 &5194146701604627226
+--- !u!1 &8390347794364102936
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4904,181 +5258,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1125608248274806022}
-  - component: {fileID: 4443831670132582787}
-  - component: {fileID: 7459486485298002101}
-  - component: {fileID: 4201656895518733312}
-  - component: {fileID: 989356145216126717}
+  - component: {fileID: 8390347794364102937}
+  - component: {fileID: 8390347794364102938}
   m_Layer: 0
-  m_Name: Golf Cart
+  m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1125608248274806022
+--- !u!4 &8390347794364102937
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194146701604627226}
+  m_GameObject: {fileID: 8390347794364102936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -67.01426, y: 11.619762, z: 37.76701}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8789012702926964354}
-  - {fileID: 993936123553665275}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4443831670132582787
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194146701604627226}
-  serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &7459486485298002101
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194146701604627226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.68931, y: 8.251182, z: 12.809731}
-  m_Center: {x: 0.78999996, y: 1.6754899, z: -1.1342163}
---- !u!114 &4201656895518733312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194146701604627226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6619ad7a3e2969f4abb12f09b96e7db5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vehicleData: {fileID: 11400000, guid: e28d0a1ef28579649990de2c7781aebd, type: 2}
-  seatBone: {fileID: 993936123553665275}
-  wheels:
-  - wc: {fileID: 3369074751446500803}
-    steer: 1
-    power: 1
-  - wc: {fileID: 2606668162940696272}
-    steer: 1
-    power: 1
-  - wc: {fileID: 3940641694556050317}
-    steer: 0
-    power: 1
-  - wc: {fileID: 1349325738356304672}
-    steer: 0
-    power: 1
-  velocity: 0
-  maxSteeringAngle: 34
-  minSteeringAngle: 16
-  maxMotorTorque: 900
-  maxBrakeTorque: 800
-  antiRollBarForce: 25000
---- !u!114 &989356145216126717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194146701604627226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fde3b0a987d9ab4ba8272b85857ae03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerOfMassOffset: {x: 0, y: -0.28, z: 0}
-  showCOM: 1
---- !u!1 &5738572893114954897
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8789012702926964354}
-  m_Layer: 0
-  m_Name: model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8789012702926964354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5738572893114954897}
-  m_LocalRotation: {x: -0.0051871836, y: -0.70327467, z: -0.008856245, w: 0.7108443}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1267208806888756666}
-  - {fileID: 3822373705878884155}
-  - {fileID: 6756830693064878276}
-  m_Father: {fileID: 1125608248274806022}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.136, y: -89.384, z: -0.303}
---- !u!1 &7560687039185185198
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7507544379639819726}
-  - component: {fileID: 2606668162940696272}
-  m_Layer: 0
-  m_Name: ControllerFrontRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7507544379639819726
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560687039185185198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.131, y: 0.593, z: 1.4}
+  m_LocalPosition: {x: 3.64, y: 2.14, z: 6.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3822373705878884155}
-  m_RootOrder: 1
+  m_Father: {fileID: 8390347794230008717}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2606668162940696272
+--- !u!114 &8390347794364102938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560687039185185198}
+  m_GameObject: {fileID: 8390347794364102936}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1afd4a2ea688de4284077de5dee13e7, type: 3}
@@ -5087,13 +5296,13 @@ MonoBehaviour:
   wheel:
     mass: 25
     rimOffset: 0.1
-    tireRadius: 1.4
-    width: 0.3
-    rpm: -18.477602
-    prevWorldPosition: {x: -10.646697, y: 0.371176, z: -1.9014504}
-    worldPosition: {x: -31.307669, y: 1.7955258, z: -50.106033}
+    tireRadius: 1.41
+    width: 1.15
+    rpm: -16.353102
+    prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
+    worldPosition: {x: 82.808975, y: 3.6799998, z: -37.39}
     prevGroundPoint: {x: 0, y: 0, z: 0}
-    worldRotation: {x: -0.054641128, y: -0.7963099, z: -0.5973027, w: 0.07832354}
+    worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
     camberCurve:
       serializedVersion: 2
       m_Curve:
@@ -5120,28 +5329,28 @@ MonoBehaviour:
       m_RotationOrder: 0
     camberAngle: 0
     inertia: 3.8024998
-    angularVelocity: -1.9088701
-    freeRollingAngularVelocity: -2.171855
+    angularVelocity: -1.6890569
+    freeRollingAngularVelocity: -1.9520417
     residualAngularVelocity: 0
     steerAngle: 0
-    rotationAngle: -71.34885
-    visual: {fileID: 320610737752602217}
+    rotationAngle: 146.66086
+    visual: {fileID: 8390347793424179348}
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0.00089873094, y: 0.056743618, z: -0.99838877}
-    inside: {x: 0.98175985, y: 0.0065431707, z: -0.19001421}
-    forward: {x: 0.015401773, y: 0.9982699, z: 0.05675073}
-    right: {x: 0.99988097, y: -0.015427955, z: 0.000023217406}
-    velocity: {x: 0.00037428737, y: -0.012928849, z: 0.8702544}
-    prevVelocity: {x: 0.0009846091, y: -0.0151785, z: 0.88184327}
-    acceleration: {x: -0.030516088, y: 0.11248253, z: -0.5794436}
-    tireLoad: 1551.718
+    up: {x: 0, y: 1, z: 0}
+    inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
+    velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
+    prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
+    acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
+    tireLoad: 5619.176
     motorTorque: 0
     brakeTorque: 50
     nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
   spring:
-    maxLength: 0.32
+    maxLength: 0.4
     forceCurve:
       serializedVersion: 2
       m_Curve:
@@ -5166,13 +5375,13 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxForce: 25000
-    length: 0.27400243
-    prevLength: 0.27400243
-    compressionPercent: 0.14374238
-    force: 1519.0265
-    velocity: -0.010550022
-    targetPoint: {x: -10.643483, y: 0.37166703, z: -1.8965985}
+    maxForce: 24000
+    length: 0.19014701
+    prevLength: 0.19014701
+    compressionPercent: 0.40579057
+    force: 5479.5454
+    velocity: -0.04506558
+    targetPoint: {x: -8.796116, y: 0.3609828, z: 0.30805615}
     overflow: 0
     prevOverflow: 0
     overflowVelocity: 0
@@ -5204,24 +5413,24 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    unitBumpForce: 900
-    unitReboundForce: 900
-    force: 32.691536
+    unitBumpForce: 800
+    unitReboundForce: 800
+    force: 139.63052
     maxForce: 800
   fFriction:
     forceCoefficient: 1
     slipCoefficient: 1
     maxForce: 0
-    slip: 0.10907062
-    speed: -0.84702337
+    slip: 0.1227175
+    speed: -0.7612963
     force: 128.20514
   sFriction:
-    forceCoefficient: 1.1
+    forceCoefficient: 1
     slipCoefficient: 1
     maxForce: 0
-    slip: 0.054124016
-    speed: 0.1619584
-    force: 1403.4977
+    slip: 0.0008023783
+    speed: 0.0021322658
+    force: 92.82323
   wheelHits:
   - angleForward: -1.5685322
     distanceFromTire: 0
@@ -5236,9 +5445,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.15650159
+    distanceFromTire: 0.14558214
     offset: {x: -0.15, y: -0.3342857}
-    weight: 0.002972594
+    weight: 0.0035688775
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5248,10 +5457,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.08719301
+    distanceFromTire: 0.076305926
     offset: {x: -0.15, y: -0.27857143}
-    weight: 0.008407434
-    valid: 0
+    weight: 0.00968334
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5260,9 +5469,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.04299721
+    distanceFromTire: 0.031472355
     offset: {x: -0.15, y: -0.22285715}
-    weight: 0.014498791
+    weight: 0.016523061
     valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5272,9 +5481,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.012961239
+    distanceFromTire: 0.0014363229
     offset: {x: -0.15, y: -0.16714287}
-    weight: 0.020208959
+    weight: 0.02279548
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5284,9 +5493,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.0061359406
+    distanceFromTire: -0.017660499
     offset: {x: -0.15, y: -0.11142859}
-    weight: 0.024625039
+    weight: 0.027618142
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5296,9 +5505,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.016115516
+    distanceFromTire: -0.027639717
     offset: {x: -0.15, y: -0.055714305}
-    weight: 0.027201839
+    weight: 0.030423356
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5308,9 +5517,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.01783818
+    distanceFromTire: -0.029362977
     offset: {x: -0.15, y: -0.000000022351742}
-    weight: 0.027666325
+    weight: 0.030928602
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5320,9 +5529,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.011560291
+    distanceFromTire: -0.023085147
     offset: {x: -0.15, y: 0.05571426}
-    weight: 0.026001774
+    weight: 0.02911778
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5332,9 +5541,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.0029741526
+    distanceFromTire: -0.008550465
     offset: {x: -0.15, y: 0.111428544}
-    weight: 0.022436744
+    weight: 0.025230927
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5344,9 +5553,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.026626319
+    distanceFromTire: 0.015101701
     offset: {x: -0.15, y: 0.16714282}
-    weight: 0.017434673
+    weight: 0.019753944
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5356,10 +5565,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.077442855
+    distanceFromTire: 0.049692422
     offset: {x: -0.15, y: 0.2228571}
-    weight: 0.009543719
-    valid: 0
+    weight: 0.01341178
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5368,10 +5577,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.08865687
+    distanceFromTire: 0.09908149
     offset: {x: -0.15, y: 0.2785714}
-    weight: 0.008246033
-    valid: 0
+    weight: 0.0071628415
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5380,9 +5589,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0
+    distanceFromTire: 0.1640953
     offset: {x: -0.15, y: 0.33428568}
-    weight: 0
+    weight: 0.0026043598
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5416,9 +5625,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.15231395
+    distanceFromTire: 0.14927638
     offset: {x: -0.050000004, y: -0.3342857}
-    weight: 0.0031916457
+    weight: 0.003357954
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5428,10 +5637,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.08116245
+    distanceFromTire: 0.07566631
     offset: {x: -0.050000004, y: -0.27857143}
-    weight: 0.009097463
-    valid: 0
+    weight: 0.009762558
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5440,9 +5649,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.042357594
+    distanceFromTire: 0.030833334
     offset: {x: -0.050000004, y: -0.22285715}
-    weight: 0.014605987
+    weight: 0.016641177
     valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5452,9 +5661,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.012321621
+    distanceFromTire: 0.0007971823
     offset: {x: -0.050000004, y: -0.16714287}
-    weight: 0.02034644
+    weight: 0.022945834
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5464,9 +5673,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.0067754984
+    distanceFromTire: -0.018300354
     offset: {x: -0.050000004, y: -0.11142859}
-    weight: 0.024784451
+    weight: 0.027791947
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5476,9 +5685,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.016754776
+    distanceFromTire: -0.028279692
     offset: {x: -0.050000004, y: -0.055714305}
-    weight: 0.027373515
+    weight: 0.030610263
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5488,9 +5697,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.01847744
+    distanceFromTire: -0.030001998
     offset: {x: -0.050000004, y: -0.000000022351742}
-    weight: 0.027840193
+    weight: 0.031117547
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5500,9 +5709,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.012199849
+    distanceFromTire: -0.023724407
     offset: {x: -0.050000004, y: 0.05571426}
-    weight: 0.026167821
+    weight: 0.029298441
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5512,9 +5721,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.0023348927
+    distanceFromTire: -0.009190321
     offset: {x: -0.050000004, y: 0.111428544}
-    weight: 0.022585347
+    weight: 0.025393346
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5524,9 +5733,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.025987297
+    distanceFromTire: 0.01446268
     offset: {x: -0.050000004, y: 0.16714282}
-    weight: 0.017557638
+    weight: 0.019888973
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5536,10 +5745,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.07123271
+    distanceFromTire: 0.0490534
     offset: {x: -0.050000004, y: 0.2228571}
-    weight: 0.010325116
-    valid: 0
+    weight: 0.013512801
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5548,10 +5757,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.087444454
+    distanceFromTire: 0.09844163
     offset: {x: -0.050000004, y: 0.2785714}
-    weight: 0.008379544
-    valid: 0
+    weight: 0.0072260667
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5560,9 +5769,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0
+    distanceFromTire: 0.16880293
     offset: {x: -0.050000004, y: 0.33428568}
-    weight: 0
+    weight: 0.0023939626
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5596,9 +5805,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.14526194
+    distanceFromTire: 0.15103447
     offset: {x: 0.049999997, y: -0.3342857}
-    weight: 0.003587616
+    weight: 0.0032609256
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5608,10 +5817,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.0772081
+    distanceFromTire: 0.07502705
     offset: {x: 0.049999997, y: -0.27857143}
-    weight: 0.009572423
-    valid: 0
+    weight: 0.009842218
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5620,9 +5829,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.041718334
+    distanceFromTire: 0.030194074
     offset: {x: 0.049999997, y: -0.22285715}
-    weight: 0.014713717
+    weight: 0.016759967
     valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5632,9 +5841,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.011682421
+    distanceFromTire: 0.00015750527
     offset: {x: 0.049999997, y: -0.16714287}
-    weight: 0.020484531
+    weight: 0.023097057
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5644,9 +5853,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.007414818
+    distanceFromTire: -0.018939376
     offset: {x: 0.049999997, y: -0.11142859}
-    weight: 0.024944577
+    weight: 0.027966341
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5656,9 +5865,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.017394453
+    distanceFromTire: -0.028918892
     offset: {x: 0.049999997, y: -0.055714305}
-    weight: 0.027546117
+    weight: 0.030797802
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5668,9 +5877,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.019116998
+    distanceFromTire: -0.030641258
     offset: {x: 0.049999997, y: -0.000000022351742}
-    weight: 0.028014962
+    weight: 0.03130743
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5680,9 +5889,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.01283887
+    distanceFromTire: -0.024364084
     offset: {x: 0.049999997, y: 0.05571426}
-    weight: 0.02633452
+    weight: 0.02948006
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5692,9 +5901,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.0016952753
+    distanceFromTire: -0.009829283
     offset: {x: 0.049999997, y: 0.111428544}
-    weight: 0.022734774
+    weight: 0.02555632
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5704,9 +5913,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.025347382
+    distanceFromTire: 0.0138224065
     offset: {x: 0.049999997, y: 0.16714282}
-    weight: 0.017681425
+    weight: 0.020024959
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5716,10 +5925,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.06573054
+    distanceFromTire: 0.0484145
     offset: {x: 0.049999997, y: 0.2228571}
-    weight: 0.0110566635
-    valid: 0
+    weight: 0.013614373
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5728,10 +5937,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.08623162
+    distanceFromTire: 0.09780237
     offset: {x: 0.049999997, y: 0.2785714}
-    weight: 0.008514716
-    valid: 0
+    weight: 0.00728965
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5740,9 +5949,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0
+    distanceFromTire: 0.17538185
     offset: {x: 0.049999997, y: 0.33428568}
-    weight: 0
+    weight: 0.0021216103
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5776,9 +5985,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -1.0296925
-    distanceFromTire: 0.14013213
+    distanceFromTire: 0.15493792
     offset: {x: 0.15, y: -0.3342857}
-    weight: 0.0038979976
+    weight: 0.0030530237
     valid: 0
     curvatureOffset: 0.20088214
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5788,10 +5997,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.79560035
-    distanceFromTire: 0.07068354
+    distanceFromTire: 0.07438743
     offset: {x: 0.15, y: -0.27857143}
-    weight: 0.010396452
-    valid: 0
+    weight: 0.009922408
+    valid: 1
     curvatureOffset: 0.27294385
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5800,9 +6009,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.6082439
-    distanceFromTire: 0.041078717
+    distanceFromTire: 0.029554516
     offset: {x: 0.15, y: -0.22285715}
-    weight: 0.014822101
+    weight: 0.01687945
     valid: 1
     curvatureOffset: 0.32005456
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5812,9 +6021,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.44290987
-    distanceFromTire: 0.011042744
+    distanceFromTire: -0.00048181415
     offset: {x: 0.15, y: -0.16714287}
-    weight: 0.020623427
+    weight: 0.02324894
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5824,9 +6033,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.289751
-    distanceFromTire: -0.008054376
+    distanceFromTire: -0.019578636
     offset: {x: 0.15, y: -0.11142859}
-    weight: 0.02510554
+    weight: 0.028141622
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5836,9 +6045,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.14334726
-    distanceFromTire: -0.018033594
+    distanceFromTire: -0.029558152
     offset: {x: 0.15, y: -0.055714305}
-    weight: 0.027719388
+    weight: 0.03098622
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5848,9 +6057,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: -0.000000057312015
-    distanceFromTire: -0.019756258
+    distanceFromTire: -0.031281173
     offset: {x: 0.15, y: -0.000000022351742}
-    weight: 0.02819047
+    weight: 0.031498376
     valid: 1
     curvatureOffset: 0.39
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5860,9 +6069,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.14334714
-    distanceFromTire: -0.013478786
+    distanceFromTire: -0.025003701
     offset: {x: 0.15, y: 0.05571426}
-    weight: 0.026502252
+    weight: 0.029662505
     valid: 1
     curvatureOffset: 0.3859999
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5872,9 +6081,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.28975087
-    distanceFromTire: 0.0010560155
+    distanceFromTire: -0.010468841
     offset: {x: 0.15, y: 0.111428544}
-    weight: 0.022884855
+    weight: 0.025720231
     valid: 1
     curvatureOffset: 0.37374288
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5884,9 +6093,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.44290978
-    distanceFromTire: 0.02470842
+    distanceFromTire: 0.013183504
     offset: {x: 0.15, y: 0.16714282}
-    weight: 0.01780568
+    weight: 0.020161347
     valid: 1
     curvatureOffset: 0.35236827
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5896,10 +6105,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.6082437
-    distanceFromTire: 0.050950974
+    distanceFromTire: 0.04777494
     offset: {x: 0.15, y: 0.2228571}
-    weight: 0.0132144755
-    valid: 0
+    weight: 0.013716621
+    valid: 1
     curvatureOffset: 0.32005462
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5908,10 +6117,10 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 0.79560024
-    distanceFromTire: 0.08501908
+    distanceFromTire: 0.09716305
     offset: {x: 0.15, y: 0.2785714}
-    weight: 0.008651484
-    valid: 0
+    weight: 0.007353658
+    valid: 1
     curvatureOffset: 0.27294388
     groundPoint: {x: 0, y: 0, z: 0}
     forwardDir: {x: 0, y: 0, z: 0}
@@ -5920,9 +6129,9 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   - angleForward: 1.0296924
-    distanceFromTire: 0
+    distanceFromTire: 0.18214758
     offset: {x: 0.15, y: 0.33428568}
-    weight: 0
+    weight: 0.0018664667
     valid: 0
     curvatureOffset: 0.20088218
     groundPoint: {x: 0, y: 0, z: 0}
@@ -5951,7 +6160,7 @@ MonoBehaviour:
   hasHit: 1
   prevHasHit: 1
   debug: 0
-  parent: {fileID: 5194146701604627226}
+  parent: {fileID: 8390347793774335264}
   useRimCollider: 1
   vehicleSide: 1
   activeFrictionPresetEnum: 0
@@ -6505,18 +6714,18 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   wheelHit:
-    angleForward: -0.06017972
+    angleForward: -0.025920788
     distanceFromTire: 0
-    offset: {x: 0.0007938764, y: -0.022208078}
+    offset: {x: 0.0007788782, y: -0.0094924}
     weight: 0
     valid: 1
-    curvatureOffset: 0.38737816
-    groundPoint: {x: -10.640587, y: -0.016294092, z: -1.8908168}
+    curvatureOffset: 0.3873755
+    groundPoint: {x: -8.795623, y: -0.026451647, z: 0.30136243}
     forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
-    forwardSlip: 0.10907062
+    forwardSlip: 0.1227175
     sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
-    sidewaysSlip: 0.054124016
-    force: 1551.718
+    sidewaysSlip: 0.0008023783
+    force: 5619.176
   singleRay: 0
   singleWheelHit:
     angleForward: 0
@@ -6534,81 +6743,3 @@ MonoBehaviour:
   trackedVehicle: 0
   applyForceToOthers: 1
   maxPutDownForce: 0
---- !u!1 &9066947795291002571
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7705527887773145239}
-  - component: {fileID: 1349371533089996880}
-  - component: {fileID: 388993070115691065}
-  m_Layer: 0
-  m_Name: WheelRearLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7705527887773145239
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066947795291002571}
-  m_LocalRotation: {x: 0.91736203, y: -0.012720646, z: -0.0055162846, w: 0.39781237}
-  m_LocalPosition: {x: -1.24, y: 0.45, z: -1.12}
-  m_LocalScale: {x: 1.4, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6756830693064878276}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1349371533089996880
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066947795291002571}
-  m_Mesh: {fileID: 4300042, guid: ed47c5a28308f4d73a626dd8c00027b9, type: 3}
---- !u!23 &388993070115691065
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066947795291002571}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7019f4a4500e94a4b8f2f3a873bee4e3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
