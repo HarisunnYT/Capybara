@@ -24,6 +24,11 @@ public class Mouth : BodyPart
 
     private SpringJoint springJoint;
 
+    public GameObject PivotObject { get; private set; }
+    public Rigidbody PivotBody { get; private set; }
+
+    private BoxCollider pivotCollider;
+
     public void GrabRagdoll(GrabbleBodyPiece bodyPiece)
     {
         DropCurrentItem();
@@ -38,6 +43,7 @@ public class Mouth : BodyPart
         controller.MovementController.SetMovementStyle(MovementStyle.Dragging);
 
         CreateJoint(bodyPiece);
+        SetPivot(bodyPiece.transform);
     }
 
     public void DropRagdoll()
@@ -52,10 +58,55 @@ public class Mouth : BodyPart
 
         controller.MovementController.SetMovementStyle(MovementStyle.Grounded);
 
+        RemovePivot();
+
         HoldingRagdoll = false;
         CurrentHeldController = null;
 
         CurrentHeldBone = null;
+    }
+
+    private void SetPivot(Transform grabbedPiece)
+    {
+        if (PivotObject == null)
+        {
+            PivotObject = new GameObject(controller.Parent.name + " Mouth Pivot");
+            PivotBody = PivotObject.gameObject.AddComponent<Rigidbody>();
+            PivotBody.useGravity = false;
+
+            controller.MovementController.MainBody.isKinematic = true;
+
+            //pivotCollider = PivotObject.AddComponent<BoxCollider>();
+
+            //controller.RagdollController.IgnoreRagdollAgainstCollider(pivotCollider, true);
+            //CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(pivotCollider, true);
+
+            //Bounds bounds = new Bounds(Vector3.zero, Vector3.zero);
+            //Bounds controllerBounds = controller.GetComponentInChildren<SkinnedMeshRenderer>().bounds;
+            //controllerBounds.size /= 100;
+
+            //bounds.Encapsulate(controllerBounds);
+
+            //pivotCollider.center = bounds.center - PivotObject.transform.position;
+            //pivotCollider.size = bounds.size;
+        }
+
+        PivotObject.transform.forward = controller.transform.forward;
+        PivotObject.transform.position = transform.position;
+        controller.Parent.SetParent(PivotObject.transform);
+    }
+
+    private void Update()
+    {
+        if (HoldingRagdoll)
+        {
+            
+        }
+    }
+
+    private void RemovePivot()
+    {
+        controller.Parent.SetParent(null);
     }
 
     private void CreateJoint(GrabbleBodyPiece bodyPiece)

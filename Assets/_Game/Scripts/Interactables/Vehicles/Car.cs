@@ -30,6 +30,8 @@ public class Car : Vehicle
     public float maxBrakeTorque;
     public float antiRollBarForce;
 
+    private const float minVelocityToKnockCharacter = 1;
+
     public void FixedUpdate()
     {
         if (CurrentController != null)
@@ -93,5 +95,20 @@ public class Car : Vehicle
     public void OnBrakeValueChanged(float a)
     {
         maxBrakeTorque = a;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ragdoll"))
+        {
+            if (Rigidbody.velocity.magnitude > minVelocityToKnockCharacter)
+            {
+                CharacterController controller = collision.transform.GetComponentInParent<CharacterController>();
+                if (controller)
+                {
+                    controller.RagdollController.SetRagdoll(true, true);
+                }
+            }
+        }
     }
 }

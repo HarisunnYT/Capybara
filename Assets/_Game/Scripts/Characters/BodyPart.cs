@@ -17,7 +17,7 @@ public class BodyPart : MonoBehaviour
 
     public Rigidbody Rigidbody { get; private set; }
 
-    private void Start()
+    protected virtual void Start()
     {
         controller = GetComponentInParent<CharacterController>();
         Rigidbody = GetComponent<Rigidbody>();

@@ -85,7 +85,7 @@ public class AIMovementController : MovementController
         SetDestination(finalPosition);
     }
 
-    public override Vector3 GetInputVector(bool includeYAxis = false)
+    public override Vector3 GetInputVector(bool includeYAxis = false, bool inverseZAxis = false)
     {
         return agent.velocity / maxVelocity;
     }
