@@ -48,6 +48,6 @@ public class PathGenerator : Singleton<PathGenerator>
             //    }
             //}
         }
-        WorldGenerator.instance.CompletedGeneration();
+        WorldGenerator.Instance.CompletedGeneration();
     }
 }

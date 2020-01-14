@@ -12,7 +12,7 @@ public class NodeManager : Singleton<NodeManager>
 
     private void Start()
     {
-        mapSize = WorldGenerator.instance.mapSize;
+        mapSize = WorldGenerator.Instance.mapSize;
         DrawNodes();
     }
 

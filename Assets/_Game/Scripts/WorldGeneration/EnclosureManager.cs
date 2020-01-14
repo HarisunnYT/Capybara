@@ -6,28 +6,28 @@ public class EnclosureManager : Singleton<EnclosureManager>
 {
     public List<SpawnObject> enclosures;
 
+    public int spawnCount;
+
     [SerializeField]
     private int zooBorder = 5;
 
     [SerializeField]
     private LayerMask conflictLayer;
 
-    public void EnclosureSpawn(int index, int mapSize)
+    public void InitEnclosureSpawn()
     {
-        //Node node = NodeManager.Instance.GetRandomUnusedNodeInRange(new Vector3(Mathf.Clamp(zooBorder + (mapSize / (EnclosureSpawner.Instance.spawnCount - index)), 1, mapSize * .75f), 0,
-        //    1 + Mathf.Clamp(zooBorder, 1, mapSize)),
-        //        new Vector3(Mathf.Clamp(mapSize / (EnclosureSpawner.Instance.spawnCount - index), 1, mapSize), 0, Mathf.Clamp(mapSize - zooBorder, 1, mapSize)));
-
-        Node node = NodeManager.Instance.GetRandomUnusedNode();
-
-        while (Physics.OverlapSphere(node.pos, EnclosureSpawner.Instance.maxFencesPerSide * 2, conflictLayer).Length > 0)
+        for (int i = 0; i < spawnCount; i++)
         {
-            Debug.Log("Enclosure collision");
-            node = NodeManager.Instance.GetRandomUnusedNode();
+            EnclosureSpawn(WorldQuadrants.Instance.GetQuadrant(i, spawnCount), WorldGenerator.Instance.mapSize);
         }
+    }
 
-        //EnclosureSpawner.Instance.SpawnEnclosure(node);
-        EnclosureSpawner.Instance.SpawnPrefabbedEnclosure(node.pos);
+    private void EnclosureSpawn(int quadrantIndex, int mapSize)
+    {
+        Vector3 pos = WorldQuadrants.Instance.GetSpawnPosInQuadrant(quadrantIndex, EnclosureSpawner.Instance.maxFencesPerSide, conflictLayer);
+
+        // OLD // EnclosureSpawner.Instance.SpawnEnclosure(node);
+        EnclosureSpawner.Instance.SpawnPrefabbedEnclosure(pos);
     }
 
     public SpawnObject GetRandomEnclosureBySize(int xLength, int zLength)

@@ -7,11 +7,6 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
     private const int fenceUnitLength = 4;
 
     public Transform parent;
-
-    public int spawnCount;
-
-    [SerializeField]
-    private SpawnObject[] collection;
   
     public int minFencesPerSide, maxFencesPerSide;
 
@@ -37,7 +32,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
     }
 
     // OLD SYSTEM
-    public void SpawnEnclosure(Node node)
+    public void SpawnEnclosure(Node node, SpawnObject[] collection)
     {      
         int index = Random.Range(0, collection.Length);
         SpawnObject fencePiece = collection[index];
@@ -102,7 +97,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
                 if (!top)
                 {
                     Vector3 pathNodePos = new Vector3(node.pos.x, 0, node.pos.z - 1);
-                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.Instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.Instance.mapSize)
                     {
                         enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
                     }
@@ -110,7 +105,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
                 else
                 {
                     Vector3 pathNodePos = new Vector3(node.pos.x, 0, node.pos.z + 1);
-                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.Instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.Instance.mapSize)
                     {
                         enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
                     }
@@ -136,7 +131,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
                 if (!left)
                 {
                     Vector3 pathNodePos = new Vector3(node.pos.x + 1, 0, node.pos.z);
-                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.Instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.Instance.mapSize)
                     {
                         enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
                     }
@@ -144,7 +139,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
                 else
                 {
                     Vector3 pathNodePos = new Vector3(node.pos.x - 1, 0, node.pos.z);
-                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.instance.mapSize)
+                    if (pathNodePos.x > 0 && pathNodePos.x < WorldGenerator.Instance.mapSize && pathNodePos.z > 0 && pathNodePos.z < WorldGenerator.Instance.mapSize)
                     {
                         enclosurePathNodes.Add(NodeManager.Instance.GetNodeAtPosition(pathNodePos));
                     }
