@@ -73,15 +73,6 @@ public class MovementController : Controller
 
     private void FixedUpdate()
     {
-        //TODO DELETE
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!GameManager.Instance.IsPlayer(CharacterController))
-            {
-                RagdollController.SetRagdoll(true);
-            }
-        }
-
         AnimationController.SetFloat("MovementSpeed", MainBody.velocity.magnitude);
 
         if ((int)CurrentMovementState < (int)MovementState.Stunned)
@@ -115,10 +106,6 @@ public class MovementController : Controller
                 //could do sliding animation here
                 MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
                 knockBackSlerpDuration = float.MaxValue;
-            }
-            else if (CurrentMovementStyle == MovementStyle.Dragging)
-            {
-                InteractionController.Mouth.PivotBody.velocity = Vector3.zero;
             }
 
             if ((int)CurrentMovementState <= (int)MovementState.Moving)
@@ -154,9 +141,9 @@ public class MovementController : Controller
             else if (CurrentMovementStyle == MovementStyle.Dragging)
             {
                 movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, 0, movementVector.z * baseMovementSpeed * fixedDTime);
-                if (InteractionController.Mouth.PivotBody.velocity.magnitude < GetMaxVelocity())
+                if (MainBody.velocity.magnitude < GetMaxVelocity())
                 {
-                    InteractionController.Mouth.PivotBody.AddForce(movementVector, ForceMode.VelocityChange);
+                    MainBody.AddForce(movementVector, ForceMode.VelocityChange);
                 }
             }
         }
@@ -166,13 +153,14 @@ public class MovementController : Controller
     {
         if (CurrentMovementStyle == MovementStyle.Dragging)
         {
-            Quaternion lookRotation = Quaternion.LookRotation(GetInputVector(false, true), Vector3.up);
-            lookRotation = Quaternion.Inverse(lookRotation);
+            Vector3 inputVec = GetInputVector(inverseZAxis: true, cameraRelative: false);
 
-            Quaternion pivotRotation = InteractionController.Mouth.PivotObject.transform.rotation;
-            Quaternion rotation = Quaternion.Lerp(pivotRotation, lookRotation, GetRotationSpeed() * Time.deltaTime);
+            float angle = Vector3.SignedAngle(inputVec, CameraController.Instance.transform.forward, Vector3.up);
+            var rotation = Quaternion.AngleAxis(angle, Vector3.up);
 
-            InteractionController.Mouth.PivotObject.transform.rotation = rotation;
+            rotation = Quaternion.Lerp(transform.rotation, rotation, GetRotationSpeed() * Time.deltaTime);
+
+            MainBody.MoveRotation(rotation);
         }
         else if (CurrentMovementStyle != MovementStyle.Driving)
         {
@@ -202,7 +190,7 @@ public class MovementController : Controller
         return rotation;
     }
 
-    public virtual Vector3 GetInputVector(bool includeYAxis = false, bool inverseZAxis = false)
+    public virtual Vector3 GetInputVector(bool includeYAxis = false, bool inverseZAxis = false, bool cameraRelative = true)
     {
         return Vector3.zero;
     }
