@@ -903,7 +903,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   forceToRagdoll: 45
-  minForceToKnockOut: 1000
+  minForceToKnockOut: 100
 --- !u!114 &1060903667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,6 +1052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnFromRagdollDuration: 0.5
   minRagdollTime: 2
+  maxRagdollTime: 7
   requiredKnockBackForceToRagdoll: 75
   spineBody: {fileID: 1312642961}
   metaRig: {fileID: 1438132456197574559}
@@ -1578,7 +1579,7 @@ GameObject:
   - component: {fileID: 583919184}
   - component: {fileID: 583919182}
   - component: {fileID: 9076902118310065974}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +1895,7 @@ GameObject:
   - component: {fileID: 1419698967}
   - component: {fileID: 1419698965}
   - component: {fileID: 2549009585795937713}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3214,7 +3215,7 @@ GameObject:
   - component: {fileID: 1002184301}
   - component: {fileID: 1002184300}
   - component: {fileID: 4092767164282449448}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3638,7 +3639,7 @@ GameObject:
   - component: {fileID: 893373028}
   - component: {fileID: 893373027}
   - component: {fileID: 8646163703654291276}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4366,7 +4367,7 @@ GameObject:
   - component: {fileID: 695389730}
   - component: {fileID: 695389729}
   - component: {fileID: 1910936554055498816}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4519,7 +4520,7 @@ GameObject:
   - component: {fileID: 938401958}
   - component: {fileID: 938401957}
   - component: {fileID: 8342380811944392658}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4719,7 +4720,7 @@ GameObject:
   - component: {fileID: 1635169370}
   - component: {fileID: 1635169368}
   - component: {fileID: 6313286118208059891}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5567,7 +5568,7 @@ GameObject:
   - component: {fileID: 987000170}
   - component: {fileID: 987000169}
   - component: {fileID: 6688924242383635168}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5720,7 +5721,7 @@ GameObject:
   - component: {fileID: 1588659190}
   - component: {fileID: 1588659188}
   - component: {fileID: 1291917948631766947}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6146,7 +6147,7 @@ GameObject:
   - component: {fileID: 328568221}
   - component: {fileID: 8964907329487059009}
   - component: {fileID: 4219431759333382704}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7239,7 +7240,7 @@ GameObject:
   - component: {fileID: 1312642961}
   - component: {fileID: 1312642962}
   - component: {fileID: 5908759871502703570}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: mixamorig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7901,11 +7902,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zookeeper Hat
-      objectReference: {fileID: 0}
-    - target: {fileID: 5075546582602331919, guid: f1e6205500cc34744a9eb6757be97d1e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4400495434908782904, guid: f1e6205500cc34744a9eb6757be97d1e,
         type: 3}

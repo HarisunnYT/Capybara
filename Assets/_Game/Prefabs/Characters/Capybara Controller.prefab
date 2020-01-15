@@ -6122,8 +6122,8 @@ MonoBehaviour:
   currentItemObject: {fileID: 0}
   spring: 10000
   snapDuration: 1
-  breakForce: Infinity
-  breakTorque: Infinity
+  breakForce: 20000
+  breakTorque: 20000
 --- !u!54 &7269895478082400603
 Rigidbody:
   m_ObjectHideFlags: 0

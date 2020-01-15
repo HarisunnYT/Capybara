@@ -1182,6 +1182,7 @@ GameObject:
   - component: {fileID: 5762638001220068555}
   - component: {fileID: 3472381001379064824}
   - component: {fileID: 1691266118625766986}
+  - component: {fileID: 4329375781047279920}
   m_Layer: 2
   m_Name: Golf Cart
   m_TagString: Untagged
@@ -1264,12 +1265,12 @@ MonoBehaviour:
   - wc: {fileID: 8390347792484485811}
     steer: 0
     power: 1
-  velocity: 0
   maxSteeringAngle: 34
   minSteeringAngle: 14
   maxMotorTorque: 27000
   maxBrakeTorque: 800
   antiRollBarForce: 12000
+  minVelocityToKnockCharacter: 10
 --- !u!65 &8390347793774335269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1335,6 +1336,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5276642, y: 5.104954, z: 0.83392334}
   m_Center: {x: -3.0675812, y: 8.693966, z: 5.0091705}
+--- !u!65 &4329375781047279920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.337318, y: 15.278378, z: 22.786821}
+  m_Center: {x: -0.031520844, y: 7.139189, z: 3.0920916}
 --- !u!1 &8390347793872996985
 GameObject:
   m_ObjectHideFlags: 0

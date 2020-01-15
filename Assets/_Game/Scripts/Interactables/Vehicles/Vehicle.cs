@@ -56,6 +56,9 @@ public class Vehicle : Interactable
             CameraController.Instance.ResetMinMaxDistance();
         }
 
+        CurrentController.MovementController.SetMovementStyle(MovementStyle.Grounded);
+        CurrentController.AnimationController.SetInstantBoneMovement(0);
+
         CurrentController = null;
     }
 }

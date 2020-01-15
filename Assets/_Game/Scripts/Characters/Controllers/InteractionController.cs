@@ -9,6 +9,7 @@ public class InteractionController : Controller
     private float interactionRadius;
 
     public Mouth Mouth { get; private set; }
+    public Vehicle CurrentVehicle { get; private set; }
 
     protected override void Awake()
     {
@@ -122,6 +123,8 @@ public class InteractionController : Controller
 
         MovementController.SetMovementStyle(MovementStyle.Driving);
         vehicle.GetInVehicle(CharacterController);
+
+        CurrentVehicle = vehicle;
     }
 
     private void AssignItem(BodyPart bodyPart, PickupableItem item)
