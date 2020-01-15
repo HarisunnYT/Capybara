@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : Singleton<ObjectSpawner>
+public class NPCSpawner : Singleton<NPCSpawner>
 {
-    public void SpawnObjects(ObjectManager.SpawnGroup spawnGroup)
+    public void SpawnNPCs(NPCManager.SpawnGroup spawnGroup)
     {
         for (int i = 0; i < spawnGroup.spawnCount; i++)
         {
-            PlaceItem(spawnGroup, WorldQuadrants.Instance.GetQuadrant(i, spawnGroup.spawnCount));
+            PlaceNPC(spawnGroup, WorldQuadrants.Instance.GetQuadrant(i, spawnGroup.spawnCount));
         }
     }
 
-    private void PlaceItem(ObjectManager.SpawnGroup spawnGroup, int quadrantIndex)
+    private void PlaceNPC(NPCManager.SpawnGroup spawnGroup, int quadrantIndex)
     {
         int index = Random.Range(0, spawnGroup.collection.Length);
         Quaternion rot = Quaternion.Euler(0, Random.Range(0, 360), 0);
@@ -20,6 +20,5 @@ public class ObjectSpawner : Singleton<ObjectSpawner>
         Vector3 pos = WorldQuadrants.Instance.GetSpawnPosInQuadrant(quadrantIndex, spawnGroup.collection[index].MaxBounds(), spawnGroup.conflictLayer);
 
         Instantiate(spawnGroup.collection[index].gameObject, pos, rot, spawnGroup.parent);
-        NodeManager.Instance.SetNodeUsed(pos);
     }
 }

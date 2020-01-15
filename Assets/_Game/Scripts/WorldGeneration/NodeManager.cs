@@ -138,7 +138,7 @@ public class NodeManager : Singleton<NodeManager>
         }
     }
 
-    public Node GetRandomUnusedNode()
+    public Node GetRandomUnusedNode(float border = 2)
     {
         Node node = null;
 
@@ -146,7 +146,7 @@ public class NodeManager : Singleton<NodeManager>
         {
             node = nodes[Random.Range(0, nodes.Count)];
         }
-        while (node == null && node.used);
+        while (node == null && node.used /*&& node.pos.x > border && node.pos.z > border && node.pos.x < (mapSize - border) && node.pos.z < (mapSize - border)*/);
 
         return node;
     }

@@ -16,15 +16,25 @@ public class PathGenerator : Singleton<PathGenerator>
 
     public void AddCentralAreaToPathDest()
     {
-        NodeManager.Instance.pathDests.Add(NodeManager.Instance.GetRandomUnusedNode());
+        currentNode = NodeManager.Instance.GetNodeAtPosition(new Vector3(WorldGenerator.Instance.mapSize / 2, 0, 4));
+
+        Instantiate(zooEntrances[Random.Range(0, zooEntrances.Length)], new Vector3(currentNode.pos.x, 0, currentNode.pos.z - 2), Quaternion.identity);
+
+        NodeManager.Instance.SetExistingNodesUsed(NodeManager.Instance.GetNodesInRange(new Vector3(currentNode.pos.x - 5, 0, currentNode.pos.z), new Vector3(currentNode.pos.x + 5, 0, currentNode.pos.z + 5)));
+
+        //
+
+        Node centralAreaNode = NodeManager.Instance.GetRandomUnusedNode(WorldGenerator.Instance.mapSize / 5);
+        NodeManager.Instance.pathDests.Add(centralAreaNode);
+
+        // SPAWN CENTRAL AREA STUFF HERE
+        //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x - 10, 0, centralAreaNode.pos.z), Quaternion.Euler(-90, -90, 0));
+        //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x, 0, centralAreaNode.pos.z + 10), Quaternion.Euler(-90, 0, 0));
+        //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x + 10, 0, centralAreaNode.pos.z), Quaternion.Euler(-90, 90, 0));
     }
 
     public void DrawPath()
-    {
-        currentNode = NodeManager.Instance.GetRandomUnusedNode();
-
-        Instantiate(zooEntrances[Random.Range(0, zooEntrances.Length)], new Vector3(currentNode.pos.x - 2, currentNode.pos.y, currentNode.pos.z), Quaternion.identity);       
-
+    {       
         StartCoroutine(RunPathfinding());
     }
 
@@ -35,18 +45,6 @@ public class PathGenerator : Singleton<PathGenerator>
         foreach (Node destNode in NodeManager.Instance.pathDests)
         {
             yield return new WaitUntil(() => PathSpawner.Instance.DrawPath(destNode, pathPiece, parent));
-
-            //List<Node> path = Pathfinding.Instance.FindNodePath(currentNode, destNode);
-
-            //if (path != null)
-            //{
-            //    foreach (Node node in path)
-            //    {
-            //        Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
-            //        NodeManager.Instance.SetNodeAsPath(node.pos);
-            //        currentNode = node;
-            //    }
-            //}
         }
         WorldGenerator.Instance.CompletedGeneration();
     }

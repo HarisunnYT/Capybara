@@ -18,7 +18,7 @@ public class WorldQuadrants : Singleton<WorldQuadrants>
     {
         xQuads.Add(new Vector3(1, 0, 1));
         xQuads.Add(new Vector3(WorldGenerator.Instance.mapSize / 2, 0, 1));
-        xQuads.Add(new Vector3(1, 0, WorldGenerator.Instance.mapSize));
+        xQuads.Add(new Vector3(1, 0, WorldGenerator.Instance.mapSize / 2));
         xQuads.Add(new Vector3(WorldGenerator.Instance.mapSize / 2, 0, WorldGenerator.Instance.mapSize / 2));
 
         zQuads.Add(new Vector3(WorldGenerator.Instance.mapSize / 2, 0, WorldGenerator.Instance.mapSize / 2));

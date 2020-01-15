@@ -60,33 +60,10 @@ public class WorldGenerator : Singleton<WorldGenerator>
     private void DelayedLoadIn()
     {
         PathGenerator.Instance.AddCentralAreaToPathDest();
-
         EnclosureManager.Instance.InitEnclosureSpawn();
-
-        DelayedObjectSpawn();
-    }
-
-    private void DelayedObjectSpawn()
-    {
-        BuildingSpawner.Instance.SpawnBuildings();
-        
-        DelayedEnemySpawn();
-    }
-
-    private void DelayedEnemySpawn()
-    {
-        ObjectSpawner.Instance.SpawnObjects();
-
-        for (int i = 0; i < EnemySpawner.Instance.spawnCount; i++)
-        {
-            EnemySpawner.Instance.SpreadEnemy();
-        }
-
-        DelayedPathSpawn();
-    }
-
-    private void DelayedPathSpawn()
-    {      
+        BuildingSpawner.Instance.InitSpawnBuildings();
+        NPCManager.Instance.InitSpawnNPCs();
+        ObjectManager.Instance.InitSpawnObjects();
         PathGenerator.Instance.DrawPath();
     }
 
