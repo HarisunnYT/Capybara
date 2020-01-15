@@ -22,7 +22,15 @@ public class CharacterController : Controller
 
     private void Start()
     {
-        Parent = transform.parent;
+        if (transform.parent != null)
+        {
+            Parent = transform.parent;
+        }
+        else
+        {
+            Parent = transform;
+        }
+
         BodyParts = GetComponentsInChildren<BodyPart>();
     }
 

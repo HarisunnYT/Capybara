@@ -58,6 +58,11 @@ public class Mouth : BodyPart
         CurrentHeldBone = null;
     }
 
+    private Vector3 reciprocal(Vector3 input)
+    {
+        return new Vector3(1f / input.x, 1f / input.y, 1f / input.z);
+    }
+
     private void CreateJoint(GrabbleBodyPiece bodyPiece)
     {
         Vector3 direction = bodyPiece.transform.position - transform.position;

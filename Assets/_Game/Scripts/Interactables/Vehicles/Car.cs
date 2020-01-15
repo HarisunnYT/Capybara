@@ -16,26 +16,37 @@ public class Car : Vehicle
     [SerializeField]
     public List<Wheel> wheels;
 
+    [SerializeField]
+    private float maxSteeringAngle = 35;
+
+    [SerializeField]
+    private float minSteeringAngle = 20;
+
+    [SerializeField]
+    private float maxMotorTorque;
+
+    [SerializeField]
+    private float maxBrakeTorque;
+
+    [SerializeField]
+    private float antiRollBarForce;
+
+    [Space()]
+    [SerializeField]
+    private float minVelocityToKnockCharacter = 1;
+
     private Vector3 inputVector;
     private float smoothXAxis;
     private float xAxisVelocity;
 
-    [HideInInspector]
-    public float velocity;
-
-    public float maxSteeringAngle = 35;
-    public float minSteeringAngle = 20;
-
-    public float maxMotorTorque;
-    public float maxBrakeTorque;
-    public float antiRollBarForce;
+    private float velocity;
 
     public void FixedUpdate()
     {
         if (CurrentController != null)
         {
             //inputVector = CurrentController.MovementController.GetInputVector();
-            inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            inputVector = CurrentController.MovementController.GetInputVector(cameraRelative: false);
 
             velocity = transform.InverseTransformDirection(this.GetComponent<Rigidbody>().velocity).z;
             smoothXAxis = Mathf.SmoothDamp(smoothXAxis, inputVector.x, ref xAxisVelocity, 0.12f);
@@ -93,5 +104,20 @@ public class Car : Vehicle
     public void OnBrakeValueChanged(float a)
     {
         maxBrakeTorque = a;
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.layer == LayerMask.NameToLayer("Ragdoll") || collider.gameObject.layer == LayerMask.NameToLayer("Character"))
+        {
+            if (Rigidbody.velocity.magnitude > minVelocityToKnockCharacter)
+            {
+                CharacterController controller = collider.transform.GetComponentInParent<CharacterController>();
+                if (controller)
+                {
+                    controller.RagdollController.SetRagdoll(true, false);
+                }
+            }
+        }
     }
 }

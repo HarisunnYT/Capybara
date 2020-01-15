@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WorldGenerator : MonoBehaviour
+public class WorldGenerator : Singleton<WorldGenerator>
 {
-    public static WorldGenerator instance;
-
     [SerializeField]
     private bool isDebug;
 
@@ -29,9 +27,8 @@ public class WorldGenerator : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI seed, genTime;
 
-    private void Awake()
+    protected override void Initialize()
     {
-        instance = this;
         loadingCanvas.SetActive(true);
     }
 
@@ -46,7 +43,9 @@ public class WorldGenerator : MonoBehaviour
 
         ground.position = new Vector3(mapSize / 2, 0, mapSize / 2);
         ground.localScale = new Vector3(mapSize / 9, 1, mapSize / 9);
-        
+
+        WorldQuadrants.Instance.SetupQuadrants();
+
         Invoke("DelayedLoadIn", .1f);
     }
 
@@ -62,10 +61,7 @@ public class WorldGenerator : MonoBehaviour
     {
         PathGenerator.Instance.AddCentralAreaToPathDest();
 
-        for (int i = 0; i < EnclosureSpawner.Instance.spawnCount; i++)
-        {
-            EnclosureManager.Instance.EnclosureSpawn(i, mapSize);
-        }
+        EnclosureManager.Instance.InitEnclosureSpawn();
 
         DelayedObjectSpawn();
     }

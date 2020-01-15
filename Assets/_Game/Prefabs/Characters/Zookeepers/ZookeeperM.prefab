@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8497837383008869687}
   - component: {fileID: 1369975803172626722}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2274208629624405472}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2886162373092282173}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +903,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   forceToRagdoll: 45
-  minForceToKnockOut: 0
+  minForceToKnockOut: 100
 --- !u!114 &1060903667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,6 +1052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnFromRagdollDuration: 0.5
   minRagdollTime: 2
+  maxRagdollTime: 7
   requiredKnockBackForceToRagdoll: 75
   spineBody: {fileID: 1312642961}
   metaRig: {fileID: 1438132456197574559}
@@ -1160,7 +1161,14 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seenPickupable":{"_name":"_seenPickupable","_id":"211be0d5-aee5-43fc-9da5-975911cb57f0","$type":"NodeCanvas.Framework.Variable`1[[Interactable,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_alwaysFalse":{"_name":"_alwaysFalse","_id":"ccddcb2b-7b26-4e82-b726-562189b0268c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"CapybaraPlayer":{"_name":"CapybaraPlayer","_id":"f142e3b1-eaae-4c34-b8a7-937db2e56a34","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_AimTime":{"_name":"_AimTime","_id":"a113ae1f-746d-4568-b2f3-fb03f8042304","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxDist":{"_value":50.0,"_name":"_seeMaxDist","_id":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxAware":{"_value":15.0,"_name":"_seeMaxAware","_id":"650a6e8f-c6df-467c-b964-deae72c04cb6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeViewAngle":{"_value":100.0,"_name":"_seeViewAngle","_id":"2a0a1413-d075-4a23-9a66-6ceacc879b4d","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_capyLastSeenPos":{"_name":"_capyLastSeenPos","_id":"7b80be8a-7d03-44c8-b385-b4cdb3ac4286","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_walkSpeed":{"_value":6.0,"_name":"_walkSpeed","_id":"2d9765f6-4a69-40f3-bcd0-8348c289126c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_runSpeed":{"_value":12.0,"_name":"_runSpeed","_id":"532dd955-0020-4af5-bc47-429c3cdcac2a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
 --- !u!114 &1267917556
 MonoBehaviour:
@@ -1174,20 +1182,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7dbb6bbdf4ffb46ab7dd87ba8191e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":44.0,"y":258.0},"zoomFactor":0.7495525,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":223.0,"y":170.0},"_name":"Wander","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"2"},{"_position":{"x":722.0,"y":338.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"4"},{"_nestedBT":{"_value":2},"_position":{"x":610.0,"y":426.0},"_name":"Flee","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"5"},{"_position":{"x":443.0,"y":538.0},"$type":"NodeCanvas.StateMachines.EmptyState","$id":"7"},{"_position":{"x":424.0,"y":-117.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"8"},{"_nestedBT":{"_value":3},"executionMode":"Once","_transitionEvaluation":"CheckAfterStateFinished","_position":{"x":437.0,"y":6.0},"_name":"PickUp","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"9"},{"_nestedBT":{"_value":4},"_position":{"x":707.0,"y":-279.0},"_name":"Stunned","_comment":"Connect
-    to When Stunned","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"11"}],"connections":[{"_condition":{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":10.0},"awarnessDistance":{"_value":1.0},"viewAngle":{"_value":70.0},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-452.0,"y":20.0},"zoomFactor":0.7301444,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":195.0,"y":165.0},"_name":"Wander","_comment":"Wander
+    to random points in the environment","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"2"},{"_position":{"x":780.0,"y":285.0},"_name":"Capy
+    seen (check weapon)","_comment":"After capy has been seen, check to see if the
+    ZK is holding a weapon or not. If they are, try and fire it at Capy. If not, run
+    away. ","$type":"NodeCanvas.StateMachines.EmptyState","$id":"4"},{"_nestedBT":{"_value":2},"_position":{"x":615.0,"y":420.0},"_name":"Flee","_comment":"Run
+    away from Capy","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"5"},{"_position":{"x":405.0,"y":555.0},"_comment":"Just
+    to keep it neat","$type":"NodeCanvas.StateMachines.EmptyState","$id":"7"},{"_nestedBT":{"_value":3},"successEvent":"","failureEvent":"","_position":{"x":1185.0,"y":540.0},"_name":"UseWeapon","_comment":"Aim
+    at and try and fire on Capy","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"8"},{"_nestedBT":{"_value":4},"executionMode":"Once","_position":{"x":1020.0,"y":690.0},"_name":"Scout","_comment":"Go
+    to the last place that the ZK saw Capy","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"10"},{"_position":{"x":465.0,"y":105.0},"_name":"OBJECT
+    SEEN","_comment":"If ZK sees an object that they can pick up","$type":"NodeCanvas.StateMachines.EmptyState","$id":"12"},{"_nestedBT":{"_value":5},"executionMode":"Once","_transitionEvaluation":"CheckAfterStateFinished","_position":{"x":465.0,"y":-60.0},"_name":"PickUp","_comment":"Go
+    and pick up the object they see","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"13"},{"_position":{"x":750.0,"y":-120.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"15"},{"_nestedBT":{"_value":6},"_position":{"x":525.0,"y":-270.0},"_name":"Stunned","_comment":"Connect
+    to When Stunned","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"16"},{"_conditionList":{"conditions":[{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":50.0,"_name":"_seeMaxDist","_targetVariableID":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1"},"awarnessDistance":{"_value":1.0,"_name":"_seeMaxAware","_targetVariableID":"650a6e8f-c6df-467c-b964-deae72c04cb6"},"viewAngle":{"_value":100.0,"_name":"_seeViewAngle","_targetVariableID":"2a0a1413-d075-4a23-9a66-6ceacc879b4d"},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"boolVariable":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},{"valueA":{"_name":"_capyLastSeenPos","_targetVariableID":"7b80be8a-7d03-44c8-b385-b4cdb3ac4286"},"valueB":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"$type":"NodeCanvas.Tasks.Actions.SetVariable`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}]},"_repeatStateActions":true,"_position":{"x":-135.0,"y":-195.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":50.0,"_name":"_seeMaxDist","_targetVariableID":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1"},"awarnessDistance":{"_value":1.0,"_name":"_seeMaxAware","_targetVariableID":"650a6e8f-c6df-467c-b964-deae72c04cb6"},"viewAngle":{"_value":100.0,"_name":"_seeViewAngle","_targetVariableID":"2a0a1413-d075-4a23-9a66-6ceacc879b4d"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"boolVariable":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}]},"_repeatStateActions":true,"_position":{"x":-105.0,"y":-45.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"overrideAgent":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[]},"_position":{"x":-90.0,"y":225.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"}],"connections":[{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"_value":true,"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIMovementController|get_CurrentMovementState|MovementState","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[MovementState,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIAttackController|IsHoldingWeapon|System.Boolean","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIAttackController|IsHoldingWeapon|System.Boolean","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"_value":true,"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIMovementController|get_CurrentMovementState|MovementState","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[MovementState,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"checkValue":{"_value":"Stunned","$type":"NodeCanvas.Framework.BBParameter`1[[MovementState,
-    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckProperty"},"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"localBlackboard":{"_name":"Local
+    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckProperty"},"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"localBlackboard":{"_name":"Local
     Blackboard","_variables":{}}}'
   boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 4c7f38a9f0e361945a8ef4f6f119f443, type: 2}
   - {fileID: 11400000, guid: 7dfa1dfd947679a4fb5e7bc486bbdccb, type: 2}
-  - {fileID: 11400000, guid: 947c7b25fd920ae478da371365c70e1f, type: 2}
+  - {fileID: 11400000, guid: 2bbc6370c3f6856479def16b521bbb3f, type: 2}
+  - {fileID: 11400000, guid: 719d95edfcee6364e855f1433d494921, type: 2}
   - {fileID: 11400000, guid: 7712f43409b9f9948afb96a7feb9ff5d, type: 2}
+  - {fileID: 11400000, guid: 947c7b25fd920ae478da371365c70e1f, type: 2}
   firstActivation: 0
   enableAction: 0
   disableAction: 0
@@ -1234,7 +1259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5363430623375869001}
   - component: {fileID: 2152640971249419686}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1554,7 +1579,7 @@ GameObject:
   - component: {fileID: 583919184}
   - component: {fileID: 583919182}
   - component: {fileID: 9076902118310065974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1617,7 +1642,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000026263297, y: 0.9183558, z: 0.00000059604645}
+  m_ConnectedAnchor: {x: 0.0000007497147, y: 0.9183568, z: -0.0000005364418}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -1870,7 +1895,7 @@ GameObject:
   - component: {fileID: 1419698967}
   - component: {fileID: 1419698965}
   - component: {fileID: 2549009585795937713}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1933,7 +1958,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000010430813, y: 1.257894, z: -0.0000014603138}
+  m_ConnectedAnchor: {x: 0.00000032782555, y: 1.2578939, z: -0.0000011026859}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2260,7 +2285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4222183465028469304}
   - component: {fileID: 2168125833765862842}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2466,7 +2491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8750169860086492182}
   - component: {fileID: 5011285924986984355}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: BumBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,7 +3215,7 @@ GameObject:
   - component: {fileID: 1002184301}
   - component: {fileID: 1002184300}
   - component: {fileID: 4092767164282449448}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3252,7 +3277,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000011697412, y: 0.39954352, z: -0.032741968}
+  m_ConnectedAnchor: {x: 0.00000043213367, y: 0.39954352, z: -0.032742478}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3565,7 +3590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3982642802117195480}
   - component: {fileID: 5051610391201864833}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3614,7 +3639,7 @@ GameObject:
   - component: {fileID: 893373028}
   - component: {fileID: 893373027}
   - component: {fileID: 8646163703654291276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3677,7 +3702,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.36560425, y: -0.22223401, z: -0.092690766}
+  m_ConnectedAnchor: {x: -0.36560524, y: -0.22223401, z: -0.09269252}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3732,7 +3757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8493568111886815756}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4276,7 +4301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8087330654273781418}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4342,7 +4367,7 @@ GameObject:
   - component: {fileID: 695389730}
   - component: {fileID: 695389729}
   - component: {fileID: 1910936554055498816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4405,7 +4430,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.36560315, y: -0.22223401, z: -0.09598031}
+  m_ConnectedAnchor: {x: 0.36560652, y: -0.22223401, z: -0.095982455}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4495,7 +4520,7 @@ GameObject:
   - component: {fileID: 938401958}
   - component: {fileID: 938401957}
   - component: {fileID: 8342380811944392658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4558,7 +4583,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.8442582, y: 1.3827729, z: -0.11739351}
+  m_ConnectedAnchor: {x: -0.84425974, y: 1.3827729, z: -0.11739263}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -4695,7 +4720,7 @@ GameObject:
   - component: {fileID: 1635169370}
   - component: {fileID: 1635169368}
   - component: {fileID: 6313286118208059891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4758,7 +4783,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000001296401, y: 0.91836596, z: 0.0000017285347}
+  m_ConnectedAnchor: {x: -0.000001322478, y: 0.9183675, z: -0.00000029802322}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -4898,7 +4923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5182285160208240996}
   - component: {fileID: 7774714797335576976}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: TwoHandedBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5543,7 +5568,7 @@ GameObject:
   - component: {fileID: 987000170}
   - component: {fileID: 987000169}
   - component: {fileID: 6688924242383635168}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5606,7 +5631,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.8456575, y: 1.3903413, z: -0.11192101}
+  m_ConnectedAnchor: {x: 0.84565514, y: 1.3903413, z: -0.1119183}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -5661,7 +5686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1568492764676143133}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5696,7 +5721,7 @@ GameObject:
   - component: {fileID: 1588659190}
   - component: {fileID: 1588659188}
   - component: {fileID: 1291917948631766947}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5759,7 +5784,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000016391277, y: 1.2579339, z: -0.00000094249845}
+  m_ConnectedAnchor: {x: -0.00000009685755, y: 1.2579339, z: -0.00000055506825}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -6122,7 +6147,7 @@ GameObject:
   - component: {fileID: 328568221}
   - component: {fileID: 8964907329487059009}
   - component: {fileID: 4219431759333382704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6186,7 +6211,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000062957406, y: 2.0336556, z: 0.08052875}
+  m_ConnectedAnchor: {x: -0.0000011492521, y: 2.0336556, z: 0.08052738}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -6364,7 +6389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882910469561348472}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:LeftToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6457,7 +6482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6307275052417774583}
   - component: {fileID: 3769008566833505482}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6844,7 +6869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3458925100468379692}
   - component: {fileID: 6184490081809555723}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7215,7 +7240,7 @@ GameObject:
   - component: {fileID: 1312642961}
   - component: {fileID: 1312642962}
   - component: {fileID: 5908759871502703570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mixamorig:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7439,7 +7464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8540154890554946388}
   - component: {fileID: 5117327925775320660}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: MouthBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7736,7 +7761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8962461218625454671}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7845,7 +7870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721590250014999989}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: mixamorig:RightToe_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}

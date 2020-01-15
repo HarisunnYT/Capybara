@@ -10,6 +10,15 @@ public class Vehicle : Interactable
     [SerializeField]
     private Transform seatBone;
 
+    private Collider[] colliders;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        colliders = GetComponents<Collider>();
+    }
+
     public void GetInVehicle(CharacterController characterController)
     {
         CurrentController = characterController;
@@ -21,7 +30,10 @@ public class Vehicle : Interactable
         characterController.MovementController.SetKinematic(true);
         characterController.AnimationController.DisableAllAnimationLayers();
 
-        CurrentController.InteractionController.IgnoreCollisions(collider, true);
+        foreach (var col in colliders)
+        {
+            CurrentController.InteractionController.IgnoreCollisions(col, true);
+        }
 
         if (GameManager.Instance.IsPlayer(CurrentController))
         {
@@ -31,17 +43,21 @@ public class Vehicle : Interactable
 
     public void GetOutOfVehicle()
     {
-        CurrentController.InteractionController.IgnoreCollisions(collider, false);
-
         CurrentController.ResetParent();
         CurrentController.MovementController.SetKinematic(false);
 
-        CurrentController.InteractionController.IgnoreCollisions(collider, false);
+        foreach (var col in colliders)
+        {
+            CurrentController.InteractionController.IgnoreCollisions(col, false);
+        }
 
         if (GameManager.Instance.IsPlayer(CurrentController))
         {
             CameraController.Instance.ResetMinMaxDistance();
         }
+
+        CurrentController.MovementController.SetMovementStyle(MovementStyle.Grounded);
+        CurrentController.AnimationController.SetInstantBoneMovement(0);
 
         CurrentController = null;
     }

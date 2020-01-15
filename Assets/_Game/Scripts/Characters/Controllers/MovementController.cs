@@ -153,10 +153,14 @@ public class MovementController : Controller
     {
         if (CurrentMovementStyle == MovementStyle.Dragging)
         {
-            Quaternion cameraRotation = CameraController.Instance.transform.rotation;
-            Vector3 angle = new Vector3(0, 5, 0);
+            Vector3 inputVec = GetInputVector(inverseZAxis: true, cameraRelative: false);
 
-            transform.RotateAround(InteractionController.Mouth.CurrentHeldBone.transform.position, Vector3.up, 1);
+            float angle = Vector3.SignedAngle(inputVec, CameraController.Instance.transform.forward, Vector3.up);
+            var rotation = Quaternion.AngleAxis(angle, Vector3.up);
+
+            rotation = Quaternion.Lerp(transform.rotation, rotation, GetRotationSpeed() * Time.deltaTime);
+
+            MainBody.MoveRotation(rotation);
         }
         else if (CurrentMovementStyle != MovementStyle.Driving)
         {
@@ -186,7 +190,7 @@ public class MovementController : Controller
         return rotation;
     }
 
-    public virtual Vector3 GetInputVector(bool includeYAxis = false)
+    public virtual Vector3 GetInputVector(bool includeYAxis = false, bool inverseZAxis = false, bool cameraRelative = true)
     {
         return Vector3.zero;
     }

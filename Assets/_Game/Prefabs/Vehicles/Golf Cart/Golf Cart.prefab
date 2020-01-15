@@ -341,62 +341,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel:
     mass: 25
-    rimOffset: 0.1
-    tireRadius: 1.41
-    width: 1.15
-    rpm: -16.353102
-    prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
-    worldPosition: {x: 82.808975, y: 3.6799998, z: -44.16}
+    rimOffset: 0
+    tireRadius: 1.51
+    width: 1.19
+    rpm: 0
+    prevWorldPosition: {x: 0, y: 0, z: 0}
+    worldPosition: {x: 82.808975, y: 2.29, z: -44.16}
     prevGroundPoint: {x: 0, y: 0, z: 0}
-    worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
+    worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -8
-        inSlope: 2.6020238
-        outSlope: 2.6020238
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9991455
-        value: 6.3096848
-        inSlope: 32.98027
-        outSlope: 32.98027
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     camberAngle: 0
-    inertia: 3.8024998
-    angularVelocity: -1.6890569
-    freeRollingAngularVelocity: -1.9520417
+    inertia: 0
+    angularVelocity: 0
+    freeRollingAngularVelocity: 0
     residualAngularVelocity: 0
     steerAngle: 0
-    rotationAngle: 146.66086
+    rotationAngle: 0
     visual: {fileID: 8390347794224597332}
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
     up: {x: 0, y: 1, z: 0}
-    inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
+    inside: {x: 0, y: 0, z: 0}
     forward: {x: 0, y: 0, z: 1}
     right: {x: 1, y: 0, z: 0}
-    velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
-    prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
-    acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
-    tireLoad: 5619.176
+    velocity: {x: 0, y: 0, z: 0}
+    prevVelocity: {x: 0, y: 0, z: 0}
+    acceleration: {x: 0, y: 0, z: 0}
+    tireLoad: 0
     motorTorque: 0
-    brakeTorque: 50
+    brakeTorque: 0
     nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
   spring:
-    maxLength: 0.4
+    maxLength: 0.24
     forceCurve:
       serializedVersion: 2
       m_Curve:
@@ -420,14 +420,14 @@ MonoBehaviour:
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
-    maxForce: 24000
-    length: 0.19014701
-    prevLength: 0.19014701
-    compressionPercent: 0.40579057
-    force: 5479.5454
-    velocity: -0.04506558
-    targetPoint: {x: -8.796116, y: 0.3609828, z: 0.30805615}
+      m_RotationOrder: 4
+    maxForce: 22000
+    length: 0
+    prevLength: 0
+    compressionPercent: 0
+    force: 0
+    velocity: 0
+    targetPoint: {x: 0, y: 0, z: 0}
     overflow: 0
     prevOverflow: 0
     overflowVelocity: 0
@@ -441,8 +441,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 3.8735247
-        outSlope: 3.8735247
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -450,765 +450,45 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 10
         value: 40
-        inSlope: 4.374663
-        outSlope: 4.374663
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     unitBumpForce: 800
-    unitReboundForce: 800
-    force: 139.63052
-    maxForce: 800
+    unitReboundForce: 1000
+    force: 0
+    maxForce: 0
   fFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.1
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.1227175
-    speed: -0.7612963
-    force: 128.20514
+    slip: 0
+    speed: 0
+    force: 0
   sFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.62
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.0008023783
-    speed: 0.0021322658
-    force: 92.82323
-  wheelHits:
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
+    slip: 0
+    speed: 0
     force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14558214
-    offset: {x: -0.15, y: -0.3342857}
-    weight: 0.0035688775
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.076305926
-    offset: {x: -0.15, y: -0.27857143}
-    weight: 0.00968334
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.031472355
-    offset: {x: -0.15, y: -0.22285715}
-    weight: 0.016523061
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0014363229
-    offset: {x: -0.15, y: -0.16714287}
-    weight: 0.02279548
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.017660499
-    offset: {x: -0.15, y: -0.11142859}
-    weight: 0.027618142
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.027639717
-    offset: {x: -0.15, y: -0.055714305}
-    weight: 0.030423356
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.029362977
-    offset: {x: -0.15, y: -0.000000022351742}
-    weight: 0.030928602
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023085147
-    offset: {x: -0.15, y: 0.05571426}
-    weight: 0.02911778
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.008550465
-    offset: {x: -0.15, y: 0.111428544}
-    weight: 0.025230927
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.015101701
-    offset: {x: -0.15, y: 0.16714282}
-    weight: 0.019753944
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.049692422
-    offset: {x: -0.15, y: 0.2228571}
-    weight: 0.01341178
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09908149
-    offset: {x: -0.15, y: 0.2785714}
-    weight: 0.0071628415
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.1640953
-    offset: {x: -0.15, y: 0.33428568}
-    weight: 0.0026043598
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14927638
-    offset: {x: -0.050000004, y: -0.3342857}
-    weight: 0.003357954
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07566631
-    offset: {x: -0.050000004, y: -0.27857143}
-    weight: 0.009762558
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030833334
-    offset: {x: -0.050000004, y: -0.22285715}
-    weight: 0.016641177
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0007971823
-    offset: {x: -0.050000004, y: -0.16714287}
-    weight: 0.022945834
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018300354
-    offset: {x: -0.050000004, y: -0.11142859}
-    weight: 0.027791947
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028279692
-    offset: {x: -0.050000004, y: -0.055714305}
-    weight: 0.030610263
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030001998
-    offset: {x: -0.050000004, y: -0.000000022351742}
-    weight: 0.031117547
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023724407
-    offset: {x: -0.050000004, y: 0.05571426}
-    weight: 0.029298441
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009190321
-    offset: {x: -0.050000004, y: 0.111428544}
-    weight: 0.025393346
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.01446268
-    offset: {x: -0.050000004, y: 0.16714282}
-    weight: 0.019888973
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0490534
-    offset: {x: -0.050000004, y: 0.2228571}
-    weight: 0.013512801
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09844163
-    offset: {x: -0.050000004, y: 0.2785714}
-    weight: 0.0072260667
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.16880293
-    offset: {x: -0.050000004, y: 0.33428568}
-    weight: 0.0023939626
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15103447
-    offset: {x: 0.049999997, y: -0.3342857}
-    weight: 0.0032609256
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07502705
-    offset: {x: 0.049999997, y: -0.27857143}
-    weight: 0.009842218
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030194074
-    offset: {x: 0.049999997, y: -0.22285715}
-    weight: 0.016759967
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.00015750527
-    offset: {x: 0.049999997, y: -0.16714287}
-    weight: 0.023097057
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018939376
-    offset: {x: 0.049999997, y: -0.11142859}
-    weight: 0.027966341
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028918892
-    offset: {x: 0.049999997, y: -0.055714305}
-    weight: 0.030797802
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030641258
-    offset: {x: 0.049999997, y: -0.000000022351742}
-    weight: 0.03130743
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.024364084
-    offset: {x: 0.049999997, y: 0.05571426}
-    weight: 0.02948006
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009829283
-    offset: {x: 0.049999997, y: 0.111428544}
-    weight: 0.02555632
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.0138224065
-    offset: {x: 0.049999997, y: 0.16714282}
-    weight: 0.020024959
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0484145
-    offset: {x: 0.049999997, y: 0.2228571}
-    weight: 0.013614373
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09780237
-    offset: {x: 0.049999997, y: 0.2785714}
-    weight: 0.00728965
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.17538185
-    offset: {x: 0.049999997, y: 0.33428568}
-    weight: 0.0021216103
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15493792
-    offset: {x: 0.15, y: -0.3342857}
-    weight: 0.0030530237
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07438743
-    offset: {x: 0.15, y: -0.27857143}
-    weight: 0.009922408
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.029554516
-    offset: {x: 0.15, y: -0.22285715}
-    weight: 0.01687945
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: -0.00048181415
-    offset: {x: 0.15, y: -0.16714287}
-    weight: 0.02324894
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.019578636
-    offset: {x: 0.15, y: -0.11142859}
-    weight: 0.028141622
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.029558152
-    offset: {x: 0.15, y: -0.055714305}
-    weight: 0.03098622
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.031281173
-    offset: {x: 0.15, y: -0.000000022351742}
-    weight: 0.031498376
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.025003701
-    offset: {x: 0.15, y: 0.05571426}
-    weight: 0.029662505
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.010468841
-    offset: {x: 0.15, y: 0.111428544}
-    weight: 0.025720231
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.013183504
-    offset: {x: 0.15, y: 0.16714282}
-    weight: 0.020161347
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.04777494
-    offset: {x: 0.15, y: 0.2228571}
-    weight: 0.013716621
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09716305
-    offset: {x: 0.15, y: 0.2785714}
-    weight: 0.007353658
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.18214758
-    offset: {x: 0.15, y: 0.33428568}
-    weight: 0.0018664667
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
+  wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
     m_Bits: 1048580
-  forwardScanResolution: 15
-  sideToSideScanResolution: 3
+  forwardScanResolution: 9
+  sideToSideScanResolution: 2
   hasHit: 1
   prevHasHit: 1
   debug: 0
   parent: {fileID: 8390347793774335264}
-  useRimCollider: 1
-  vehicleSide: 1
+  useRimCollider: 0
+  vehicleSide: -1
   activeFrictionPresetEnum: 0
   activeFrictionPreset:
     name: TarmacDry
@@ -1760,18 +1040,18 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   wheelHit:
-    angleForward: -0.025920788
+    angleForward: 0
     distanceFromTire: 0
-    offset: {x: 0.0007788782, y: -0.0094924}
+    offset: {x: 0, y: 0}
     weight: 0
-    valid: 1
-    curvatureOffset: 0.3873755
-    groundPoint: {x: -8.795623, y: -0.026451647, z: 0.30136243}
-    forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
-    forwardSlip: 0.1227175
-    sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
-    sidewaysSlip: 0.0008023783
-    force: 5619.176
+    valid: 0
+    curvatureOffset: 0
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
   singleRay: 0
   singleWheelHit:
     angleForward: 0
@@ -1899,6 +1179,10 @@ GameObject:
   - component: {fileID: 8390347793774335265}
   - component: {fileID: 8390347793774335269}
   - component: {fileID: 8390347793774335270}
+  - component: {fileID: 5762638001220068555}
+  - component: {fileID: 3472381001379064824}
+  - component: {fileID: 1691266118625766986}
+  - component: {fileID: 4329375781047279920}
   m_Layer: 2
   m_Name: Golf Cart
   m_TagString: Untagged
@@ -1932,7 +1216,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390347793774335264}
   serializedVersion: 2
-  m_Mass: 1900
+  m_Mass: 3000
   m_Drag: 0.15
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -1952,7 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fde3b0a987d9ab4ba8272b85857ae03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMassOffset: {x: 0, y: 2.77, z: 1.95}
+  centerOfMassOffset: {x: 0, y: 0, z: 0}
   showCOM: 1
 --- !u!114 &8390347793774335265
 MonoBehaviour:
@@ -1971,22 +1255,22 @@ MonoBehaviour:
   wheels:
   - wc: {fileID: 8390347794364102938}
     steer: 1
-    power: 1
+    power: 0
   - wc: {fileID: 8390347794306506781}
     steer: 1
-    power: 1
+    power: 0
   - wc: {fileID: 8390347794054976265}
     steer: 0
     power: 1
   - wc: {fileID: 8390347792484485811}
     steer: 0
     power: 1
-  velocity: 0
   maxSteeringAngle: 34
   minSteeringAngle: 14
-  maxMotorTorque: 10800
+  maxMotorTorque: 27000
   maxBrakeTorque: 800
   antiRollBarForce: 12000
+  minVelocityToKnockCharacter: 10
 --- !u!65 &8390347793774335269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2011,8 +1295,60 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 7.753792, y: 5.5757084, z: 8.783962}
-  m_Center: {x: -0.043468475, y: 8.88263, z: 1.0018368}
+  m_Size: {x: 7.753792, y: 0.73218536, z: 8.783962}
+  m_Center: {x: -0.043468475, y: 11.304392, z: 1.0018368}
+--- !u!65 &5762638001220068555
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.753792, y: 6.0125976, z: 0.792366}
+  m_Center: {x: -0.043468475, y: 8.664186, z: -2.9939613}
+--- !u!65 &3472381001379064824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6142273, y: 5.104954, z: 0.83392334}
+  m_Center: {x: 3.1370392, y: 8.693966, z: 5.0091705}
+--- !u!65 &1691266118625766986
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5276642, y: 5.104954, z: 0.83392334}
+  m_Center: {x: -3.0675812, y: 8.693966, z: 5.0091705}
+--- !u!65 &4329375781047279920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390347793774335264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.337318, y: 15.278378, z: 22.786821}
+  m_Center: {x: -0.031520844, y: 7.139189, z: 3.0920916}
 --- !u!1 &8390347793872996985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,62 +1550,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel:
     mass: 25
-    rimOffset: 0.1
-    tireRadius: 1.41
-    width: 1.15
-    rpm: -16.353102
-    prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
-    worldPosition: {x: 75.32897, y: 3.6799998, z: -44.16}
+    rimOffset: 0
+    tireRadius: 1.51
+    width: 1.19
+    rpm: 0
+    prevWorldPosition: {x: 0, y: 0, z: 0}
+    worldPosition: {x: 75.32897, y: 2.29, z: -44.16}
     prevGroundPoint: {x: 0, y: 0, z: 0}
-    worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
+    worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -8
-        inSlope: 2.6020238
-        outSlope: 2.6020238
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9991455
-        value: 6.3096848
-        inSlope: 32.98027
-        outSlope: 32.98027
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     camberAngle: 0
-    inertia: 3.8024998
-    angularVelocity: -1.6890569
-    freeRollingAngularVelocity: -1.9520417
+    inertia: 0
+    angularVelocity: 0
+    freeRollingAngularVelocity: 0
     residualAngularVelocity: 0
     steerAngle: 0
-    rotationAngle: 146.66086
+    rotationAngle: 0
     visual: {fileID: 3899741114184233768}
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
     up: {x: 0, y: 1, z: 0}
-    inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
+    inside: {x: 0, y: 0, z: 0}
     forward: {x: 0, y: 0, z: 1}
     right: {x: 1, y: 0, z: 0}
-    velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
-    prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
-    acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
-    tireLoad: 5619.176
+    velocity: {x: 0, y: 0, z: 0}
+    prevVelocity: {x: 0, y: 0, z: 0}
+    acceleration: {x: 0, y: 0, z: 0}
+    tireLoad: 0
     motorTorque: 0
-    brakeTorque: 50
+    brakeTorque: 0
     nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
   spring:
-    maxLength: 0.4
+    maxLength: 0.24
     forceCurve:
       serializedVersion: 2
       m_Curve:
@@ -2293,14 +1629,14 @@ MonoBehaviour:
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
-    maxForce: 24000
-    length: 0.19014701
-    prevLength: 0.19014701
-    compressionPercent: 0.40579057
-    force: 5479.5454
-    velocity: -0.04506558
-    targetPoint: {x: -8.796116, y: 0.3609828, z: 0.30805615}
+      m_RotationOrder: 4
+    maxForce: 22000
+    length: 0
+    prevLength: 0
+    compressionPercent: 0
+    force: 0
+    velocity: 0
+    targetPoint: {x: 0, y: 0, z: 0}
     overflow: 0
     prevOverflow: 0
     overflowVelocity: 0
@@ -2314,8 +1650,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 3.8735247
-        outSlope: 3.8735247
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2323,764 +1659,44 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 10
         value: 40
-        inSlope: 4.374663
-        outSlope: 4.374663
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     unitBumpForce: 800
-    unitReboundForce: 800
-    force: 139.63052
-    maxForce: 800
+    unitReboundForce: 1000
+    force: 0
+    maxForce: 0
   fFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.1
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.1227175
-    speed: -0.7612963
-    force: 128.20514
+    slip: 0
+    speed: 0
+    force: 0
   sFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.62
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.0008023783
-    speed: 0.0021322658
-    force: 92.82323
-  wheelHits:
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
+    slip: 0
+    speed: 0
     force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14558214
-    offset: {x: -0.15, y: -0.3342857}
-    weight: 0.0035688775
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.076305926
-    offset: {x: -0.15, y: -0.27857143}
-    weight: 0.00968334
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.031472355
-    offset: {x: -0.15, y: -0.22285715}
-    weight: 0.016523061
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0014363229
-    offset: {x: -0.15, y: -0.16714287}
-    weight: 0.02279548
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.017660499
-    offset: {x: -0.15, y: -0.11142859}
-    weight: 0.027618142
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.027639717
-    offset: {x: -0.15, y: -0.055714305}
-    weight: 0.030423356
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.029362977
-    offset: {x: -0.15, y: -0.000000022351742}
-    weight: 0.030928602
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023085147
-    offset: {x: -0.15, y: 0.05571426}
-    weight: 0.02911778
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.008550465
-    offset: {x: -0.15, y: 0.111428544}
-    weight: 0.025230927
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.015101701
-    offset: {x: -0.15, y: 0.16714282}
-    weight: 0.019753944
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.049692422
-    offset: {x: -0.15, y: 0.2228571}
-    weight: 0.01341178
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09908149
-    offset: {x: -0.15, y: 0.2785714}
-    weight: 0.0071628415
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.1640953
-    offset: {x: -0.15, y: 0.33428568}
-    weight: 0.0026043598
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14927638
-    offset: {x: -0.050000004, y: -0.3342857}
-    weight: 0.003357954
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07566631
-    offset: {x: -0.050000004, y: -0.27857143}
-    weight: 0.009762558
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030833334
-    offset: {x: -0.050000004, y: -0.22285715}
-    weight: 0.016641177
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0007971823
-    offset: {x: -0.050000004, y: -0.16714287}
-    weight: 0.022945834
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018300354
-    offset: {x: -0.050000004, y: -0.11142859}
-    weight: 0.027791947
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028279692
-    offset: {x: -0.050000004, y: -0.055714305}
-    weight: 0.030610263
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030001998
-    offset: {x: -0.050000004, y: -0.000000022351742}
-    weight: 0.031117547
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023724407
-    offset: {x: -0.050000004, y: 0.05571426}
-    weight: 0.029298441
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009190321
-    offset: {x: -0.050000004, y: 0.111428544}
-    weight: 0.025393346
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.01446268
-    offset: {x: -0.050000004, y: 0.16714282}
-    weight: 0.019888973
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0490534
-    offset: {x: -0.050000004, y: 0.2228571}
-    weight: 0.013512801
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09844163
-    offset: {x: -0.050000004, y: 0.2785714}
-    weight: 0.0072260667
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.16880293
-    offset: {x: -0.050000004, y: 0.33428568}
-    weight: 0.0023939626
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15103447
-    offset: {x: 0.049999997, y: -0.3342857}
-    weight: 0.0032609256
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07502705
-    offset: {x: 0.049999997, y: -0.27857143}
-    weight: 0.009842218
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030194074
-    offset: {x: 0.049999997, y: -0.22285715}
-    weight: 0.016759967
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.00015750527
-    offset: {x: 0.049999997, y: -0.16714287}
-    weight: 0.023097057
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018939376
-    offset: {x: 0.049999997, y: -0.11142859}
-    weight: 0.027966341
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028918892
-    offset: {x: 0.049999997, y: -0.055714305}
-    weight: 0.030797802
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030641258
-    offset: {x: 0.049999997, y: -0.000000022351742}
-    weight: 0.03130743
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.024364084
-    offset: {x: 0.049999997, y: 0.05571426}
-    weight: 0.02948006
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009829283
-    offset: {x: 0.049999997, y: 0.111428544}
-    weight: 0.02555632
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.0138224065
-    offset: {x: 0.049999997, y: 0.16714282}
-    weight: 0.020024959
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0484145
-    offset: {x: 0.049999997, y: 0.2228571}
-    weight: 0.013614373
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09780237
-    offset: {x: 0.049999997, y: 0.2785714}
-    weight: 0.00728965
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.17538185
-    offset: {x: 0.049999997, y: 0.33428568}
-    weight: 0.0021216103
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15493792
-    offset: {x: 0.15, y: -0.3342857}
-    weight: 0.0030530237
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07438743
-    offset: {x: 0.15, y: -0.27857143}
-    weight: 0.009922408
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.029554516
-    offset: {x: 0.15, y: -0.22285715}
-    weight: 0.01687945
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: -0.00048181415
-    offset: {x: 0.15, y: -0.16714287}
-    weight: 0.02324894
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.019578636
-    offset: {x: 0.15, y: -0.11142859}
-    weight: 0.028141622
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.029558152
-    offset: {x: 0.15, y: -0.055714305}
-    weight: 0.03098622
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.031281173
-    offset: {x: 0.15, y: -0.000000022351742}
-    weight: 0.031498376
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.025003701
-    offset: {x: 0.15, y: 0.05571426}
-    weight: 0.029662505
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.010468841
-    offset: {x: 0.15, y: 0.111428544}
-    weight: 0.025720231
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.013183504
-    offset: {x: 0.15, y: 0.16714282}
-    weight: 0.020161347
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.04777494
-    offset: {x: 0.15, y: 0.2228571}
-    weight: 0.013716621
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09716305
-    offset: {x: 0.15, y: 0.2785714}
-    weight: 0.007353658
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.18214758
-    offset: {x: 0.15, y: 0.33428568}
-    weight: 0.0018664667
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
+  wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
     m_Bits: 1048580
-  forwardScanResolution: 15
-  sideToSideScanResolution: 3
+  forwardScanResolution: 9
+  sideToSideScanResolution: 2
   hasHit: 1
   prevHasHit: 1
-  debug: 1
+  debug: 0
   parent: {fileID: 8390347793774335264}
-  useRimCollider: 1
+  useRimCollider: 0
   vehicleSide: -1
   activeFrictionPresetEnum: 0
   activeFrictionPreset:
@@ -3633,18 +2249,18 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   wheelHit:
-    angleForward: -0.025920788
+    angleForward: 0
     distanceFromTire: 0
-    offset: {x: 0.0007788782, y: -0.0094924}
+    offset: {x: 0, y: 0}
     weight: 0
-    valid: 1
-    curvatureOffset: 0.3873755
-    groundPoint: {x: -8.795623, y: -0.026451647, z: 0.30136243}
-    forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
-    forwardSlip: 0.1227175
-    sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
-    sidewaysSlip: 0.0008023783
-    force: 5619.176
+    valid: 0
+    curvatureOffset: 0
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
   singleRay: 0
   singleWheelHit:
     angleForward: 0
@@ -3802,62 +2418,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel:
     mass: 25
-    rimOffset: 0.1
-    tireRadius: 1.41
-    width: 1.15
-    rpm: -16.353102
-    prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
-    worldPosition: {x: 75.32897, y: 3.6799998, z: -37.39}
+    rimOffset: 0
+    tireRadius: 1.51
+    width: 1.19
+    rpm: 0
+    prevWorldPosition: {x: 0, y: 0, z: 0}
+    worldPosition: {x: 75.32897, y: 2.29, z: -37.39}
     prevGroundPoint: {x: 0, y: 0, z: 0}
-    worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
+    worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -8
-        inSlope: 2.6020238
-        outSlope: 2.6020238
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9991455
-        value: 6.3096848
-        inSlope: 32.98027
-        outSlope: 32.98027
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     camberAngle: 0
-    inertia: 3.8024998
-    angularVelocity: -1.6890569
-    freeRollingAngularVelocity: -1.9520417
+    inertia: 0
+    angularVelocity: 0
+    freeRollingAngularVelocity: 0
     residualAngularVelocity: 0
     steerAngle: 0
-    rotationAngle: 146.66086
+    rotationAngle: 0
     visual: {fileID: 8390347793758225020}
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
     up: {x: 0, y: 1, z: 0}
-    inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
+    inside: {x: 0, y: 0, z: 0}
     forward: {x: 0, y: 0, z: 1}
     right: {x: 1, y: 0, z: 0}
-    velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
-    prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
-    acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
-    tireLoad: 5619.176
+    velocity: {x: 0, y: 0, z: 0}
+    prevVelocity: {x: 0, y: 0, z: 0}
+    acceleration: {x: 0, y: 0, z: 0}
+    tireLoad: 0
     motorTorque: 0
-    brakeTorque: 50
+    brakeTorque: 0
     nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
   spring:
-    maxLength: 0.4
+    maxLength: 0.24
     forceCurve:
       serializedVersion: 2
       m_Curve:
@@ -3881,14 +2497,14 @@ MonoBehaviour:
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
-    maxForce: 24000
-    length: 0.19014701
-    prevLength: 0.19014701
-    compressionPercent: 0.40579057
-    force: 5479.5454
-    velocity: -0.04506558
-    targetPoint: {x: -8.796116, y: 0.3609828, z: 0.30805615}
+      m_RotationOrder: 4
+    maxForce: 22000
+    length: 0
+    prevLength: 0
+    compressionPercent: 0
+    force: 0
+    velocity: 0
+    targetPoint: {x: 0, y: 0, z: 0}
     overflow: 0
     prevOverflow: 0
     overflowVelocity: 0
@@ -3902,8 +2518,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 3.8735247
-        outSlope: 3.8735247
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -3911,764 +2527,44 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 10
         value: 40
-        inSlope: 4.374663
-        outSlope: 4.374663
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     unitBumpForce: 800
-    unitReboundForce: 800
-    force: 139.63052
-    maxForce: 800
+    unitReboundForce: 1000
+    force: 0
+    maxForce: 0
   fFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.1
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.1227175
-    speed: -0.7612963
-    force: 128.20514
+    slip: 0
+    speed: 0
+    force: 0
   sFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.62
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.0008023783
-    speed: 0.0021322658
-    force: 92.82323
-  wheelHits:
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
+    slip: 0
+    speed: 0
     force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14558214
-    offset: {x: -0.15, y: -0.3342857}
-    weight: 0.0035688775
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.076305926
-    offset: {x: -0.15, y: -0.27857143}
-    weight: 0.00968334
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.031472355
-    offset: {x: -0.15, y: -0.22285715}
-    weight: 0.016523061
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0014363229
-    offset: {x: -0.15, y: -0.16714287}
-    weight: 0.02279548
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.017660499
-    offset: {x: -0.15, y: -0.11142859}
-    weight: 0.027618142
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.027639717
-    offset: {x: -0.15, y: -0.055714305}
-    weight: 0.030423356
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.029362977
-    offset: {x: -0.15, y: -0.000000022351742}
-    weight: 0.030928602
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023085147
-    offset: {x: -0.15, y: 0.05571426}
-    weight: 0.02911778
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.008550465
-    offset: {x: -0.15, y: 0.111428544}
-    weight: 0.025230927
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.015101701
-    offset: {x: -0.15, y: 0.16714282}
-    weight: 0.019753944
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.049692422
-    offset: {x: -0.15, y: 0.2228571}
-    weight: 0.01341178
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09908149
-    offset: {x: -0.15, y: 0.2785714}
-    weight: 0.0071628415
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.1640953
-    offset: {x: -0.15, y: 0.33428568}
-    weight: 0.0026043598
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14927638
-    offset: {x: -0.050000004, y: -0.3342857}
-    weight: 0.003357954
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07566631
-    offset: {x: -0.050000004, y: -0.27857143}
-    weight: 0.009762558
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030833334
-    offset: {x: -0.050000004, y: -0.22285715}
-    weight: 0.016641177
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0007971823
-    offset: {x: -0.050000004, y: -0.16714287}
-    weight: 0.022945834
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018300354
-    offset: {x: -0.050000004, y: -0.11142859}
-    weight: 0.027791947
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028279692
-    offset: {x: -0.050000004, y: -0.055714305}
-    weight: 0.030610263
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030001998
-    offset: {x: -0.050000004, y: -0.000000022351742}
-    weight: 0.031117547
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023724407
-    offset: {x: -0.050000004, y: 0.05571426}
-    weight: 0.029298441
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009190321
-    offset: {x: -0.050000004, y: 0.111428544}
-    weight: 0.025393346
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.01446268
-    offset: {x: -0.050000004, y: 0.16714282}
-    weight: 0.019888973
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0490534
-    offset: {x: -0.050000004, y: 0.2228571}
-    weight: 0.013512801
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09844163
-    offset: {x: -0.050000004, y: 0.2785714}
-    weight: 0.0072260667
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.16880293
-    offset: {x: -0.050000004, y: 0.33428568}
-    weight: 0.0023939626
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15103447
-    offset: {x: 0.049999997, y: -0.3342857}
-    weight: 0.0032609256
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07502705
-    offset: {x: 0.049999997, y: -0.27857143}
-    weight: 0.009842218
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030194074
-    offset: {x: 0.049999997, y: -0.22285715}
-    weight: 0.016759967
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.00015750527
-    offset: {x: 0.049999997, y: -0.16714287}
-    weight: 0.023097057
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018939376
-    offset: {x: 0.049999997, y: -0.11142859}
-    weight: 0.027966341
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028918892
-    offset: {x: 0.049999997, y: -0.055714305}
-    weight: 0.030797802
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030641258
-    offset: {x: 0.049999997, y: -0.000000022351742}
-    weight: 0.03130743
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.024364084
-    offset: {x: 0.049999997, y: 0.05571426}
-    weight: 0.02948006
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009829283
-    offset: {x: 0.049999997, y: 0.111428544}
-    weight: 0.02555632
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.0138224065
-    offset: {x: 0.049999997, y: 0.16714282}
-    weight: 0.020024959
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0484145
-    offset: {x: 0.049999997, y: 0.2228571}
-    weight: 0.013614373
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09780237
-    offset: {x: 0.049999997, y: 0.2785714}
-    weight: 0.00728965
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.17538185
-    offset: {x: 0.049999997, y: 0.33428568}
-    weight: 0.0021216103
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15493792
-    offset: {x: 0.15, y: -0.3342857}
-    weight: 0.0030530237
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07438743
-    offset: {x: 0.15, y: -0.27857143}
-    weight: 0.009922408
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.029554516
-    offset: {x: 0.15, y: -0.22285715}
-    weight: 0.01687945
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: -0.00048181415
-    offset: {x: 0.15, y: -0.16714287}
-    weight: 0.02324894
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.019578636
-    offset: {x: 0.15, y: -0.11142859}
-    weight: 0.028141622
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.029558152
-    offset: {x: 0.15, y: -0.055714305}
-    weight: 0.03098622
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.031281173
-    offset: {x: 0.15, y: -0.000000022351742}
-    weight: 0.031498376
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.025003701
-    offset: {x: 0.15, y: 0.05571426}
-    weight: 0.029662505
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.010468841
-    offset: {x: 0.15, y: 0.111428544}
-    weight: 0.025720231
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.013183504
-    offset: {x: 0.15, y: 0.16714282}
-    weight: 0.020161347
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.04777494
-    offset: {x: 0.15, y: 0.2228571}
-    weight: 0.013716621
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09716305
-    offset: {x: 0.15, y: 0.2785714}
-    weight: 0.007353658
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.18214758
-    offset: {x: 0.15, y: 0.33428568}
-    weight: 0.0018664667
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
+  wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
     m_Bits: 1048580
-  forwardScanResolution: 15
-  sideToSideScanResolution: 3
+  forwardScanResolution: 9
+  sideToSideScanResolution: 2
   hasHit: 1
   prevHasHit: 1
   debug: 0
   parent: {fileID: 8390347793774335264}
-  useRimCollider: 1
+  useRimCollider: 0
   vehicleSide: -1
   activeFrictionPresetEnum: 0
   activeFrictionPreset:
@@ -5221,18 +3117,18 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   wheelHit:
-    angleForward: -0.025920788
+    angleForward: 0
     distanceFromTire: 0
-    offset: {x: 0.0007788782, y: -0.0094924}
+    offset: {x: 0, y: 0}
     weight: 0
-    valid: 1
-    curvatureOffset: 0.3873755
-    groundPoint: {x: -8.795623, y: -0.026451647, z: 0.30136243}
-    forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
-    forwardSlip: 0.1227175
-    sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
-    sidewaysSlip: 0.0008023783
-    force: 5619.176
+    valid: 0
+    curvatureOffset: 0
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
   singleRay: 0
   singleWheelHit:
     angleForward: 0
@@ -5295,62 +3191,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel:
     mass: 25
-    rimOffset: 0.1
-    tireRadius: 1.41
-    width: 1.15
-    rpm: -16.353102
-    prevWorldPosition: {x: -8.795811, y: 0.36028713, z: 0.31020492}
-    worldPosition: {x: 82.808975, y: 3.6799998, z: -37.39}
+    rimOffset: 0
+    tireRadius: 1.51
+    width: 1.19
+    rpm: 0
+    prevWorldPosition: {x: 0, y: 0, z: 0}
+    worldPosition: {x: 82.808975, y: 2.29, z: -37.39}
     prevGroundPoint: {x: 0, y: 0, z: 0}
-    worldRotation: {x: 0.09184797, y: -0.3054273, z: 0.94741446, w: 0.026156768}
+    worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -8
-        inSlope: 2.6020238
-        outSlope: 2.6020238
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9991455
-        value: 6.3096848
-        inSlope: 32.98027
-        outSlope: 32.98027
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     camberAngle: 0
-    inertia: 3.8024998
-    angularVelocity: -1.6890569
-    freeRollingAngularVelocity: -1.9520417
+    inertia: 0
+    angularVelocity: 0
+    freeRollingAngularVelocity: 0
     residualAngularVelocity: 0
     steerAngle: 0
-    rotationAngle: 146.66086
+    rotationAngle: 0
     visual: {fileID: 8390347793424179348}
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
     up: {x: 0, y: 1, z: 0}
-    inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
+    inside: {x: 0, y: 0, z: 0}
     forward: {x: 0, y: 0, z: 1}
     right: {x: 1, y: 0, z: 0}
-    velocity: {x: 0.13776842, y: -0.046645217, z: 0.754811}
-    prevVelocity: {x: 0.14026353, y: -0.050996974, z: 0.7651074}
-    acceleration: {x: -0.1247555, y: 0.21758787, z: -0.5148202}
-    tireLoad: 5619.176
+    velocity: {x: 0, y: 0, z: 0}
+    prevVelocity: {x: 0, y: 0, z: 0}
+    acceleration: {x: 0, y: 0, z: 0}
+    tireLoad: 0
     motorTorque: 0
-    brakeTorque: 50
+    brakeTorque: 0
     nonRotatingPostionOffset: {x: 0, y: 0, z: 0}
   spring:
-    maxLength: 0.4
+    maxLength: 0.24
     forceCurve:
       serializedVersion: 2
       m_Curve:
@@ -5374,14 +3270,14 @@ MonoBehaviour:
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
-    maxForce: 24000
-    length: 0.19014701
-    prevLength: 0.19014701
-    compressionPercent: 0.40579057
-    force: 5479.5454
-    velocity: -0.04506558
-    targetPoint: {x: -8.796116, y: 0.3609828, z: 0.30805615}
+      m_RotationOrder: 4
+    maxForce: 22000
+    length: 0
+    prevLength: 0
+    compressionPercent: 0
+    force: 0
+    velocity: 0
+    targetPoint: {x: 0, y: 0, z: 0}
     overflow: 0
     prevOverflow: 0
     overflowVelocity: 0
@@ -5395,8 +3291,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 3.8735247
-        outSlope: 3.8735247
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5404,765 +3300,45 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 10
         value: 40
-        inSlope: 4.374663
-        outSlope: 4.374663
+        inSlope: 4
+        outSlope: 4
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
     unitBumpForce: 800
-    unitReboundForce: 800
-    force: 139.63052
-    maxForce: 800
+    unitReboundForce: 1000
+    force: 0
+    maxForce: 0
   fFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.1
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.1227175
-    speed: -0.7612963
-    force: 128.20514
+    slip: 0
+    speed: 0
+    force: 0
   sFriction:
-    forceCoefficient: 1
-    slipCoefficient: 1
+    forceCoefficient: 1.62
+    slipCoefficient: 0.9
     maxForce: 0
-    slip: 0.0008023783
-    speed: 0.0021322658
-    force: 92.82323
-  wheelHits:
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
+    slip: 0
+    speed: 0
     force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14558214
-    offset: {x: -0.15, y: -0.3342857}
-    weight: 0.0035688775
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.076305926
-    offset: {x: -0.15, y: -0.27857143}
-    weight: 0.00968334
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.031472355
-    offset: {x: -0.15, y: -0.22285715}
-    weight: 0.016523061
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0014363229
-    offset: {x: -0.15, y: -0.16714287}
-    weight: 0.02279548
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.017660499
-    offset: {x: -0.15, y: -0.11142859}
-    weight: 0.027618142
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.027639717
-    offset: {x: -0.15, y: -0.055714305}
-    weight: 0.030423356
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.029362977
-    offset: {x: -0.15, y: -0.000000022351742}
-    weight: 0.030928602
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023085147
-    offset: {x: -0.15, y: 0.05571426}
-    weight: 0.02911778
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.008550465
-    offset: {x: -0.15, y: 0.111428544}
-    weight: 0.025230927
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.015101701
-    offset: {x: -0.15, y: 0.16714282}
-    weight: 0.019753944
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.049692422
-    offset: {x: -0.15, y: 0.2228571}
-    weight: 0.01341178
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09908149
-    offset: {x: -0.15, y: 0.2785714}
-    weight: 0.0071628415
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.1640953
-    offset: {x: -0.15, y: 0.33428568}
-    weight: 0.0026043598
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.14927638
-    offset: {x: -0.050000004, y: -0.3342857}
-    weight: 0.003357954
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07566631
-    offset: {x: -0.050000004, y: -0.27857143}
-    weight: 0.009762558
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030833334
-    offset: {x: -0.050000004, y: -0.22285715}
-    weight: 0.016641177
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.0007971823
-    offset: {x: -0.050000004, y: -0.16714287}
-    weight: 0.022945834
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018300354
-    offset: {x: -0.050000004, y: -0.11142859}
-    weight: 0.027791947
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028279692
-    offset: {x: -0.050000004, y: -0.055714305}
-    weight: 0.030610263
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030001998
-    offset: {x: -0.050000004, y: -0.000000022351742}
-    weight: 0.031117547
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.023724407
-    offset: {x: -0.050000004, y: 0.05571426}
-    weight: 0.029298441
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009190321
-    offset: {x: -0.050000004, y: 0.111428544}
-    weight: 0.025393346
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.01446268
-    offset: {x: -0.050000004, y: 0.16714282}
-    weight: 0.019888973
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0490534
-    offset: {x: -0.050000004, y: 0.2228571}
-    weight: 0.013512801
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09844163
-    offset: {x: -0.050000004, y: 0.2785714}
-    weight: 0.0072260667
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.16880293
-    offset: {x: -0.050000004, y: 0.33428568}
-    weight: 0.0023939626
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: -0.050000004, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15103447
-    offset: {x: 0.049999997, y: -0.3342857}
-    weight: 0.0032609256
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07502705
-    offset: {x: 0.049999997, y: -0.27857143}
-    weight: 0.009842218
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.030194074
-    offset: {x: 0.049999997, y: -0.22285715}
-    weight: 0.016759967
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: 0.00015750527
-    offset: {x: 0.049999997, y: -0.16714287}
-    weight: 0.023097057
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.018939376
-    offset: {x: 0.049999997, y: -0.11142859}
-    weight: 0.027966341
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.028918892
-    offset: {x: 0.049999997, y: -0.055714305}
-    weight: 0.030797802
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.030641258
-    offset: {x: 0.049999997, y: -0.000000022351742}
-    weight: 0.03130743
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.024364084
-    offset: {x: 0.049999997, y: 0.05571426}
-    weight: 0.02948006
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.009829283
-    offset: {x: 0.049999997, y: 0.111428544}
-    weight: 0.02555632
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.0138224065
-    offset: {x: 0.049999997, y: 0.16714282}
-    weight: 0.020024959
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.0484145
-    offset: {x: 0.049999997, y: 0.2228571}
-    weight: 0.013614373
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09780237
-    offset: {x: 0.049999997, y: 0.2785714}
-    weight: 0.00728965
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.17538185
-    offset: {x: 0.049999997, y: 0.33428568}
-    weight: 0.0021216103
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.049999997, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.5685322
-    distanceFromTire: 0
-    offset: {x: 0.15, y: -0.39}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008829976
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -1.0296925
-    distanceFromTire: 0.15493792
-    offset: {x: 0.15, y: -0.3342857}
-    weight: 0.0030530237
-    valid: 0
-    curvatureOffset: 0.20088214
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.79560035
-    distanceFromTire: 0.07438743
-    offset: {x: 0.15, y: -0.27857143}
-    weight: 0.009922408
-    valid: 1
-    curvatureOffset: 0.27294385
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.6082439
-    distanceFromTire: 0.029554516
-    offset: {x: 0.15, y: -0.22285715}
-    weight: 0.01687945
-    valid: 1
-    curvatureOffset: 0.32005456
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.44290987
-    distanceFromTire: -0.00048181415
-    offset: {x: 0.15, y: -0.16714287}
-    weight: 0.02324894
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.289751
-    distanceFromTire: -0.019578636
-    offset: {x: 0.15, y: -0.11142859}
-    weight: 0.028141622
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.14334726
-    distanceFromTire: -0.029558152
-    offset: {x: 0.15, y: -0.055714305}
-    weight: 0.03098622
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: -0.000000057312015
-    distanceFromTire: -0.031281173
-    offset: {x: 0.15, y: -0.000000022351742}
-    weight: 0.031498376
-    valid: 1
-    curvatureOffset: 0.39
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.14334714
-    distanceFromTire: -0.025003701
-    offset: {x: 0.15, y: 0.05571426}
-    weight: 0.029662505
-    valid: 1
-    curvatureOffset: 0.3859999
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.28975087
-    distanceFromTire: -0.010468841
-    offset: {x: 0.15, y: 0.111428544}
-    weight: 0.025720231
-    valid: 1
-    curvatureOffset: 0.37374288
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.44290978
-    distanceFromTire: 0.013183504
-    offset: {x: 0.15, y: 0.16714282}
-    weight: 0.020161347
-    valid: 1
-    curvatureOffset: 0.35236827
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.6082437
-    distanceFromTire: 0.04777494
-    offset: {x: 0.15, y: 0.2228571}
-    weight: 0.013716621
-    valid: 1
-    curvatureOffset: 0.32005462
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 0.79560024
-    distanceFromTire: 0.09716305
-    offset: {x: 0.15, y: 0.2785714}
-    weight: 0.007353658
-    valid: 1
-    curvatureOffset: 0.27294388
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.0296924
-    distanceFromTire: 0.18214758
-    offset: {x: 0.15, y: 0.33428568}
-    weight: 0.0018664667
-    valid: 0
-    curvatureOffset: 0.20088218
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
-  - angleForward: 1.5685061
-    distanceFromTire: 0
-    offset: {x: 0.15, y: 0.38999996}
-    weight: 0
-    valid: 0
-    curvatureOffset: 0.0008931792
-    groundPoint: {x: 0, y: 0, z: 0}
-    forwardDir: {x: 0, y: 0, z: 0}
-    forwardSlip: 0
-    sidewaysDir: {x: 0, y: 0, z: 0}
-    sidewaysSlip: 0
-    force: 0
+  wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
     m_Bits: 1048580
-  forwardScanResolution: 15
-  sideToSideScanResolution: 3
+  forwardScanResolution: 9
+  sideToSideScanResolution: 2
   hasHit: 1
   prevHasHit: 1
   debug: 0
   parent: {fileID: 8390347793774335264}
-  useRimCollider: 1
-  vehicleSide: 1
+  useRimCollider: 0
+  vehicleSide: -1
   activeFrictionPresetEnum: 0
   activeFrictionPreset:
     name: TarmacDry
@@ -6714,18 +3890,18 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   wheelHit:
-    angleForward: -0.025920788
+    angleForward: 0
     distanceFromTire: 0
-    offset: {x: 0.0007788782, y: -0.0094924}
+    offset: {x: 0, y: 0}
     weight: 0
-    valid: 1
-    curvatureOffset: 0.3873755
-    groundPoint: {x: -8.795623, y: -0.026451647, z: 0.30136243}
-    forwardDir: {x: -0.19001822, y: 0, z: -0.9817806}
-    forwardSlip: 0.1227175
-    sidewaysDir: {x: -0.9817805, y: 0, z: 0.19001815}
-    sidewaysSlip: 0.0008023783
-    force: 5619.176
+    valid: 0
+    curvatureOffset: 0
+    groundPoint: {x: 0, y: 0, z: 0}
+    forwardDir: {x: 0, y: 0, z: 0}
+    forwardSlip: 0
+    sidewaysDir: {x: 0, y: 0, z: 0}
+    sidewaysSlip: 0
+    force: 0
   singleRay: 0
   singleWheelHit:
     angleForward: 0

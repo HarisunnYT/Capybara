@@ -24,6 +24,9 @@ public class RagdollController : Controller
     private float minRagdollTime = 2;
 
     [SerializeField]
+    private float maxRagdollTime = 7;
+
+    [SerializeField]
     private float requiredKnockBackForceToRagdoll = 15;
     public float RequiredKnockBackForceToRagdoll { get { return requiredKnockBackForceToRagdoll; } }
 
@@ -41,7 +44,8 @@ public class RagdollController : Controller
     private List<BoneData> lastRagdollBoneData = new List<BoneData>();
 
     private float timer = 0;
-    private float ragdollTime;
+    private float minRagdollTimer;
+    private float maxRagdollTimer;
 
     private bool returningFromRagdoll = false;
     private MovementState previousMovementState;
@@ -104,7 +108,7 @@ public class RagdollController : Controller
         else if ((int)MovementController.CurrentMovementState >= (int)MovementState.Ragdoll)
         {
             //check if the spine has stopped moving
-            if (MovementController.CurrentMovementState != MovementState.KnockedOut && spineBody.velocity.magnitude < 0.1f && Time.time > ragdollTime)
+            if (MovementController.CurrentMovementState != MovementState.KnockedOut && (spineBody.velocity.magnitude < 0.1f && Time.time > minRagdollTimer) || Time.time > maxRagdollTimer)
             {
                 SetRagdoll(false);
             }
@@ -154,6 +158,12 @@ public class RagdollController : Controller
         //only disable if going into ragdoll, transition back to animation will enable animator
         if (ragdoll)
         {
+            //detach from the vehicle if in one
+            if (MovementController.CurrentMovementStyle == MovementStyle.Driving)
+            {
+                InteractionController.CurrentVehicle.GetOutOfVehicle();
+            }
+
             spineBody.transform.parent = null;
 
             OnRagdollBegin();
@@ -171,7 +181,8 @@ public class RagdollController : Controller
             MovementController.MainBody.velocity = Vector3.zero;
             MovementController.SetMovementState(MovementState.Ragdoll);
 
-            ragdollTime = Time.time + minRagdollTime;
+            minRagdollTimer = Time.time + minRagdollTime;
+            maxRagdollTimer = Time.time + maxRagdollTime;
         }
         else
         {
