@@ -346,7 +346,7 @@ MonoBehaviour:
     width: 1.19
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 82.808975, y: 2.29, z: -44.16}
+    worldPosition: {x: 69.23378, y: 1.66, z: -22.61956}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -384,10 +384,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: 0}
+    up: {x: 0, y: 1, z: -0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0, y: 0, z: 1}
-    right: {x: 1, y: 0, z: 0}
+    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
+    right: {x: -0.0016727448, y: 0, z: -0.99999857}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -1295,8 +1295,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.753792, y: 0.73218536, z: 8.783962}
-  m_Center: {x: -0.043468475, y: 11.304392, z: 1.0018368}
+  m_Size: {x: 7.753792, y: 0.4873333, z: 8.783962}
+  m_Center: {x: -0.043468475, y: 11.426818, z: 1.0018368}
 --- !u!65 &5762638001220068555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1555,7 +1555,7 @@ MonoBehaviour:
     width: 1.19
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 75.32897, y: 2.29, z: -44.16}
+    worldPosition: {x: 69.24629, y: 1.66, z: -15.13957}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -1593,10 +1593,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: 0}
+    up: {x: 0, y: 1, z: -0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0, y: 0, z: 1}
-    right: {x: 1, y: 0, z: 0}
+    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
+    right: {x: -0.0016727448, y: 0, z: -0.99999857}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -2302,7 +2302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390347794188430968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.97, z: 0}
+  m_LocalPosition: {x: 0.93, y: 4.98, z: -0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8390347793774335268}
@@ -2423,7 +2423,7 @@ MonoBehaviour:
     width: 1.19
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 75.32897, y: 2.29, z: -37.39}
+    worldPosition: {x: 76.01628, y: 1.66, z: -15.150894}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -2461,10 +2461,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: 0}
+    up: {x: 0, y: 1, z: -0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0, y: 0, z: 1}
-    right: {x: 1, y: 0, z: 0}
+    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
+    right: {x: -0.0016727448, y: 0, z: -0.99999857}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -3196,7 +3196,7 @@ MonoBehaviour:
     width: 1.19
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 82.808975, y: 2.29, z: -37.39}
+    worldPosition: {x: 76.00377, y: 1.66, z: -22.630884}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -3234,10 +3234,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: 0}
+    up: {x: 0, y: 1, z: -0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0, y: 0, z: 1}
-    right: {x: 1, y: 0, z: 0}
+    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
+    right: {x: -0.0016727448, y: 0, z: -0.99999857}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}

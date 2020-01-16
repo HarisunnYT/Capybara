@@ -8,7 +8,14 @@ public class CapyInteractionController : InteractionController
     {
         if (InputController.InputManager.Interact.WasPressed)
         {
-            TryPickUpObject(true);
+            if (MovementController.CurrentMovementStyle == MovementStyle.Driving)
+            {
+                CurrentVehicle.GetOutOfVehicle();
+            }
+            else
+            {
+                TryPickUpObject(true);
+            }
         }
     }
 }

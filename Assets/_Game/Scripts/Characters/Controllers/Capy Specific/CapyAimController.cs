@@ -65,6 +65,8 @@ public class CapyAimController : Controller
 
             CameraController.Instance.SetMinMaxDistance(float.MinValue, float.MaxValue);
             AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, true);
+
+            CanvasManager.Instance.ShowCrosshair(true);
         }
         else if (InputController.InputManager.Aim.WasReleased)
         {
@@ -81,6 +83,8 @@ public class CapyAimController : Controller
 
             fromRotation = transform.rotation;
             targetRotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+
+            CanvasManager.Instance.ShowCrosshair(false);
         }
 
         if (currentState == AimingState.ToAim)

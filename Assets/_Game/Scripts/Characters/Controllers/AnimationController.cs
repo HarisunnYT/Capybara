@@ -83,10 +83,11 @@ public class AnimationController : Controller
     {
         if ((int)MovementController.CurrentMovementState <= (int)MovementState.Stunned && isAnimating)
         {
-            foreach(var layer in boneLayers)
+            for (int L = 0; L < boneLayers.Length; L++)
             {
-                if (layer.Active)
+                if (boneLayers[L].Active)
                 {
+                    Layer layer = boneLayers[L];
                     for (int i = 0; i < layer.MovingBones.Length; i++)
                     {
                         layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, boneMoveSpeed * Time.deltaTime);

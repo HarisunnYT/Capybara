@@ -36,6 +36,7 @@ public class RagdollController : Controller
 
     [SerializeField]
     private Transform metaRig;
+    public Transform MetaRig { get { return metaRig; } }
 
     public Collider[] Colliders { get; private set; }
 
