@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7533845369871752395}
   - component: {fileID: 7533845369871752396}
   - component: {fileID: 7533845369871752394}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Bone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000004539714, y: 0.0036003562, z: -0.000025120386}
+  m_ConnectedAnchor: {x: 0.00000000162933, y: 0.0036003548, z: -0.000025125391}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -210,7 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8309876945591731936}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: shoulder.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 785581378733219848}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: front_toe.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626136934962490375}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: breast.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 7533845370544487173}
   - component: {fileID: 7533845370544487175}
   - component: {fileID: 7533845370544487174}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: thigh.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0012489978, y: 0.00085015805, z: 0.0011844195}
+  m_ConnectedAnchor: {x: -0.0012489979, y: 0.000850162, z: 0.0011844237}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -976,7 +976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43154797151892154}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2443481626514800514}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: pelvis.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 7533845371253174804}
   - component: {fileID: 7533845371253174803}
   - component: {fileID: 1661914307444565027}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: spine.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1170,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00004231707, y: 0.0054015196, z: 0.002667097}
+  m_ConnectedAnchor: {x: 0.000042313757, y: 0.0054015242, z: 0.0026671016}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1692,7 +1692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2168787917238345518}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: front_toe.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1729,6 +1729,7 @@ GameObject:
   - component: {fileID: 6363449402077780486}
   - component: {fileID: 4581520771052920361}
   - component: {fileID: 2452640285819722851}
+  - component: {fileID: 3062248122844030766}
   - component: {fileID: 1994097811412033950}
   - component: {fileID: 1994097811412033949}
   - component: {fileID: 300859593648225703}
@@ -1819,6 +1820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnFromRagdollDuration: 0.2
   minRagdollTime: 2
+  maxRagdollTime: 7
   requiredKnockBackForceToRagdoll: 45
   spineBody: {fileID: 7533845371126763220}
   metaRig: {fileID: 8832953338511576563}
@@ -1865,6 +1867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorAnimator: {fileID: 300859593648225703}
   boneAnimator: {fileID: 250788453686427652}
+  hips: {fileID: 4637300676730615269}
   movingBones:
   - {fileID: 5545394054815567551}
   - {fileID: 43154797151892154}
@@ -1963,11 +1966,6 @@ MonoBehaviour:
     MovingBones:
     - {fileID: 43154797151892154}
     - {fileID: 5545394054815567551}
-    AnimatingBones:
-    - {fileID: 2368325747823495660}
-    - {fileID: 631053241401925107}
-  - Active: 0
-    MovingBones:
     - {fileID: 4637300676730615269}
     - {fileID: 6194750036505518975}
     - {fileID: 8169093160543467589}
@@ -1987,6 +1985,8 @@ MonoBehaviour:
     - {fileID: 2576519046952240395}
     - {fileID: 2168787917238345518}
     AnimatingBones:
+    - {fileID: 2368325747823495660}
+    - {fileID: 631053241401925107}
     - {fileID: 6516815169939338069}
     - {fileID: 1680653045073537416}
     - {fileID: 7968630793307599039}
@@ -2005,6 +2005,22 @@ MonoBehaviour:
     - {fileID: 2121444810178601348}
     - {fileID: 3156081150104868017}
     - {fileID: 8495850080812442010}
+--- !u!114 &3062248122844030766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994097811412033947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad2ed774035b594abf9de0a1872d652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimRotationSpeed: 30
+  cameraOffset: {x: 2, y: 7, z: 0.5}
+  cameraDistance: 5
+  lerpDuration: 0.1
 --- !u!54 &1994097811412033950
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2094,7 +2110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9066142356285553221}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: pelvis.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2473,7 +2489,7 @@ GameObject:
   - component: {fileID: 7533845371287467903}
   - component: {fileID: 7533845371287467901}
   - component: {fileID: 2646122746887649747}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: spine.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2535,7 +2551,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00002439471, y: 0.0043945145, z: -0.0008846431}
+  m_ConnectedAnchor: {x: 0.00002439311, y: 0.0043945145, z: -0.0008846431}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3054,7 +3070,7 @@ GameObject:
   - component: {fileID: 5638794715821735596}
   - component: {fileID: 1963263910}
   - component: {fileID: 1963263909}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: front_toe.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3119,7 +3135,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -9.458745e-10, y: 0.0021922, z: -0.0000000022118911}
+  m_ConnectedAnchor: {x: 0.0000000024592737, y: 0.002192199, z: 5.820766e-11}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3165,7 +3181,7 @@ GameObject:
   - component: {fileID: 7533845369539598900}
   - component: {fileID: 7533845369539598901}
   - component: {fileID: 7533845369539598899}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Bone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3228,7 +3244,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000003026798, y: 0.0035310064, z: -0.00007526099}
+  m_ConnectedAnchor: {x: -0.0000000036088745, y: 0.003531009, z: -0.00007525552}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -3528,7 +3544,7 @@ GameObject:
   - component: {fileID: 7533845369387535782}
   - component: {fileID: 7533845369387535784}
   - component: {fileID: 7533845369387535783}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: front_thigh.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3591,7 +3607,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0012450445, y: 0.0025368298, z: 0.0018515746}
+  m_ConnectedAnchor: {x: 0.0012450425, y: 0.0025368335, z: 0.001851574}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3742,7 +3758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8206340098391008647}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: toe.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4019,7 +4035,7 @@ GameObject:
   - component: {fileID: 7533845370637975138}
   - component: {fileID: 7533845370637975139}
   - component: {fileID: 7533845370637975137}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Bone.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4082,7 +4098,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 4.6566123e-10, y: 0.0035318043, z: -0.000075399876}
+  m_ConnectedAnchor: {x: -0.0000000026775522, y: 0.0035318055, z: -0.000075391494}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -4926,7 +4942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6194750036505518975}
   - component: {fileID: 5725971781972412143}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Bone.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5192,7 +5208,7 @@ GameObject:
   - component: {fileID: 5738115425222900966}
   - component: {fileID: 1312855275}
   - component: {fileID: 1312855274}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: front_toe.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5257,7 +5273,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000000042055035, y: 0.0021914039, z: -0.000000004773028}
+  m_ConnectedAnchor: {x: 0.0000000024447218, y: 0.0021914039, z: 4.656613e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -5303,7 +5319,7 @@ GameObject:
   - component: {fileID: 7533845369477651766}
   - component: {fileID: 7533845369477651767}
   - component: {fileID: 7533845369477651765}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5366,7 +5382,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 5.6961313e-10, y: 0.003600355, z: -0.000025121666}
+  m_ConnectedAnchor: {x: 0.0000000026650868, y: 0.0036003538, z: -0.000025125275}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -5530,7 +5546,7 @@ GameObject:
   - component: {fileID: 7533845371222676613}
   - component: {fileID: 7533845371222676615}
   - component: {fileID: 7533845371222676614}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: thigh.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5593,7 +5609,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0012490017, y: 0.0008501678, z: 0.0011844273}
+  m_ConnectedAnchor: {x: 0.0012490009, y: 0.00085016247, z: 0.0011844217}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -5639,7 +5655,7 @@ GameObject:
   - component: {fileID: 7533845371126763220}
   - component: {fileID: 7533845371126763221}
   - component: {fileID: 6261024827220413825}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Bone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6085,7 +6101,7 @@ GameObject:
   - component: {fileID: 1537102626104746634}
   - component: {fileID: 1277667729760589157}
   - component: {fileID: 7269895478082400603}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: spine.011_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6230,7 +6246,7 @@ GameObject:
   - component: {fileID: 7533845371092187780}
   - component: {fileID: 7533845371092187782}
   - component: {fileID: 7533845371092187781}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: front_thigh.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6293,7 +6309,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0012526653, y: 0.0025746904, z: 0.0018512686}
+  m_ConnectedAnchor: {x: -0.0012526697, y: 0.0025746895, z: 0.0018512688}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -6501,7 +6517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8466623523240964330}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: pelvis.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6532,7 +6548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4598546128192640118}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: breast.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6597,6 +6613,7 @@ GameObject:
   - component: {fileID: 7533845369540800356}
   - component: {fileID: 157268315}
   - component: {fileID: 790827784975384058}
+  - component: {fileID: 9216960708085156213}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -6720,9 +6737,26 @@ MonoBehaviour:
   blockingLayers:
     serializedVersion: 2
     m_Bits: 256
-  blockingRadius: 1
+  blockingRadius: 0.5
   blockingSmoothTime: 0.1
   blockedOffset: 0.5
+--- !u!114 &9216960708085156213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7533845369540800354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 0}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &7533845370532946597
 GameObject:
   m_ObjectHideFlags: 0
@@ -6794,7 +6828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6878614387252631423}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: breast.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6997,7 +7031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108685081465073985}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: toe.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7030,7 +7064,7 @@ GameObject:
   - component: {fileID: 8029283102209106627}
   - component: {fileID: 226172945}
   - component: {fileID: 226172944}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: toe.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7093,7 +7127,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000000028521758, y: 0.002192736, z: -0.000000006170013}
+  m_ConnectedAnchor: {x: -7.566997e-10, y: 0.0021927357, z: -9.313227e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -7170,7 +7204,7 @@ GameObject:
   - component: {fileID: 8096336483639673406}
   - component: {fileID: 410718018}
   - component: {fileID: 410718017}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: toe.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7233,7 +7267,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 5.384209e-10, y: 0.002192736, z: -0.0000000031432141}
+  m_ConnectedAnchor: {x: 6.6938816e-10, y: 0.002192735, z: 0.0000000011641533}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -7399,7 +7433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5425730740359228653}
   - component: {fileID: 2258129062823623214}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: TwoHandedBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7507,7 +7541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3255797955781382178}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: breast.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7920,7 +7954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5982740859050479812}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: shoulder.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8129,7 +8163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4813866821523716308}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: pelvis.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

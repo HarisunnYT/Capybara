@@ -64,11 +64,16 @@ public class Hand : BodyPart
 
     public bool Attack()
     {
-        if (currentItemObject != null && currentItemObject is Weapon)
+        if (HoldingWeapon())
         {
             return ((Weapon)currentItemObject).Attack();
         }
 
         return false;
+    }
+
+    public bool HoldingWeapon()
+    {
+        return currentItemObject != null && currentItemObject is Weapon;
     }
 }

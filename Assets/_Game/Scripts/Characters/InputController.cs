@@ -25,6 +25,7 @@ public class InputProfile : PlayerActionSet
 
     //button presses
     public PlayerAction Attack;
+    public PlayerAction Aim;
     public PlayerAction Interact;
 
     public InputProfile()
@@ -37,6 +38,7 @@ public class InputProfile : PlayerActionSet
         Move = CreateTwoAxisPlayerAction(Left, Right, Down, Up);
 
         Attack = CreatePlayerAction("Basic Attack");
+        Aim = CreatePlayerAction("Aim");
         Interact = CreatePlayerAction("Interact");
 
         AddKeyboardBindings();
@@ -51,6 +53,7 @@ public class InputProfile : PlayerActionSet
         Down.AddDefaultBinding(Key.S);
 
         Attack.AddDefaultBinding(Mouse.LeftButton);
+        Aim.AddDefaultBinding(Mouse.RightButton);
         Interact.AddDefaultBinding(Key.E);
     }
 
@@ -69,7 +72,8 @@ public class InputProfile : PlayerActionSet
         Down.AddDefaultBinding(InputControlType.DPadDown);
         Down.AddDefaultBinding(InputControlType.LeftStickDown);
 
-        Attack.AddDefaultBinding(InputControlType.Action3);
+        Attack.AddDefaultBinding(InputControlType.RightTrigger);
+        Aim.AddDefaultBinding(InputControlType.LeftTrigger);
         Interact.AddDefaultBinding(InputControlType.Action2);
     }
 }

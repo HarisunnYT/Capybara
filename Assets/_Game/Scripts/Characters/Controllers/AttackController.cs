@@ -21,4 +21,9 @@ public class AttackController : Controller
             AnimationController.SetTrigger("Attack");
         }
     }
+
+    public bool IsHoldingWeapon()
+    {
+        return twoHand.HoldingWeapon() || leftHand.HoldingWeapon() || rightHand.HoldingWeapon();
+    }
 }

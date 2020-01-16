@@ -43,6 +43,12 @@ public class AnimationController : Controller
     private Animator boneAnimator;
     public Animator Animator { get { return boneAnimator; } }
 
+    [Space()]
+    [SerializeField]
+    private Transform hips;
+    public Transform Hips { get { return hips; } }
+
+    [Space()]
     [SerializeField]
     private Transform[] movingBones;
     public Transform[] MovingBones { get { return movingBones; } }

@@ -108,9 +108,12 @@ public class RagdollController : Controller
         else if ((int)MovementController.CurrentMovementState >= (int)MovementState.Ragdoll)
         {
             //check if the spine has stopped moving
-            if (MovementController.CurrentMovementState != MovementState.KnockedOut && (spineBody.velocity.magnitude < 0.1f && Time.time > minRagdollTimer) || Time.time > maxRagdollTimer)
+            if (MovementController.CurrentMovementState != MovementState.KnockedOut)
             {
-                SetRagdoll(false);
+                if ((spineBody.velocity.magnitude < 0.1f && Time.time > minRagdollTimer) || Time.time > maxRagdollTimer)
+                {
+                    SetRagdoll(false);
+                }
             }
         }
     }
@@ -129,7 +132,8 @@ public class RagdollController : Controller
 
         //if we are trying to ragdoll and it's already ragdolling, or stop ragdoll and it isn't ragdolling, do nothing
         if ((ragdoll && MovementController.CurrentMovementState == MovementState.Ragdoll) ||
-           (!ragdoll && (int)MovementController.CurrentMovementState < (int)MovementState.Ragdoll))
+           (!ragdoll && (int)MovementController.CurrentMovementState < (int)MovementState.Ragdoll)
+           || MovementController.CurrentMovementStyle == MovementStyle.Driving)
         {
             return;
         }

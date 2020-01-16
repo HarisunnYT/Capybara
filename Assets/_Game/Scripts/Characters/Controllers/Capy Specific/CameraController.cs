@@ -64,7 +64,8 @@ public class CameraController : MonoBehaviour
     private Vector3 lastUp;
     private float blockedDistance = 10f, blockedDistanceV;
 
-    private Vector2 originalMinDistance;
+    public Vector2 OriginalMinMaxDistance { get; private set; }
+    public Vector3 OriginalOffset { get; private set; }
 
     public void SetTarget(Transform target, bool smoothFollow)
     {
@@ -99,7 +100,8 @@ public class CameraController : MonoBehaviour
         Instance = this;
 
         lastUp = rotationSpace != null ? rotationSpace.up : Vector3.up;
-        originalMinDistance = new Vector2(minDistance, maxDistance);
+        OriginalMinMaxDistance = new Vector2(minDistance, maxDistance);
+        OriginalOffset = offset;
     }
 
     protected virtual void Update()
@@ -196,7 +198,7 @@ public class CameraController : MonoBehaviour
                 }
                 else blockedDistance = distanceTarget;
 
-                distance = Mathf.Min(distance, blockedDistance);
+                //distance = Mathf.Min(distance, blockedDistance);
             }
 
             position = t + f * distance;
@@ -236,9 +238,18 @@ public class CameraController : MonoBehaviour
 
     public void ResetMinMaxDistance()
     {
-        minDistance = originalMinDistance.x;
-        maxDistance = originalMinDistance.y;
+        minDistance = OriginalMinMaxDistance.x;
+        maxDistance = OriginalMinMaxDistance.y;
     }
 
+    public void SetOffset(Vector3 offset)
+    {
+        this.offset = offset; 
+    }
+
+    public void ResetOffset()
+    {
+        this.offset = OriginalOffset;
+    }
 }
 

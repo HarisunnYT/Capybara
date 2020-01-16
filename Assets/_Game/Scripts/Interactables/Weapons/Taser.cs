@@ -54,9 +54,10 @@ public class Taser : Weapon
         base.DropItem();
 
         Rigidbody.useGravity = true;
-        Rigidbody.isKinematic = true;
 
         Rigidbody.constraints = RigidbodyConstraints.None;
+
+        tasingCharacter = null;
     }
 
     private void FixedUpdate()

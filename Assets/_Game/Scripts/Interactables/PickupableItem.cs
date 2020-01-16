@@ -73,6 +73,8 @@ public class PickupableItem : Interactable
         transform.parent = null;
         Rigidbody.isKinematic = false;
 
+        Equiped = false;
+
         timer = Time.time + pickUpDelay;
 
         if (animator)
