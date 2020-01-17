@@ -9,6 +9,17 @@ public class LevelLoader : MonoBehaviour
 
     public float transitionTime = 1f;
 
+    private void Update()
+    {
+        if (Application.isEditor && Input.GetKeyDown(KeyCode.R))
+        {
+            int currentsceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            SceneManager.UnloadSceneAsync(currentsceneIndex);
+            SceneManager.LoadScene(currentsceneIndex);
+        }
+    }
+
     public void InitLoadLevel(int levelIndex)
     {
         StartCoroutine("LoadLevel", levelIndex);

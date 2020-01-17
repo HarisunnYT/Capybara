@@ -13749,11 +13749,6 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.016974391
       objectReference: {fileID: 0}
-    - target: {fileID: 5541180936335868225, guid: 929f620c87b8c4e40b7c222e58bb2ecb,
-        type: 3}
-      propertyPath: knockBackForce
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929f620c87b8c4e40b7c222e58bb2ecb, type: 3}
 --- !u!1001 &1342490884
@@ -24752,16 +24747,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7533845369540800357, guid: 95d98cb276bb3bb4f935cf45b724f23c,
-        type: 3}
-      propertyPath: orthographic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7533845369540800357, guid: 95d98cb276bb3bb4f935cf45b724f23c,
-        type: 3}
-      propertyPath: orthographic size
-      value: 6.71
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d98cb276bb3bb4f935cf45b724f23c, type: 3}
 --- !u!4 &8240870227813394888 stripped
@@ -24790,7 +24775,7 @@ PrefabInstance:
     - target: {fileID: 8390347793774335268, guid: 517957a33be840f449e078a373fec390,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.34
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8390347793774335268, guid: 517957a33be840f449e078a373fec390,
         type: 3}
@@ -24836,26 +24821,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8390347793774335269, guid: 517957a33be840f449e078a373fec390,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8390347793774335270, guid: 517957a33be840f449e078a373fec390,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8390347793774335270, guid: 517957a33be840f449e078a373fec390,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.4873333
-      objectReference: {fileID: 0}
-    - target: {fileID: 8390347793774335270, guid: 517957a33be840f449e078a373fec390,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 11.426818
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 517957a33be840f449e078a373fec390, type: 3}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CapyAimController : Controller
+public class CapyAimController : AimController
 {
     enum AimingState
     {
@@ -55,7 +55,7 @@ public class CapyAimController : Controller
 
     private void AimLerp()
     {
-        if (InputController.InputManager.Aim.WasPressed)
+        if ((int)MovementController.CurrentMovementState < (int)MovementState.Stunned && (InputController.InputManager.Aim.WasPressed || (currentState == AimingState.None && InputController.InputManager.Aim)))
         {
             currentState = AimingState.ToAim;
             timer = 0;
@@ -68,7 +68,7 @@ public class CapyAimController : Controller
 
             CanvasManager.Instance.ShowCrosshair(true);
         }
-        else if (InputController.InputManager.Aim.WasReleased)
+        else if ((InputController.InputManager.Aim.WasReleased && currentState != AimingState.None) || ((int)MovementController.CurrentMovementState >= (int)MovementState.Stunned && currentState == AimingState.Aiming))
         {
             currentState = AimingState.FromAim;
             timer = 0;
@@ -102,6 +102,8 @@ public class CapyAimController : Controller
             {
                 CameraController.Instance.SetMinMaxDistance(distance, distance);
                 currentState = AimingState.Aiming;
+
+                IsAiming = true;
             }
         }
         else if (currentState == AimingState.FromAim)
@@ -121,6 +123,8 @@ public class CapyAimController : Controller
             {
                 CameraController.Instance.ResetMinMaxDistance();
                 currentState = AimingState.None;
+
+                IsAiming = false;
             }
         }
     }

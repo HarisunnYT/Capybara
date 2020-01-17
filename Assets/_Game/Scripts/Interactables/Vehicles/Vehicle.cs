@@ -7,6 +7,16 @@ public class Vehicle : Interactable
     [SerializeField]
     protected VehicleData vehicleData;
 
+    [Space()]
+    [SerializeField]
+    private Transform leftHandBone;
+
+    [SerializeField]
+    private Transform rightHandBone;
+
+    [SerializeField]
+    private Transform steeringWheel;
+
     [SerializeField]
     private Transform seatBone;
 
@@ -17,6 +27,14 @@ public class Vehicle : Interactable
         base.Start();
 
         colliders = GetComponents<Collider>();
+    }
+
+    protected virtual void Update()
+    {
+        if (CurrentController != null)
+        {
+            
+        }
     }
 
     public void GetInVehicle(CharacterController characterController)

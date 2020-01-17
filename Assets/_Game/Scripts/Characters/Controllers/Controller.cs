@@ -11,6 +11,7 @@ public class Controller : MonoBehaviour
     public CollisionController CollisionController { get; private set; }
     public MovementController MovementController { get; private set; }
     public InteractionController InteractionController { get; private set; }
+    public AimController AimController { get; private set; }
 
     private List<Controller> Controllers = new List<Controller>();
 
@@ -23,6 +24,7 @@ public class Controller : MonoBehaviour
         Controllers.Add(CollisionController = GetComponent<CollisionController>());
         Controllers.Add(MovementController = GetComponent<MovementController>());
         Controllers.Add(InteractionController = GetComponent<InteractionController>());
+        Controllers.Add(AimController = GetComponent<AimController>());
     }
 
     public T GetController<T>() where T : Controller

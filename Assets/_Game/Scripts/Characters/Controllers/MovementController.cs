@@ -129,17 +129,9 @@ public class MovementController : Controller
                 movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, inputVec.y * movementSpeed * fixedDTime, movementVector.z * movementSpeed * fixedDTime);
                 MainBody.velocity = movementVector;
             }
-            else if (CurrentMovementStyle == MovementStyle.Grounded)
+            else if (CurrentMovementStyle == MovementStyle.Grounded || CurrentMovementStyle == MovementStyle.Dragging)
             {
                 //set input vector based on movement speed
-                movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, 0, movementVector.z * baseMovementSpeed * fixedDTime);
-                if (MainBody.velocity.magnitude < GetMaxVelocity())
-                {
-                    MainBody.AddForce(movementVector, ForceMode.VelocityChange);
-                }
-            }
-            else if (CurrentMovementStyle == MovementStyle.Dragging)
-            {
                 movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, 0, movementVector.z * baseMovementSpeed * fixedDTime);
                 if (MainBody.velocity.magnitude < GetMaxVelocity())
                 {
@@ -162,7 +154,7 @@ public class MovementController : Controller
 
             MainBody.MoveRotation(rotation);
         }
-        else if (CurrentMovementStyle != MovementStyle.Driving)
+        else if (CurrentMovementStyle != MovementStyle.Driving && !AimController.IsAiming)
         {
             transform.rotation = GetRotation();
         }
