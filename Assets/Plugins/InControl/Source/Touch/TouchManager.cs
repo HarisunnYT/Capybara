@@ -76,30 +76,30 @@ namespace InControl
 				return;
 			}
 
-#if UNITY_EDITOR
-			if (touchCamera == null)
-			{
-				foreach (var component in manager.gameObject.GetComponentsInChildren<Camera>())
-				{
-					DestroyImmediate( component.gameObject );
-				}
+//#if UNITY_EDITOR
+//			if (touchCamera == null)
+//			{
+//				foreach (var component in manager.gameObject.GetComponentsInChildren<Camera>())
+//				{
+//					DestroyImmediate( component.gameObject );
+//				}
 
-				var cameraGameObject = new GameObject( "Touch Camera" );
-				cameraGameObject.transform.parent = manager.gameObject.transform;
-				cameraGameObject.transform.SetAsFirstSibling();
+//				var cameraGameObject = new GameObject( "Touch Camera" );
+//				cameraGameObject.transform.parent = manager.gameObject.transform;
+//				cameraGameObject.transform.SetAsFirstSibling();
 
-				touchCamera = cameraGameObject.AddComponent<Camera>();
-				touchCamera.transform.position = new Vector3( 0.0f, 0.0f, -10.0f );
-				touchCamera.clearFlags = CameraClearFlags.Nothing;
-				touchCamera.cullingMask = 1 << LayerMask.NameToLayer( "UI" );
-				touchCamera.orthographic = true;
-				touchCamera.orthographicSize = 5.0f;
-				touchCamera.nearClipPlane = 0.3f;
-				touchCamera.farClipPlane = 1000.0f;
-				touchCamera.rect = new Rect( 0.0f, 0.0f, 1.0f, 1.0f );
-				touchCamera.depth = 100;
-			}
-#endif
+//				touchCamera = cameraGameObject.AddComponent<Camera>();
+//				touchCamera.transform.position = new Vector3( 0.0f, 0.0f, -10.0f );
+//				touchCamera.clearFlags = CameraClearFlags.Nothing;
+//				touchCamera.cullingMask = 1 << LayerMask.NameToLayer( "UI" );
+//				touchCamera.orthographic = true;
+//				touchCamera.orthographicSize = 5.0f;
+//				touchCamera.nearClipPlane = 0.3f;
+//				touchCamera.farClipPlane = 1000.0f;
+//				touchCamera.rect = new Rect( 0.0f, 0.0f, 1.0f, 1.0f );
+//				touchCamera.depth = 100;
+//			}
+//#endif
 
 			touchControls = GetComponentsInChildren<TouchControl>( true );
 

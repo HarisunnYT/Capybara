@@ -23,7 +23,7 @@ namespace InControl
 		public static event Action<InputDevice> OnDeviceDetached;
 		public static event Action<InputDevice> OnActiveDeviceChanged;
 
-		internal static event Action<ulong, float> OnUpdateDevices;
+		public static event Action<ulong, float> OnUpdateDevices;
 		internal static event Action<ulong, float> OnCommitDevices;
 
 		static readonly List<InputDeviceManager> deviceManagers = new List<InputDeviceManager>();

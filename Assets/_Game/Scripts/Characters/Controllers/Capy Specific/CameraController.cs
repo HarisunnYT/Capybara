@@ -145,8 +145,8 @@ public class CameraController : MonoBehaviour
         // delta rotation
         if (rotate)
         {
-            x += Input.GetAxis("Mouse X") * rotationSensitivity;
-            y = ClampAngle(y - Input.GetAxis("Mouse Y") * rotationSensitivity, yMinLimit, yMaxLimit);
+            x += InputController.InputManager.RotateCamera.X * rotationSensitivity;
+            y = ClampAngle(y - InputController.InputManager.RotateCamera.Y * rotationSensitivity, yMinLimit, yMaxLimit);
         }
 
         // Distance

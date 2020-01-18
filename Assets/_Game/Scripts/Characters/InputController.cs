@@ -21,7 +21,13 @@ public class InputProfile : PlayerActionSet
     public PlayerAction Up;
     public PlayerAction Down;
 
+    public PlayerAction RotateLeft;
+    public PlayerAction RotateRight;
+    public PlayerAction RotateUp;
+    public PlayerAction RotateDown;
+
     public PlayerTwoAxisAction Move;
+    public PlayerTwoAxisAction RotateCamera;
 
     //button presses
     public PlayerAction Attack;
@@ -35,14 +41,24 @@ public class InputProfile : PlayerActionSet
         Up = CreatePlayerAction("Move Up");
         Down = CreatePlayerAction("Move Down");
 
+        RotateLeft = CreatePlayerAction("Rotate Left");
+        RotateRight = CreatePlayerAction("Rotate Right");
+        RotateUp = CreatePlayerAction("Rotate Up");
+        RotateDown = CreatePlayerAction("Rotate Down");
+
         Move = CreateTwoAxisPlayerAction(Left, Right, Down, Up);
+        RotateCamera = CreateTwoAxisPlayerAction(RotateLeft, RotateRight, RotateDown, RotateUp);
 
         Attack = CreatePlayerAction("Basic Attack");
         Aim = CreatePlayerAction("Aim");
         Interact = CreatePlayerAction("Interact");
 
-        AddKeyboardBindings();
         AddControllerBindings();
+
+#if UNITY_ANDROID || UNITY_IOS
+#else
+        AddKeyboardBindings();
+#endif
     }
 
     public void AddKeyboardBindings()
@@ -51,6 +67,11 @@ public class InputProfile : PlayerActionSet
         Right.AddDefaultBinding(Key.D);
         Up.AddDefaultBinding(Key.W);
         Down.AddDefaultBinding(Key.S);
+
+        RotateLeft.AddDefaultBinding(Mouse.NegativeX);
+        RotateRight.AddDefaultBinding(Mouse.PositiveX);
+        RotateUp.AddDefaultBinding(Mouse.PositiveY);
+        RotateDown.AddDefaultBinding(Mouse.NegativeY);
 
         Attack.AddDefaultBinding(Mouse.LeftButton);
         Aim.AddDefaultBinding(Mouse.RightButton);
@@ -72,8 +93,13 @@ public class InputProfile : PlayerActionSet
         Down.AddDefaultBinding(InputControlType.DPadDown);
         Down.AddDefaultBinding(InputControlType.LeftStickDown);
 
+        RotateLeft.AddDefaultBinding(InputControlType.RightStickLeft);
+        RotateRight.AddDefaultBinding(InputControlType.RightStickRight);
+        RotateUp.AddDefaultBinding(InputControlType.RightStickUp);
+        RotateDown.AddDefaultBinding(InputControlType.RightStickDown);
+
         Attack.AddDefaultBinding(InputControlType.RightTrigger);
         Aim.AddDefaultBinding(InputControlType.LeftTrigger);
-        Interact.AddDefaultBinding(InputControlType.Action2);
+        Interact.AddDefaultBinding(InputControlType.Action3);
     }
 }

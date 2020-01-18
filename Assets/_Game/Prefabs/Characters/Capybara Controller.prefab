@@ -1820,7 +1820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnFromRagdollDuration: 0.2
   minRagdollTime: 2
-  maxRagdollTime: 7
+  maxRagdollTime: 100
   requiredKnockBackForceToRagdoll: 45
   spineBody: {fileID: 7533845371126763220}
   metaRig: {fileID: 8832953338511576563}
@@ -6614,9 +6614,10 @@ GameObject:
   - component: {fileID: 157268315}
   - component: {fileID: 790827784975384058}
   - component: {fileID: 9216960708085156213}
+  - component: {fileID: 1811215843947925326}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6666,7 +6667,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65335
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6757,6 +6758,18 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &1811215843947925326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7533845369540800354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3babade30d3e18a45bd8585a5fe3912d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7533845370532946597
 GameObject:
   m_ObjectHideFlags: 0
