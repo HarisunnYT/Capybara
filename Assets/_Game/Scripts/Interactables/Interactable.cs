@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
 
     protected Collider collider;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();

@@ -20,8 +20,10 @@ public class CharacterController : Controller
     private Transform skeleton;
     public Transform Skeleton { get { return skeleton; } }
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
+
         if (transform.parent != null)
         {
             Parent = transform.parent;

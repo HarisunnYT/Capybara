@@ -15,8 +15,10 @@ public class PickupableItem : Interactable
     private const float pickUpDelay = 1;
     private float timer = float.MaxValue;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         animator = GetComponent<Animator>();
     }
 

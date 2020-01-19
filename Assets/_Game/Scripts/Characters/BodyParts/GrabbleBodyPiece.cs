@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class GrabbleBodyPiece : Interactable
 {
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-
         CurrentController = GetComponentInParent<CharacterController>();
     }
 }

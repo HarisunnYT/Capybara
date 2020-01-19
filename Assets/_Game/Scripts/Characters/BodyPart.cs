@@ -17,7 +17,7 @@ public class BodyPart : MonoBehaviour
 
     public Rigidbody Rigidbody { get; private set; }
 
-    protected virtual void Start()
+    private void Awake()
     {
         controller = GetComponentInParent<CharacterController>();
         Rigidbody = GetComponent<Rigidbody>();
@@ -48,22 +48,27 @@ public class BodyPart : MonoBehaviour
             MovementData movementData = previousItem.PickupableItemData.GetMovementData(Controller.CharacterType);
             if (movementData != null)
             {
-                //loop through each bone weight and check if any other body parts contain that weight
-                for (int i = 0; i < System.Enum.GetNames(typeof(AnimatorBodyPartLayer)).Length; i++)
-                {
-                    foreach(var bodyPart in Controller.BodyParts)
-                    {
-                        if (!bodyPart.ContainsWeight((AnimatorBodyPartLayer)i))
-                        {
-                            Controller.AnimationController.SetAnimatorLayerWeight((AnimatorBodyPartLayer)i, 0);
-                        }
-                    }
-                }
-
                 foreach(var b in movementData.AnimatorBools)
                 {
                     Controller.AnimationController.SetBool(b.Name, !b.Result);
                 }
+            }
+
+            //loop through each bone weight and check if any other body parts contain that weight
+            for (int i = 0; i < System.Enum.GetNames(typeof(AnimatorBodyPartLayer)).Length; i++)
+            {
+                foreach (var bodyPart in Controller.BodyParts)
+                {
+                    if (!bodyPart.ContainsWeight((AnimatorBodyPartLayer)i))
+                    {
+                        Controller.AnimationController.SetAnimatorLayerWeight((AnimatorBodyPartLayer)i, 0);
+                    }
+                }
+            }
+
+            foreach (var b in previousItem.PickupableItemData.GetAnimatorBools(Controller.CharacterType))
+            {
+                Controller.AnimationController.SetBool(b.Name, !b.Result);
             }
         }
     }

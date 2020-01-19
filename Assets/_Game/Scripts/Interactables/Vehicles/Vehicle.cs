@@ -21,10 +21,8 @@ public class Vehicle : Interactable
 
     protected float health;
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-
         colliders = GetComponents<Collider>();
         health = vehicleData.StartingHealth;
     }
