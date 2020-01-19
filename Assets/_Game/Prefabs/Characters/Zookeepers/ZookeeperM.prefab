@@ -933,7 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorAnimator: {fileID: 1210574091052522771}
   boneAnimator: {fileID: 19921216863534416}
-  hips: {fileID: 0}
+  hips: {fileID: 2436399384350737865}
   movingBones:
   - {fileID: 2436399384350737865}
   - {fileID: 6633607702087604512}
@@ -1058,10 +1058,18 @@ MonoBehaviour:
   maxRagdollTime: 7
   requiredKnockBackForceToRagdoll: 75
   spineBody: {fileID: 1312642961}
-  leftHandBones: []
-  rightHandBones: []
-  leftLegBones: []
-  rightLegBones: []
+  leftHandBones:
+  - {fileID: 938401956}
+  - {fileID: 1635169369}
+  rightHandBones:
+  - {fileID: 987000168}
+  - {fileID: 583919183}
+  leftLegBones:
+  - {fileID: 893373026}
+  - {fileID: 1588659189}
+  rightLegBones:
+  - {fileID: 695389728}
+  - {fileID: 1419698966}
   metaRig: {fileID: 1438132456197574559}
 --- !u!114 &2554728552083519075
 MonoBehaviour:
@@ -1198,13 +1206,14 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seenPickupable":{"_name":"_seenPickupable","_id":"211be0d5-aee5-43fc-9da5-975911cb57f0","$type":"NodeCanvas.Framework.Variable`1[[Interactable,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_alwaysFalse":{"_name":"_alwaysFalse","_id":"ccddcb2b-7b26-4e82-b726-562189b0268c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"CapybaraPlayer":{"_name":"CapybaraPlayer","_id":"f142e3b1-eaae-4c34-b8a7-937db2e56a34","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_AimTime":{"_name":"_AimTime","_id":"a113ae1f-746d-4568-b2f3-fb03f8042304","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_AimTime":{"_value":2.0,"_name":"_AimTime","_id":"a113ae1f-746d-4568-b2f3-fb03f8042304","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxDist":{"_value":50.0,"_name":"_seeMaxDist","_id":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxAware":{"_value":15.0,"_name":"_seeMaxAware","_id":"650a6e8f-c6df-467c-b964-deae72c04cb6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeViewAngle":{"_value":100.0,"_name":"_seeViewAngle","_id":"2a0a1413-d075-4a23-9a66-6ceacc879b4d","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_capyLastSeenPos":{"_name":"_capyLastSeenPos","_id":"7b80be8a-7d03-44c8-b385-b4cdb3ac4286","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_walkSpeed":{"_value":6.0,"_name":"_walkSpeed","_id":"2d9765f6-4a69-40f3-bcd0-8348c289126c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_runSpeed":{"_value":12.0,"_name":"_runSpeed","_id":"532dd955-0020-4af5-bc47-429c3cdcac2a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_canPickUpObject":{"_value":true,"_name":"_canPickUpObject","_id":"16787cfc-b0bc-435a-a806-22373849bef6","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
 --- !u!114 &1267917556
@@ -1219,7 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7dbb6bbdf4ffb46ab7dd87ba8191e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-452.0,"y":20.0},"zoomFactor":0.7301444,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":195.0,"y":165.0},"_name":"Wander","_comment":"Wander
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":108.0,"y":117.0},"zoomFactor":0.7304277,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":195.0,"y":165.0},"_name":"Wander","_comment":"Wander
     to random points in the environment","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"2"},{"_position":{"x":780.0,"y":285.0},"_name":"Capy
     seen (check weapon)","_comment":"After capy has been seen, check to see if the
     ZK is holding a weapon or not. If they are, try and fire it at Capy. If not, run
@@ -1231,10 +1240,11 @@ MonoBehaviour:
     SEEN","_comment":"If ZK sees an object that they can pick up","$type":"NodeCanvas.StateMachines.EmptyState","$id":"12"},{"_nestedBT":{"_value":5},"executionMode":"Once","_transitionEvaluation":"CheckAfterStateFinished","_position":{"x":465.0,"y":-60.0},"_name":"PickUp","_comment":"Go
     and pick up the object they see","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"13"},{"_position":{"x":750.0,"y":-120.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"15"},{"_nestedBT":{"_value":6},"_position":{"x":525.0,"y":-270.0},"_name":"Stunned","_comment":"Connect
     to When Stunned","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"16"},{"_conditionList":{"conditions":[{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":50.0,"_name":"_seeMaxDist","_targetVariableID":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1"},"awarnessDistance":{"_value":1.0,"_name":"_seeMaxAware","_targetVariableID":"650a6e8f-c6df-467c-b964-deae72c04cb6"},"viewAngle":{"_value":100.0,"_name":"_seeViewAngle","_targetVariableID":"2a0a1413-d075-4a23-9a66-6ceacc879b4d"},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"boolVariable":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},{"valueA":{"_name":"_capyLastSeenPos","_targetVariableID":"7b80be8a-7d03-44c8-b385-b4cdb3ac4286"},"valueB":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"$type":"NodeCanvas.Tasks.Actions.SetVariable`1[[UnityEngine.Vector3,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}]},"_repeatStateActions":true,"_position":{"x":-135.0,"y":-195.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":50.0,"_name":"_seeMaxDist","_targetVariableID":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1"},"awarnessDistance":{"_value":1.0,"_name":"_seeMaxAware","_targetVariableID":"650a6e8f-c6df-467c-b964-deae72c04cb6"},"viewAngle":{"_value":100.0,"_name":"_seeViewAngle","_targetVariableID":"2a0a1413-d075-4a23-9a66-6ceacc879b4d"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"boolVariable":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}]},"_repeatStateActions":true,"_position":{"x":-105.0,"y":-45.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"overrideAgent":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[]},"_position":{"x":-90.0,"y":225.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"}],"connections":[{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}]},"_repeatStateActions":true,"_position":{"x":-135.0,"y":-195.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":50.0,"_name":"_seeMaxDist","_targetVariableID":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1"},"awarnessDistance":{"_value":1.0,"_name":"_seeMaxAware","_targetVariableID":"650a6e8f-c6df-467c-b964-deae72c04cb6"},"viewAngle":{"_value":100.0,"_name":"_seeViewAngle","_targetVariableID":"2a0a1413-d075-4a23-9a66-6ceacc879b4d"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"boolVariable":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}]},"_repeatStateActions":true,"_position":{"x":-105.0,"y":-45.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"valueA":{"_name":"_canPickUpObject","_targetVariableID":"16787cfc-b0bc-435a-a806-22373849bef6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}]},"_actionList":{"actions":[{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"_canPickUpObject","_targetVariableID":"16787cfc-b0bc-435a-a806-22373849bef6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Actions.SetVariable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}]},"_repeatStateActions":true,"_position":{"x":-90.0,"y":105.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"}],"connections":[{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"conditions":[{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"_value":true,"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIAttackController|IsHoldingWeapon|System.Boolean","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},{"valueA":{"_name":"_canPickUpObject","_targetVariableID":"16787cfc-b0bc-435a-a806-22373849bef6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIAttackController|IsHoldingWeapon|System.Boolean","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIAttackController|IsHoldingWeapon|System.Boolean","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"_value":true,"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
@@ -1679,7 +1689,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000006798655, y: 0.91835606, z: -0.00000011920929}
+  m_ConnectedAnchor: {x: 0.0000007497147, y: 0.9183568, z: -0.0000005364418}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -1995,7 +2005,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000014901161, y: 1.2578939, z: 0}
+  m_ConnectedAnchor: {x: 0.00000032782555, y: 1.2578939, z: -0.0000011026859}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3314,7 +3324,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.39954352, z: -0.032743663}
+  m_ConnectedAnchor: {x: 0.00000043213367, y: 0.39954352, z: -0.032742478}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3739,7 +3749,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.3656053, y: -0.22223401, z: -0.09269157}
+  m_ConnectedAnchor: {x: -0.36560524, y: -0.22223401, z: -0.09269252}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4467,7 +4477,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.3656053, y: -0.22223401, z: -0.095981866}
+  m_ConnectedAnchor: {x: 0.36560652, y: -0.22223401, z: -0.095982455}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4620,7 +4630,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.84425914, y: 1.3827729, z: -0.11739291}
+  m_ConnectedAnchor: {x: -0.84425974, y: 1.3827729, z: -0.11739263}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -4820,7 +4830,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000055879354, y: 0.918367, z: -0.000000059604645}
+  m_ConnectedAnchor: {x: -0.000001322478, y: 0.9183675, z: -0.00000029802322}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -5668,7 +5678,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.8456558, y: 1.3903413, z: -0.1119194}
+  m_ConnectedAnchor: {x: 0.84565514, y: 1.3903413, z: -0.1119183}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -5821,7 +5831,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000007450581, y: 1.2579339, z: 0}
+  m_ConnectedAnchor: {x: -0.00000009685755, y: 1.2579339, z: -0.00000055506825}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -6247,7 +6257,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 2.0336556, z: 0.08052738}
+  m_ConnectedAnchor: {x: -0.0000011492521, y: 2.0336556, z: 0.08052738}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
