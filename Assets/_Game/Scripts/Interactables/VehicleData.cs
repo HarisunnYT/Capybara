@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Capybara/Vehicle Data")]
 public class VehicleData : ScriptableObject
 {
-    public float Speed;
-    public float MaxAngle;
+    public int StartingHealth = 100;
 
     [Space()]
     public float cameraMinDistance = 10;
