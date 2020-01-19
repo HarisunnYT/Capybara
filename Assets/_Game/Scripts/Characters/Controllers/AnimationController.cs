@@ -68,6 +68,8 @@ public class AnimationController : Controller
 
     private float boneMoveSpeed;
 
+    private Dictionary<string, int> bools = new Dictionary<string, int>();
+
     protected override void Awake()
     {
         base.Awake();
@@ -158,7 +160,15 @@ public class AnimationController : Controller
 
     public void SetBool(string name, bool result)
     {
-        Animator.SetBool(name, result);
+        if (result)
+        {
+            Animator.SetBool(name, result);
+            AddBool(name);
+        }
+        else
+        {
+            RemoveBool(name);
+        }
     }
 
     public void SetFloat(string name, float value)
@@ -195,5 +205,29 @@ public class AnimationController : Controller
         yield return new WaitForSeconds(duration);
 
         boneMoveSpeed = originalBoneMoveSpeed;
+    }
+
+    private void AddBool(string name)
+    {
+        if (bools.ContainsKey(name))
+        {
+            bools[name]++;
+        }
+        else
+        {
+            bools.Add(name, 1);
+        }
+    }
+
+    private void RemoveBool(string name)
+    {
+        if (bools.ContainsKey(name) && bools[name] > 0)
+        {
+            bools[name]--;
+            if (bools[name] == 0)
+            {
+                Animator.SetBool(name, false);
+            }
+        }
     }
 }

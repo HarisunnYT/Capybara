@@ -16,15 +16,6 @@ public class AIAttackController : AttackController
 
     private float timer = 0;
 
-    private void LateUpdate()
-    {
-        //TODO REMOVe
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ShootAtTarget(GameManager.Instance.CapyController.transform, 2);
-        }
-    }
-
     public void ShootAtTarget(Transform target, float duration)
     {
         AnimationController.SetAnimatorLayerWeight("UpperBody", 1);

@@ -36,10 +36,35 @@ public class BodyPart : MonoBehaviour
 
     public virtual void DropCurrentItem()
     {
-        if (currentItemObject != null)
+        PickupableItem previousItem = currentItemObject;
+        if (currentItemObject)
         {
             currentItemObject.DropItem();
             currentItemObject = null;
+        }
+
+        if (previousItem != null)
+        {
+            MovementData movementData = previousItem.PickupableItemData.GetMovementData(Controller.CharacterType);
+            if (movementData != null)
+            {
+                //loop through each bone weight and check if any other body parts contain that weight
+                for (int i = 0; i < System.Enum.GetNames(typeof(AnimatorBodyPartLayer)).Length; i++)
+                {
+                    foreach(var bodyPart in Controller.BodyParts)
+                    {
+                        if (!bodyPart.ContainsWeight((AnimatorBodyPartLayer)i))
+                        {
+                            Controller.AnimationController.SetAnimatorLayerWeight((AnimatorBodyPartLayer)i, 0);
+                        }
+                    }
+                }
+
+                foreach(var b in movementData.AnimatorBools)
+                {
+                    Controller.AnimationController.SetBool(b.Name, !b.Result);
+                }
+            }
         }
     }
 
@@ -63,6 +88,18 @@ public class BodyPart : MonoBehaviour
         }
 
         return null;
+    }
+
+    public bool ContainsWeight(AnimatorBodyPartLayer bodyPartLayer)
+    {
+        if (GetMovementData())
+        {
+            return GetMovementData().GetWeight(bodyPartLayer) != 0;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

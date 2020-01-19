@@ -36,4 +36,9 @@ public class MovementData : ScriptableObject
 
         return 0;
     }
+
+    public bool ContainsWeight(AnimatorBodyPartLayer bodyPartLayer)
+    {
+        return GetWeight(bodyPartLayer) != 0;
+    }
 }
