@@ -12,6 +12,7 @@ public class Controller : MonoBehaviour
     public MovementController MovementController { get; private set; }
     public InteractionController InteractionController { get; private set; }
     public AimController AimController { get; private set; }
+    public HeadController HeadController { get; private set; }
 
     private List<Controller> Controllers = new List<Controller>();
 
@@ -25,6 +26,7 @@ public class Controller : MonoBehaviour
         Controllers.Add(MovementController = GetComponent<MovementController>());
         Controllers.Add(InteractionController = GetComponent<InteractionController>());
         Controllers.Add(AimController = GetComponent<AimController>());
+        Controllers.Add(HeadController = GetComponent<HeadController>());
     }
 
     public T GetController<T>() where T : Controller
