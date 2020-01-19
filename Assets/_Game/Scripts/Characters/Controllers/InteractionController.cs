@@ -121,7 +121,6 @@ public class InteractionController : Controller
     {
         DropAllItems();
 
-        MovementController.SetMovementStyle(MovementStyle.Driving);
         vehicle.GetInVehicle(CharacterController);
 
         CurrentVehicle = vehicle;

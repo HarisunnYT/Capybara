@@ -35,6 +35,22 @@ public class RagdollController : Controller
     protected Rigidbody spineBody;
 
     [SerializeField]
+    private Rigidbody[] leftHandBones;
+    public Rigidbody[] LeftHandBones { get { return leftHandBones; } }
+
+    [SerializeField]
+    private Rigidbody[] rightHandBones;
+    public Rigidbody[] RightHandBones { get { return rightHandBones; } }
+
+    [SerializeField]
+    private Rigidbody[] leftLegBones;
+    public Rigidbody[] LeftLegBones { get { return leftLegBones; } }
+
+    [SerializeField]
+    private Rigidbody[] rightLegBones;
+    public Rigidbody[] RightLegBones { get { return rightLegBones; } }
+
+    [SerializeField]
     private Transform metaRig;
     public Transform MetaRig { get { return metaRig; } }
 
@@ -215,6 +231,32 @@ public class RagdollController : Controller
         foreach (var col in Colliders)
         {
             Physics.IgnoreCollision(col, ignoreCollider, ignore);
+        }
+    }
+
+    public void RagdollArms(bool ragoll)
+    {
+        foreach(var armBone in LeftHandBones)
+        {
+            armBone.isKinematic = !ragoll;
+        }
+
+        foreach (var armBone in RightHandBones)
+        {
+            armBone.isKinematic = !ragoll;
+        }
+    }
+
+    public void RagdollLegs(bool ragoll)
+    {
+        foreach (var legBone in LeftLegBones)
+        {
+            legBone.isKinematic = !ragoll;
+        }
+
+        foreach (var legBone in RightLegBones)
+        {
+            legBone.isKinematic = !ragoll;
         }
     }
 

@@ -81,6 +81,11 @@ public class AnimationController : Controller
 
     private void LateUpdate()
     {
+        UpdateBones();
+    }
+
+    private void UpdateBones()
+    {
         if ((int)MovementController.CurrentMovementState <= (int)MovementState.Stunned && isAnimating)
         {
             for (int L = 0; L < boneLayers.Length; L++)
@@ -90,8 +95,9 @@ public class AnimationController : Controller
                     Layer layer = boneLayers[L];
                     for (int i = 0; i < layer.MovingBones.Length; i++)
                     {
-                        layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, boneMoveSpeed * Time.deltaTime);
-                        layer.MovingBones[i].localRotation = Quaternion.Lerp(layer.MovingBones[i].localRotation, layer.AnimatingBones[i].localRotation, boneMoveSpeed * Time.deltaTime);
+                        float time = boneMoveSpeed == float.MaxValue ? boneMoveSpeed : boneMoveSpeed * Time.deltaTime;
+                        layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, time);
+                        layer.MovingBones[i].localRotation = Quaternion.Lerp(layer.MovingBones[i].localRotation, layer.AnimatingBones[i].localRotation, time);
                     }
                 }
             }
@@ -183,6 +189,8 @@ public class AnimationController : Controller
     private IEnumerator InstantMovementDelay(float duration)
     {
         boneMoveSpeed = float.MaxValue;
+
+        UpdateBones();
 
         yield return new WaitForSeconds(duration);
 

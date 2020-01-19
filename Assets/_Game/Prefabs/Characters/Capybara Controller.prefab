@@ -1823,6 +1823,22 @@ MonoBehaviour:
   maxRagdollTime: 100
   requiredKnockBackForceToRagdoll: 45
   spineBody: {fileID: 7533845371126763220}
+  leftHandBones:
+  - {fileID: 7533845371092187780}
+  - {fileID: 7533845370637975138}
+  - {fileID: 1312855275}
+  rightHandBones:
+  - {fileID: 7533845369387535782}
+  - {fileID: 7533845369539598900}
+  - {fileID: 1963263910}
+  leftLegBones:
+  - {fileID: 7533845370544487173}
+  - {fileID: 7533845369477651766}
+  - {fileID: 226172945}
+  rightLegBones:
+  - {fileID: 7533845371222676613}
+  - {fileID: 7533845369871752395}
+  - {fileID: 410718018}
   metaRig: {fileID: 8832953338511576563}
 --- !u!114 &6363449402077780486
 MonoBehaviour:
@@ -6137,7 +6153,6 @@ MonoBehaviour:
   itemSlotType: 3
   currentItemObject: {fileID: 0}
   spring: 10000
-  snapDuration: 1
   breakForce: 20000
   breakTorque: 20000
 --- !u!54 &7269895478082400603
@@ -6614,7 +6629,6 @@ GameObject:
   - component: {fileID: 157268315}
   - component: {fileID: 790827784975384058}
   - component: {fileID: 9216960708085156213}
-  - component: {fileID: 1811215843947925326}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -6758,18 +6772,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!114 &1811215843947925326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7533845369540800354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3babade30d3e18a45bd8585a5fe3912d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7533845370532946597
 GameObject:
   m_ObjectHideFlags: 0

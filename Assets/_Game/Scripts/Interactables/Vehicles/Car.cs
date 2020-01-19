@@ -45,7 +45,6 @@ public class Car : Vehicle
     {
         if (CurrentController != null)
         {
-            //inputVector = CurrentController.MovementController.GetInputVector();
             inputVector = CurrentController.MovementController.GetInputVector(cameraRelative: false);
 
             velocity = transform.InverseTransformDirection(this.GetComponent<Rigidbody>().velocity).z;

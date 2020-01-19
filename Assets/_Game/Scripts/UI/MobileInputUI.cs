@@ -25,25 +25,8 @@ public class MobileInputUI : MonoBehaviour
 
     void UpdateDevice(ulong updateTick, float deltaTime)
     {
-        //updating left stick
-        if (leftJoystick.Value.x > 0)
-            InputController.InputManager.Right.UpdateWithValue(leftJoystick.Value.x, updateTick, deltaTime);
-        else if (leftJoystick.Value.x < 0)
-            InputController.InputManager.Left.UpdateWithValue(leftJoystick.Value.x, updateTick, deltaTime);
-        if (leftJoystick.Value.y > 0)
-            InputController.InputManager.Up.UpdateWithValue(leftJoystick.Value.y, updateTick, deltaTime);
-        else if (leftJoystick.Value.y < 0)
-            InputController.InputManager.Down.UpdateWithValue(leftJoystick.Value.y, updateTick, deltaTime);
-
-        //updating right stick
-        if (rightJoystick.Value.x > 0)
-            InputController.InputManager.RotateRight.UpdateWithValue(rightJoystick.Value.x, updateTick, deltaTime);
-        else if (rightJoystick.Value.x < 0)
-            InputController.InputManager.RotateLeft.UpdateWithValue(rightJoystick.Value.x, updateTick, deltaTime);
-        if (rightJoystick.Value.y > 0)
-            InputController.InputManager.RotateUp.UpdateWithValue(rightJoystick.Value.y, updateTick, deltaTime);
-        else if (rightJoystick.Value.y < 0)
-            InputController.InputManager.RotateDown.UpdateWithValue(rightJoystick.Value.y, updateTick, deltaTime);
+        InputController.InputManager.ForceUpdateMovement(leftJoystick.Value);
+        InputController.InputManager.ForceUpdateCameraRotation(rightJoystick.Value);
 
         this.updateTick = updateTick;
         this.deltaTime = deltaTime;

@@ -9,9 +9,6 @@ public class Mouth : BodyPart
     private float spring = 1000;
 
     [SerializeField]
-    private float snapDuration = 1;
-
-    [SerializeField]
     private float breakForce = 20000;
 
     [SerializeField]

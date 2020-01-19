@@ -34,6 +34,9 @@ public class InputProfile : PlayerActionSet
     public PlayerAction Aim;
     public PlayerAction Interact;
 
+    private ulong updateTick;
+    private float deltaTime;
+
     public InputProfile()
     {
         Left = CreatePlayerAction("Move Left");
@@ -52,6 +55,8 @@ public class InputProfile : PlayerActionSet
         Attack = CreatePlayerAction("Basic Attack");
         Aim = CreatePlayerAction("Aim");
         Interact = CreatePlayerAction("Interact");
+
+        InputManager.OnUpdateDevices += UpdateValues;
 
         AddControllerBindings();
 
@@ -101,5 +106,37 @@ public class InputProfile : PlayerActionSet
         Attack.AddDefaultBinding(InputControlType.RightTrigger);
         Aim.AddDefaultBinding(InputControlType.LeftTrigger);
         Interact.AddDefaultBinding(InputControlType.Action3);
+    }
+
+    private void UpdateValues(ulong updateTick, float deltaTime)
+    {
+        this.updateTick = updateTick;
+        this.deltaTime = deltaTime;
+    }
+
+    public void ForceUpdateMovement(Vector2 value)
+    {
+        //updating left stick
+        if (value.x > 0)
+            InputController.InputManager.Right.UpdateWithValue(value.x, updateTick, deltaTime);
+        else if (value.x < 0)
+            InputController.InputManager.Left.UpdateWithValue(value.x, updateTick, deltaTime);
+        if (value.y > 0)
+            InputController.InputManager.Up.UpdateWithValue(value.y, updateTick, deltaTime);
+        else if (value.y < 0)
+            InputController.InputManager.Down.UpdateWithValue(value.y, updateTick, deltaTime);
+    }
+
+    public void ForceUpdateCameraRotation(Vector2 value)
+    {
+        //updating right stick
+        if (value.x > 0)
+            InputController.InputManager.RotateRight.UpdateWithValue(value.x, updateTick, deltaTime);
+        else if (value.x < 0)
+            InputController.InputManager.RotateLeft.UpdateWithValue(value.x, updateTick, deltaTime);
+        if (value.y > 0)
+            InputController.InputManager.RotateUp.UpdateWithValue(value.y, updateTick, deltaTime);
+        else if (value.y < 0)
+            InputController.InputManager.RotateDown.UpdateWithValue(value.y, updateTick, deltaTime);
     }
 }
