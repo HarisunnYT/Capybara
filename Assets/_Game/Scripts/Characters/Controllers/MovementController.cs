@@ -247,8 +247,11 @@ public class MovementController : Controller
     {
         if (force < RagdollController.RequiredKnockBackForceToRagdoll)
         {
-            MainBody.AddForce(direction * force, ForceMode.Impulse);
-            this.knockBackSlerpDuration = Time.time + knockBackSlerpDuration;
+            if (Time.time > this.knockBackSlerpDuration || this.knockBackSlerpDuration == float.MaxValue)
+            {
+                MainBody.AddForce(direction * force, ForceMode.Impulse);
+                this.knockBackSlerpDuration = Time.time + knockBackSlerpDuration;
+            }
         }
         if (force > RagdollController.RequiredKnockBackForceToRagdoll)
         {
