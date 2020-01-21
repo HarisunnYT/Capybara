@@ -55,6 +55,11 @@ public class WorldGenerator : Singleton<WorldGenerator>
         {
             genTime.text = "Gen time: " + Time.timeSinceLevelLoad.ToString("F2") + "s";
         }
+
+        if (isDebug && Input.GetKeyDown(KeyCode.R))
+        {
+            RegenerateWorld();
+        }
     }
 
     private void DelayedLoadIn()
@@ -73,7 +78,8 @@ public class WorldGenerator : Singleton<WorldGenerator>
 
         if (player != null)
         {
-            Instantiate(player, NodeManager.Instance.GetRandomUnusedNode().pos, Quaternion.identity);
+            GameObject spawnedPlayer = Instantiate(player, NodeManager.Instance.GetRandomUnusedNode().pos, Quaternion.identity);
+            spawnedPlayer.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
 
         loadingCanvas.SetActive(false);

@@ -19,7 +19,7 @@ public class ObjectSpawner : Singleton<ObjectSpawner>
 
         Vector3 pos = WorldQuadrants.Instance.GetSpawnPosInQuadrant(quadrantIndex, spawnGroup.collection[index].MaxBounds(), spawnGroup.conflictLayer);
 
-        Instantiate(spawnGroup.collection[index].gameObject, pos, rot, spawnGroup.parent);
+        Instantiate(spawnGroup.collection[index].gameObject, new Vector3(pos.x, spawnGroup.collection[index].bounds.y, pos.z), rot, spawnGroup.parent);
         NodeManager.Instance.SetNodeUsed(pos);
     }
 }
