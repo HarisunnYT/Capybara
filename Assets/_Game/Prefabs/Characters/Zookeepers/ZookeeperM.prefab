@@ -918,6 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a42b769a9837fc4aa170c2f5b536175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionRadius: 0
 --- !u!114 &1060903668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1941,6 +1942,8 @@ GameObject:
   - component: {fileID: 1419698967}
   - component: {fileID: 1419698965}
   - component: {fileID: 2549009585795937713}
+  - component: {fileID: 6623630167792154325}
+  - component: {fileID: 8771442615238798111}
   m_Layer: 10
   m_Name: mixamorig:RightLeg
   m_TagString: Untagged
@@ -2050,6 +2053,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6623630167792154325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882056453377572553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  phase: 0
+  thickness: 0
+  sourceCollider: {fileID: 1419698967}
+  accurateContacts: 0
+  useDistanceFields: 0
+  distanceField: {fileID: 0}
+--- !u!114 &8771442615238798111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882056453377572553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicForParticles: 0
 --- !u!1 &1908288572008743486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,6 +3800,8 @@ GameObject:
   - component: {fileID: 893373028}
   - component: {fileID: 893373027}
   - component: {fileID: 8646163703654291276}
+  - component: {fileID: 807929852996820801}
+  - component: {fileID: 8626577990425194703}
   m_Layer: 10
   m_Name: mixamorig:LeftUpLeg
   m_TagString: Untagged
@@ -3874,6 +3911,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &807929852996820801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422357939358089308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  phase: 0
+  thickness: 0
+  sourceCollider: {fileID: 893373028}
+  accurateContacts: 0
+  useDistanceFields: 0
+  distanceField: {fileID: 0}
+--- !u!114 &8626577990425194703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422357939358089308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicForParticles: 0
 --- !u!1 &4488946049477218022
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,6 +4562,8 @@ GameObject:
   - component: {fileID: 695389730}
   - component: {fileID: 695389729}
   - component: {fileID: 1910936554055498816}
+  - component: {fileID: 3733404260410397515}
+  - component: {fileID: 3555801591520041241}
   m_Layer: 10
   m_Name: mixamorig:RightUpLeg
   m_TagString: Untagged
@@ -4602,6 +4673,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3733404260410397515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835637442643365783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  phase: 0
+  thickness: 0
+  sourceCollider: {fileID: 695389730}
+  accurateContacts: 0
+  useDistanceFields: 0
+  distanceField: {fileID: 0}
+--- !u!114 &3555801591520041241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835637442643365783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicForParticles: 0
 --- !u!1 &4859805454975605326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5847,6 +5950,8 @@ GameObject:
   - component: {fileID: 1588659190}
   - component: {fileID: 1588659188}
   - component: {fileID: 1291917948631766947}
+  - component: {fileID: 7852423089107287207}
+  - component: {fileID: 8568298180947253983}
   m_Layer: 10
   m_Name: mixamorig:LeftLeg
   m_TagString: Untagged
@@ -5956,6 +6061,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7852423089107287207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365102257307360381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  phase: 0
+  thickness: 0
+  sourceCollider: {fileID: 1588659190}
+  accurateContacts: 0
+  useDistanceFields: 0
+  distanceField: {fileID: 0}
+--- !u!114 &8568298180947253983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365102257307360381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicForParticles: 0
 --- !u!1 &6388248536107540637
 GameObject:
   m_ObjectHideFlags: 0

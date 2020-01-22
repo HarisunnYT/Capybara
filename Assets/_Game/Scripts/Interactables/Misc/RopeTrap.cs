@@ -11,12 +11,18 @@ public class RopeTrap : MonoBehaviour
     [SerializeField]
     private float exaggerationForceMultiplier = 1;
 
+    [SerializeField]
+    private float tensionToTrip = 1.05f;
+
     private ObiSolver solver;
+    private ObiRope rope;
+
     private Obi.ObiSolver.ObiCollisionEventArgs collisionEvent;
 
     private void Awake()
     {
         solver = GetComponent<Obi.ObiSolver>();
+        rope = GetComponent<ObiRope>();
     }
 
     private void OnEnable()
@@ -39,14 +45,19 @@ public class RopeTrap : MonoBehaviour
                 Component collider;
                 if (ObiCollider.idToCollider.TryGetValue(contact.other, out collider))
                 {
-                    CharacterController controller = collider.GetComponent<CharacterController>();
+                    CharacterController controller = collider.GetComponentInParent<CharacterController>();
                     if (controller && controller.MovementController.MainBody.velocity.magnitude >= minFallVelocity)
                     {
-                        Vector3 direction = controller.MovementController.MainBody.velocity.normalized;
-                        float force = controller.MovementController.MainBody.velocity.magnitude;
+                        float tension = rope.CalculateLength() / rope.restLength;
 
-                        controller.RagdollController.SetRagdoll(true);
-                        controller.RagdollController.AddForceToBodies(direction, force * exaggerationForceMultiplier);
+                        if (tension >= tensionToTrip)
+                        {
+                            Vector3 direction = controller.MovementController.GetVelocity().normalized;
+                            float force = controller.MovementController.GetVelocity().magnitude;
+
+                            controller.RagdollController.SetRagdoll(true);
+                            controller.RagdollController.AddForceToBodies(direction, force * exaggerationForceMultiplier);
+                        }
                     }
                 }
             }

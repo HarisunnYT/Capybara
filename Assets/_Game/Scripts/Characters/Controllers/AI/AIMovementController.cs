@@ -97,4 +97,9 @@ public class AIMovementController : MovementController
 
         transform.DORotate(targetRotation.eulerAngles, duration);
     }
+
+    public override Vector3 GetVelocity()
+    {
+        return agent.velocity;
+    }
 }

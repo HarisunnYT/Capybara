@@ -288,5 +288,10 @@ public class MovementController : Controller
         MainBody.isKinematic = kinematic;
     }
 
+    public virtual Vector3 GetVelocity()
+    {
+        return MainBody.velocity;
+    }
+
     #endregion
 }
