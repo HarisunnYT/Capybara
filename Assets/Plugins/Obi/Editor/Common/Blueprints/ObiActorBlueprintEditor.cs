@@ -113,7 +113,7 @@ namespace Obi
             }
         }
 
-        protected virtual bool ValidateBlueprint() { return true; }
+        protected virtual bool IsBlueprintValid() { return true; }
 
         public override void OnInspectorGUI()
         {
@@ -123,11 +123,11 @@ namespace Obi
             EditorGUILayout.BeginVertical(EditorStyles.inspectorDefaultMargins);
             Editor.DrawPropertiesExcluding(serializedObject, "m_Script");
 
-            GUI.enabled = ValidateBlueprint();
+            GUI.enabled = IsBlueprintValid();
             if (GUILayout.Button("Generate", GUI.skin.FindStyle("LargeButton"), GUILayout.Height(32)))
                 Generate();
 
-            GUI.enabled = (blueprint != null && !blueprint.empty && !Application.isPlaying);
+            GUI.enabled = (blueprint != null && !blueprint.empty);
             EditorGUI.BeginChangeCheck();
             editMode = GUILayout.Toggle(editMode, editMode ? "Done" : "Edit", "Button");
             if (EditorGUI.EndChangeCheck())

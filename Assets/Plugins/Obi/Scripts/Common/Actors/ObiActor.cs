@@ -153,28 +153,6 @@ namespace Obi
             get;
         }
 
-        protected void Awake()
-        {
-#if UNITY_EDITOR
-
-            // Check if this script's GameObject is in a PrefabStage
-            var prefabStage = UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetPrefabStage(gameObject);
-
-            if (prefabStage != null)
-            {
-                // Only create a solver if there's not one up our hierarchy.
-                if (GetComponentInParent<ObiSolver>() == null)
-                {
-                    // Add our own environment root and move it to the PrefabStage scene
-                    var newParent = new GameObject("ObiSolver (Environment)", typeof(ObiSolver), typeof(ObiLateFixedUpdater));
-                    newParent.GetComponent<ObiLateFixedUpdater>().solvers.Add(newParent.GetComponent<ObiSolver>());
-                    UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(newParent, gameObject.scene);
-                    transform.root.parent = newParent.transform;
-                }
-            }
-#endif
-        }
-
         protected virtual void OnEnable()
         {
             // when an actor is enabled, grabs the first solver up its hierarchy,

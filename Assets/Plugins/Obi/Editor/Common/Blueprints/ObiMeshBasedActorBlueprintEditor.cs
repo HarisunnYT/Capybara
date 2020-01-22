@@ -39,40 +39,9 @@ namespace Obi
             get;
         }
 
-        protected void NonReadableMeshWarning(Mesh mesh)
+        protected override bool IsBlueprintValid()
         {
-            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
-            Texture2D icon = EditorGUIUtility.Load("icons/console.erroricon.png") as Texture2D;
-            EditorGUILayout.LabelField(new GUIContent("The input mesh is not readable. Read/Write must be enabled in the mesh import settings.", icon), EditorStyles.wordWrappedMiniLabel);
-
-            EditorGUILayout.BeginHorizontal();
-            GUILayout.FlexibleSpace();
-            if (GUILayout.Button("Fix now", GUILayout.MaxWidth(100), GUILayout.MinHeight(32)))
-            {
-                string assetPath = AssetDatabase.GetAssetPath(mesh);
-                ModelImporter modelImporter = AssetImporter.GetAtPath(assetPath) as ModelImporter;
-                if (modelImporter != null)
-                {
-                    modelImporter.isReadable = true;
-                }
-                modelImporter.SaveAndReimport();
-            }
-            EditorGUILayout.EndHorizontal();
-            EditorGUILayout.EndVertical();
-        }
-
-        protected override bool ValidateBlueprint()
-        {
-            if (sourceMesh != null)
-            {
-                if (!sourceMesh.isReadable)
-                {
-                    NonReadableMeshWarning(sourceMesh);
-                    return false;
-                }
-                return true;
-            }
-            return false;
+            return sourceMesh != null;
         }
 
         public abstract int VertexToParticle(int vertexIndex);

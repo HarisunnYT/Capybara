@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39c637925552924caefc34260a83d29, type: 3}
   m_Name: Cube
   m_EditorClassIdentifier: 
-  ItemSlotType: 1
-  Position: {x: 0, y: 0, z: 0}
-  EulerRotation: {x: 0, y: 0, z: 0}
-  MovementData: {fileID: 11400000, guid: cf66f1d8ba1f6424b99cf6af45a1f40a, type: 2}
-  BoneWeights:
-  - bodyPartType: 0
-    Weight: 0
-  AnimatorBools: []
+  DataPerCharacter:
+  - ItemSlotType: 0
+    Position: {x: 0, y: 0, z: 0}
+    EulerRotation: {x: 0, y: 0, z: 0}
+    MovementData: {fileID: 11400000, guid: cf66f1d8ba1f6424b99cf6af45a1f40a, type: 2}
+    BoneWeights: []
+    AnimatorBools:
+    - Name: Flying
+      Result: 1

@@ -118,10 +118,7 @@ public static class Oni {
 
 		[Tooltip("Max ratio between a particle's longest and shortest axis. Use 1 for isotropic (completely round) particles.")]
 		[Range(1,5)]
-		public float maxAnisotropy;
-
-        [Tooltip("Maximum depenetration velocity applied to particles that start a frame inside an object. Low values ensure no 'explosive' collision resolution. Should be > 0 unless looking for non-physical effects.")]
-        public float maxDepenetration;
+		public float maxAnisotropy; 	
 
 		[Tooltip("Kinetic energy below which particle positions arent updated. Energy values are mass-normalized, so all particles in the solver have the same threshold.")]
 		public float sleepThreshold; 		              		              
@@ -133,8 +130,7 @@ public static class Oni {
 			damping = 0;
 			shockPropagation = 0;
 			maxAnisotropy = 3;
-            maxDepenetration = 5;
-            sleepThreshold = 0.0001f;
+			sleepThreshold = 0.0001f;
 		}
 
 	}

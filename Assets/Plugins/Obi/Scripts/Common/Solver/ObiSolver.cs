@@ -776,8 +776,8 @@ namespace Obi
         #endregion
 
 		private void OnEnable() 
-        {
-            Initialize();
+        { 
+            // Just so that the solver can be enabled/disabled in the inspector. 
         }
 
         void Update()
@@ -820,7 +820,7 @@ namespace Obi
         public void Teardown()
         {
             // Free particle memory:
-            FreeParticleArrays(); 
+            FreeParticleArrays();
 
             // Destroy the Oni solver:
             Oni.DestroySolver(oniSolver);
@@ -1053,8 +1053,8 @@ namespace Obi
         }
 
         /// <summary>  
-        /// Removes an actor from this solver. Will only complete successfully if the actor had been previously added to this solver. 
-        /// If the actor is sucessfully removed from the solver, will also call actor.UnloadBlueprint().
+        /// Removes an actor from this solver. Will only complete successfully if the actor had been previously added to this solver. While in play mode,
+        /// if the actor is sucessfully removed from the solver, will also call actor.UnloadBlueprint().
         /// </summary>  
         /// <param name="actor"> An actor.</param>  
         /// <returns>
@@ -1237,7 +1237,7 @@ namespace Obi
 
         public IntPtr BeginStep(float stepTime)
         {
-            if (!isActiveAndEnabled || oniSolver == IntPtr.Zero)
+            if (!isActiveAndEnabled)
                 return IntPtr.Zero;
 
             // Copy positions / orientations at the start of the step, for interpolation:
@@ -1267,7 +1267,7 @@ namespace Obi
         {
 
             // Only update the solver if it is visible, or if we must simulate even when invisible.
-            if (isActiveAndEnabled && (simulateWhenInvisible || isVisible) && oniSolver != IntPtr.Zero)
+            if (isActiveAndEnabled && (simulateWhenInvisible || isVisible))
             {
                 if (OnSubstep != null)
                     OnSubstep(this,substepTime);
@@ -1287,9 +1287,7 @@ namespace Obi
 
         public void EndStep()
         {
-            if (oniSolver == IntPtr.Zero)
-                return;
-
+             
             if (OnCollision != null)
             {
 
@@ -1329,7 +1327,7 @@ namespace Obi
         // This is usually used for mesh generation, rendering setup and other tasks that must take place after all physics steps for this frame are done.
         public void Interpolate(float stepTime, float unsimulatedTime) // TODO: give a better name, as "Interpolate" is too specific.
         {
-            if (!isActiveAndEnabled || oniSolver == IntPtr.Zero)
+            if (!isActiveAndEnabled)
                 return;
 
             // Only perform interpolation if the solver is visible, or if we must simulate even when invisible.

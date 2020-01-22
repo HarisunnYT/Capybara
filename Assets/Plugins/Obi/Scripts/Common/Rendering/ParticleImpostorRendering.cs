@@ -59,8 +59,8 @@ namespace Obi
 
                 // figure out the size of our drawcall arrays:
                 particlesPerDrawcall = Constants.maxVertsPerMesh / 4;
-                drawcallCount = collection.activeParticleCount / particlesPerDrawcall + 1;
-                particlesPerDrawcall = Mathf.Min(particlesPerDrawcall, collection.activeParticleCount);
+                drawcallCount = collection.particleCount / particlesPerDrawcall + 1;
+                particlesPerDrawcall = Mathf.Min(particlesPerDrawcall, collection.particleCount);
 
                 // If the amount of meshes we need to draw the particles has changed:
                 if (drawcallCount != meshes.Count)

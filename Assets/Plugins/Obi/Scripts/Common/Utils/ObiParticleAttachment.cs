@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 namespace Obi
 {
-    [AddComponentMenu("Physics/Obi/Obi Particle Attachment", 820)]
     [RequireComponent(typeof(ObiActor))]
     public class ObiParticleAttachment : MonoBehaviour
     {

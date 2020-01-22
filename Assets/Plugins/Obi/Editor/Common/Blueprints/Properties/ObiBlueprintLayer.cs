@@ -16,7 +16,7 @@ namespace Obi
 
         public override string name
         {
-            get { return "Phase"; }
+            get { return "Layer"; }
         }
 
         public override int Get(int index)

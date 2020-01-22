@@ -89,7 +89,6 @@ namespace Obi
 
         private delegate void ColliderUpdateCallback();
         private static event ColliderUpdateCallback OnUpdateColliders;
-        private static event ColliderUpdateCallback OnResetColliderTransforms;
 
         public static void UpdateColliders()
         {
@@ -98,12 +97,6 @@ namespace Obi
                 if (OnUpdateColliders != null)
                     OnUpdateColliders();
             }
-        }
-
-        public static void ResetColliderTransforms()
-        {
-            if (OnResetColliderTransforms != null)
-                OnResetColliderTransforms();
         }
 
         /**
@@ -194,7 +187,6 @@ namespace Obi
 
                 // Subscribe collider callback:
                 ObiColliderBase.OnUpdateColliders += UpdateIfNeeded;
-                ObiColliderBase.OnResetColliderTransforms += ResetTransformChangeFlag;
 
             }
         }
@@ -210,7 +202,6 @@ namespace Obi
 
                 // Unsubscribe collider callback:
                 ObiColliderBase.OnUpdateColliders -= UpdateIfNeeded;
-                ObiColliderBase.OnResetColliderTransforms -= ResetTransformChangeFlag;
 
                 // Remove and destroy collider:
                 Oni.RemoveCollider(oniCollider);
@@ -258,6 +249,8 @@ namespace Obi
                     if (unityColliderEnabled)
                         Oni.AddCollider(oniCollider);
 
+
+                    transform.hasChanged = false;
                 }
             }
             // If the unity collider is null but its Oni counterpart isn't, the unity collider has been destroyed.
@@ -265,12 +258,6 @@ namespace Obi
                 RemoveCollider();
 
 
-        }
-
-        private void ResetTransformChangeFlag()
-        {
-            //this is done for all colliders at once, when the simulation step has ended.
-            transform.hasChanged = false;
         }
 
         private void Awake()

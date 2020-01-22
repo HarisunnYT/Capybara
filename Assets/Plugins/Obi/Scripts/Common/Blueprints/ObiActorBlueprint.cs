@@ -504,21 +504,6 @@ namespace Obi
             }
         }
 
-        private void ParticlesSwappedInGroups(int index, int newIndex)
-        {
-            // Update groups:
-            foreach (ObiParticleGroup group in groups)
-            {
-                for (int i = 0; i < group.particleIndices.Count; ++i)
-                {
-                    if (group.particleIndices[i] == newIndex)
-                        group.particleIndices[i] = index;
-                    else if (group.particleIndices[i] == index)
-                        group.particleIndices[i] = newIndex;
-                }
-            }
-        }
-
         public void RemoveSelectedParticles(ref bool[] selected, bool optimize = true)
         {
             List<int> particles = new List<int>();
@@ -545,13 +530,9 @@ namespace Obi
                     {
                         selected.Swap(i, m_ActiveParticleCount);
 
-                        // Update constraints:
                         foreach (IObiConstraints constraints in GetConstraints())
                             foreach (var batch in constraints.GetBatchInterfaces())
                                 batch.ParticlesSwapped(i, m_ActiveParticleCount);
-
-                        // Update groups:
-                        ParticlesSwappedInGroups(i, m_ActiveParticleCount);
                     }
                 }
 
@@ -561,6 +542,7 @@ namespace Obi
             foreach (IObiConstraints constraints in GetConstraints())
                 DeactivateConstraintsWithInactiveParticles(constraints, particles);
 
+            // TODO: also update particle group indices!!
         }
 
         public void RestoreRemovedParticles()

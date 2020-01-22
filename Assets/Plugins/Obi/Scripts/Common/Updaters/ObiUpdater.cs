@@ -48,9 +48,6 @@ namespace Obi
 
                 // Wait the task to complete:
                 Oni.Complete(beginStep);
-
-                // Reset transform change flags:
-                ObiColliderBase.ResetColliderTransforms();
             }
         }
 
@@ -85,9 +82,6 @@ namespace Obi
 
                 // Update rigidbody velocities:
                 ObiRigidbodyBase.UpdateAllVelocities();
-
-                // Reset transform change flags:
-                ObiColliderBase.ResetColliderTransforms();
             }
         }
 
