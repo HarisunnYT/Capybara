@@ -22,8 +22,8 @@ public class AttackController : Controller
         }
     }
 
-    public bool IsHoldingWeapon()
+    public bool IsHoldingWeapon(WeaponType weaponType = WeaponType.None)
     {
-        return twoHand.HoldingWeapon() || leftHand.HoldingWeapon() || rightHand.HoldingWeapon();
+        return twoHand.HoldingWeapon(weaponType) || leftHand.HoldingWeapon(weaponType) || rightHand.HoldingWeapon(weaponType);
     }
 }

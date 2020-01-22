@@ -72,8 +72,30 @@ public class Hand : BodyPart
         return false;
     }
 
-    public bool HoldingWeapon()
+    public bool HoldingWeapon(WeaponType weaponType = WeaponType.None)
     {
-        return currentItemObject != null && currentItemObject is Weapon;
+        if (currentItemObject != null && currentItemObject is Weapon)
+        {
+            if (weaponType == WeaponType.None)
+            {
+                return true;
+            }
+            else
+            {
+                return ((Weapon)currentItemObject).WeaponType == weaponType;
+            }
+        }
+
+        return false;
+    }
+
+    public WeaponType GetWeaponType()
+    {
+        if (HoldingWeapon())
+        {
+            return ((Weapon)currentItemObject).WeaponType;
+        }
+
+        return WeaponType.None;
     }
 }

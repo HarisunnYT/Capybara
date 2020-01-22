@@ -200,6 +200,19 @@ public class InteractionController : Controller
         }
     }
 
+    public bool IsSlotEmpty(BodyPartType slotType)
+    {
+        foreach(var bodyPart in CharacterController.BodyParts)
+        {
+            if (bodyPart.ItemSlotType == slotType)
+            {
+                return bodyPart.CurrentItemObject;
+            }
+        }
+
+        return false;
+    }
+
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
