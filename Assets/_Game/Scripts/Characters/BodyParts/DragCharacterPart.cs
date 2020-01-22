@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Mouth : BodyPart
+public class DragCharacterPart : MonoBehaviour
 {
     [SerializeField]
     private float spring = 1000;
@@ -18,36 +18,45 @@ public class Mouth : BodyPart
 
     public CharacterController CurrentHeldController { get; private set; }
     public Transform CurrentHeldBone { get; private set; }
+    public Rigidbody Rigidbody { get; private set; }
 
     private SpringJoint springJoint;
 
+    private BodyPart bodyPart;
+
+    private void Awake()
+    {
+        bodyPart = GetComponent<BodyPart>();
+        Rigidbody = GetComponent<Rigidbody>();
+    }
+
     public void GrabRagdoll(GrabbleBodyPiece bodyPiece)
     {
-        DropCurrentItem();
+        bodyPart.DropCurrentItem();
 
         bodyPiece.transform.position = transform.position;
         HoldingRagdoll = true;
         CurrentHeldBone = bodyPiece.transform;
 
         CurrentHeldController = bodyPiece.CurrentController;
-        CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(Controller.CollisionController.MainCollider, true);
+        CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(bodyPart.Controller.CollisionController.MainCollider, true);
 
-        controller.MovementController.SetMovementStyle(MovementStyle.Dragging);
+        bodyPart.Controller.MovementController.SetMovementStyle(MovementStyle.Dragging);
 
         CreateJoint(bodyPiece);
     }
 
     public void DropRagdoll()
     {
-        DropCurrentItem();
+        bodyPart.DropCurrentItem();
 
         if (springJoint != null)
         {
             Destroy(springJoint);
-            CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(Controller.CollisionController.MainCollider, false);
+            CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(bodyPart.Controller.CollisionController.MainCollider, false);
         }
 
-        controller.MovementController.SetMovementStyle(MovementStyle.Grounded);
+        bodyPart.Controller.MovementController.SetMovementStyle(MovementStyle.Grounded);
 
         HoldingRagdoll = false;
         CurrentHeldController = null;

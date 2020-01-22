@@ -82,9 +82,9 @@ public class RagdollController : Controller
             Physics.IgnoreCollision(col, mainCollider, true);
         }
 
-        if (InteractionController.Mouth != null)
+        if (InteractionController.DragCharacterPart != null)
         {
-            bodies.Remove(InteractionController.Mouth.Rigidbody);
+            bodies.Remove(InteractionController.DragCharacterPart.Rigidbody);
         }
 
         SetRagdoll(false);

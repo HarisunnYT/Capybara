@@ -191,9 +191,9 @@ public class MovementController : Controller
     {
         float rotSpeed = rotationSpeed;
 
-        if (InteractionController.Mouth.CurrentHeldController != null)
+        if (InteractionController.DragCharacterPart.CurrentHeldController != null)
         {
-            rotSpeed /= InteractionController.Mouth.CurrentHeldController.MovementController.MainBody.mass;
+            rotSpeed /= InteractionController.DragCharacterPart.CurrentHeldController.MovementController.MainBody.mass;
         }
 
         return rotSpeed;
@@ -210,9 +210,9 @@ public class MovementController : Controller
             }
         }
 
-        if (InteractionController.Mouth.CurrentHeldController != null)
+        if (InteractionController.DragCharacterPart.CurrentHeldController != null)
         {
-            movementSpeed /= InteractionController.Mouth.CurrentHeldController.MovementController.MainBody.mass;
+            movementSpeed /= InteractionController.DragCharacterPart.CurrentHeldController.MovementController.MainBody.mass;
         }
 
         return movementSpeed;

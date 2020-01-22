@@ -8,14 +8,14 @@ public class InteractionController : Controller
     [SerializeField]
     private float interactionRadius;
 
-    public Mouth Mouth { get; private set; }
+    public DragCharacterPart DragCharacterPart { get; private set; }
     public Vehicle CurrentVehicle { get; private set; }
 
     protected override void Awake()
     {
         base.Awake();
 
-        Mouth = GetComponentInChildren<Mouth>();
+        DragCharacterPart = GetComponentInChildren<DragCharacterPart>();
     }
 
     public bool TryPickUpObject(bool includeRagdollCharacters = false)
@@ -35,13 +35,13 @@ public class InteractionController : Controller
             }
             else if (closestObject is GrabbleBodyPiece)
             {
-                if (Mouth.HoldingRagdoll)
+                if (DragCharacterPart.HoldingRagdoll)
                 {
-                    Mouth.DropRagdoll();
+                    DragCharacterPart.DropRagdoll();
                 }
                 else
                 {
-                    Mouth.GrabRagdoll(closestObject as GrabbleBodyPiece);
+                    DragCharacterPart.GrabRagdoll(closestObject as GrabbleBodyPiece);
                 }
             }
             else if (closestObject is Vehicle)

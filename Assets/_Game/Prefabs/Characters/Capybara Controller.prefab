@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7533845369871752395}
   - component: {fileID: 7533845369871752396}
   - component: {fileID: 7533845369871752394}
+  - component: {fileID: 1079350491570160287}
   m_Layer: 0
   m_Name: Bone.002
   m_TagString: Untagged
@@ -105,7 +106,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000001862161, y: 0.0036003548, z: -0.000025123878}
+  m_ConnectedAnchor: {x: -4.8416826e-13, y: 0.0036003548, z: -0.000025123878}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -139,6 +140,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1079350491570160287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129071007489987756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &132982366808547268
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +914,7 @@ GameObject:
   - component: {fileID: 7533845370544487173}
   - component: {fileID: 7533845370544487175}
   - component: {fileID: 7533845370544487174}
+  - component: {fileID: 5290929623771814272}
   m_Layer: 0
   m_Name: thigh.L
   m_TagString: Untagged
@@ -964,7 +978,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0012489979, y: 0.000850162, z: 0.0011844237}
+  m_ConnectedAnchor: {x: -0.0012489994, y: 0.00085016177, z: 0.0011844235}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -998,6 +1012,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5290929623771814272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540329229331923415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570438008375241700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,6 +1160,7 @@ GameObject:
   - component: {fileID: 7533845371253174804}
   - component: {fileID: 7533845371253174803}
   - component: {fileID: 1661914307444565027}
+  - component: {fileID: 3019727704582717747}
   m_Layer: 0
   m_Name: spine.008
   m_TagString: Untagged
@@ -1201,7 +1228,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000042317133, y: 0.005401526, z: 0.002667103}
+  m_ConnectedAnchor: {x: 0.000042316457, y: 0.005401525, z: 0.0026671025}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1249,6 +1276,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSlotType: 2
   currentItemObject: {fileID: 0}
+--- !u!114 &3019727704582717747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661914307444565026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1763321874734488965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2706,7 @@ GameObject:
   - component: {fileID: 7533845371287467903}
   - component: {fileID: 7533845371287467901}
   - component: {fileID: 2646122746887649747}
+  - component: {fileID: 714332003973821594}
   m_Layer: 0
   m_Name: spine.011
   m_TagString: Untagged
@@ -2729,7 +2769,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00006967931, y: 0.004321015, z: -0.0007937594}
+  m_ConnectedAnchor: {x: 0.00006967769, y: 0.004321014, z: -0.0007937599}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2777,6 +2817,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSlotType: 0
   currentItemObject: {fileID: 0}
+--- !u!114 &714332003973821594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2646122746887649746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2682639072115520623
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,6 +3300,7 @@ GameObject:
   - component: {fileID: 5638794715821735596}
   - component: {fileID: 1963263910}
   - component: {fileID: 1963263909}
+  - component: {fileID: 5733843693257366022}
   m_Layer: 0
   m_Name: front_toe.R
   m_TagString: Untagged
@@ -3313,7 +3366,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000012223609, y: 0.0021921992, z: -0.0000000023283064}
+  m_ConnectedAnchor: {x: 5.529728e-10, y: 0.0021922002, z: -5.2386895e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3347,6 +3400,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5733843693257366022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289567721268475835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3323344184502172062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,6 +3424,7 @@ GameObject:
   - component: {fileID: 7533845369539598900}
   - component: {fileID: 7533845369539598901}
   - component: {fileID: 7533845369539598899}
+  - component: {fileID: 135071405089114754}
   m_Layer: 0
   m_Name: Bone.004
   m_TagString: Untagged
@@ -3422,7 +3488,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.003531008, z: -0.00007525785}
+  m_ConnectedAnchor: {x: 2.3283062e-10, y: 0.0035310085, z: -0.00007525552}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -3456,6 +3522,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &135071405089114754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3323344184502172062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3483088395544243193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,6 +3800,7 @@ GameObject:
   - component: {fileID: 7533845369387535782}
   - component: {fileID: 7533845369387535784}
   - component: {fileID: 7533845369387535783}
+  - component: {fileID: 769358165433404645}
   m_Layer: 0
   m_Name: front_thigh.R
   m_TagString: Untagged
@@ -3785,7 +3864,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0012450467, y: 0.0025368326, z: 0.0018515734}
+  m_ConnectedAnchor: {x: 0.0012450457, y: 0.0025368321, z: 0.001851574}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3819,6 +3898,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &769358165433404645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971335818302890123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3998208086973742968
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4304,7 @@ GameObject:
   - component: {fileID: 7533845370637975138}
   - component: {fileID: 7533845370637975139}
   - component: {fileID: 7533845370637975137}
+  - component: {fileID: 943774995356478150}
   m_Layer: 0
   m_Name: Bone.003
   m_TagString: Untagged
@@ -4276,7 +4368,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 6.984918e-10, y: 0.0035318057, z: -0.000075394055}
+  m_ConnectedAnchor: {x: 1.1641531e-10, y: 0.0035318048, z: -0.00007539266}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -4310,6 +4402,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &943774995356478150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626560196515459120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4662397054037594904
 GameObject:
   m_ObjectHideFlags: 0
@@ -5386,6 +5490,7 @@ GameObject:
   - component: {fileID: 5738115425222900966}
   - component: {fileID: 1312855275}
   - component: {fileID: 1312855274}
+  - component: {fileID: 8337623687701058384}
   m_Layer: 0
   m_Name: front_toe.L
   m_TagString: Untagged
@@ -5451,7 +5556,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000016880222, y: 0.0021914048, z: -2.3283064e-10}
+  m_ConnectedAnchor: {x: 2.3283064e-10, y: 0.0021914036, z: 3.4924597e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -5485,6 +5590,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8337623687701058384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069273481318999962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6097380891180572561
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,6 +5614,7 @@ GameObject:
   - component: {fileID: 7533845369477651766}
   - component: {fileID: 7533845369477651767}
   - component: {fileID: 7533845369477651765}
+  - component: {fileID: 1074581824987430280}
   m_Layer: 0
   m_Name: Bone.001
   m_TagString: Untagged
@@ -5560,7 +5678,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -8.2737145e-10, y: 0.0036003548, z: -0.00002512283}
+  m_ConnectedAnchor: {x: -1.2464585e-11, y: 0.0036003545, z: -0.000025123529}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -5594,6 +5712,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1074581824987430280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097380891180572561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6100308300749156364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5724,6 +5854,7 @@ GameObject:
   - component: {fileID: 7533845371222676613}
   - component: {fileID: 7533845371222676615}
   - component: {fileID: 7533845371222676614}
+  - component: {fileID: 6570469711760741044}
   m_Layer: 0
   m_Name: thigh.R
   m_TagString: Untagged
@@ -5787,7 +5918,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0012490009, y: 0.00085016247, z: 0.0011844217}
+  m_ConnectedAnchor: {x: 0.0012490004, y: 0.00085016247, z: 0.0011844217}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -5821,6 +5952,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6570469711760741044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234011306871402974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6261024827220413824
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,6 +5976,7 @@ GameObject:
   - component: {fileID: 7533845371126763220}
   - component: {fileID: 7533845371126763221}
   - component: {fileID: 6261024827220413825}
+  - component: {fileID: 2442854236569058566}
   m_Layer: 0
   m_Name: Bone.006
   m_TagString: Untagged
@@ -5902,6 +6046,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSlotType: 7
   currentItemObject: {fileID: 0}
+--- !u!114 &2442854236569058566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6261024827220413824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6339186451188047128
 GameObject:
   m_ObjectHideFlags: 0
@@ -6279,6 +6435,7 @@ GameObject:
   - component: {fileID: 1537102626104746634}
   - component: {fileID: 1277667729760589157}
   - component: {fileID: 7269895478082400603}
+  - component: {fileID: 2497431290662659229}
   m_Layer: 0
   m_Name: spine.011_end
   m_TagString: Untagged
@@ -6312,8 +6469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0894197e80e29b648a371a6bbee0223e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlotType: 3
-  currentItemObject: {fileID: 0}
   spring: 10000
   breakForce: 20000
   breakTorque: 20000
@@ -6333,6 +6488,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2497431290662659229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245001910256857253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446dfb7f05120b446a6cf1d0bd9ef4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlotType: 3
+  currentItemObject: {fileID: 0}
 --- !u!1 &7313221441412725890
 GameObject:
   m_ObjectHideFlags: 0
@@ -6423,6 +6592,7 @@ GameObject:
   - component: {fileID: 7533845371092187780}
   - component: {fileID: 7533845371092187782}
   - component: {fileID: 7533845371092187781}
+  - component: {fileID: 3197472863137250945}
   m_Layer: 0
   m_Name: front_thigh.L
   m_TagString: Untagged
@@ -6486,7 +6656,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0012526693, y: 0.0025746876, z: 0.0018512689}
+  m_ConnectedAnchor: {x: -0.0012526679, y: 0.0025746876, z: 0.0018512689}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -6520,6 +6690,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3197472863137250945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314724265824578577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7367790518875151601
 GameObject:
   m_ObjectHideFlags: 0
@@ -7241,6 +7423,7 @@ GameObject:
   - component: {fileID: 8029283102209106627}
   - component: {fileID: 226172945}
   - component: {fileID: 226172944}
+  - component: {fileID: 6411380341389856885}
   m_Layer: 0
   m_Name: toe.L
   m_TagString: Untagged
@@ -7304,7 +7487,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -4.6566134e-10, y: 0.002192735, z: 9.313227e-10}
+  m_ConnectedAnchor: {x: -1.6007108e-10, y: 0.0021927357, z: 8.1490736e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -7338,6 +7521,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6411380341389856885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029283102209106626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8057708839699030902
 GameObject:
   m_ObjectHideFlags: 0
@@ -7381,6 +7576,7 @@ GameObject:
   - component: {fileID: 8096336483639673406}
   - component: {fileID: 410718018}
   - component: {fileID: 410718017}
+  - component: {fileID: 204876267179105533}
   m_Layer: 0
   m_Name: toe.R
   m_TagString: Untagged
@@ -7444,7 +7640,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 6.6938816e-10, y: 0.002192735, z: 0.0000000011641533}
+  m_ConnectedAnchor: {x: 1.6007108e-10, y: 0.0021927345, z: 9.313227e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -7478,6 +7674,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &204876267179105533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8096336483639673405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2819960a4c252745993e3f9685771c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8103759913860854078
 GameObject:
   m_ObjectHideFlags: 0
