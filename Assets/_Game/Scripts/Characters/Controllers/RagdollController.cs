@@ -213,6 +213,13 @@ public class RagdollController : Controller
         }
     }
 
+    public void SetRagdollForSeconds(float seconds)
+    {
+        SetRagdoll(true, true);
+
+        minRagdollTimer = Time.time + seconds;
+    }
+
     /// <summary>
     /// Setting all the bones to kinematic or not, not using proper ragdoll system
     /// </summary>
