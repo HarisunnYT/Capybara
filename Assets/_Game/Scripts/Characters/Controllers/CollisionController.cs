@@ -10,6 +10,9 @@ public class CollisionController : Controller
     [SerializeField]
     protected float forceToRagdoll = 10;
 
+    [SerializeField]
+    private float minForceToKnockOut = 10;
+
     public Collider MainCollider { get; private set; }
 
     private void Start()
@@ -45,5 +48,11 @@ public class CollisionController : Controller
         RagdollController.SetRagdoll(true);
     }
 
-    protected virtual void CheckKnockoutForce(float force) { }
+    private void CheckKnockoutForce(float force) 
+    {
+        if (force >= minForceToKnockOut && MovementController.CurrentMovementState == MovementState.Ragdoll)
+        {
+            ((AIRagdollController)RagdollController).KnockOut();
+        }
+    }
 }

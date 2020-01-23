@@ -7709,7 +7709,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8540154890554946388}
-  - component: {fileID: 5117327925775320660}
   m_Layer: 17
   m_Name: MouthBone
   m_TagString: Untagged
@@ -7731,21 +7730,6 @@ Transform:
   m_Father: {fileID: 5346405898028794296}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5117327925775320660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8430798194814345986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0894197e80e29b648a371a6bbee0223e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spring: 1000
-  breakForce: 20000
-  breakTorque: 20000
 --- !u!1 &8438161256639465759
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AICollisionController : CollisionController
+public class RopeHandle : PickupableItem
 {
-
+    
 }
