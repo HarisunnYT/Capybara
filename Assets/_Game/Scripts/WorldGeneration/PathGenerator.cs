@@ -10,7 +10,7 @@ public class PathGenerator : Singleton<PathGenerator>
     private SpawnObject[] collection;
 
     [SerializeField]
-    private SpawnObject[] zooEntrances;
+    private SpawnObject[] zooEntrances;   
 
     public Node currentNode;
 
@@ -31,6 +31,7 @@ public class PathGenerator : Singleton<PathGenerator>
         //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x - 10, 0, centralAreaNode.pos.z), Quaternion.Euler(-90, -90, 0));
         //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x, 0, centralAreaNode.pos.z + 10), Quaternion.Euler(-90, 0, 0));
         //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x + 10, 0, centralAreaNode.pos.z), Quaternion.Euler(-90, 90, 0));
+        CentralAreaSpawner.Instance.SpawnCentralAreaAtPos(centralAreaNode.pos);
     }
 
     public void DrawPath()

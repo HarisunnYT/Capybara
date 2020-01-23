@@ -6,7 +6,7 @@ using TMPro;
 public class WorldGenerator : Singleton<WorldGenerator>
 {
     [SerializeField]
-    private bool isDebug;
+    private bool isDebug, generatePaths;
 
     private bool genComplete = false;
 
@@ -17,6 +17,7 @@ public class WorldGenerator : Singleton<WorldGenerator>
 
     [SerializeField]
     private GameObject player;
+    public GameObject spawnedPlayer;
 
     [SerializeField]
     private GameObject debugCanvas;
@@ -69,7 +70,15 @@ public class WorldGenerator : Singleton<WorldGenerator>
         BuildingSpawner.Instance.InitSpawnBuildings();
         NPCManager.Instance.InitSpawnNPCs();
         ObjectManager.Instance.InitSpawnObjects();
-        PathGenerator.Instance.DrawPath();
+
+        if (generatePaths)
+        {
+            PathGenerator.Instance.DrawPath();
+        }
+        else
+        {
+            CompletedGeneration();
+        }
     }
 
     public void CompletedGeneration()
@@ -78,8 +87,12 @@ public class WorldGenerator : Singleton<WorldGenerator>
 
         if (player != null)
         {
-            GameObject spawnedPlayer = Instantiate(player, NodeManager.Instance.GetRandomUnusedNode().pos, Quaternion.identity);
+            spawnedPlayer = Instantiate(player, NodeManager.Instance.GetRandomUnusedNode().pos, Quaternion.identity);
             spawnedPlayer.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        }
+        else
+        {
+            Camera.main.gameObject.SetActive(true);
         }
 
         loadingCanvas.SetActive(false);

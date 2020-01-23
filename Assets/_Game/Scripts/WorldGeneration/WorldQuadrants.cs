@@ -31,7 +31,7 @@ public class WorldQuadrants : Singleton<WorldQuadrants>
     {
         Node node = NodeManager.Instance.GetRandomUnusedNodeInRange(xQuads[quadrantIndex], zQuads[quadrantIndex]);
 
-        while (Physics.OverlapBox(node.pos, new Vector3(bounds, 0, bounds), Quaternion.identity, conflictLayer).Length > 0)
+        while (Physics.OverlapBox(node.pos, new Vector3(bounds, bounds, bounds), Quaternion.identity, conflictLayer).Length > 0)
         {
             node = NodeManager.Instance.GetRandomUnusedNodeInRange(xQuads[quadrantIndex], zQuads[quadrantIndex]);
         }
