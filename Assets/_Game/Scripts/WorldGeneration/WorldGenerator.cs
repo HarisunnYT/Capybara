@@ -88,7 +88,6 @@ public class WorldGenerator : Singleton<WorldGenerator>
         if (player != null)
         {
             spawnedPlayer = Instantiate(player, NodeManager.Instance.GetRandomUnusedNode().pos, Quaternion.identity);
-            spawnedPlayer.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
         else
         {

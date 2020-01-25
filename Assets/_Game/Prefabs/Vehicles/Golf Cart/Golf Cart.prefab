@@ -1073,11 +1073,11 @@ MonoBehaviour:
   wheel:
     mass: 25
     rimOffset: 0
-    tireRadius: 1.51
-    width: 1.19
+    tireRadius: 0.25166667
+    width: 0.19833334
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 69.23378, y: 1.6, z: -22.61956}
+    worldPosition: {x: -2.2800002, y: 0.61333334, z: 1.8480508}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -1115,10 +1115,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: -0}
+    up: {x: 0, y: 1, z: 0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
-    right: {x: -0.0016727448, y: 0, z: -0.99999857}
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -1152,7 +1152,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    maxForce: 8700
+    maxForce: 8750
     length: 0
     prevLength: 0
     compressionPercent: 0
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
-    m_Bits: 196151
+    m_Bits: 523831
   forwardScanResolution: 9
   sideToSideScanResolution: 2
   hasHit: 1
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   debug: 0
   parent: {fileID: 8390347793774335264}
   useRimCollider: 0
-  vehicleSide: -1
+  vehicleSide: 1
   activeFrictionPresetEnum: 0
   activeFrictionPreset:
     name: TarmacDry
@@ -1798,7 +1798,7 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   trackedVehicle: 0
-  applyForceToOthers: 1
+  applyForceToOthers: 0
   maxPutDownForce: 0
 --- !u!1 &8390347793340784704
 GameObject:
@@ -1969,7 +1969,6 @@ GameObject:
   - component: {fileID: 8390347793774335268}
   - component: {fileID: 8390347793774335267}
   - component: {fileID: 8390347793774335266}
-  - component: {fileID: 8390347793774335265}
   - component: {fileID: 8390347793774335269}
   - component: {fileID: 4329375781047279920}
   - component: {fileID: 8380506391321604257}
@@ -1989,7 +1988,7 @@ Transform:
   m_GameObject: {fileID: 8390347793774335264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 79.088974, y: 1.68, z: -43.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
   m_Children:
   - {fileID: 2722773717254240732}
   - {fileID: 8390347793340784705}
@@ -2026,64 +2025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fde3b0a987d9ab4ba8272b85857ae03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMassOffset: {x: 0, y: -2.24, z: 0}
+  centerOfMassOffset: {x: 0, y: 0, z: 0}
   showCOM: 1
---- !u!114 &8390347793774335265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390347793774335264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6619ad7a3e2969f4abb12f09b96e7db5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vehicleData: {fileID: 11400000, guid: e28d0a1ef28579649990de2c7781aebd, type: 2}
-  causesDamageLayers:
-    serializedVersion: 2
-    m_Bits: 260407
-  breakableParts:
-  - {fileID: 3425426281817064756}
-  seatBone: {fileID: 8390347794188430969}
-  wheels:
-  - wc: {fileID: 8390347794364102938}
-    steer: 1
-    power: 0
-  - wc: {fileID: 8390347794306506781}
-    steer: 1
-    power: 0
-  - wc: {fileID: 8390347794054976265}
-    steer: 0
-    power: 1
-  - wc: {fileID: 8390347792484485811}
-    steer: 0
-    power: 1
-  wheelVisuals:
-  - Rigidbody: {fileID: 5997316275368558732}
-    Collider: {fileID: 8427880284154485737}
-  - Rigidbody: {fileID: 2815014034977887063}
-    Collider: {fileID: 5615782555993737916}
-  - Rigidbody: {fileID: 2472062468979997314}
-    Collider: {fileID: 2261887433479826841}
-  - Rigidbody: {fileID: 8800348826668781517}
-    Collider: {fileID: 5726251247477213113}
-  maxSteeringAngle: 34
-  minSteeringAngle: 14
-  maxMotorTorque: 2700
-  maxBrakeTorque: 2000
-  antiRollBarForce: 12000
-  minVelocityToKnockCharacter: 10
-  leftHandBone: {fileID: 1455316623}
-  rightHandBone: {fileID: 392487281}
-  steeringWheel: {fileID: 9132483053873940804}
-  wheelTurnSpeed: 10
-  leftFootBone: {fileID: 6563885138639533878}
-  rightFootBone: {fileID: 744838786085726500}
-  brake: {fileID: 8344025086763639375}
-  accelerator: {fileID: 970369028944875308}
-  pedalPushSpeed: 10
 --- !u!65 &8390347793774335269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2325,11 +2268,11 @@ MonoBehaviour:
   wheel:
     mass: 25
     rimOffset: 0
-    tireRadius: 1.51
-    width: 1.19
+    tireRadius: 0.25166667
+    width: 0.19833334
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 69.24629, y: 1.6, z: -15.13957}
+    worldPosition: {x: -3.5266666, y: 0.61333334, z: 1.8480508}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -2367,10 +2310,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: -0}
+    up: {x: 0, y: 1, z: 0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
-    right: {x: -0.0016727448, y: 0, z: -0.99999857}
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -2404,7 +2347,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    maxForce: 8700
+    maxForce: 8750
     length: 0
     prevLength: 0
     compressionPercent: 0
@@ -2463,7 +2406,7 @@ MonoBehaviour:
   wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
-    m_Bits: 196151
+    m_Bits: 523831
   forwardScanResolution: 9
   sideToSideScanResolution: 2
   hasHit: 1
@@ -3050,7 +2993,7 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   trackedVehicle: 0
-  applyForceToOthers: 1
+  applyForceToOthers: 0
   maxPutDownForce: 0
 --- !u!1 &8390347794188430968
 GameObject:
@@ -3076,7 +3019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390347794188430968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.18, y: 4.98, z: -0.75}
+  m_LocalPosition: {x: 1.18, y: 4.98, z: -2.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8390347793774335268}
@@ -3224,11 +3167,11 @@ MonoBehaviour:
   wheel:
     mass: 25
     rimOffset: 0
-    tireRadius: 1.51
-    width: 1.19
+    tireRadius: 0.25166667
+    width: 0.19833334
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 76.01628, y: 1.6, z: -15.150894}
+    worldPosition: {x: -3.5266666, y: 0.61333334, z: 2.9763842}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -3266,10 +3209,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: -0}
+    up: {x: 0, y: 1, z: 0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
-    right: {x: -0.0016727448, y: 0, z: -0.99999857}
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -3303,7 +3246,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    maxForce: 8700
+    maxForce: 8750
     length: 0
     prevLength: 0
     compressionPercent: 0
@@ -3362,7 +3305,7 @@ MonoBehaviour:
   wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
-    m_Bits: 196151
+    m_Bits: 523831
   forwardScanResolution: 9
   sideToSideScanResolution: 2
   hasHit: 1
@@ -3949,7 +3892,7 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   trackedVehicle: 0
-  applyForceToOthers: 1
+  applyForceToOthers: 0
   maxPutDownForce: 0
 --- !u!1 &8390347794364102936
 GameObject:
@@ -3997,11 +3940,11 @@ MonoBehaviour:
   wheel:
     mass: 25
     rimOffset: 0
-    tireRadius: 1.51
-    width: 1.19
+    tireRadius: 0.25166667
+    width: 0.19833334
     rpm: 0
     prevWorldPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 76.00377, y: 1.6, z: -22.630884}
+    worldPosition: {x: -2.2800002, y: 0.61333334, z: 2.9763842}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0, y: 0, z: 0, w: 0}
     camberCurve:
@@ -4039,10 +3982,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: 0, y: 1, z: -0}
+    up: {x: 0, y: 1, z: 0}
     inside: {x: 0, y: 0, z: 0}
-    forward: {x: 0.99999857, y: 0, z: -0.0016727448}
-    right: {x: -0.0016727448, y: 0, z: -0.99999857}
+    forward: {x: 0, y: 0, z: 1}
+    right: {x: 1, y: 0, z: 0}
     velocity: {x: 0, y: 0, z: 0}
     prevVelocity: {x: 0, y: 0, z: 0}
     acceleration: {x: 0, y: 0, z: 0}
@@ -4076,7 +4019,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    maxForce: 8700
+    maxForce: 8750
     length: 0
     prevLength: 0
     compressionPercent: 0
@@ -4135,7 +4078,7 @@ MonoBehaviour:
   wheelHits: []
   scanIgnoreLayers:
     serializedVersion: 2
-    m_Bits: 196151
+    m_Bits: 523831
   forwardScanResolution: 9
   sideToSideScanResolution: 2
   hasHit: 1
@@ -4143,7 +4086,7 @@ MonoBehaviour:
   debug: 0
   parent: {fileID: 8390347793774335264}
   useRimCollider: 0
-  vehicleSide: -1
+  vehicleSide: 1
   activeFrictionPresetEnum: 0
   activeFrictionPreset:
     name: TarmacDry
@@ -4722,7 +4665,7 @@ MonoBehaviour:
     sidewaysSlip: 0
     force: 0
   trackedVehicle: 0
-  applyForceToOthers: 1
+  applyForceToOthers: 0
   maxPutDownForce: 0
 --- !u!1 &8832466425076948424
 GameObject:

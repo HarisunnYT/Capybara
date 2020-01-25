@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.4700003, y: 1.3807385, z: 1.11}
-  m_Center: {x: 0.5479174, y: -0.13847819, z: 0.0028595924}
+  m_Size: {x: 0.745, y: 0.2761476, z: 0.18029533}
+  m_Center: {x: 0.13, y: -0.02, z: 0.016974391}
 --- !u!54 &972465696084619116
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupableItemData: {fileID: 11400000, guid: d2115f2a042828947bf156a3d8c2b6d3, type: 2}
+  weaponType: 0
   projectileData: {fileID: 11400000, guid: dd6be91ee1074ca4aab31d6ee68f13fa, type: 2}
   spawnPosition: {x: -1.59, y: 0, z: 0}
   shootDirection: 2

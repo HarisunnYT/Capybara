@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1855032892488056368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38, y: 0.165, z: 1}
+  m_LocalScale: {x: 0.06333333, y: 0.0275, z: 0.16666667}
   m_Children: []
   m_Father: {fileID: 7654280424012107178}
   m_RootOrder: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7654280424012107178}
   - component: {fileID: 4971083540868406082}
   - component: {fileID: 3061034374599411679}
-  - component: {fileID: 3209494827193860231}
+  - component: {fileID: 4912519830953071198}
   m_Layer: 18
   m_Name: Taser
   m_TagString: Untagged
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupableItemData: {fileID: 11400000, guid: dae7c758703b8604b99e25eef03be836, type: 2}
+  weaponType: 0
   ragdollAfterStun: 1
   stunDuration: 2
   strength: 15
@@ -148,7 +149,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3209494827193860231
+--- !u!65 &4912519830953071198
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,5 +160,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.072430134, y: 0.03162138, z: 0.16666667}
+  m_Center: {x: 0.00093978643, y: 0.0002630949, z: 0}

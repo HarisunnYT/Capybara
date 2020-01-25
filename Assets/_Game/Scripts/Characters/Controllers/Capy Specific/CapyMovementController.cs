@@ -4,6 +4,37 @@ using UnityEngine;
 
 public class CapyMovementController : MovementController
 {
+    [SerializeField]
+    private Transform neckBone;
+
+    [SerializeField]
+    private float neckMovementSpeed = 2;
+
+    private Quaternion originalRotation;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        //originalRotation = neckBone.localRotation;
+    }
+
+    private void Update()
+    {
+        if (GetInputVector() == Vector3.zero)
+        {
+            //neckBone.localRotation = originalRotation;
+        }
+        else
+        {
+            Quaternion toRotation = Quaternion.LookRotation(GetInputVector());
+            //Quaternion rotation = Quaternion.Lerp(neckBone.rotation, toRotation, neckMovementSpeed * Time.deltaTime);
+
+            //toRotation.eulerAngles = new Vector3(0, toRotation.eulerAngles.y, 0);
+            //neckBone.rotation = toRotation;
+        }
+    }
+
     public override Vector3 GetInputVector(bool includeYAxis = false, bool inverseZAxis = false, bool cameraRelative = true)
     {
         Vector3 inputVec = new Vector3(InputController.InputManager.Move.Value.x, 0, InputController.InputManager.Move.Value.y);
