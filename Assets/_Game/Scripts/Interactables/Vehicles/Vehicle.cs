@@ -17,13 +17,13 @@ public class Vehicle : Interactable
     [SerializeField]
     private Transform seatBone;
 
-    private Collider[] colliders;
+    [SerializeField]
+    private Collider[] carliders;
 
     protected float health;
 
     private void Start()
     {
-        colliders = GetComponents<Collider>();
         health = vehicleData.StartingHealth;
     }
        
@@ -54,7 +54,7 @@ public class Vehicle : Interactable
 
         CurrentController.MovementController.SetKinematic(true);
 
-        foreach (var col in colliders)
+        foreach (var col in carliders)
         {
             CurrentController.InteractionController.IgnoreCollisions(col, true);
         }
@@ -70,7 +70,7 @@ public class Vehicle : Interactable
         CurrentController.ResetParent();
         CurrentController.MovementController.SetKinematic(false);
 
-        foreach (var col in colliders)
+        foreach (var col in carliders)
         {
             CurrentController.InteractionController.IgnoreCollisions(col, false);
         }
@@ -100,7 +100,7 @@ public class Vehicle : Interactable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Util.CheckInsideLayer(causesDamageLayers, collider.gameObject.layer))
+        if (Util.CheckInsideLayer(causesDamageLayers, collision.gameObject.layer))
         {
             health -= collision.relativeVelocity.magnitude;
             UpdateParts();

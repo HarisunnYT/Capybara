@@ -118,9 +118,9 @@ public class Car : Vehicle
         {
             Vector3 inputVector = CurrentController.MovementController.GetInputVector(cameraRelative: false);
 
-            steeringWheel.transform.localRotation = Quaternion.Lerp(steeringWheel.transform.localRotation, Quaternion.Euler(0, 0, -45 * inputVector.x), wheelTurnSpeed * Time.deltaTime);
-            brake.transform.localRotation = Quaternion.Lerp(brake.transform.localRotation, Quaternion.Euler(-20 * inputVector.z, 0, 0), pedalPushSpeed * Time.deltaTime);
-            accelerator.transform.localRotation = Quaternion.Lerp(accelerator.transform.localRotation, Quaternion.Euler(20 * inputVector.z, 0, 0), pedalPushSpeed * Time.deltaTime);
+            steeringWheel.transform.localRotation = Quaternion.Lerp(steeringWheel.transform.localRotation, Quaternion.Euler(0, 0, -25 * inputVector.x), wheelTurnSpeed * Time.deltaTime);
+            brake.transform.localRotation = Quaternion.Lerp(brake.transform.localRotation, Quaternion.Euler(-10 * inputVector.z, 0, 0), pedalPushSpeed * Time.deltaTime);
+            accelerator.transform.localRotation = Quaternion.Lerp(accelerator.transform.localRotation, Quaternion.Euler(10 * inputVector.z, 0, 0), pedalPushSpeed * Time.deltaTime);
         }
     }
 
