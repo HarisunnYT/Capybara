@@ -15,12 +15,37 @@ public class Weapon : PickupableItem
     private WeaponType weaponType;
     public WeaponType WeaponType { get { return weaponType; } }
 
-    public virtual bool Attack()
-    {
-        OnAttack();
+    [SerializeField]
+    private float attackDelay = 0.2f;
 
-        return true;
+    private float attackTimer = 0;
+
+    protected bool canAttack = false;
+
+    private void Update()
+    {
+        if (!canAttack && Time.time > attackTimer)
+        {
+            canAttack = true;
+        }
     }
 
-    protected virtual void OnAttack() { }
+    public virtual bool Attack()
+    {
+        if (canAttack)
+        {
+            OnAttack();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    protected virtual void OnAttack() 
+    {
+        canAttack = false;
+        attackTimer = Time.time + attackDelay;
+    }
 }

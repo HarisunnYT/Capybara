@@ -8,6 +8,9 @@ public class InteractionController : Controller
     [SerializeField]
     private float interactionRadius;
 
+    [SerializeField]
+    private Vector3 interactionOffset = new Vector3(0, 0.5f, 0.5f);
+
     public DragCharacterPart DragCharacterPart { get; private set; }
     public Vehicle CurrentVehicle { get; private set; }
 
@@ -63,7 +66,7 @@ public class InteractionController : Controller
 
         radius = radius == -1 ? interactionRadius : radius;
 
-        Collider[] hitCols = Physics.OverlapSphere(transform.position, radius);
+        Collider[] hitCols = Physics.OverlapSphere(transform.position + interactionOffset, radius);
         Interactable closestObject = null;
 
         if (hitCols.Length > 0)
@@ -216,7 +219,7 @@ public class InteractionController : Controller
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, interactionRadius);
+        Gizmos.DrawWireSphere(transform.position + interactionOffset, interactionRadius);
     }
 #endif
 }

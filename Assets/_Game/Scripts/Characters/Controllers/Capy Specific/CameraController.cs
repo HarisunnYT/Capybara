@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 /// <summary>
 /// 3rd person camera controller.
@@ -52,7 +53,7 @@ public class CameraController : MonoBehaviour
 
     public float x { get; private set; } // The current x rotation of the camera
     public float y { get; private set; } // The current y rotation of the camera
-    public float distanceTarget { get; private set; } // Get/set distance
+    public float distanceTarget { get; set; } // Get/set distance
 
     private Vector3 targetDistance, position;
     private Quaternion rotation = Quaternion.identity;
@@ -66,6 +67,8 @@ public class CameraController : MonoBehaviour
 
     public Vector2 OriginalMinMaxDistance { get; private set; }
     public Vector3 OriginalOffset { get; private set; }
+
+    private Vector3 rotationOffset = new Vector3(0, 0, 0);
 
     public void SetTarget(Transform target, bool smoothFollow)
     {
@@ -127,6 +130,8 @@ public class CameraController : MonoBehaviour
             UpdateTransform(fixedDeltaTime);
             fixedDeltaTime = 0f;
             fixedFrame = false;
+
+            DOTween.ManualUpdate(Time.deltaTime, Time.unscaledDeltaTime);
         }
     }
 
@@ -207,7 +212,7 @@ public class CameraController : MonoBehaviour
             transform.position = position;
         }
 
-        transform.rotation = rotation;
+        transform.rotation = Quaternion.Euler(rotation.eulerAngles + rotationOffset);
     }
 
     // Zoom input
@@ -250,6 +255,11 @@ public class CameraController : MonoBehaviour
     public void ResetOffset()
     {
         this.offset = OriginalOffset;
+    }
+
+    public void ShakeScreen(float duration, float strength = 3, int vibrato = 10, int randomness = 90, bool fadeOut = true)
+    {
+        DOTween.Shake(() => rotationOffset, x => rotationOffset = x, duration, strength, vibrato, randomness, fadeOut);
     }
 }
 

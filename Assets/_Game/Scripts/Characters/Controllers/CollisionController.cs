@@ -52,7 +52,7 @@ public class CollisionController : Controller
     {
         if (force >= minForceToKnockOut && MovementController.CurrentMovementState == MovementState.Ragdoll)
         {
-            ((AIRagdollController)RagdollController).KnockOut();
+            RagdollController.KnockOut();
         }
     }
 }

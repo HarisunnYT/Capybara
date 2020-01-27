@@ -35,6 +35,8 @@ public class ProjectileLauncher : TwoHandedWeapon
 
     protected override void OnAttack()
     {
+        base.OnAttack();
+
         LaunchProjectile();
     }
 

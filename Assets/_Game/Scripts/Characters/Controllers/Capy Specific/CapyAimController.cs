@@ -64,7 +64,6 @@ public class CapyAimController : AimController
             distanceLerp = CameraController.Instance.distance;
 
             CameraController.Instance.SetMinMaxDistance(float.MinValue, float.MaxValue);
-            AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, true);
 
             CanvasManager.Instance.ShowCrosshair(true);
         }
@@ -103,6 +102,8 @@ public class CapyAimController : AimController
                 CameraController.Instance.SetMinMaxDistance(distance, distance);
                 currentState = AimingState.Aiming;
 
+                AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, true);
+
                 IsAiming = true;
             }
         }
@@ -115,7 +116,7 @@ public class CapyAimController : AimController
             float distance = Mathf.Lerp(distanceLerp, distanceTarget, normalisedTime);
 
             CameraController.Instance.SetOffset(offset);
-            CameraController.Instance.distance = distance;
+            CameraController.Instance.distanceTarget = distance;
 
             transform.rotation = Quaternion.Lerp(fromRotation, targetRotation, normalisedTime);
 

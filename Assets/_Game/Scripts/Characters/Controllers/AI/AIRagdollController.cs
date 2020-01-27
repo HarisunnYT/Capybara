@@ -10,9 +10,4 @@ public class AIRagdollController : RagdollController
 
         InteractionController.DropAllItems();
     }
-
-    public void KnockOut()
-    {
-        MovementController.SetMovementState(MovementState.KnockedOut);
-    }
 }

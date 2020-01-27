@@ -24,10 +24,20 @@ public class ExplosionProjectile : Projectile
         //ragdoll characters first
         foreach(var col in colliders)
         {
-            RagdollController ragdollController = col.GetComponent<RagdollController>();
-            if (ragdollController)
+            MovementController movementController = col.GetComponent<MovementController>();
+            if (movementController)
             {
-                ragdollController.SetRagdoll(true);
+                float distanceFromCharacter = Vector3.Distance(movementController.transform.position, collisionPoint);
+                float explosionForce = explosionRadius - distanceFromCharacter;
+
+                if (explosionForce > explosionRadius / 2)
+                {
+                    movementController.RagdollController.SetRagdoll(true);
+                }
+                else
+                {
+                    movementController.AddKnockBackForce((collisionPoint - movementController.transform.position).normalized, explosionForce);
+                }
             }
         }
 
@@ -39,6 +49,14 @@ public class ExplosionProjectile : Projectile
             {
                 rBody.AddExplosionForce(force, collisionPoint, explosionRadius, 1, ForceMode.Impulse);
             }
+        }
+
+        float distanceFromCapy = Vector3.Distance(GameManager.Instance.CapyController.transform.position, collisionPoint);
+        float strength = explosionRadius - distanceFromCapy;
+
+        if (strength > 0)
+        {
+            CameraController.Instance.ShakeScreen(1, strength);
         }
 
         OnDestroyed(collisionPoint, hideDelay);

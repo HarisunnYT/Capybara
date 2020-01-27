@@ -267,6 +267,11 @@ public class RagdollController : Controller
         }
     }
 
+    public void KnockOut()
+    {
+        MovementController.SetMovementState(MovementState.KnockedOut);
+    }
+
     protected virtual void OnRagdollBegin() { }
     protected virtual void OnRagdollEnd() { }
 
