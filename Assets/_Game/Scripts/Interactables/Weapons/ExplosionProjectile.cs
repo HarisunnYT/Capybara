@@ -18,6 +18,8 @@ public class ExplosionProjectile : Projectile
 
     protected override void OnCollision(Collision collision)
     {
+        base.OnCollision(collision);
+
         Vector3 collisionPoint = collision.GetContact(0).point;
         Collider[] colliders = Physics.OverlapSphere(collisionPoint, explosionRadius, explosionLayers);
 

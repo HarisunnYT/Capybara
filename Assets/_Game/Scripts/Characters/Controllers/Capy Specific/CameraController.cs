@@ -58,7 +58,7 @@ public class CameraController : MonoBehaviour
     private Vector3 targetDistance, position;
     private Quaternion rotation = Quaternion.identity;
     private Vector3 smoothPosition;
-    private Camera cam;
+    public Camera Cam;
     private bool fixedFrame;
     private float fixedDeltaTime;
     private Quaternion r = Quaternion.identity;
@@ -99,7 +99,7 @@ public class CameraController : MonoBehaviour
         distanceTarget = distance;
         smoothPosition = transform.position;
 
-        cam = GetComponent<Camera>();
+        Cam = GetComponent<Camera>();
         Instance = this;
 
         lastUp = rotationSpace != null ? rotationSpace.up : Vector3.up;
@@ -138,7 +138,7 @@ public class CameraController : MonoBehaviour
     // Read the user input
     public void UpdateInput()
     {
-        if (!cam.enabled) return;
+        if (!Cam.enabled) return;
 
         // Cursors
         Cursor.lockState = lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
@@ -166,7 +166,7 @@ public class CameraController : MonoBehaviour
 
     public void UpdateTransform(float deltaTime)
     {
-        if (!cam.enabled) return;
+        if (!Cam.enabled) return;
 
         // Rotation
         rotation = Quaternion.AngleAxis(x, Vector3.up) * Quaternion.AngleAxis(y, Vector3.right);

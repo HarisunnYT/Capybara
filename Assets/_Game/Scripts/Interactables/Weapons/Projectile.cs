@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
 
     [SerializeField]
     protected LayerMask collisionLayers;
+    public LayerMask CollisionLayers { get { return collisionLayers; } }
 
     [Space()]
     [SerializeField]
@@ -38,6 +39,8 @@ public class Projectile : MonoBehaviour
         timeUntilDestroy = Time.time + lifetime;
 
         Rigidbody.velocity = Vector3.zero;
+        Rigidbody.isKinematic = false;
+
         destroyed = false;
 
         meshRenderer.enabled = true;
@@ -66,14 +69,17 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    protected virtual void OnCollision(Collision collision) { }
+    protected virtual void OnCollision(Collision collision) 
+    {
+        Rigidbody.velocity = Vector3.zero;
+        Rigidbody.isKinematic = true;
+    }
 
     protected virtual void OnDestroyed(Vector3 destroyPoint, float disableDelay) 
     {
         destroyed = true;
 
         meshRenderer.enabled = false;
-        Rigidbody.velocity = Vector3.zero;
 
         Invoke("DisableWithDelay", disableDelay);
     }

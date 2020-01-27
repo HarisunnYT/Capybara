@@ -42,12 +42,24 @@ public class ProjectileLauncher : TwoHandedWeapon
 
     private void LaunchProjectile()
     {
+        //get raycast hit point
+        Vector3 rayStartPoint = CameraController.Instance.Cam.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, CameraController.Instance.Cam.nearClipPlane));
+
         Projectile projectile = ObjectPooler.GetPooledObject(projectileData.ProjectilePrefab).GetComponent<Projectile>();
 
         Vector3 worldPosition = transform.GetChild(0).TransformPoint(transform.GetChild(0).transform.localPosition + spawnPosition);
 
         projectile.transform.position = worldPosition;
-        projectile.transform.rotation = Quaternion.LookRotation(Util.GetDirection(transform, shootDirection), Vector3.up);
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(rayStartPoint, CameraController.Instance.transform.forward, out hitInfo, 100, projectile.CollisionLayers))
+        {
+            projectile.transform.LookAt(hitInfo.point);
+        }
+        else
+        {
+            projectile.transform.rotation = Quaternion.LookRotation(Util.GetDirection(transform, shootDirection), Vector3.up);
+        }
 
         //shoot it 
         projectile.Rigidbody.AddForce(projectile.transform.forward * force * projectileData.ForceMultiplier, ForceMode.Impulse);
