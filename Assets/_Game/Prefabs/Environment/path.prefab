@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1952590385676971601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 52.954586, y: 0.67928, z: -64.1414}
-  m_LocalScale: {x: 0.990235, y: 0.990235, z: 0.990235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2145628547800486534}
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2145628547800486534}
   - component: {fileID: 400956665643037108}
   - component: {fileID: 2025646897864482462}
-  - component: {fileID: 5861111712571910062}
+  - component: {fileID: 2030106929911130659}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -111,7 +111,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5861111712571910062
+--- !u!65 &2030106929911130659
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,8 +122,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 0.026983, z: 7.8982134}
-  m_Center: {x: 0, y: 0.029435538, z: 0.0076135397}
+  m_Size: {x: 1.2, y: 0.0053966, z: 1.5796427}
+  m_Center: {x: 0, y: 0.0058871, z: 0.0015227199}
 --- !u!1 &7526316188764482449
 GameObject:
   m_ObjectHideFlags: 0

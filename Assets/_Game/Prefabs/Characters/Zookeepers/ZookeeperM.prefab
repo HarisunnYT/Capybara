@@ -864,7 +864,7 @@ Transform:
   m_GameObject: {fileID: 1183988630139540828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 5646345652905784439}
   - {fileID: 1438132456197574559}
@@ -919,6 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRadius: 0
+  interactionOffset: {x: 0, y: 0.5, z: 0.5}
 --- !u!114 &1060903668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,20 +1200,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serializedBlackboard: '{"_variables":{"_pathNodes":{"_value":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"_name":"_pathNodes","_id":"6dcb8681-a4f0-46e5-bbcc-9f64211d85d2","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject,
+  _serializedBlackboard: '{"_variables":{"_pathNodes":{"_value":[null,null],"_name":"_pathNodes","_id":"6dcb8681-a4f0-46e5-bbcc-9f64211d85d2","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_waitTime":{"_name":"_waitTime","_id":"6788f3b8-f924-4ec5-8e58-93eb809f2e26","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_capySeen":{"_name":"_capySeen","_id":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seenPickupable":{"_name":"_seenPickupable","_id":"211be0d5-aee5-43fc-9da5-975911cb57f0","$type":"NodeCanvas.Framework.Variable`1[[Interactable,
-    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_alwaysFalse":{"_name":"_alwaysFalse","_id":"ccddcb2b-7b26-4e82-b726-562189b0268c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_pickupMaxDist":{"_value":4,"_name":"_pickupMaxDist","_id":"f1199aea-3a7f-4771-9684-45687047fe7a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_alwaysFalse":{"_name":"_alwaysFalse","_id":"ccddcb2b-7b26-4e82-b726-562189b0268c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"CapybaraPlayer":{"_name":"CapybaraPlayer","_id":"f142e3b1-eaae-4c34-b8a7-937db2e56a34","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_AimTime":{"_value":2.0,"_name":"_AimTime","_id":"a113ae1f-746d-4568-b2f3-fb03f8042304","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxDist":{"_value":50.0,"_name":"_seeMaxDist","_id":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxAware":{"_value":15.0,"_name":"_seeMaxAware","_id":"650a6e8f-c6df-467c-b964-deae72c04cb6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxDist":{"_value":7.0,"_name":"_seeMaxDist","_id":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeMaxAware":{"_value":2.0,"_name":"_seeMaxAware","_id":"650a6e8f-c6df-467c-b964-deae72c04cb6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_seeViewAngle":{"_value":100.0,"_name":"_seeViewAngle","_id":"2a0a1413-d075-4a23-9a66-6ceacc879b4d","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_capyLastSeenPos":{"_name":"_capyLastSeenPos","_id":"7b80be8a-7d03-44c8-b385-b4cdb3ac4286","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_walkSpeed":{"_value":6.0,"_name":"_walkSpeed","_id":"2d9765f6-4a69-40f3-bcd0-8348c289126c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_runSpeed":{"_value":12.0,"_name":"_runSpeed","_id":"532dd955-0020-4af5-bc47-429c3cdcac2a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"_walkSpeed":{"_value":1.0,"_name":"_walkSpeed","_id":"2d9765f6-4a69-40f3-bcd0-8348c289126c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_runSpeed":{"_value":2.0,"_name":"_runSpeed","_id":"532dd955-0020-4af5-bc47-429c3cdcac2a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"_canPickUpObject":{"_value":true,"_name":"_canPickUpObject","_id":"16787cfc-b0bc-435a-a806-22373849bef6","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
@@ -1228,7 +1230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7dbb6bbdf4ffb46ab7dd87ba8191e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":108.0,"y":117.0},"zoomFactor":0.7304277,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":195.0,"y":165.0},"_name":"Wander","_comment":"Wander
+  boundGraphSerialization: '{"version":2.97,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":224.0,"y":216.0},"zoomFactor":0.6299029,"nodes":[{"_nestedBT":{"_value":1},"_position":{"x":195.0,"y":165.0},"_name":"Wander","_comment":"Wander
     to random points in the environment","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"2"},{"_position":{"x":780.0,"y":285.0},"_name":"Capy
     seen (check weapon)","_comment":"After capy has been seen, check to see if the
     ZK is holding a weapon or not. If they are, try and fire it at Capy. If not, run
@@ -1241,7 +1243,7 @@ MonoBehaviour:
     and pick up the object they see","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"13"},{"_position":{"x":750.0,"y":-120.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"15"},{"_nestedBT":{"_value":6},"_position":{"x":525.0,"y":-270.0},"_name":"Stunned","_comment":"Connect
     to When Stunned","$type":"NodeCanvas.StateMachines.NestedBTState","$id":"16"},{"_conditionList":{"conditions":[{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":50.0,"_name":"_seeMaxDist","_targetVariableID":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1"},"awarnessDistance":{"_value":1.0,"_name":"_seeMaxAware","_targetVariableID":"650a6e8f-c6df-467c-b964-deae72c04cb6"},"viewAngle":{"_value":100.0,"_name":"_seeViewAngle","_targetVariableID":"2a0a1413-d075-4a23-9a66-6ceacc879b4d"},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"boolVariable":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},{"valueA":{"_name":"_capyLastSeenPos","_targetVariableID":"7b80be8a-7d03-44c8-b385-b4cdb3ac4286"},"valueB":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"$type":"NodeCanvas.Tasks.Actions.SetVariable`1[[UnityEngine.Vector3,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}]},"_repeatStateActions":true,"_position":{"x":-135.0,"y":-195.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"target":{"_name":"CapybaraPlayer","_targetVariableID":"f142e3b1-eaae-4c34-b8a7-937db2e56a34"},"maxDistance":{"_value":50.0,"_name":"_seeMaxDist","_targetVariableID":"6cda125f-e0c7-42e8-a959-8ff0fa3cafb1"},"awarnessDistance":{"_value":1.0,"_name":"_seeMaxAware","_targetVariableID":"650a6e8f-c6df-467c-b964-deae72c04cb6"},"viewAngle":{"_value":100.0,"_name":"_seeViewAngle","_targetVariableID":"2a0a1413-d075-4a23-9a66-6ceacc879b4d"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}]},"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"boolVariable":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}]},"_repeatStateActions":true,"_position":{"x":-105.0,"y":-45.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"},{"_conditionList":{"conditions":[{"valueA":{"_name":"_canPickUpObject","_targetVariableID":"16787cfc-b0bc-435a-a806-22373849bef6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}]},"_actionList":{"actions":[{"waitTime":{"_value":10.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"_canPickUpObject","_targetVariableID":"16787cfc-b0bc-435a-a806-22373849bef6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Actions.SetVariable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}]},"_repeatStateActions":true,"_position":{"x":-90.0,"y":105.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"}],"connections":[{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"conditions":[{"functionWrapper":{"p1":{"_value":-1.0},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}]},"_repeatStateActions":true,"_position":{"x":-90.0,"y":105.0},"$type":"NodeCanvas.StateMachines.ConcurrentState"}],"connections":[{"_condition":{"valueA":{"_name":"_capySeen","_targetVariableID":"1899669e-3ac4-4a98-84e1-bf2b2ba4b753"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"conditions":[{"functionWrapper":{"p1":{"_value":-1.0,"_name":"_pickupMaxDist","_targetVariableID":"f1199aea-3a7f-4771-9684-45687047fe7a"},"result":{},"_targetMethod":{"_baseInfo":"InteractionController|ObjectInArea|System.Boolean","_paramsInfo":"System.Single"},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`2[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"checkValue":{"_value":true,"$type":"NodeCanvas.Framework.BBParameter`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"$type":"NodeCanvas.Tasks.Conditions.CheckFunction"},{"valueA":{"_name":"_canPickUpObject","_targetVariableID":"16787cfc-b0bc-435a-a806-22373849bef6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"functionWrapper":{"result":{},"_targetMethod":{"_baseInfo":"AIAttackController|IsHoldingWeapon|System.Boolean","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[System.Boolean,
@@ -1689,7 +1691,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000006798655, y: 0.91835606, z: -0.00000011920929}
+  m_ConnectedAnchor: {x: 0.00001858361, y: 0.91835296, z: 0.000017344952}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -2007,7 +2009,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000014901161, y: 1.2578939, z: 0}
+  m_ConnectedAnchor: {x: -0.00001039356, y: 1.2578951, z: 0.000019997358}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3358,7 +3360,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.39954352, z: -0.032743663}
+  m_ConnectedAnchor: {x: 0.000012410805, y: 0.39954305, z: -0.032739624}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3865,7 +3867,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.3656053, y: -0.22223401, z: -0.09269157}
+  m_ConnectedAnchor: {x: -0.36561358, y: -0.22223425, z: -0.09270666}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4627,7 +4629,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.3656053, y: -0.22223401, z: -0.095981866}
+  m_ConnectedAnchor: {x: 0.36561295, y: -0.22223425, z: -0.09596187}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4812,7 +4814,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.84425914, y: 1.3827729, z: -0.11739291}
+  m_ConnectedAnchor: {x: -0.84425634, y: 1.3827724, z: -0.11738691}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -5012,7 +5014,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000055879354, y: 0.918367, z: -0.000000059604645}
+  m_ConnectedAnchor: {x: 0.000008177012, y: 0.91836375, z: 0.000002503395}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -5860,7 +5862,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.8456558, y: 1.3903413, z: -0.1119194}
+  m_ConnectedAnchor: {x: 0.8456544, y: 1.3903413, z: -0.1119446}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -6015,7 +6017,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000007450581, y: 1.2579339, z: 0}
+  m_ConnectedAnchor: {x: 0.000010341406, y: 1.2579346, z: -0.0000044703484}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -6473,7 +6475,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 2.0336556, z: 0.08052738}
+  m_ConnectedAnchor: {x: 0.000012410805, y: 2.0336547, z: 0.08051958}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
