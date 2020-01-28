@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 541930245012738203}
   - component: {fileID: 5052348830613339830}
   - component: {fileID: 791427139045310453}
+  - component: {fileID: -1981055995222609873}
   m_Layer: 15
   m_Name: RocketLauncher (SpawnObj)
   m_TagString: Untagged
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupableItemData: {fileID: 11400000, guid: d2115f2a042828947bf156a3d8c2b6d3, type: 2}
   weaponType: 0
+  attackDelay: 0.2
   projectileData: {fileID: 11400000, guid: dd6be91ee1074ca4aab31d6ee68f13fa, type: 2}
   spawnPosition: {x: -1.59, y: 0, z: 0}
   shootDirection: 2
@@ -96,6 +98,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {x: 3, y: 0.5, z: 1}
+--- !u!95 &-1981055995222609873
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541930245012738206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da92eab02874c4343b00e2bff7dabbcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6307599143455864067
 GameObject:
   m_ObjectHideFlags: 0

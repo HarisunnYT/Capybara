@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 880255257}
-  spawnCount: 8
+  spawnCount: 0
   collection:
   - {fileID: 4001087507484674615, guid: 6a6989ce2d4bf464390911893a987385, type: 3}
   - {fileID: 8774091826575525250, guid: 29d8daa94f868c74282f90252041969f, type: 3}
@@ -1375,7 +1375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1083789008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2870,7 +2870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2104443386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2965,7 +2965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &2136052250
 AudioListener:
   m_ObjectHideFlags: 0

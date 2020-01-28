@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2776727712920862654}
   - component: {fileID: 7201924213403866274}
+  - component: {fileID: 3164320938254490627}
   m_Layer: 15
   m_Name: ZooSign (SpawnObj)
   m_TagString: Untagged
@@ -45,6 +46,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {x: 5, y: 0, z: 1}
+--- !u!95 &3164320938254490627
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212509521322675629}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da92eab02874c4343b00e2bff7dabbcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7410185627245982669
 GameObject:
   m_ObjectHideFlags: 0

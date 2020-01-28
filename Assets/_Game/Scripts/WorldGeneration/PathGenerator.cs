@@ -14,7 +14,7 @@ public class PathGenerator : Singleton<PathGenerator>
 
     public Node currentNode;
 
-    public void AddCentralAreaToPathDest()
+    public bool AddCentralAreaToPathDest()
     {
         currentNode = NodeManager.Instance.GetNodeAtPosition(new Vector3(WorldGenerator.Instance.mapSize / 2, 0, 4));
 
@@ -32,6 +32,8 @@ public class PathGenerator : Singleton<PathGenerator>
         //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x, 0, centralAreaNode.pos.z + 10), Quaternion.Euler(-90, 0, 0));
         //BuildingSpawner.Instance.SpawnBuildingAtPos(new Vector3(centralAreaNode.pos.x + 10, 0, centralAreaNode.pos.z), Quaternion.Euler(-90, 90, 0));
         CentralAreaSpawner.Instance.SpawnCentralAreaAtPos(centralAreaNode.pos);
+
+        return true;
     }
 
     public void DrawPath()
@@ -46,6 +48,7 @@ public class PathGenerator : Singleton<PathGenerator>
         foreach (Node destNode in NodeManager.Instance.pathDests)
         {
             yield return new WaitUntil(() => PathSpawner.Instance.DrawPath(destNode, pathPiece, parent));
+            yield return null;
         }
         WorldGenerator.Instance.CompletedGeneration();
     }

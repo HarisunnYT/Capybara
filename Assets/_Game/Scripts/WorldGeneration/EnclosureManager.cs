@@ -14,12 +14,14 @@ public class EnclosureManager : Singleton<EnclosureManager>
     [SerializeField]
     private LayerMask conflictLayer;
 
-    public void InitEnclosureSpawn()
+    public bool InitEnclosureSpawn()
     {
         for (int i = 0; i < spawnCount; i++)
         {
             EnclosureSpawn(WorldQuadrants.Instance.GetQuadrant(i, spawnCount), WorldGenerator.Instance.mapSize);
         }
+
+        return true;
     }
 
     private void EnclosureSpawn(int quadrantIndex, int mapSize)

@@ -47,7 +47,7 @@ public class WorldGenerator : Singleton<WorldGenerator>
 
         WorldQuadrants.Instance.SetupQuadrants();
 
-        Invoke("DelayedLoadIn", .1f);
+        StartCoroutine(DelayedLoadIn());
     }
 
     private void Update()
@@ -63,13 +63,14 @@ public class WorldGenerator : Singleton<WorldGenerator>
         }
     }
 
-    private void DelayedLoadIn()
+    private IEnumerator DelayedLoadIn()
     {
-        PathGenerator.Instance.AddCentralAreaToPathDest();
-        EnclosureManager.Instance.InitEnclosureSpawn();
-        BuildingSpawner.Instance.InitSpawnBuildings();
-        NPCManager.Instance.InitSpawnNPCs();
-        ObjectManager.Instance.InitSpawnObjects();
+        yield return null;
+        yield return new WaitUntil(() => PathGenerator.Instance.AddCentralAreaToPathDest());
+        yield return new WaitUntil(() => EnclosureManager.Instance.InitEnclosureSpawn());
+        yield return new WaitUntil(() => BuildingSpawner.Instance.InitSpawnBuildings());
+        yield return new WaitUntil(() => NPCManager.Instance.InitSpawnNPCs());
+        yield return new WaitUntil(() => ObjectManager.Instance.InitSpawnObjects());
 
         if (generatePaths)
         {

@@ -17,12 +17,14 @@ public class BuildingSpawner : Singleton<BuildingSpawner>
 
     private int[] rotations = { 0, 90, 180, 270 };
 
-    public void InitSpawnBuildings()
+    public bool InitSpawnBuildings()
     {
         for (int i = 0; i < spawnCount; i++)
         {
             PickBuilding(WorldQuadrants.Instance.GetQuadrant(i, spawnCount));
         }
+
+        return true;
     }
 
     private bool PickBuilding(int quadrantIndex)

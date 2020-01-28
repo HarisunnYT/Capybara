@@ -16,11 +16,12 @@ public class ObjectManager : Singleton<ObjectManager>
 
     public SpawnGroup[] spawnGroups;
 
-    public void InitSpawnObjects()
+    public bool InitSpawnObjects()
     {
         foreach (SpawnGroup spawnGroup in spawnGroups)
         {
             ObjectSpawner.Instance.SpawnObjects(spawnGroup);
-        }       
+        }
+        return true;
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1669449838705121625}
   - component: {fileID: 6942326872177846054}
   - component: {fileID: 848930544644408192}
+  - component: {fileID: 4131743121690610074}
   m_Layer: 15
   m_Name: Fence (SpawnObj)
   m_TagString: Untagged
@@ -59,6 +60,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {x: 4, y: 0, z: 1}
+--- !u!95 &4131743121690610074
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2409507235669273418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da92eab02874c4343b00e2bff7dabbcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4993372868007284195
 GameObject:
   m_ObjectHideFlags: 0

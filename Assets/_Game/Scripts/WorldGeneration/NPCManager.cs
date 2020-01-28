@@ -16,11 +16,13 @@ public class NPCManager : Singleton<NPCManager>
 
     public SpawnGroup[] spawnGroups;
 
-    public void InitSpawnNPCs()
+    public bool InitSpawnNPCs()
     {
         foreach (SpawnGroup spawnGroup in spawnGroups)
         {
             NPCSpawner.Instance.SpawnNPCs(spawnGroup);
         }
+
+        return true;
     }
 }
