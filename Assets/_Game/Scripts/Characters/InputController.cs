@@ -33,6 +33,7 @@ public class InputProfile : PlayerActionSet
     public PlayerAction Attack;
     public PlayerAction Aim;
     public PlayerAction Interact;
+    public PlayerAction Jump;
 
     private ulong updateTick;
     private float deltaTime;
@@ -55,6 +56,7 @@ public class InputProfile : PlayerActionSet
         Attack = CreatePlayerAction("Basic Attack");
         Aim = CreatePlayerAction("Aim");
         Interact = CreatePlayerAction("Interact");
+        Jump = CreatePlayerAction("Jump");
 
         InputManager.OnUpdateDevices += UpdateValues;
 
@@ -81,6 +83,7 @@ public class InputProfile : PlayerActionSet
         Attack.AddDefaultBinding(Mouse.LeftButton);
         Aim.AddDefaultBinding(Mouse.RightButton);
         Interact.AddDefaultBinding(Key.E);
+        Jump.AddDefaultBinding(Key.Space);
     }
 
     public void AddControllerBindings()
@@ -106,6 +109,7 @@ public class InputProfile : PlayerActionSet
         Attack.AddDefaultBinding(InputControlType.RightTrigger);
         Aim.AddDefaultBinding(InputControlType.LeftTrigger);
         Interact.AddDefaultBinding(InputControlType.Action3);
+        Jump.AddDefaultBinding(InputControlType.Action1);
     }
 
     private void UpdateValues(ulong updateTick, float deltaTime)

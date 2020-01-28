@@ -207,6 +207,11 @@ public class AnimationController : Controller
         boneMoveSpeed = originalBoneMoveSpeed;
     }
 
+    public bool GetBool(string name)
+    {
+        return bools.ContainsKey(name);        
+    }
+
     private void AddBool(string name)
     {
         if (bools.ContainsKey(name))

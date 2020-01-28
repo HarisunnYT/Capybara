@@ -33,6 +33,11 @@ public class CapyMovementController : MovementController
             //toRotation.eulerAngles = new Vector3(0, toRotation.eulerAngles.y, 0);
             //neckBone.rotation = toRotation;
         }
+
+        if (InputController.InputManager.Jump.WasPressed)
+        {
+            TryJump();
+        }
     }
 
     public override Vector3 GetInputVector(bool includeYAxis = false, bool inverseZAxis = false, bool cameraRelative = true)
@@ -54,5 +59,17 @@ public class CapyMovementController : MovementController
         }
 
         return inputVec;
+    }
+
+    protected override void Jump()
+    {
+        Vector3 force = Vector3.up * upwardJumpForce;
+
+        if (!AnimationController.GetBool("Standing"))
+        {
+            force += (transform.forward * forwardJumpForce);
+        }
+
+        MainBody.AddForce(force, ForceMode.Impulse);
     }
 }

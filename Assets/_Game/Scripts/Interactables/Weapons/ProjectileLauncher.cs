@@ -52,7 +52,7 @@ public class ProjectileLauncher : TwoHandedWeapon
         projectile.transform.position = worldPosition;
 
         RaycastHit hitInfo;
-        if (Physics.Raycast(rayStartPoint, CameraController.Instance.transform.forward, out hitInfo, 100, projectile.CollisionLayers))
+        if (CurrentController == GameManager.Instance.CapyController && CurrentController.AimController.IsAiming && Physics.Raycast(rayStartPoint, CameraController.Instance.transform.forward, out hitInfo, 100, projectile.CollisionLayers))
         {
             projectile.transform.LookAt(hitInfo.point);
         }

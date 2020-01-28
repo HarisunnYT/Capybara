@@ -45,6 +45,19 @@ public class MovementController : Controller
     [SerializeField]
     private float rotationSpeed = 5;
 
+    [Space()]
+    [SerializeField]
+    protected float forwardJumpForce = 10;
+
+    [SerializeField]
+    protected float upwardJumpForce = 10;
+
+    [SerializeField]
+    private float groundedRaySize = 0.5f;
+
+    [SerializeField]
+    private LayerMask groundedLayers;
+
     public Rigidbody MainBody { get; private set; }
     public Collider[] Colliders { get; private set; }
 
@@ -56,6 +69,8 @@ public class MovementController : Controller
     private Vector3 lastInputVec;
 
     private float knockBackSlerpDuration;
+
+    private float jumpDelayTimer = 0;
 
     protected override void Awake()
     {
@@ -83,8 +98,6 @@ public class MovementController : Controller
         Vector3 gravity = GetGravity() * MainBody.mass;
         MainBody.AddForce(gravity, ForceMode.Acceleration);
     }
-
-    #region Movement
 
     private void Move()
     {
@@ -243,6 +256,20 @@ public class MovementController : Controller
         return gravity;
     }
 
+    protected void TryJump()
+    {
+        if (IsGrounded() && Time.time > jumpDelayTimer)
+        {
+            Jump();
+            jumpDelayTimer = Time.time + 0.2f;
+        }
+    }
+
+    protected virtual void Jump()
+    {
+        MainBody.AddForce((transform.forward * forwardJumpForce) + (Vector3.up * upwardJumpForce), ForceMode.Impulse);
+    }
+
     public void AddKnockBackForce(Vector3 direction, float force, float knockBackSlerpDuration = 1)
     {
         if (force < RagdollController.RequiredKnockBackForceToRagdoll)
@@ -293,5 +320,16 @@ public class MovementController : Controller
         return MainBody.velocity;
     }
 
-    #endregion
+    public bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, groundedRaySize, groundedLayers);
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, Vector3.down * groundedRaySize);
+    }
+#endif
 }
