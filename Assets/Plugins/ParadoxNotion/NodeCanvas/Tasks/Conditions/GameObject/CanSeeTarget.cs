@@ -28,11 +28,14 @@ namespace NodeCanvas.Tasks.Conditions
         protected override bool OnCheck() {
 
             var t = target.value.transform;
+
+
             if ( Vector3.Distance(agent.position, t.position) > maxDistance.value ) {
                 return false;
             }
 
-            if ( Physics.Linecast(agent.position + offset, t.position + offset, out hit) ) {
+            if ( Physics.Linecast(agent.position + offset, t.position + offset, out hit, 13, QueryTriggerInteraction.Ignore) ) {
+                Debug.Log(hit.collider);
                 if ( hit.collider != t.GetComponent<Collider>() ) {
                     return false;
                 }
