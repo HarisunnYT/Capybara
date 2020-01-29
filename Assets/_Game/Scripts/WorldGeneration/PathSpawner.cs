@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PathSpawner : Singleton<PathSpawner>
 {
+    [SerializeField]
+    private bool spawnPathTiles;
+
     private List<Node> confirmedPathNodes = new List<Node>();
     private List<Node> pathNodeCandidates = new List<Node>();
 
@@ -98,8 +101,8 @@ public class PathSpawner : Singleton<PathSpawner>
                     confirmedPathNodes.Add(nextNode);
                     PathGenerator.Instance.currentNode = nextNode;
 
-                    PlacePath(confirmedPathNodes, pathPiece, parent);
-                    confirmedPathNodes.Clear();
+                    PlacePath(confirmedPathNodes, pathPiece, parent);                 
+                    confirmedPathNodes.Clear();                 
                 }
                 else
                 {
@@ -117,8 +120,15 @@ public class PathSpawner : Singleton<PathSpawner>
             // draw path on node
             if(node != null)
             {
-                Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
+                if (spawnPathTiles)
+                {
+                    Instantiate(pathPiece.gameObject, node.pos, Quaternion.identity, parent);
+                }
+                
                 NodeManager.Instance.SetNodeAsPath(node.pos);
+
+                // update ferr path
+                ProceduralPath.Instance.AddControlPoint(node.pos.x, node.pos.z, 0.5f);
             }            
         }     
     }

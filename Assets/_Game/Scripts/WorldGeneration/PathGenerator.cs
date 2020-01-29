@@ -10,7 +10,10 @@ public class PathGenerator : Singleton<PathGenerator>
     private SpawnObject[] collection;
 
     [SerializeField]
-    private SpawnObject[] zooEntrances;   
+    private SpawnObject[] zooEntrances;
+
+    [SerializeField]
+    private GameObject proceduralPath;
 
     public Node currentNode;
 
@@ -37,7 +40,11 @@ public class PathGenerator : Singleton<PathGenerator>
     }
 
     public void DrawPath()
-    {       
+    {
+        // add procedural ferr path
+        GameObject path = Instantiate(proceduralPath, /*currentNode.pos*/ new Vector3(0, 0, 0), Quaternion.Euler(-90, 0, 0), parent);
+        ProceduralPath.Instance.pathTerrain = path.GetComponent<Ferr2DT_PathTerrain>();
+
         StartCoroutine(RunPathfinding());
     }
 
@@ -48,7 +55,6 @@ public class PathGenerator : Singleton<PathGenerator>
         foreach (Node destNode in NodeManager.Instance.pathDests)
         {
             yield return new WaitUntil(() => PathSpawner.Instance.DrawPath(destNode, pathPiece, parent));
-            yield return null;
         }
         WorldGenerator.Instance.CompletedGeneration();
     }

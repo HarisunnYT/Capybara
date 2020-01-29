@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 323109115}
   - component: {fileID: 323109114}
   - component: {fileID: 323109113}
+  - component: {fileID: 323109116}
   m_Layer: 0
   m_Name: PathManager
   m_TagString: Untagged
@@ -706,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a334a1ebcd9f55e4c983acddc04c32d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPathTiles: 0
 --- !u!114 &323109115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +725,8 @@ MonoBehaviour:
   - {fileID: 4780512777863051030, guid: e2b9c8146013e16419a776c7b709d961, type: 3}
   zooEntrances:
   - {fileID: 7201924213403866274, guid: e7a225a5aa8b37e4cb15744109ffea7a, type: 3}
+  proceduralPath: {fileID: 3665988321406657738, guid: 79e8f73153b257441b7b0ebec680a673,
+    type: 3}
   currentNode:
     name: 
     pos: {x: 0, y: 0, z: 0}
@@ -733,6 +737,19 @@ MonoBehaviour:
     gCost: 2147483647
     hCost: 2147483647
     fCost: 2147483647
+--- !u!114 &323109116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323109111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d7a1891b38ead46b06cd4467d4fc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathTerrain: {fileID: 0}
 --- !u!1001 &376794898
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -95,6 +95,8 @@ public class WorldGenerator : Singleton<WorldGenerator>
             Camera.main.gameObject.SetActive(true);
         }
 
+        ProceduralPath.Instance.CompleteProceduralPath();
+
         loadingCanvas.SetActive(false);
     }
 
