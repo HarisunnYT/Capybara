@@ -28,7 +28,7 @@ public enum MovementState
 public enum MovementStyle
 {
     None,
-    Grounded,
+    Normal,
     Flying,
     Driving,
     Dragging
@@ -64,12 +64,13 @@ public class MovementController : Controller
     public MovementState CurrentMovementState { get; private set; }
     public MovementStyle CurrentMovementStyle { get; private set; }
 
+    protected bool IsGrounded { get; private set; }
+
     protected virtual bool MoveWithRigidbody { get { return true; } }
 
     private Vector3 lastInputVec;
 
     private float knockBackSlerpDuration;
-
     private float jumpDelayTimer = 0;
 
     protected override void Awake()
@@ -83,7 +84,7 @@ public class MovementController : Controller
     private void Start()
     {
         SetMovementState(MovementState.Idle);
-        SetMovementStyle(MovementStyle.Grounded);
+        SetMovementStyle(MovementStyle.Normal);
     }
 
     private void FixedUpdate()
@@ -97,6 +98,12 @@ public class MovementController : Controller
 
         Vector3 gravity = GetGravity() * MainBody.mass;
         MainBody.AddForce(gravity, ForceMode.Acceleration);
+    }
+
+    protected virtual void Update()
+    {
+        IsGrounded = Physics.Raycast(transform.position + Vector3.up, Vector3.down, groundedRaySize, groundedLayers);
+        AnimationController.ForceSetBool("InAir", !IsGrounded);
     }
 
     private void Move()
@@ -114,7 +121,7 @@ public class MovementController : Controller
         }
         else
         {
-            if (CurrentMovementStyle == MovementStyle.Grounded && Time.time > knockBackSlerpDuration)
+            if (CurrentMovementStyle == MovementStyle.Normal && Time.time > knockBackSlerpDuration)
             {
                 //could do sliding animation here
                 MainBody.AddForce(-MainBody.velocity, ForceMode.VelocityChange);
@@ -142,7 +149,7 @@ public class MovementController : Controller
                 movementVector = new Vector3(movementVector.x * movementSpeed * fixedDTime, inputVec.y * movementSpeed * fixedDTime, movementVector.z * movementSpeed * fixedDTime);
                 MainBody.velocity = movementVector;
             }
-            else if (CurrentMovementStyle == MovementStyle.Grounded || CurrentMovementStyle == MovementStyle.Dragging)
+            else if (CurrentMovementStyle == MovementStyle.Normal || CurrentMovementStyle == MovementStyle.Dragging)
             {
                 //set input vector based on movement speed
                 movementVector = new Vector3(movementVector.x * baseMovementSpeed * fixedDTime, 0, movementVector.z * baseMovementSpeed * fixedDTime);
@@ -258,7 +265,7 @@ public class MovementController : Controller
 
     protected void TryJump()
     {
-        if (IsGrounded() && Time.time > jumpDelayTimer)
+        if (IsGrounded && Time.time > jumpDelayTimer)
         {
             Jump();
             jumpDelayTimer = Time.time + 0.2f;
@@ -305,7 +312,7 @@ public class MovementController : Controller
 
         CurrentMovementStyle = movementStyle;
 
-        AnimationController.SetBool(MovementStyle.Grounded.ToString(), movementStyle == MovementStyle.Grounded || movementStyle == MovementStyle.Dragging);
+        AnimationController.SetBool(MovementStyle.Normal.ToString(), movementStyle == MovementStyle.Normal || movementStyle == MovementStyle.Dragging);
         AnimationController.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
         AnimationController.SetBool(MovementStyle.Driving.ToString(), movementStyle == MovementStyle.Driving);
     }
@@ -320,16 +327,11 @@ public class MovementController : Controller
         return MainBody.velocity;
     }
 
-    public bool IsGrounded()
-    {
-        return Physics.Raycast(transform.position, Vector3.down, groundedRaySize, groundedLayers);
-    }
-
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, Vector3.down * groundedRaySize);
+        Gizmos.DrawLine(transform.position + Vector3.up, (transform.position + Vector3.up) + Vector3.down * groundedRaySize);
     }
 #endif
 }

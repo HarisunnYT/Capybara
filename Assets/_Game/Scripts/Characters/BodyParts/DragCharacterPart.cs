@@ -56,7 +56,7 @@ public class DragCharacterPart : MonoBehaviour
             CurrentHeldController.RagdollController.IgnoreRagdollAgainstCollider(bodyPart.Controller.CollisionController.MainCollider, false);
         }
 
-        bodyPart.Controller.MovementController.SetMovementStyle(MovementStyle.Grounded);
+        bodyPart.Controller.MovementController.SetMovementStyle(MovementStyle.Normal);
 
         HoldingRagdoll = false;
         CurrentHeldController = null;

@@ -19,8 +19,10 @@ public class CapyMovementController : MovementController
         //originalRotation = neckBone.localRotation;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (GetInputVector() == Vector3.zero)
         {
             //neckBone.localRotation = originalRotation;

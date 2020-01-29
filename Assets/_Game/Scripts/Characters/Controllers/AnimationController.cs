@@ -158,6 +158,16 @@ public class AnimationController : Controller
         }
     }
 
+    /// <summary>
+    /// Only use if you want to ignore the bool que
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="result"></param>
+    public void ForceSetBool(string name, bool result)
+    {
+        Animator.SetBool(name, result);
+    }
+
     public void SetBool(string name, bool result)
     {
         if (result)
