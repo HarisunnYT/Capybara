@@ -68,15 +68,13 @@ public class WorldGenerator : Singleton<WorldGenerator>
         yield return null;
         yield return new WaitUntil(() => PathGenerator.Instance.AddCentralAreaToPathDest());
         yield return new WaitUntil(() => EnclosureManager.Instance.InitEnclosureSpawn());
+        if (generatePaths) PathGenerator.Instance.DrawPath();
         yield return new WaitUntil(() => BuildingSpawner.Instance.InitSpawnBuildings());
         yield return new WaitUntil(() => NPCManager.Instance.InitSpawnNPCs());
         yield return new WaitUntil(() => ObjectManager.Instance.InitSpawnObjects());
 
-        if (generatePaths)
-        {
-            PathGenerator.Instance.DrawPath();
-        }
-        else
+        
+        if (!generatePaths)
         {
             CompletedGeneration();
         }
@@ -95,7 +93,8 @@ public class WorldGenerator : Singleton<WorldGenerator>
             Camera.main.gameObject.SetActive(true);
         }
 
-        ProceduralPath.Instance.CompleteProceduralPath();
+        // ferr path
+        //ProceduralPath.Instance.CompleteProceduralPath();
 
         loadingCanvas.SetActive(false);
     }

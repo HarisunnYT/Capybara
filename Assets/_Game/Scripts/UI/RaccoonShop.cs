@@ -22,7 +22,7 @@ public class RaccoonShop : MonoBehaviour
             {
                 raccoonShop.SetActive(true);
             }
-            else
+            else if (raccoonShop != null)
             {
                 raccoonShop.SetActive(false);
             }

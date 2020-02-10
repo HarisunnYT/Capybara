@@ -707,7 +707,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a334a1ebcd9f55e4c983acddc04c32d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPathTiles: 0
+  spawnPathTiles: 1
+  pathPaddingPerSide: 1
+  pathFoilageList:
+  - {fileID: 1110682230031039964, guid: 18221ce2bd5812442b344faca46a0557, type: 3}
 --- !u!114 &323109115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,7 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 5865397}
   collection:
-  - {fileID: 4780512777863051030, guid: e2b9c8146013e16419a776c7b709d961, type: 3}
+  - {fileID: 4664085189305887974, guid: 2700ed5bc8f2c2340b8b753a93f00337, type: 3}
   zooEntrances:
   - {fileID: 7201924213403866274, guid: e7a225a5aa8b37e4cb15744109ffea7a, type: 3}
   proceduralPath: {fileID: 3665988321406657738, guid: 79e8f73153b257441b7b0ebec680a673,

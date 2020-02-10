@@ -23,7 +23,7 @@ public class PathGenerator : Singleton<PathGenerator>
 
         Instantiate(zooEntrances[Random.Range(0, zooEntrances.Length)], new Vector3(currentNode.pos.x, 0, currentNode.pos.z - 2), Quaternion.identity);
 
-        NodeManager.Instance.SetExistingNodesUsed(NodeManager.Instance.GetNodesInRange(new Vector3(currentNode.pos.x - 5, 0, currentNode.pos.z), new Vector3(currentNode.pos.x + 5, 0, currentNode.pos.z + 5)));
+        NodeManager.Instance.SetExistingNodesUsed(NodeManager.Instance.GetNodesInRange(new Vector3(currentNode.pos.x, 0, currentNode.pos.z), new Vector3(currentNode.pos.x + 5, 0, currentNode.pos.z)));
 
         //
 
@@ -42,8 +42,8 @@ public class PathGenerator : Singleton<PathGenerator>
     public void DrawPath()
     {
         // add procedural ferr path
-        GameObject path = Instantiate(proceduralPath, /*currentNode.pos*/ new Vector3(0, 0, 0), Quaternion.Euler(-90, 0, 0), parent);
-        ProceduralPath.Instance.pathTerrain = path.GetComponent<Ferr2DT_PathTerrain>();
+        //GameObject path = Instantiate(proceduralPath, /*currentNode.pos*/ new Vector3(0, 0, 0), Quaternion.Euler(-90, 0, 0), parent);
+        //ProceduralPath.Instance.pathTerrain = path.GetComponent<Ferr2DT_PathTerrain>();
 
         StartCoroutine(RunPathfinding());
     }
