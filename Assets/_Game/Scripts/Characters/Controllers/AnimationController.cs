@@ -201,12 +201,12 @@ public class AnimationController : Controller
 
     #endregion
 
-    public void SetInstantBoneMovement(float duration)
+    public void SetInstantBoneMovement(float duration, System.Action callback = null)
     {
-        StartCoroutine(InstantMovementDelay(duration));
+        StartCoroutine(InstantMovementDelay(duration, callback));
     }
 
-    private IEnumerator InstantMovementDelay(float duration)
+    private IEnumerator InstantMovementDelay(float duration, System.Action callback = null)
     {
         boneMoveSpeed = float.MaxValue;
 
@@ -215,6 +215,10 @@ public class AnimationController : Controller
         yield return new WaitForSeconds(duration);
 
         boneMoveSpeed = originalBoneMoveSpeed;
+
+        yield return new WaitForEndOfFrame();
+
+        callback?.Invoke();
     }
 
     public bool GetBool(string name)

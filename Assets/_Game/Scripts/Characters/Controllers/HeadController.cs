@@ -8,6 +8,10 @@ public class HeadController : Controller
     private Transform headBone;
 
     [SerializeField]
+    private Rigidbody headBody;
+    public Rigidbody HeadBody { get { return headBody; } }
+
+    [SerializeField]
     private LayerMask interestLayers;
 
     [SerializeField]

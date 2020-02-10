@@ -20,6 +20,9 @@ public class MovementData : ScriptableObject
     public Vector3 GravityMultiplier = new Vector3(0, 1, 0);
 
     [Space()]
+    public Vector3 CameraOffset;
+
+    [Space()]
     public BoneWeight[] BoneWeights;
 
     public AnimatorBool[] AnimatorBools;

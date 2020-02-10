@@ -59,6 +59,8 @@ public class PickupableItem : Interactable
             controller.AnimationController.SetAnimatorBools(movementData.AnimatorBools);
 
             controller.MovementController.SetMovementStyle(movementData.MovementStyle);
+
+            CameraController.Instance.SetOffset(movementData.CameraOffset, 0.5f);
         }
 
         if (animator)

@@ -252,6 +252,11 @@ public class CameraController : MonoBehaviour
         this.offset = offset; 
     }
 
+    public void SetOffset(Vector3 offset, float duration)
+    {
+        DOTween.To(() => this.offset, x => this.offset = x, offset, duration);
+    }
+
     public void ResetOffset()
     {
         this.offset = OriginalOffset;

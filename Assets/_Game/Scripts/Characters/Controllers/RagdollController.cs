@@ -33,6 +33,7 @@ public class RagdollController : Controller
     [Space()]
     [SerializeField]
     protected Rigidbody spineBody;
+    public Rigidbody SpineBody { get { return spineBody; } }
 
     [SerializeField]
     private Rigidbody[] leftHandBones;
@@ -270,6 +271,11 @@ public class RagdollController : Controller
     public void KnockOut()
     {
         MovementController.SetMovementState(MovementState.KnockedOut);
+    }
+
+    public void ResetVelocity()
+    {
+        spineBody.velocity = Vector3.zero;
     }
 
     protected virtual void OnRagdollBegin() { }

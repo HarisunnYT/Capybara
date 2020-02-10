@@ -31,13 +31,16 @@ public enum MovementStyle
     Normal,
     Flying,
     Driving,
-    Dragging
+    Dragging,
+
+    Overriden
 }
 
 public class MovementController : Controller
 {
     [SerializeField]
     protected float baseMovementSpeed = 10;
+    public float BaseMovementSpeed { get { return baseMovementSpeed; } }
 
     [SerializeField]
     protected float maxVelocity = 100;
@@ -219,7 +222,7 @@ public class MovementController : Controller
         return rotSpeed;
     }
 
-    private float GetMaxVelocity()
+    public float GetMaxVelocity()
     {
         float movementSpeed = maxVelocity;
         foreach (var bodyPart in CharacterController.BodyParts)

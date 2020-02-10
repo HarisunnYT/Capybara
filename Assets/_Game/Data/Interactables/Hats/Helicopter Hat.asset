@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Helicopter Hat
   m_EditorClassIdentifier: 
   DataPerCharacter:
-  - ItemSlotType: 0
-    Position: {x: -0.00005, y: 0.00109, z: -0.00044}
-    EulerRotation: {x: 292.45587, y: 180, z: 180.00003}
-    MovementData: {fileID: 11400000, guid: cf66f1d8ba1f6424b99cf6af45a1f40a, type: 2}
+  - ItemSlotType: 7
+    Position: {x: -0.00005, y: 0.0005, z: -0.00143}
+    EulerRotation: {x: 292.45584, y: 180, z: 180.00003}
+    MovementData: {fileID: 11400000, guid: de71f29b4f775da44b8aab832ecba100, type: 2}
     BoneWeights: []
     AnimatorBools: []
   - ItemSlotType: 0
@@ -24,4 +24,6 @@ MonoBehaviour:
     EulerRotation: {x: -0, y: 0, z: 0}
     MovementData: {fileID: 0}
     BoneWeights: []
-    AnimatorBools: []
+    AnimatorBools:
+    - Name: Standing
+      Result: 1

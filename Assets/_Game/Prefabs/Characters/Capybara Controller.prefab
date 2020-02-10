@@ -1934,8 +1934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf77b650ca911048bb2d0d4d4609de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRadius: 1
-  interactionOffset: {x: 0.5, y: 0.5, z: 0}
+  interactionRadius: 2
+  interactionOffset: {x: 0, y: 0.5, z: 0}
 --- !u!114 &4581520771052920361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2130,11 +2130,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headBone: {fileID: 5848493723482232320}
+  headBody: {fileID: 7533845371287467902}
   interestLayers:
     serializedVersion: 2
     m_Bits: 393216
   lookSpeed: 10
-  maxAngle: 20
+  maxAngle: 80
 --- !u!54 &1994097811412033950
 Rigidbody:
   m_ObjectHideFlags: 0
