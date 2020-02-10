@@ -83,6 +83,8 @@ public class Vehicle : Interactable
         CurrentController.MovementController.SetMovementStyle(MovementStyle.Normal);
         CurrentController.AnimationController.SetInstantBoneMovement(0);
 
+        CurrentController.transform.position += transform.right;
+
         CurrentController = null;
     }
 

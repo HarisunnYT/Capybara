@@ -53,7 +53,6 @@ public class RagdollController : Controller
 
     [SerializeField]
     private Transform metaRig;
-    public Transform MetaRig { get { return metaRig; } }
 
     public Collider[] Colliders { get; private set; }
 
@@ -66,9 +65,13 @@ public class RagdollController : Controller
     private float maxRagdollTimer;
 
     private bool returningFromRagdoll = false;
+    private Quaternion originalMetaRigRotation;
+
     private MovementState previousMovementState;
 
     private Collider mainCollider;
+
+    private bool inFakeRagdoll = false;
 
     private void Start()
     {
@@ -87,6 +90,8 @@ public class RagdollController : Controller
         {
             bodies.Remove(InteractionController.DragCharacterPart.Rigidbody);
         }
+
+        originalMetaRigRotation = metaRig.transform.rotation;
 
         SetRagdoll(false);
     }
@@ -146,6 +151,11 @@ public class RagdollController : Controller
 
     public void SetRagdoll(bool ragdoll, bool setVelocityFromMainBody = true)
     {
+        if (inFakeRagdoll)
+        {
+            return;
+        }
+
         Transform[] bones = AnimationController.MovingBones;
 
         //if we are trying to ragdoll and it's already ragdolling, or stop ragdoll and it isn't ragdolling, do nothing
@@ -230,8 +240,9 @@ public class RagdollController : Controller
         {
             rigidbody.isKinematic = !ragdoll;
         }
-
         AnimationController.DisableAnimation(ragdoll);
+
+        inFakeRagdoll = ragdoll;
     }
 
     public void IgnoreRagdollAgainstCollider(Collider ignoreCollider, bool ignore)
@@ -276,6 +287,16 @@ public class RagdollController : Controller
     public void ResetVelocity()
     {
         spineBody.velocity = Vector3.zero;
+    }
+
+    public void SetMetaRigRotation(Vector3 rotation)
+    {
+        metaRig.rotation = Quaternion.Euler(rotation);
+    }
+
+    public void ResetMetaRigRotation()
+    {
+        metaRig.rotation = originalMetaRigRotation;
     }
 
     protected virtual void OnRagdollBegin() { }

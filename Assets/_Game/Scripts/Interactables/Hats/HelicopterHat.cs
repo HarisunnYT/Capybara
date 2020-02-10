@@ -21,18 +21,14 @@ public class HelicopterHat : PickupableItem
 
             controller.MovementController.MainBody.transform.position += Vector3.up;
 
-            controller.RagdollController.MetaRig.rotation = Quaternion.Euler(-40, 0, 0);
+            controller.RagdollController.SetMetaRigRotation(new Vector3(-40, 0, 0));
         });
     }
 
     public override void DropItem()
     {
         CurrentController.RagdollController.FakeRagdoll(false);
-        CurrentController.GetBodyPart(BodyPartType.Head).Rigidbody.isKinematic = false;
-        foreach (var spine in CurrentController.Spines)
-        {
-            spine.isKinematic = false;
-        }
+        CurrentController.RagdollController.ResetMetaRigRotation();
 
         base.DropItem();
     }
