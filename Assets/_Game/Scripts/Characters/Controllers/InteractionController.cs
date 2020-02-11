@@ -170,7 +170,7 @@ public class InteractionController : Controller
             }
         }
 
-        bodyPart.AssignItem(item);
+        bodyPart.PickUpItem(item);
     }
 
     public void DropItem(BodyPartType bodySlot)
@@ -213,6 +213,35 @@ public class InteractionController : Controller
             }
         }
 
+        return false;
+    }
+
+    public List<PickupableItem> GetCurrentItems()
+    {
+        List<PickupableItem> items = new List<PickupableItem>();
+        foreach (var bodyPart in CharacterController.BodyParts)
+        {
+            if (bodyPart.CurrentItemObject != null)
+            {
+                items.Add(bodyPart.CurrentItemObject);
+            }
+        }
+
+        return items;
+    }
+
+    public bool HasItem(PickupableItemData refItem, out PickupableItem item)
+    {
+        foreach (var bodyPart in CharacterController.BodyParts)
+        {
+            if (bodyPart.CurrentItemObject != null && bodyPart.CurrentItemObject.PickupableItemData == refItem)
+            {
+                item = bodyPart.CurrentItemObject;
+                return true;
+            }
+        }
+
+        item = null;
         return false;
     }
 

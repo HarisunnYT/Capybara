@@ -78,6 +78,7 @@ public class Vehicle : Interactable
         if (GameManager.Instance.IsPlayer(CurrentController))
         {
             CameraController.Instance.ResetMinMaxDistance();
+            CameraController.Instance.ResetOffset();
         }
 
         CurrentController.MovementController.SetMovementStyle(MovementStyle.Normal);

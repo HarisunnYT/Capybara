@@ -19,7 +19,7 @@ public class Hand : BodyPart
     [SerializeField]
     private Hand otherHand;
 
-    public override void AssignItem(PickupableItem newItem)
+    public override void PickUpItem(PickupableItem newItem)
     {
         //try and chuck it on other hand first
         if (otherHand != null && otherHand.CurrentItemObject == null)

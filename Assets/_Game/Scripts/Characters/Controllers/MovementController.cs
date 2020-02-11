@@ -313,6 +313,16 @@ public class MovementController : Controller
             return;
         }
 
+        //remove any objects that have different movement styles
+        foreach(var item in InteractionController.GetCurrentItems())
+        {
+            MovementData data = item.PickupableItemData.GetMovementData(CharacterController.CharacterType);
+            if (data && data.MovementStyle != MovementStyle.None && data.MovementStyle != movementStyle)
+            {
+                item.CurrentBodyPart.DropCurrentItem();
+            }
+        }
+
         CurrentMovementStyle = movementStyle;
 
         AnimationController.SetBool(MovementStyle.Normal.ToString(), movementStyle == MovementStyle.Normal || movementStyle == MovementStyle.Dragging);

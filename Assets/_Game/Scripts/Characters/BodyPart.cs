@@ -28,7 +28,7 @@ public class BodyPart : MonoBehaviour
         }
     }
 
-    public virtual void AssignItem(PickupableItem newItem)
+    public virtual void PickUpItem(PickupableItem newItem)
     {
         DropCurrentItem();
         ConnectItem(newItem);
@@ -75,6 +75,20 @@ public class BodyPart : MonoBehaviour
 
     public virtual void ConnectItem(PickupableItem newItem)
     {
+        PickupableItem resultedItem;
+
+        //drop any non compatible items first
+        foreach (var nonCompatibleItem in newItem.PickupableItemData.GetNonCompatibleItems(Controller.CharacterType))
+        {
+            foreach(var bodyPartItem in Controller.InteractionController.GetCurrentItems())
+            {
+                if (bodyPartItem.PickupableItemData == nonCompatibleItem)
+                {
+                    bodyPartItem.CurrentBodyPart.DropCurrentItem();
+                }
+            }
+        }
+
         currentItemObject = newItem;
         currentItemObject.PickUpItem(transform, this, controller);
     }

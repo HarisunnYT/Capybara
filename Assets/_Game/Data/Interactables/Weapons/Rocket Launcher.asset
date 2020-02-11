@@ -27,6 +27,8 @@ MonoBehaviour:
     - bodyPartType: 3
       Weight: 0
     AnimatorBools: []
+    NonCompatibleItems:
+    - {fileID: 11400000, guid: 6851242ca4c4d454c92246f3394305cf, type: 2}
   - ItemSlotType: 4
     Position: {x: 0.453, y: 0.765, z: 0.371}
     EulerRotation: {x: 358.44363, y: 92.62215, z: 4.975702}
@@ -39,3 +41,4 @@ MonoBehaviour:
     AnimatorBools:
     - Name: HoldingRocketLauncher
       Result: 1
+    NonCompatibleItems: []

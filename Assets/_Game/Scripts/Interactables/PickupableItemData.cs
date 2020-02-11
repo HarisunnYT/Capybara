@@ -21,6 +21,8 @@ public class PickupableItemData : ScriptableObject
         public BoneWeight[] BoneWeights;
 
         public AnimatorBool[] AnimatorBools;
+
+        public PickupableItemData[] NonCompatibleItems;
     }
 
     [EnumList(typeof(CharacterType)), SerializeField]
@@ -72,5 +74,10 @@ public class PickupableItemData : ScriptableObject
     public BodyPartType GetBodyPartSlotType(CharacterType characterType)
     {
         return GetData(characterType).ItemSlotType;
+    }
+
+    public PickupableItemData[] GetNonCompatibleItems(CharacterType characterType)
+    {
+        return GetData(characterType).NonCompatibleItems;
     }
 }

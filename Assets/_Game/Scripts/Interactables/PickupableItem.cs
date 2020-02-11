@@ -31,6 +31,9 @@ public class PickupableItem : Interactable
         }
     }
 
+    /// <summary>
+    /// Call ConnectItem on the current body part instead
+    /// </summary>
     public virtual void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
     {
         CurrentController = controller;
@@ -69,6 +72,9 @@ public class PickupableItem : Interactable
         }
     }
 
+    /// <summary>
+    /// Call Drop on the current body part instead
+    /// </summary>
     public virtual void DropItem()
     {
         CurrentController.InteractionController.IgnoreCollisions(collider, false);
