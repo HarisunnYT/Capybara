@@ -294,6 +294,21 @@ public class RagdollController : Controller
         metaRig.rotation = Quaternion.Euler(rotation);
     }
 
+    public void SetMetaRigRotationX(float value)
+    {
+        metaRig.rotation = Quaternion.Euler(new Vector3(value, metaRig.rotation.eulerAngles.y, metaRig.rotation.eulerAngles.z));
+    }
+
+    public void SetMetaRigRotationY(float value)
+    {
+        metaRig.rotation = Quaternion.Euler(new Vector3(metaRig.rotation.eulerAngles.x, value, metaRig.rotation.eulerAngles.z));
+    }
+
+    public void SetMetaRigRotationZ(float value)
+    {
+        metaRig.rotation = Quaternion.Euler(new Vector3(metaRig.rotation.eulerAngles.x, metaRig.rotation.eulerAngles.y, value));
+    }
+
     public void ResetMetaRigRotation()
     {
         metaRig.rotation = originalMetaRigRotation;
