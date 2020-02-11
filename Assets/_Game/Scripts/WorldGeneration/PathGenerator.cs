@@ -39,13 +39,15 @@ public class PathGenerator : Singleton<PathGenerator>
         return true;
     }
 
-    public void DrawPath()
+    public bool DrawPath()
     {
         // add procedural ferr path
         //GameObject path = Instantiate(proceduralPath, /*currentNode.pos*/ new Vector3(0, 0, 0), Quaternion.Euler(-90, 0, 0), parent);
         //ProceduralPath.Instance.pathTerrain = path.GetComponent<Ferr2DT_PathTerrain>();
 
         StartCoroutine(RunPathfinding());
+
+        return true;
     }
 
     private IEnumerator RunPathfinding()
@@ -56,6 +58,7 @@ public class PathGenerator : Singleton<PathGenerator>
         {
             yield return new WaitUntil(() => PathSpawner.Instance.DrawPath(destNode, pathPiece, parent));
         }
+
         WorldGenerator.Instance.CompletedGeneration();
     }
 }

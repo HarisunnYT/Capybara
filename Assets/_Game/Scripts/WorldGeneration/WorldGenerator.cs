@@ -68,7 +68,7 @@ public class WorldGenerator : Singleton<WorldGenerator>
         yield return null;
         yield return new WaitUntil(() => PathGenerator.Instance.AddCentralAreaToPathDest());
         yield return new WaitUntil(() => EnclosureManager.Instance.InitEnclosureSpawn());
-        if (generatePaths) PathGenerator.Instance.DrawPath();
+        if (generatePaths) yield return new WaitUntil(() => PathGenerator.Instance.DrawPath()); 
         yield return new WaitUntil(() => BuildingSpawner.Instance.InitSpawnBuildings());
         yield return new WaitUntil(() => NPCManager.Instance.InitSpawnNPCs());
         yield return new WaitUntil(() => ObjectManager.Instance.InitSpawnObjects());

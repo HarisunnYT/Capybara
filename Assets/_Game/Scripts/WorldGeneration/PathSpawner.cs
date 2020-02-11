@@ -112,36 +112,11 @@ public class PathSpawner : Singleton<PathSpawner>
 
                 if (nextNode != null && Vector3.Distance(nextNode.pos, destinationNode.pos) < Vector3.Distance(PathGenerator.Instance.currentNode.pos, destinationNode.pos))
                 {
-                    confirmedPathNodes.Add(nextNode);
+                    confirmedPathNodes.Add(nextNode);                    
 
-                    //for (int i = 1; i <= pathPaddingPerSide; i++)
-                    //{
-                    //    if(PathGenerator.Instance.currentNode.pos.x > nextNode.pos.x || PathGenerator.Instance.currentNode.pos.x < nextNode.pos.x)
-                    //    {
-                    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x, nextNode.pos.y, nextNode.pos.z + pathPaddingPerSide)).used)
-                    //        {
-                    //            confirmedPathNodes.Add(NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x, nextNode.pos.y, nextNode.pos.z + pathPaddingPerSide)));
-                    //        }
-                    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x, nextNode.pos.y, nextNode.pos.z - pathPaddingPerSide)).used)
-                    //        {
-                    //            confirmedPathNodes.Add(NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x, nextNode.pos.y, nextNode.pos.z - pathPaddingPerSide)));
-                    //        }
-                    //    }
-                    //    else
-                    //    {
-                    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x + pathPaddingPerSide, nextNode.pos.y, nextNode.pos.z)).used)
-                    //        {
-                    //            confirmedPathNodes.Add(NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x + pathPaddingPerSide, nextNode.pos.y, nextNode.pos.z)));
-                    //        }
-                    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x - pathPaddingPerSide, nextNode.pos.y, nextNode.pos.z)).used)
-                    //        {
-                    //            confirmedPathNodes.Add(NodeManager.Instance.GetNodeAtPosition(new Vector3(nextNode.pos.x - pathPaddingPerSide, nextNode.pos.y, nextNode.pos.z)));
-                    //        }
-                    //    }
-                    //}
+                    PlacePath(confirmedPathNodes, PathGenerator.Instance.currentNode, pathPiece, parent);
+
                     PathGenerator.Instance.currentNode = nextNode;
-
-                    PlacePath(confirmedPathNodes, pathPiece, parent);                 
                     confirmedPathNodes.Clear();                 
                 }
                 else
@@ -153,7 +128,7 @@ public class PathSpawner : Singleton<PathSpawner>
         return true;
     }
 
-    private void PlacePath(List<Node> nodesToPlace, SpawnObject pathPiece, Transform parent)
+    private void PlacePath(List<Node> nodesToPlace, Node prevNode, SpawnObject pathPiece, Transform parent)
     {
         //foreach (Node node in nodesToPlace)
         for (int i = 0; i < nodesToPlace.Count; i++)
@@ -163,50 +138,25 @@ public class PathSpawner : Singleton<PathSpawner>
             {
                 if (spawnPathTiles)
                 {
-                    Instantiate(pathPiece.gameObject, nodesToPlace[i].pos, Quaternion.identity, parent);
-                    //if (i == 0 && nodesToPlace.Count > 2)
-                    //    PathLining(nodesToPlace[0], nodesToPlace[1], parent, nodesToPlace.Count);
+                    if (prevNode.pos.x > nodesToPlace[i].pos.x || prevNode.pos.x < nodesToPlace[i].pos.x)
+                    {
+                        for (float x = -pathPiece.bounds.x / 2; x < pathPiece.bounds.x / 2; x++)
+                        {
+                            Instantiate(pathPiece.gameObject, new Vector3(nodesToPlace[i].pos.x + x, nodesToPlace[i].pos.y, nodesToPlace[i].pos.z), Quaternion.Euler(0, 90, 0), parent);
+                        }                      
+                    }
+                    else
+                    {
+                        Instantiate(pathPiece.gameObject, nodesToPlace[i].pos, Quaternion.Euler(0, 0, 0), parent);
+                    }
                 }
-                
+                else
+                {
+                    // update ferr path
+                    ProceduralPath.Instance.AddControlPoint(nodesToPlace[i].pos.x, nodesToPlace[i].pos.z, 0.5f);
+                }
                 NodeManager.Instance.SetNodeAsPath(nodesToPlace[i].pos);
-
-                // update ferr path
-                //ProceduralPath.Instance.AddControlPoint(node.pos.x, node.pos.z, 0.5f);
-            }            
+            }               
         }     
     }
-
-    //private void PathLining(Node node, Node neighbourNode, Transform parent, int width)
-    //{
-    //    if (node.pos.x < neighbourNode.pos.x || node.pos.x > neighbourNode.pos.x)
-    //    {
-    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x, node.pos.y, node.pos.z + pathPaddingPerSide * width)).used)
-    //        {
-    //            Vector3 pos = new Vector3(node.pos.x, node.pos.y, node.pos.z + pathPaddingPerSide * width);
-    //            Instantiate(pathFoilage, pos, Quaternion.identity, parent);
-    //            NodeManager.Instance.SetNodeUsed(pos);
-    //        }
-    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x, node.pos.y, node.pos.z - pathPaddingPerSide * width)).used)
-    //        {
-    //            Vector3 pos = new Vector3(node.pos.x, node.pos.y, node.pos.z - pathPaddingPerSide * width);
-    //            Instantiate(pathFoilage, pos, Quaternion.identity, parent);
-    //            NodeManager.Instance.SetNodeUsed(pos);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x + pathPaddingPerSide * width, node.pos.y, node.pos.z)).used)
-    //        {
-    //            Vector3 pos = new Vector3(node.pos.x + pathPaddingPerSide * width, node.pos.y, node.pos.z);
-    //            Instantiate(pathFoilage, pos, Quaternion.identity, parent);
-    //            NodeManager.Instance.SetNodeUsed(pos);
-    //        }
-    //        if (!NodeManager.Instance.GetNodeAtPosition(new Vector3(node.pos.x - pathPaddingPerSide * width, node.pos.y, node.pos.z)).used)
-    //        {
-    //            Vector3 pos = new Vector3(node.pos.x - pathPaddingPerSide * width, node.pos.y, node.pos.z);
-    //            Instantiate(pathFoilage, pos, Quaternion.identity, parent);
-    //            NodeManager.Instance.SetNodeUsed(pos);
-    //        }
-    //    }
-    //}
 }

@@ -190,6 +190,7 @@ public class NodeManager : Singleton<NodeManager>
                 enclosureNodes.Add(new Vector3(pos.x + i, pos.y, pos.z + z));
             }
         }
+
         SetEnclosure(enclosureNodes);
     }
 }
