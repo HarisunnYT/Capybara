@@ -370,7 +370,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1963568720}
-  - {fileID: 668493586}
   - {fileID: 323109112}
   - {fileID: 311961891}
   - {fileID: 1875041515}
@@ -404,9 +403,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDebug: 1
-  generatePaths: 1
+  generatePaths: 0
   loadingCanvas: {fileID: 715611836}
-  mapSize: 150
+  mapSize: 200
+  segmentSize: 50
+  spawner: {fileID: 4186830885023359583, guid: 0a7a55b5433f8ca4eb60f96782148c8e, type: 3}
   player: {fileID: 7533845370532946597, guid: 95d98cb276bb3bb4f935cf45b724f23c, type: 3}
   spawnedPlayer: {fileID: 0}
   debugCanvas: {fileID: 986716333}
@@ -471,7 +472,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 89903607}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &183241353
 MonoBehaviour:
@@ -632,7 +633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 89903607}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &311961892
 MonoBehaviour:
@@ -681,7 +682,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 89903607}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &323109113
 MonoBehaviour:
@@ -1051,71 +1052,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &668493585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 668493586}
-  - component: {fileID: 668493588}
-  - component: {fileID: 668493587}
-  m_Layer: 0
-  m_Name: NPCManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &668493586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668493585}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 89903607}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &668493587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668493585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66328ec4c17d414abdfe237d8775f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnGroups:
-  - groupTitle: Enemies
-    parent: {fileID: 775292085}
-    spawnCount: 20
-    collection:
-    - {fileID: 5529489542169120618, guid: 7dc2a31d86d682045bb0e35fdad0e5d4, type: 3}
-    conflictLayer:
-      serializedVersion: 2
-      m_Bits: 32768
---- !u!114 &668493588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668493585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1028fa3bdcc277e47a91b39a1676d299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &715611836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,7 +2223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 89903607}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1875041516
 MonoBehaviour:
@@ -2315,6 +2251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnGroups:
   - groupTitle: Foliage
+    autoSpawn: 1
     parent: {fileID: 61793571}
     spawnCount: 100
     collection:
@@ -2323,10 +2260,41 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 32768
   - groupTitle: Pickups
+    autoSpawn: 1
     parent: {fileID: 61793571}
     spawnCount: 8
     collection:
     - {fileID: 791427139045310453, guid: 1eaaaabd6c37dc0448590f3ac1c7f256, type: 3}
+    conflictLayer:
+      serializedVersion: 2
+      m_Bits: 32768
+  - groupTitle: EnclosureGroup
+    autoSpawn: 0
+    parent: {fileID: 1848722286}
+    spawnCount: 8
+    collection:
+    - {fileID: 3857767134280690430, guid: 2cbc1fd6728520c459a89cc9e5c8a3a0, type: 3}
+    conflictLayer:
+      serializedVersion: 2
+      m_Bits: 32768
+  - groupTitle: Enclosure
+    autoSpawn: 0
+    parent: {fileID: 1848722286}
+    spawnCount: 8
+    collection:
+    - {fileID: 1415457020988730676, guid: 743f5d68fe0654b40b8ed176279f5571, type: 3}
+    - {fileID: 6030442550509953282, guid: e163ef05c14162740802215dd0cc54ce, type: 3}
+    - {fileID: 5011567379467080404, guid: 5fd9b9e62d9dc104e955cfe76c60527a, type: 3}
+    - {fileID: 4764420839156741222, guid: 333a080cf0181314494205d2cab8e1ae, type: 3}
+    conflictLayer:
+      serializedVersion: 2
+      m_Bits: 32768
+  - groupTitle: NPCs
+    autoSpawn: 1
+    parent: {fileID: 1848722286}
+    spawnCount: 20
+    collection:
+    - {fileID: 5529489542169120618, guid: 7dc2a31d86d682045bb0e35fdad0e5d4, type: 3}
     conflictLayer:
       serializedVersion: 2
       m_Bits: 32768
@@ -2531,12 +2499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f8a82dc0dbd964f884f94ce9438716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 1848722286}
-  minFencesPerSide: 3
-  maxFencesPerSide: 4
-  conflictLayer:
-    serializedVersion: 2
-    m_Bits: 32768
 --- !u!114 &1963568722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2555,10 +2517,6 @@ MonoBehaviour:
   - {fileID: 4764420839156741222, guid: 333a080cf0181314494205d2cab8e1ae, type: 3}
   - {fileID: 1415457020988730676, guid: 743f5d68fe0654b40b8ed176279f5571, type: 3}
   spawnCount: 12
-  zooBorder: 5
-  conflictLayer:
-    serializedVersion: 2
-    m_Bits: 32768
 --- !u!1 &1993881777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2911,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 89903607}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2129998480
 BoxCollider:

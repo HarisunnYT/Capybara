@@ -95,7 +95,11 @@ public class NodeManager : Singleton<NodeManager>
 
     public void SetNodeUsed(Vector3 pos)
     {
-        GetNodeAtPosition(pos).used = true;
+        Node node = GetNodeAtPosition(pos);
+        if (node != null)
+        {
+            node.used = true;
+        }
     }
 
     public void SetNodeAsPath(Vector3 pos)

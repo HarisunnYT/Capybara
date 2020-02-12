@@ -8,28 +8,11 @@ public class EnclosureManager : Singleton<EnclosureManager>
 
     public int spawnCount;
 
-    [SerializeField]
-    private int zooBorder = 5;
-
-    [SerializeField]
-    private LayerMask conflictLayer;
-
     public bool InitEnclosureSpawn()
     {
-        for (int i = 0; i < spawnCount; i++)
-        {
-            EnclosureSpawn(WorldQuadrants.Instance.GetQuadrant(i, spawnCount), WorldGenerator.Instance.mapSize);
-        }
+        EnclosureSpawner.Instance.SpawnPrefabbedEnclosures();
 
         return true;
-    }
-
-    private void EnclosureSpawn(int quadrantIndex, int mapSize)
-    {
-        Vector3 pos = WorldQuadrants.Instance.GetSpawnPosInQuadrant(quadrantIndex, EnclosureSpawner.Instance.maxFencesPerSide, conflictLayer);
-
-        // OLD // EnclosureSpawner.Instance.SpawnEnclosure(node);
-        EnclosureSpawner.Instance.SpawnPrefabbedEnclosure(pos);
     }
 
     public SpawnObject GetRandomEnclosureBySize(int xLength, int zLength)

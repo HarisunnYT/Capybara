@@ -14,6 +14,9 @@ public class WorldGenerator : Singleton<WorldGenerator>
     private GameObject loadingCanvas;
 
     public int mapSize;
+    public int segmentSize;
+
+    public Spawner spawner;
 
     [SerializeField]
     private GameObject player;
@@ -66,13 +69,11 @@ public class WorldGenerator : Singleton<WorldGenerator>
     private IEnumerator DelayedLoadIn()
     {
         yield return null;
-        yield return new WaitUntil(() => PathGenerator.Instance.AddCentralAreaToPathDest());
+        //yield return new WaitUntil(() => PathGenerator.Instance.AddCentralAreaToPathDest());
         yield return new WaitUntil(() => EnclosureManager.Instance.InitEnclosureSpawn());
-        if (generatePaths) yield return new WaitUntil(() => PathGenerator.Instance.DrawPath()); 
-        yield return new WaitUntil(() => BuildingSpawner.Instance.InitSpawnBuildings());
-        yield return new WaitUntil(() => NPCManager.Instance.InitSpawnNPCs());
+        //if (generatePaths) yield return new WaitUntil(() => PathGenerator.Instance.DrawPath()); 
+        //yield return new WaitUntil(() => BuildingSpawner.Instance.InitSpawnBuildings());
         yield return new WaitUntil(() => ObjectManager.Instance.InitSpawnObjects());
-
         
         if (!generatePaths)
         {
