@@ -68,17 +68,24 @@ public class WorldGenerator : Singleton<WorldGenerator>
 
     private IEnumerator DelayedLoadIn()
     {
+        if (isDebug)
+        {
+            yield return new WaitForSeconds(.25f);
+        }
+
         yield return null;
-        //yield return new WaitUntil(() => PathGenerator.Instance.AddCentralAreaToPathDest());
+
         yield return new WaitUntil(() => EnclosureManager.Instance.InitEnclosureSpawn());
-        //if (generatePaths) yield return new WaitUntil(() => PathGenerator.Instance.DrawPath()); 
-        //yield return new WaitUntil(() => BuildingSpawner.Instance.InitSpawnBuildings());
+
+        if (generatePaths)
+        {
+            PathGenerator.Instance.DrawPath();
+            yield return new WaitUntil(() => PathGenerator.Instance.CompletedPathSpawns());
+        }
+
         yield return new WaitUntil(() => ObjectManager.Instance.InitSpawnObjects());
         
-        if (!generatePaths)
-        {
-            CompletedGeneration();
-        }
+        CompletedGeneration();
     }
 
     public void CompletedGeneration()
@@ -93,9 +100,6 @@ public class WorldGenerator : Singleton<WorldGenerator>
         {
             Camera.main.gameObject.SetActive(true);
         }
-
-        // ferr path
-        //ProceduralPath.Instance.CompleteProceduralPath();
 
         loadingCanvas.SetActive(false);
     }

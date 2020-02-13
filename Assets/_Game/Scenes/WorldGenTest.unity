@@ -373,7 +373,6 @@ Transform:
   - {fileID: 323109112}
   - {fileID: 311961891}
   - {fileID: 1875041515}
-  - {fileID: 183241352}
   - {fileID: 2129998479}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -403,10 +402,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDebug: 1
-  generatePaths: 0
+  generatePaths: 1
   loadingCanvas: {fileID: 715611836}
-  mapSize: 200
-  segmentSize: 50
+  mapSize: 225
+  segmentSize: 75
   spawner: {fileID: 4186830885023359583, guid: 0a7a55b5433f8ca4eb60f96782148c8e, type: 3}
   player: {fileID: 7533845370532946597, guid: 95d98cb276bb3bb4f935cf45b724f23c, type: 3}
   spawnedPlayer: {fileID: 0}
@@ -442,59 +441,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodes: []
+  usedNodes: []
   pathDests: []
---- !u!1 &183241351
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 183241352}
-  - component: {fileID: 183241353}
-  m_Layer: 0
-  m_Name: BuildingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &183241352
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183241351}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 89903607}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &183241353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183241351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb7c66ca5b9f834696d7e8a8ac2e4ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 880255257}
-  spawnCount: 0
-  collection:
-  - {fileID: 4001087507484674615, guid: 6a6989ce2d4bf464390911893a987385, type: 3}
-  - {fileID: 8774091826575525250, guid: 29d8daa94f868c74282f90252041969f, type: 3}
-  - {fileID: 299220992980012656, guid: 62b3d9a38dcb1274e8a373e8ab471052, type: 3}
-  conflictLayer:
-    serializedVersion: 2
-    m_Bits: 32768
 --- !u!1 &252755391
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,8 +609,6 @@ GameObject:
   - component: {fileID: 323109112}
   - component: {fileID: 323109115}
   - component: {fileID: 323109114}
-  - component: {fileID: 323109113}
-  - component: {fileID: 323109116}
   m_Layer: 0
   m_Name: PathManager
   m_TagString: Untagged
@@ -684,18 +630,6 @@ Transform:
   m_Father: {fileID: 89903607}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &323109113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323109111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e6ad98aa62d1f240b035981eeb4b09c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &323109114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,10 +642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a334a1ebcd9f55e4c983acddc04c32d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPathTiles: 1
-  pathPaddingPerSide: 1
-  pathFoilageList:
-  - {fileID: 1110682230031039964, guid: 18221ce2bd5812442b344faca46a0557, type: 3}
 --- !u!114 &323109115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,22 +668,6 @@ MonoBehaviour:
     path: 0
     enclosure: 0
     distanceToDest: 0
-    gCost: 2147483647
-    hCost: 2147483647
-    fCost: 2147483647
---- !u!114 &323109116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323109111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d7a1891b38ead46b06cd4467d4fc85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathTerrain: {fileID: 0}
 --- !u!1001 &376794898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2274,6 +2188,8 @@ MonoBehaviour:
     spawnCount: 8
     collection:
     - {fileID: 3857767134280690430, guid: 2cbc1fd6728520c459a89cc9e5c8a3a0, type: 3}
+    - {fileID: 3857767134280690430, guid: a530620e3db688f4193b6e393c2f43ec, type: 3}
+    - {fileID: 3857767134280690430, guid: d352ea12a7956434ba40e83130bfce3c, type: 3}
     conflictLayer:
       serializedVersion: 2
       m_Bits: 32768
@@ -2292,7 +2208,7 @@ MonoBehaviour:
   - groupTitle: NPCs
     autoSpawn: 1
     parent: {fileID: 1848722286}
-    spawnCount: 20
+    spawnCount: 12
     collection:
     - {fileID: 5529489542169120618, guid: 7dc2a31d86d682045bb0e35fdad0e5d4, type: 3}
     conflictLayer:
@@ -2911,7 +2827,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 89903607}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2129998480
 BoxCollider:

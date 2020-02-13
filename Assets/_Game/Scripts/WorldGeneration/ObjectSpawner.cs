@@ -29,10 +29,12 @@ public class ObjectSpawner : Singleton<ObjectSpawner>
 
         SpawnObject obj = Instantiate(spawnGroup.collection[Random.Range(0, spawnGroup.collection.Length)], pos, Quaternion.identity, spawnGroup.parent);
 
-        //List<Node> nodes = NodeManager.Instance.GetNodesInRange(new Vector3(pos.x - obj.bounds.x / 2, 0, pos.z - obj.bounds.z / 2), new Vector3(pos.x + obj.bounds.x / 2, 0, pos.z + obj.bounds.z / 2));
-        //foreach(Node node in nodes)
-        //{
-        //    NodeManager.Instance.SetNodeUsed(node.pos);
-        //}       
+        for (float x = -obj.MaxBounds() / 2; x < obj.MaxBounds() / 2; x++)
+        {
+            for (float z = -obj.MaxBounds() / 2; z < obj.MaxBounds() / 2; z++)
+            {
+                NodeManager.Instance.SetNodeUsed(new Vector3(pos.x + x, 0, pos.z + z));
+            }
+        }
     }
 }

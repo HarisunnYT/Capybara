@@ -13,14 +13,14 @@ public class Node
     public bool enclosure;
 
     public float distanceToDest;
-    public Node cameFromNode;
+    //public Node cameFromNode;
 
-    public int gCost = int.MaxValue;
-    public int hCost = int.MaxValue;
-    public int fCost = int.MaxValue;
+    //public int gCost = int.MaxValue;
+    //public int hCost = int.MaxValue;
+    //public int fCost = int.MaxValue;
 
-    public void CalculateFCost()
-    {
-        fCost = gCost + hCost;
-    }
+    //public void CalculateFCost()
+    //{
+    //    fCost = gCost + hCost;
+    //}
 }

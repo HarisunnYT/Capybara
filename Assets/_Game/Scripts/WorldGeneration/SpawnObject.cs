@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    //public enum ObjectType { Environment, Enemy, Building, Fence, Pickup };
-    //public ObjectType objectType;
-
     public Vector3 bounds = new Vector3(1, 0, 1);
 
     public Vector3 GetRotatedBounds()

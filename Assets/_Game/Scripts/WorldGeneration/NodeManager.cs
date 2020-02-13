@@ -7,7 +7,8 @@ public class NodeManager : Singleton<NodeManager>
     int mapSize;
     public List<Node> nodes = new List<Node>();
 
-    [SerializeField]
+    public List<Node> usedNodes = new List<Node>();
+
     public List<Node> pathDests = new List<Node>();
 
     private void Start()
@@ -99,12 +100,19 @@ public class NodeManager : Singleton<NodeManager>
         if (node != null)
         {
             node.used = true;
+            nodes.Remove(node);
+            usedNodes.Add(node);
         }
     }
 
     public void SetNodeAsPath(Vector3 pos)
     {
-        GetNodeAtPosition(pos).path = true;
+        Node node = GetNodeAtPosition(pos);
+
+        if (node != null)
+        {
+            node.path = true;
+        }           
     }
 
     public void SetAreaUsed(List<Vector3> positions)
@@ -114,7 +122,12 @@ public class NodeManager : Singleton<NodeManager>
             if (GetNodeAtPosition(pos) != null && !GetNodeAtPosition(pos).used)
             {
                 SetNodeUsed(pos);
-                GetNodeAtPosition(pos).used = true;
+
+                Node node = GetNodeAtPosition(pos);
+                node.used = true;
+
+                nodes.Remove(node);
+                usedNodes.Add(node);
             }
         }
     }
@@ -138,6 +151,9 @@ public class NodeManager : Singleton<NodeManager>
             if(node != null)
             {
                 node.used = true;
+
+                nodes.Remove(node);
+                usedNodes.Add(node);
             }
         }
     }
@@ -162,9 +178,12 @@ public class NodeManager : Singleton<NodeManager>
         int x = Random.Range(Mathf.RoundToInt(lowerPos.x), Mathf.RoundToInt(upperPos.x));
         int z = Random.Range(Mathf.RoundToInt(lowerPos.z), Mathf.RoundToInt(upperPos.z));
 
-        //Debug.Log("Node: " + new Vector3(x, 0, z));
-
         node = GetNodeAtPosition(new Vector3(x, 0, z));  
+
+        if (node == null)
+        {
+            node = usedNodes.Find(opt => opt.pos == new Vector3(x, 0, z));
+        }
 
         return node;
     }
