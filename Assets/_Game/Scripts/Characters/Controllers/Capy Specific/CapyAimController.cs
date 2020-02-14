@@ -60,6 +60,8 @@ public class CapyAimController : AimController
             currentState = AimingState.ToAim;
             timer = 0;
 
+            AnimationController.SetInstantBoneMovement(0);
+
             offsetLerp = CameraController.Instance.offset;
             distanceLerp = CameraController.Instance.distance;
 

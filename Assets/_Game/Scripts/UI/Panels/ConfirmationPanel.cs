@@ -22,8 +22,6 @@ public class ConfirmationPanel : Panel
     public void YesPressed()
     {
         yesAction?.Invoke();
-
-        Close();
     }
 
     public void NoPressed()

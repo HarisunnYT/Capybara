@@ -15,7 +15,5 @@ public class PausePanel : Panel
     private void QuitToMenu()
     {
         LevelLoader.Instance.LoadMenu();
-
-        Close();
     }
 }

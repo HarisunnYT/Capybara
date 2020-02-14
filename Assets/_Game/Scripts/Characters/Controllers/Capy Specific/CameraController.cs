@@ -70,6 +70,8 @@ public class CameraController : MonoBehaviour
 
     private Vector3 rotationOffset = new Vector3(0, 0, 0);
 
+    private Tween currentOffsetTween;
+
     public void SetTarget(Transform target, bool smoothFollow)
     {
         this.target = target;
@@ -249,12 +251,18 @@ public class CameraController : MonoBehaviour
 
     public void SetOffset(Vector3 offset)
     {
+        if (currentOffsetTween != null)
+        {
+            currentOffsetTween.Complete();
+            currentOffsetTween = null;
+        }
+
         this.offset = offset; 
     }
 
     public void SetOffset(Vector3 offset, float duration)
     {
-        DOTween.To(() => this.offset, x => this.offset = x, offset, duration);
+        currentOffsetTween = DOTween.To(() => this.offset, x => this.offset = x, offset, duration);
     }
 
     public void ResetOffset()

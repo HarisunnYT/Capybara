@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : Singleton<LevelLoader>
 {
-    public Animator transition;
-
-    public float transitionTime = 1f;
-
     public const int MenuSceneIndex = 0;
     public const int GameSceneIndex = 1;
+
+    private bool sceneLoadingInProgress = false;
+    private bool sceneUnloadingInProgress = false;
 
     private void Update()
     {
@@ -33,6 +32,7 @@ public class LevelLoader : Singleton<LevelLoader>
         StartCoroutine(UnloadSceneAsync(GameSceneIndex, afterFullTransition: () =>
         {
             CanvasManager.Instance.ShowPanel<MainMenuPanel>();
+            MenuCamera.Instance.gameObject.SetActive(true);
         }));
     }
 
@@ -41,11 +41,19 @@ public class LevelLoader : Singleton<LevelLoader>
         StartCoroutine(LoadSceneAsync(GameSceneIndex, afterFullTransition: () =>
         {
             CanvasManager.Instance.ShowPanel<HUDPanel>();
+            MenuCamera.Instance.gameObject.SetActive(false);
         }));
     }
 
     private IEnumerator UnloadSceneAsync(int sceneIndex, System.Action afterInitialTransition = null, System.Action afterFullTransition = null)
     {
+        if (sceneUnloadingInProgress)
+        {
+            yield break;
+        }
+
+        sceneUnloadingInProgress = true;
+
         CanvasManager.Instance.ShowPanel<TransitionPanel>();
 
         //we need to wait at least a second for the panel to animate
@@ -70,10 +78,19 @@ public class LevelLoader : Singleton<LevelLoader>
         CanvasManager.Instance.CloseAllPanels(CanvasManager.Instance.GetPanel<TransitionPanel>());
 
         afterFullTransition?.Invoke();
+
+        sceneUnloadingInProgress = false;
     }
 
     private IEnumerator LoadSceneAsync(int sceneIndex, System.Action afterInitialTransition = null, System.Action afterFullTransition = null)
     {
+        if (sceneLoadingInProgress)
+        {
+            yield break;
+        }
+
+        sceneLoadingInProgress = true;
+
         CanvasManager.Instance.ShowPanel<TransitionPanel>();
 
         //we need to wait at least a second for the panel to animate
@@ -98,5 +115,7 @@ public class LevelLoader : Singleton<LevelLoader>
         CanvasManager.Instance.CloseAllPanels(CanvasManager.Instance.GetPanel<TransitionPanel>());
 
         afterFullTransition?.Invoke();
+
+        sceneLoadingInProgress = false;
     }
 }
