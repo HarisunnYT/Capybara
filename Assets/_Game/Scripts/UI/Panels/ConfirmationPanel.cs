@@ -9,7 +9,7 @@ public class ConfirmationPanel : Panel
 
     private Panel lastPanel;
 
-    public void ShowPanel(Panel lastPanel, System.Action yesAction, System.Action noAction)
+    public void ShowPanel(Panel lastPanel, System.Action yesAction, System.Action noAction = null)
     {
         this.yesAction = yesAction;
         this.noAction = noAction;

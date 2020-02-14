@@ -20,7 +20,6 @@ public class MobileInputUI : MonoBehaviour
     void Start()
     {
         InputManager.OnUpdateDevices += UpdateDevice;
-        CameraController.Instance.lockCursor = false;
     }
 
     void UpdateDevice(ulong updateTick, float deltaTime)

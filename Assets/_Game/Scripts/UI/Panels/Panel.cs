@@ -89,6 +89,6 @@ public class Panel : MonoBehaviour, IAnimationHandler
 
     public void OnAnimationComplete() 
     {
-        ForceClose();
+        ObjectDisabled();
     }
 }

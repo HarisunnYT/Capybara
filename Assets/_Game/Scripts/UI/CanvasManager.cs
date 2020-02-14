@@ -22,6 +22,24 @@ public class CanvasManager : Singleton<CanvasManager>
         }
     }
 
+    private void Update()
+    {
+        if (LevelLoader.Instance.CurrentSceneIndex == LevelLoader.GameSceneIndex)
+        {
+            if (InputController.InputManager.Escape.WasPressed)
+            {
+                if (GetPanel<PausePanel>().gameObject.activeSelf)
+                {
+                    ClosePanel<PausePanel>();
+                }
+                else
+                {
+                    ShowPanel<PausePanel>();
+                }
+            }
+        }
+    }
+
     public void ShowPanel<T>() where T : Panel
     {
         GetPanel<T>().ShowPanel();
@@ -74,6 +92,7 @@ public class CanvasManager : Singleton<CanvasManager>
         if (panel.PauseTime)
         {
             timeScaleCounter--;
+            timeScaleCounter = Mathf.Clamp(timeScaleCounter, 0, int.MaxValue);
 
             if (timeScaleCounter <= 0)
             {

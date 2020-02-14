@@ -11,6 +11,13 @@ public class LevelLoader : Singleton<LevelLoader>
     private bool sceneLoadingInProgress = false;
     private bool sceneUnloadingInProgress = false;
 
+    public int CurrentSceneIndex { get; private set; } = 0;
+
+    private void Start()
+    {
+        CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
     private void Update()
     {
         if (Application.isEditor && Input.GetKeyDown(KeyCode.R))
@@ -33,6 +40,8 @@ public class LevelLoader : Singleton<LevelLoader>
         {
             CanvasManager.Instance.ShowPanel<MainMenuPanel>();
             MenuCamera.Instance.gameObject.SetActive(true);
+
+            CurrentSceneIndex = MenuSceneIndex;
         }));
     }
 
@@ -42,6 +51,8 @@ public class LevelLoader : Singleton<LevelLoader>
         {
             CanvasManager.Instance.ShowPanel<HUDPanel>();
             MenuCamera.Instance.gameObject.SetActive(false);
+
+            CurrentSceneIndex = GameSceneIndex;
         }));
     }
 
@@ -109,7 +120,7 @@ public class LevelLoader : Singleton<LevelLoader>
         levelAsync.allowSceneActivation = true;
 
         //stutter fix
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(1);
 
         CanvasManager.Instance.ClosePanel<TransitionPanel>();
         CanvasManager.Instance.CloseAllPanels(CanvasManager.Instance.GetPanel<TransitionPanel>());

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HUDPanel : Panel
 {
     [SerializeField]
-    private GameObject crosshair; 
+    private GameObject crosshair;
 
     public void ShowCrosshair(bool show)
     {

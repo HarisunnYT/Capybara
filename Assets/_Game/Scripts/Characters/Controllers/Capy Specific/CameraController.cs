@@ -22,7 +22,6 @@ public class CameraController : MonoBehaviour
     public Transform target; // The target Transform to follow
     public Transform rotationSpace; // If assigned, will use this Transform's rotation as the rotation space instead of the world space. Useful with spherical planets.
     public UpdateMode updateMode = UpdateMode.LateUpdate; // When to update the camera?
-    public bool lockCursor = true; // If true, the mouse will be locked to screen center and hidden
 
     [Header("Position")]
     public bool smoothFollow; // If > 0, camera will smoothly interpolate towards the target
@@ -141,10 +140,6 @@ public class CameraController : MonoBehaviour
     public void UpdateInput()
     {
         if (!Cam.enabled) return;
-
-        // Cursors
-        Cursor.lockState = lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-        Cursor.visible = lockCursor ? false : true;
 
         // Should we rotate the camera?
         bool rotate = rotateAlways || (rotateOnLeftButton && Input.GetMouseButton(0)) || (rotateOnRightButton && Input.GetMouseButton(1)) || (rotateOnMiddleButton && Input.GetMouseButton(2));
