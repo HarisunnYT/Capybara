@@ -95,6 +95,7 @@ public class WorldGenerator : Singleton<WorldGenerator>
         if (player != null)
         {
             spawnedPlayer = Instantiate(player, NodeManager.Instance.GetRandomUnusedNode().pos, Quaternion.identity);
+            Camera.main.gameObject.SetActive(false);
         }
         else
         {

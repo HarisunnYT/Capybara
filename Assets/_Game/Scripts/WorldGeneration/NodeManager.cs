@@ -37,33 +37,6 @@ public class NodeManager : Singleton<NodeManager>
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        foreach (Node node in nodes)
-        {
-            if (!node.used && !node.path)
-            {
-                Gizmos.color = Color.blue;
-                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
-            }
-            else if (node.enclosure)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
-            }
-            else if (node.path)
-            {
-                Gizmos.color = Color.yellow;
-                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
-            }
-            else
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
-            }
-        }
-    }
-
     public Node GetNodeAtPosition(Vector3 pos)
     {
         Node node = null;
@@ -216,4 +189,33 @@ public class NodeManager : Singleton<NodeManager>
 
         SetEnclosure(enclosureNodes);
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        foreach (Node node in nodes)
+        {
+            if (!node.used && !node.path)
+            {
+                Gizmos.color = Color.blue;
+                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
+            }
+            else if (node.enclosure)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
+            }
+            else if (node.path)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
+            }
+            else
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawCube(node.pos, new Vector3(1, 0.1f, 1));
+            }
+        }
+    }
+#endif
 }

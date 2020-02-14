@@ -65,7 +65,7 @@ public class CapyAimController : AimController
 
             CameraController.Instance.SetMinMaxDistance(float.MinValue, float.MaxValue);
 
-            CanvasManager.Instance.ShowCrosshair(true);
+            CanvasManager.Instance.GetPanel<HUDPanel>().ShowCrosshair(true);
         }
         else if ((InputController.InputManager.Aim.WasReleased && currentState != AimingState.None) || ((int)MovementController.CurrentMovementState >= (int)MovementState.Stunned && currentState == AimingState.Aiming))
         {
@@ -83,7 +83,7 @@ public class CapyAimController : AimController
             fromRotation = transform.rotation;
             targetRotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
 
-            CanvasManager.Instance.ShowCrosshair(false);
+            CanvasManager.Instance.GetPanel<HUDPanel>().ShowCrosshair(false);
         }
 
         if (currentState == AimingState.ToAim)
