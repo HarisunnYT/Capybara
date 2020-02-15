@@ -83,7 +83,7 @@ public class Car : Vehicle
 
     public void FixedUpdate()
     {
-        if (CurrentController != null)
+        if (Equiped)
         {
             inputVector = CurrentController.MovementController.GetInputVector(cameraRelative: false);
 

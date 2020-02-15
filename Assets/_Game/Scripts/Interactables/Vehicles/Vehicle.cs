@@ -6,6 +6,7 @@ public class Vehicle : Interactable
 {
     [SerializeField]
     protected VehicleData vehicleData;
+    public VehicleData VehicleData { get { return vehicleData; } }
 
     [SerializeField]
     private LayerMask causesDamageLayers;
@@ -29,6 +30,7 @@ public class Vehicle : Interactable
        
     public void GetInVehicle(CharacterController characterController)
     {
+        Equiped = true;
         CurrentController = characterController;
 
         StartCoroutine(GetInVehicleIE());
@@ -40,7 +42,11 @@ public class Vehicle : Interactable
         CurrentController.MovementController.MainBody.velocity = Vector3.zero;
 
         CurrentController.AnimationController.SetInstantBoneMovement(1);
-        CurrentController.AnimationController.DisableAllAnimationLayers();
+
+        if (VehicleData.DropAllItemsOnEnter)
+        {
+            CurrentController.AnimationController.DisableAllAnimationLayers();
+        }
 
         yield return new WaitForEndOfFrame();
 
@@ -61,7 +67,8 @@ public class Vehicle : Interactable
 
         if (GameManager.Instance.IsPlayer(CurrentController))
         {
-            CameraController.Instance.SetMinMaxDistance(vehicleData.cameraMinDistance, vehicleData.cameraMaxDistance);
+            CameraController.Instance.SetMinMaxDistance(vehicleData.CameraMinDistance, vehicleData.CameraMaxDistance);
+            CameraController.Instance.SetOffset(vehicleData.CameraOffset, 0.5f);
         }
     }
 
@@ -87,6 +94,7 @@ public class Vehicle : Interactable
         CurrentController.transform.position += transform.right;
 
         CurrentController = null;
+        Equiped = false;
     }
 
     protected virtual void UpdateParts()

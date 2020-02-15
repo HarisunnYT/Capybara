@@ -122,7 +122,10 @@ public class InteractionController : Controller
 
     private void GetInVehicle(Vehicle vehicle)
     {
-        DropAllItems();
+        if (vehicle.VehicleData.DropAllItemsOnEnter)
+        {
+            DropAllItems();
+        }
 
         vehicle.GetInVehicle(CharacterController);
 

@@ -7,7 +7,11 @@ public class VehicleData : ScriptableObject
 {
     public int StartingHealth = 100;
 
+    public bool DropAllItemsOnEnter = true;
+
     [Space()]
-    public float cameraMinDistance = 10;
-    public float cameraMaxDistance = 15;
+    public float CameraMinDistance = 10;
+    public float CameraMaxDistance = 15;
+
+    public Vector3 CameraOffset = Vector3.one;
 }
