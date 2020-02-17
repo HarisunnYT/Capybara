@@ -181,6 +181,20 @@ public class AnimationController : Controller
         }
     }
 
+    public void SetBoolTrigger(string name, bool result)
+    {
+        StartCoroutine(BoolTrigger(name, result));
+    }
+
+    private IEnumerator BoolTrigger(string name, bool result)
+    {
+        SetBool(name, result);
+
+        yield return new WaitForEndOfFrame();
+
+        SetBool(name, !result);
+    }
+
     public void SetFloat(string name, float value)
     {
         Animator.SetFloat(name, value);

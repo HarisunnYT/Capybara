@@ -20,7 +20,7 @@ public class HeadController : Controller
     [SerializeField]
     private float maxAngle;
 
-    private Transform currentInterest;
+    private PickupableItem currentInterest;
 
     private Quaternion originalRotation;
 
@@ -31,9 +31,9 @@ public class HeadController : Controller
 
     private void Update()
     {
-        if (currentInterest != null)
+        if (currentInterest != null && !currentInterest.Equiped)
         {
-            Vector3 direction = currentInterest.position - headBone.position;
+            Vector3 direction = currentInterest.transform.position - headBone.position;
             Quaternion targetRotation = Quaternion.LookRotation(direction);
 
             float angle = Quaternion.Angle(headBone.rotation, targetRotation);
@@ -62,7 +62,7 @@ public class HeadController : Controller
                 return;
             }
 
-            currentInterest = other.transform;
+            currentInterest = pickupableItem;
         }
     }
 

@@ -55,10 +55,10 @@ public class Unicycle : Vehicle
 
             if (Rigidbody.velocity.magnitude < maxSpeed)
             {
-                Rigidbody.AddForce(inputVectorCameraRelative * speed, ForceMode.VelocityChange);
+                Rigidbody.AddForce(inputVectorCameraRelative * speed, ForceMode.Acceleration);
             }
 
-            Quaternion toRotation = Quaternion.LookRotation(inputVectorCameraRelative, Vector3.up);
+            Quaternion toRotation = Quaternion.LookRotation(Rigidbody.velocity, Vector3.up);
             toRotation = Quaternion.Euler((Mathf.Abs(inputVectorRaw.magnitude) * maxTilt) + (wobbleValue * wobbleMultiplier), toRotation.eulerAngles.y, toRotation.eulerAngles.z);
 
             Quaternion rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);

@@ -47,5 +47,7 @@ public class Weapon : PickupableItem
     {
         canAttack = false;
         attackTimer = Time.time + attackDelay;
+
+        CurrentController.AnimationController.SetBoolTrigger("Attack" + ((Hand)CurrentBodyPart).CurrentHandType.ToString(), true);
     }
 }
