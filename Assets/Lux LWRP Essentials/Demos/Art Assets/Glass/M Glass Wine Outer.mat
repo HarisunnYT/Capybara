@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M Glass Wine Outer
   m_Shader: {fileID: 4800000, guid: be01a6202122cde4e9b0bd2e7f93a961, type: 3}
-  m_ShaderKeywords: _GEOREFRACTIONS _MASKMAP
+  m_ShaderKeywords: _FINALALPHA _GEOREFRACTIONS _MASKMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -42,7 +42,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _ApplyNormal: 0
-    - _Blend: 0
+    - _Blend: 1
     - _BumpRefraction: 0.05
     - _BumpScale: 1
     - _Cull: 2
@@ -50,7 +50,7 @@ Material:
     - _Cutoff: 0.682
     - _Distortion: 0.01
     - _DonNotRefractForeground: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EnableBaseMap: 0
     - _EnableGeoRefr: 1
     - _EnableMaskMap: 1
@@ -58,7 +58,7 @@ Material:
     - _EnableTintMap: 0
     - _EnvironmentReflections: 1
     - _ExcludeForeground: 0
-    - _FinalAlpha: 0.5
+    - _FinalAlpha: 0.42
     - _IOR: 1.5
     - _IsThinShell: 0.96
     - _Occlusion: 1
@@ -78,7 +78,7 @@ Material:
     - _Smoothness: 0.917
     - _SmoothnessBase: 0.5
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _Stencil: 1
     - _StencilComp: 8
     - _StencilFail: 0
