@@ -61,8 +61,12 @@ public class Unicycle : Vehicle
 
         yield return base.GetInVehicleIE();
 
+        if (!CurrentController.AttackController.IsHoldingWeapon())
+        {
+            CurrentController.RagdollController.RagdollArms(true);
+        }
+
         CurrentController.RagdollController.RagdollLegs(true);
-        CurrentController.RagdollController.RagdollArms(true);
 
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.LowerBody, true);
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, true);
@@ -126,7 +130,10 @@ public class Unicycle : Vehicle
                 rotation = Quaternion.Euler(rotation.eulerAngles.x, transform.rotation.eulerAngles.y, rotation.eulerAngles.z);
             }
 
-            transform.rotation = rotation;
+            if (!CurrentController.AimController.IsAiming)
+            {
+                transform.rotation = rotation;
+            }
 
             float angle = (Rigidbody.velocity.magnitude * 360 / circumference);
             wheel.Rotate(wheel.transform.right, angle * rotationSpeed * Time.fixedDeltaTime, Space.World);

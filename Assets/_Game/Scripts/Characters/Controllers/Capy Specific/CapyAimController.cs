@@ -49,7 +49,14 @@ public class CapyAimController : AimController
     {
         if (currentState == AimingState.Aiming)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, CameraController.Instance.transform.rotation, aimRotationSpeed * Time.deltaTime);
+            if (InteractionController.CurrentVehicle != null)
+            {
+                InteractionController.CurrentVehicle.transform.rotation = Quaternion.Lerp(InteractionController.CurrentVehicle.transform.rotation, CameraController.Instance.transform.rotation, aimRotationSpeed * Time.deltaTime);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Lerp(transform.rotation, CameraController.Instance.transform.rotation, aimRotationSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -82,8 +89,16 @@ public class CapyAimController : AimController
             CameraController.Instance.SetMinMaxDistance(float.MinValue, float.MaxValue);
             AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, false);
 
-            fromRotation = transform.rotation;
-            targetRotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+            if (InteractionController.CurrentVehicle != null)
+            {
+                fromRotation = InteractionController.transform.rotation;
+                targetRotation = Quaternion.Euler(new Vector3(0, InteractionController.transform.rotation.eulerAngles.y, InteractionController.transform.rotation.eulerAngles.z));
+            }
+            else
+            {
+                fromRotation = transform.rotation;
+                targetRotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+            }
 
             CanvasManager.Instance.GetPanel<HUDPanel>().ShowCrosshair(false);
         }
@@ -120,7 +135,14 @@ public class CapyAimController : AimController
             CameraController.Instance.SetOffset(offset);
             CameraController.Instance.distanceTarget = distance;
 
-            transform.rotation = Quaternion.Lerp(fromRotation, targetRotation, normalisedTime);
+            if (InteractionController.CurrentVehicle != null)
+            {
+                InteractionController.CurrentVehicle.transform.rotation = Quaternion.Lerp(fromRotation, targetRotation, normalisedTime);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Lerp(fromRotation, targetRotation, normalisedTime);
+            }
 
             if (normalisedTime > 0.99f)
             {
