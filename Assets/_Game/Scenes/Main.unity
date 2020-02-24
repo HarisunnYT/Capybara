@@ -2736,7 +2736,7 @@ PrefabInstance:
     - target: {fileID: 5870205635892031623, guid: 66e7e08d718301d4ba5161c28ca83e1b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.398
+      value: 3.66
       objectReference: {fileID: 0}
     - target: {fileID: 5870205635892031623, guid: 66e7e08d718301d4ba5161c28ca83e1b,
         type: 3}
@@ -2951,6 +2951,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1281466276506919722, guid: 95d98cb276bb3bb4f935cf45b724f23c,
+        type: 3}
+      propertyPath: requiredKnockBackForceToRagdoll
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7533845371253174803, guid: 95d98cb276bb3bb4f935cf45b724f23c,
         type: 3}
       propertyPath: m_ConnectedBody
@@ -2970,11 +2975,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 6.9849193e-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281466276506919722, guid: 95d98cb276bb3bb4f935cf45b724f23c,
-        type: 3}
-      propertyPath: requiredKnockBackForceToRagdoll
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d98cb276bb3bb4f935cf45b724f23c, type: 3}

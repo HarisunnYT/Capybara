@@ -93,6 +93,8 @@ public class Vehicle : Interactable
 
         CurrentController.transform.position += transform.right;
 
+        CurrentController.InteractionController.CurrentVehicle = null;
+
         CurrentController = null;
         Equiped = false;
     }

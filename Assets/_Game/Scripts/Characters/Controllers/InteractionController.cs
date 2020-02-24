@@ -12,7 +12,7 @@ public class InteractionController : Controller
     private Vector3 interactionOffset = new Vector3(0, 0.5f, 0.5f);
 
     public DragCharacterPart DragCharacterPart { get; private set; }
-    public Vehicle CurrentVehicle { get; private set; }
+    public Vehicle CurrentVehicle { get; set; }
 
     protected override void Awake()
     {
