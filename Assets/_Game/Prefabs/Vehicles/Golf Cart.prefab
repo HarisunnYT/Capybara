@@ -1015,6 +1015,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2270555879602649323}
   - component: {fileID: 2270555879602649332}
+  - component: {fileID: 6738150697422390082}
+  - component: {fileID: 3002279075382226417}
   m_Layer: 17
   m_Name: FrontSlope
   m_TagString: Untagged
@@ -1049,6 +1051,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8906612, y: 0.14807303, z: 0.86699206}
   m_Center: {x: -0.0063604126, y: 1.3931614, z: -0.38110995}
+--- !u!114 &6738150697422390082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270555879602649322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d5295efd2da3e499aaeb72e7c1dfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &3002279075382226417
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270555879602649322}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2270555879609498602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1313,7 @@ MonoBehaviour:
     width: 0.31
     rpm: -16.304043
     prevWorldPosition: {x: -9.271905, y: 0.37475333, z: -2.1659544}
-    worldPosition: {x: 4.03528, y: 0.57118887, z: -0.719531}
+    worldPosition: {x: 98.31472, y: 0.37418887, z: -152.69048}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0.08972791, y: -0.37280357, z: 0.92298293, w: 0.032697573}
     camberCurve:
@@ -1321,10 +1351,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: -0.011890164, y: -0.5707056, z: 0.82106876}
+    up: {x: 0.011885943, y: -0.5707059, z: -0.82106894}
     inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
-    forward: {x: -0.017047914, y: -0.82089174, z: -0.57082945}
-    right: {x: 0.999784, y: -0.020784764, z: 0.000031199306}
+    forward: {x: 0.017050855, y: -0.8208919, z: 0.5708292}
+    right: {x: -0.9997844, y: -0.020784767, z: -0.000026055612}
     velocity: {x: -0.0161945, y: -0.0010582209, z: 0.78488195}
     prevVelocity: {x: -0.015695244, y: 0.005049579, z: 0.79542124}
     acceleration: {x: -0.024962798, y: -0.30539, z: -0.52696466}
@@ -1358,7 +1388,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxForce: 5000
+    maxForce: 2500
     length: 0.27959555
     prevLength: 0.27959555
     compressionPercent: 0.12626387
@@ -2820,7 +2850,7 @@ MonoBehaviour:
     width: 0.31
     rpm: -16.304043
     prevWorldPosition: {x: -9.271905, y: 0.37475333, z: -2.1659544}
-    worldPosition: {x: 2.8032725, y: 0.571971, z: -1.8535335}
+    worldPosition: {x: 99.54673, y: 0.374971, z: -151.55647}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0.08972791, y: -0.37280357, z: 0.92298293, w: 0.032697573}
     camberCurve:
@@ -2858,10 +2888,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: -0.011890164, y: -0.5707056, z: 0.82106876}
+    up: {x: 0.011885943, y: -0.5707059, z: -0.82106894}
     inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
-    forward: {x: -0.017047914, y: -0.82089174, z: -0.57082945}
-    right: {x: 0.999784, y: -0.020784764, z: 0.000031199306}
+    forward: {x: 0.017050855, y: -0.8208919, z: 0.5708292}
+    right: {x: -0.9997844, y: -0.020784767, z: -0.000026055612}
     velocity: {x: -0.0161945, y: -0.0010582209, z: 0.78488195}
     prevVelocity: {x: -0.015695244, y: 0.005049579, z: 0.79542124}
     acceleration: {x: -0.024962798, y: -0.30539, z: -0.52696466}
@@ -2895,7 +2925,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxForce: 5000
+    maxForce: 2500
     length: 0.27959555
     prevLength: 0.27959555
     compressionPercent: 0.12626387
@@ -4313,7 +4343,7 @@ MonoBehaviour:
     width: 0.31
     rpm: -16.304043
     prevWorldPosition: {x: -9.271905, y: 0.37475333, z: -2.1659544}
-    worldPosition: {x: 4.035274, y: 0.5724867, z: -1.8535342}
+    worldPosition: {x: 98.31473, y: 0.37548673, z: -151.55647}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0.08972791, y: -0.37280357, z: 0.92298293, w: 0.032697573}
     camberCurve:
@@ -4351,10 +4381,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: -0.011890164, y: -0.5707056, z: 0.82106876}
+    up: {x: 0.011885943, y: -0.5707059, z: -0.82106894}
     inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
-    forward: {x: -0.017047914, y: -0.82089174, z: -0.57082945}
-    right: {x: 0.999784, y: -0.020784764, z: 0.000031199306}
+    forward: {x: 0.017050855, y: -0.8208919, z: 0.5708292}
+    right: {x: -0.9997844, y: -0.020784767, z: -0.000026055612}
     velocity: {x: -0.0161945, y: -0.0010582209, z: 0.78488195}
     prevVelocity: {x: -0.015695244, y: 0.005049579, z: 0.79542124}
     acceleration: {x: -0.024962798, y: -0.30539, z: -0.52696466}
@@ -4388,7 +4418,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxForce: 5000
+    maxForce: 2500
     length: 0.27959555
     prevLength: 0.27959555
     compressionPercent: 0.12626387
@@ -5971,7 +6001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fde3b0a987d9ab4ba8272b85857ae03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMassOffset: {x: 0, y: -0.17, z: 0}
+  centerOfMassOffset: {x: 0, y: 0.5, z: 0}
   showCOM: 1
 --- !u!114 &4281694261532102275
 MonoBehaviour:
@@ -6001,10 +6031,10 @@ MonoBehaviour:
   wheels:
   - wc: {fileID: 4250926301309175054}
     steer: 1
-    power: 0
+    power: 1
   - wc: {fileID: 2270555879703070791}
     steer: 1
-    power: 0
+    power: 1
   - wc: {fileID: 2270555879951539462}
     steer: 0
     power: 1
@@ -6022,8 +6052,8 @@ MonoBehaviour:
     Collider: {fileID: 0}
   maxSteeringAngle: 35
   minSteeringAngle: 20
-  maxMotorTorque: 900
-  maxBrakeTorque: 800
+  maxMotorTorque: 450
+  maxBrakeTorque: 400
   antiRollBarForce: 12000
   minVelocityToKnockCharacter: 1
   leftHandBone: {fileID: 2270555878197145991}
@@ -6035,6 +6065,8 @@ MonoBehaviour:
   brake: {fileID: 2270555879346026188}
   accelerator: {fileID: 2270555877999153903}
   pedalPushSpeed: 10
+  frontBumper: {fileID: 6738150697422390082}
+  minEjectForce: 3
 --- !u!65 &4281694261532102284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6176,7 +6208,7 @@ MonoBehaviour:
     width: 0.31
     rpm: -16.304043
     prevWorldPosition: {x: -9.271905, y: 0.37475333, z: -2.1659544}
-    worldPosition: {x: 2.8032765, y: 0.57167315, z: -0.7195317}
+    worldPosition: {x: 99.54672, y: 0.37467316, z: -152.69048}
     prevGroundPoint: {x: 0, y: 0, z: 0}
     worldRotation: {x: 0.08972791, y: -0.37280357, z: 0.92298293, w: 0.032697573}
     camberCurve:
@@ -6214,10 +6246,10 @@ MonoBehaviour:
     nonRotating: {fileID: 0}
     rim: {fileID: 0}
     rimCollider: {fileID: 0}
-    up: {x: -0.011890164, y: -0.5707056, z: 0.82106876}
+    up: {x: 0.011885943, y: -0.5707059, z: -0.82106894}
     inside: {x: -0.98175985, y: -0.0065431707, z: 0.19001421}
-    forward: {x: -0.017047914, y: -0.82089174, z: -0.57082945}
-    right: {x: 0.999784, y: -0.020784764, z: 0.000031199306}
+    forward: {x: 0.017050855, y: -0.8208919, z: 0.5708292}
+    right: {x: -0.9997844, y: -0.020784767, z: -0.000026055612}
     velocity: {x: -0.0161945, y: -0.0010582209, z: 0.78488195}
     prevVelocity: {x: -0.015695244, y: 0.005049579, z: 0.79542124}
     acceleration: {x: -0.024962798, y: -0.30539, z: -0.52696466}
@@ -6251,7 +6283,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxForce: 5000
+    maxForce: 2500
     length: 0.27959555
     prevLength: 0.27959555
     compressionPercent: 0.12626387

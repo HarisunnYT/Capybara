@@ -19,11 +19,11 @@ public class Vehicle : Interactable
     private Transform seatBone;
 
     [SerializeField]
-    private Collider[] carliders;
+    protected Collider[] carliders;
 
     protected float health;
 
-    private void Start()
+    protected virtual void Start()
     {
         health = vehicleData.StartingHealth;
     }
@@ -72,7 +72,7 @@ public class Vehicle : Interactable
         }
     }
 
-    public virtual void GetOutOfVehicle()
+    public virtual void GetOutOfVehicle(bool ejected = false)
     {
         CurrentController.ResetParent();
         CurrentController.MovementController.SetKinematic(false);
@@ -91,7 +91,10 @@ public class Vehicle : Interactable
         CurrentController.MovementController.SetMovementStyle(MovementStyle.Normal);
         CurrentController.AnimationController.SetInstantBoneMovement(0);
 
-        CurrentController.transform.position += transform.right;
+        if (!ejected)
+        {
+            CurrentController.transform.position += transform.right;
+        }
 
         CurrentController.InteractionController.CurrentVehicle = null;
 

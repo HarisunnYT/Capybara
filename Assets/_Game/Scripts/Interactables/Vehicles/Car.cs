@@ -75,11 +75,25 @@ public class Car : Vehicle
     [SerializeField]
     private float pedalPushSpeed = 10;
 
+    [Space()]
+    [SerializeField]
+    private OnCollision frontBumper;
+
+    [SerializeField]
+    private float minEjectForce = 50;
+
     private Vector3 inputVector;
     private float smoothXAxis;
     private float xAxisVelocity;
 
     private float velocity;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        frontBumper.OnCollisionEvent += Eject;
+    }
 
     public void FixedUpdate()
     {
@@ -172,7 +186,7 @@ public class Car : Vehicle
 
     }
 
-    public override void GetOutOfVehicle()
+    public override void GetOutOfVehicle(bool ejected = false)
     {
         rightHandBone.connectedBody = null;
         leftHandBone.connectedBody = null;
@@ -185,7 +199,7 @@ public class Car : Vehicle
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, false);
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.LowerBody, false);
 
-        base.GetOutOfVehicle();
+        base.GetOutOfVehicle(ejected);
     }
 
     protected override void UpdateParts()
@@ -238,6 +252,28 @@ public class Car : Vehicle
     public void OnBrakeValueChanged(float a)
     {
         maxBrakeTorque = a;
+    }
+
+    private void Eject(Collision collision)
+    {
+        //only eject if it hits solid objects
+        if (Equiped && Rigidbody.velocity.magnitude >= minEjectForce && collision.gameObject.GetComponent<Rigidbody>() == null)
+        {
+            CharacterController controller = CurrentController;
+            GetOutOfVehicle(true);
+
+            controller.transform.position += transform.forward;
+
+            controller.RagdollController.SetRagdoll(true);
+            controller.RagdollController.AddForceToBodies(transform.forward, 20);
+
+            Rigidbody.velocity = Vector3.zero;
+
+            foreach (var col in carliders)
+            {
+                controller.InteractionController.IgnoreCollisions(col, true);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
