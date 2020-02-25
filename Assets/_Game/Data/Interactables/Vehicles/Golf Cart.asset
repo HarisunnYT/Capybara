@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Golf Cart
   m_EditorClassIdentifier: 
   StartingHealth: 100
-  cameraMinDistance: 3.3333333
-  cameraMaxDistance: 6
+  DropAllItemsOnEnter: 1
+  CameraMinDistance: 5
+  CameraMaxDistance: 7.5
+  CameraOffset: {x: 1, y: 1, z: 1}
