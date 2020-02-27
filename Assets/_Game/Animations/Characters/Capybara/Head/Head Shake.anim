@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 32.266003, y: 8.617001, z: 46.447002}
+        value: {x: -30.824001, y: 0.076000005, z: 0.031000001}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -28,7 +28,25 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5
-        value: {x: 34.460003, y: -4.9430003, z: -24.597002}
+        value: {x: -20.847, y: 22.129002, z: -11.172001}
+        inSlope: {x: 1.1639904, y: 0, z: 0}
+        outSlope: {x: 1.1639904, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666667
+        value: {x: -20.653002, y: 0.186, z: 50.212}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.8333333
+        value: {x: -20.653002, y: 0.186, z: -59.416004}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -37,7 +55,16 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: 32.266003, y: 8.617001, z: 46.447002}
+        value: {x: -28.996002, y: 29.018002, z: 11.141001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1666666
+        value: {x: -21.713001, y: 5.9600005, z: -44.269}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -47,7 +74,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: metarig/Bone.006/Bone/spine.008/Bone.005/spine.011
+    path: metarig/Bone.006/Bone/spine.008/Bone.005
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -60,7 +87,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1480364432
+      path: 1686612560
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -72,7 +99,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.1666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -93,7 +120,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 32.266003
+        value: -30.824001
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -102,7 +129,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: 34.460003
+        value: -20.847
+        inSlope: 1.1639904
+        outSlope: 1.1639904
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: -20.653002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: -20.653002
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -111,7 +156,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 32.266003
+        value: -28.996002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: -21.713001
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -122,7 +176,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: metarig/Bone.006/Bone/spine.008/Bone.005/spine.011
+    path: metarig/Bone.006/Bone/spine.008/Bone.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -130,7 +184,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 8.617001
+        value: 0.076000005
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -139,7 +193,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: -4.9430003
+        value: 22.129002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 0.186
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 0.186
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -148,7 +220,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 8.617001
+        value: 29.018002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: 5.9600005
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -159,7 +240,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: metarig/Bone.006/Bone/spine.008/Bone.005/spine.011
+    path: metarig/Bone.006/Bone/spine.008/Bone.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -167,7 +248,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 46.447002
+        value: 0.031000001
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -176,7 +257,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: -24.597002
+        value: -11.172001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 50.212
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8333333
+        value: -59.416004
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -185,7 +284,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 46.447002
+        value: 11.141001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1666666
+        value: -44.269
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -196,7 +304,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: metarig/Bone.006/Bone/spine.008/Bone.005/spine.011
+    path: metarig/Bone.006/Bone/spine.008/Bone.005
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -206,8 +314,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: metarig/Bone.006/Bone/spine.008/Bone.005/spine.011
+    attribute: m_LocalEulerAngles.z
+    path: metarig/Bone.006/Bone/spine.008/Bone.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -217,7 +325,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: metarig/Bone.006/Bone/spine.008/Bone.005/spine.011
+    path: metarig/Bone.006/Bone/spine.008/Bone.005
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -226,8 +334,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: metarig/Bone.006/Bone/spine.008/Bone.005/spine.011
+    attribute: m_LocalEulerAngles.x
+    path: metarig/Bone.006/Bone/spine.008/Bone.005
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

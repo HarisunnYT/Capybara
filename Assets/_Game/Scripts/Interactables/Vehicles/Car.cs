@@ -82,6 +82,9 @@ public class Car : Vehicle
     [SerializeField]
     private float minEjectForce = 50;
 
+    [SerializeField]
+    private float ejectMultiplier = 10;
+
     private Vector3 inputVector;
     private float smoothXAxis;
     private float xAxisVelocity;
@@ -92,7 +95,15 @@ public class Car : Vehicle
     {
         base.Start();
 
-        frontBumper.OnCollisionEvent += Eject;
+        frontBumper.OnTriggerEvent += Eject;
+
+        foreach(var collider1 in carliders)
+        {
+            foreach (var collider2 in carliders)
+            {
+                Physics.IgnoreCollision(collider1, collider2, true);
+            }
+        }
     }
 
     public void FixedUpdate()
@@ -254,10 +265,10 @@ public class Car : Vehicle
         maxBrakeTorque = a;
     }
 
-    private void Eject(Collision collision)
+    private void Eject(Collider collider)
     {
         //only eject if it hits solid objects
-        if (Equiped && Rigidbody.velocity.magnitude >= minEjectForce && collision.gameObject.GetComponent<Rigidbody>() == null)
+        if (Equiped && Rigidbody.velocity.magnitude >= minEjectForce && collider.gameObject.GetComponent<Rigidbody>() == null)
         {
             CharacterController controller = CurrentController;
             GetOutOfVehicle(true);
@@ -265,7 +276,7 @@ public class Car : Vehicle
             controller.transform.position += transform.forward;
 
             controller.RagdollController.SetRagdoll(true);
-            controller.RagdollController.AddForceToBodies(transform.forward, 20);
+            controller.RagdollController.AddForceToBodies(transform.forward, Rigidbody.velocity.magnitude * ejectMultiplier);
 
             Rigidbody.velocity = Vector3.zero;
 

@@ -14,5 +14,10 @@ public class CapyRagdollController : RagdollController
     {
         //set camera target
         CameraController.Instance.SetTarget(transform, false);
+
+        AnimationController.SetAnimatorLayerWeight(AnimatorBodyPartLayer.Head, 1);
+        AnimationController.SetTrigger("HeadShake");
+
+        AnimationController.SetAnimatorLayerWeight(AnimatorBodyPartLayer.Head, 0, 1.5f);
     }
 }

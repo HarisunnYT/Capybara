@@ -69,6 +69,7 @@ public class AnimationController : Controller
     private float boneMoveSpeed;
 
     private Dictionary<string, int> bools = new Dictionary<string, int>();
+    private Dictionary<string, int> animatorLayers = new Dictionary<string, int>();
 
     protected override void Awake()
     {
@@ -142,12 +143,32 @@ public class AnimationController : Controller
 
     public void SetAnimatorLayerWeight(AnimatorBodyPartLayer layer, float weight)
     {
-        Animator.SetLayerWeight(Animator.GetLayerIndex(layer.ToString()), weight);
+        SetAnimatorLayerWeight(layer.ToString(), weight);
+    }
+
+    public void SetAnimatorLayerWeight(AnimatorBodyPartLayer layer, float weight, float delay)
+    {
+        StartCoroutine(AnimatorLayerWeightDelay(layer, weight, delay));
+    }
+
+    private IEnumerator AnimatorLayerWeightDelay(AnimatorBodyPartLayer layer, float weight, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        SetAnimatorLayerWeight(layer.ToString(), weight);
     }
 
     public void SetAnimatorLayerWeight(string layerName, float weight)
     {
-        Animator.SetLayerWeight(Animator.GetLayerIndex(layerName), weight);
+        if (weight == 1)
+        {
+            Animator.SetLayerWeight(Animator.GetLayerIndex(layerName), weight);
+            AddAnimatorLayer(layerName);
+        }
+        else
+        {
+            RemoveAnimatorLayer(layerName);
+        }
     }
 
     public void SetAnimatorLayerWeights(BoneWeight[] boneWeights)
@@ -205,6 +226,18 @@ public class AnimationController : Controller
         Animator.SetTrigger(name);
     }
 
+    public void SetTrigger(string name, float delay)
+    {
+        StartCoroutine(TriggerDelay(name, delay));
+    }
+
+    private IEnumerator TriggerDelay(string name, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        SetTrigger(name);
+    }
+
     public void SetAnimatorBools(AnimatorBool[] bools)
     {
         foreach(var b in bools)
@@ -238,6 +271,30 @@ public class AnimationController : Controller
     public bool GetBool(string name)
     {
         return bools.ContainsKey(name);        
+    }
+
+    private void AddAnimatorLayer(string layer)
+    {
+        if (animatorLayers.ContainsKey(name))
+        {
+            animatorLayers[name]++;
+        }
+        else
+        {
+            animatorLayers.Add(name, 1);
+        }
+    }
+
+    private void RemoveAnimatorLayer(string layer)
+    {
+        if (animatorLayers.ContainsKey(name) && animatorLayers[name] > 0)
+        {
+            animatorLayers[name]--;
+            if (animatorLayers[name] == 0)
+            {
+                Animator.SetLayerWeight(Animator.GetLayerIndex(layer), 0);
+            }
+        }
     }
 
     private void AddBool(string name)
