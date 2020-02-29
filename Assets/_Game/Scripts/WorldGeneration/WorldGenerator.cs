@@ -83,13 +83,15 @@ public class WorldGenerator : Singleton<WorldGenerator>
             yield return new WaitUntil(() => PathGenerator.Instance.CompletedPathSpawns());
         }
 
-        yield return new WaitUntil(() => ObjectManager.Instance.InitSpawnObjects());
+        //yield return new WaitUntil(() => ObjectManager.Instance.InitSpawnObjects());
         
         CompletedGeneration();
     }
 
     public void CompletedGeneration()
     {
+        ObjectManager.Instance.InitSpawnObjects();
+
         genComplete = true;
 
         if (player != null)

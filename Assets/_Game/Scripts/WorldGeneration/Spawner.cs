@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    public enum SpawnType { Pickup, Foliage, EnclosureGroup, Enclosure };
+    public enum SpawnType { Pickup, Foliage, EnclosureGroup, Enclosure, Fence, Props };
 
     public SpawnType spawnType;
 
