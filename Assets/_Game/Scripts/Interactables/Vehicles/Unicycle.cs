@@ -90,7 +90,7 @@ public class Unicycle : Vehicle
         leftFoot.isKinematic = false;
     }
 
-    public override void GetOutOfVehicle(bool ejected = false)
+    public override void GetOutOfVehicle()
     {
         Rigidbody.constraints = RigidbodyConstraints.None;
 
@@ -103,7 +103,7 @@ public class Unicycle : Vehicle
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.LowerBody, false);
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, false);
 
-        base.GetOutOfVehicle(ejected);
+        base.GetOutOfVehicle();
     }
 
     private void Update()

@@ -14,4 +14,8 @@ public class VehicleData : ScriptableObject
     public float CameraMaxDistance = 15;
 
     public Vector3 CameraOffset = Vector3.one;
+
+    [Space()]
+    public BoneWeight[] BoneWeights;
+    public AnimatorBool[] AnimatorBools;
 }

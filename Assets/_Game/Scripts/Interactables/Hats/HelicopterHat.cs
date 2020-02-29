@@ -22,6 +22,7 @@ public class HelicopterHat : PickupableItem
             controller.MovementController.MainBody.transform.position += Vector3.up;
 
             controller.RagdollController.SetMetaRigRotationX(-40);
+            controller.RagdollController.SetMetaRigRotationY(0);
         });
     }
 

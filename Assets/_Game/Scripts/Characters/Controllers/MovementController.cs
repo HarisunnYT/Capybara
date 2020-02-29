@@ -327,7 +327,6 @@ public class MovementController : Controller
 
         AnimationController.SetBool(MovementStyle.Normal.ToString(), movementStyle == MovementStyle.Normal || movementStyle == MovementStyle.Dragging);
         AnimationController.SetBool(MovementStyle.Flying.ToString(), movementStyle == MovementStyle.Flying);
-        AnimationController.SetBool(MovementStyle.Driving.ToString(), movementStyle == MovementStyle.Driving);
     }
 
     public void SetKinematic(bool kinematic)

@@ -179,6 +179,14 @@ public class AnimationController : Controller
         }
     }
 
+    public void InvertAnimatorLayerWeights(BoneWeight[] boneWeights)
+    {
+        foreach (var boneWeight in boneWeights)
+        {
+            SetAnimatorLayerWeight(boneWeight.bodyPartType, boneWeight.Weight == 0 ? 1 : 0);
+        }
+    }
+
     /// <summary>
     /// Only use if you want to ignore the bool que
     /// </summary>
@@ -246,7 +254,13 @@ public class AnimationController : Controller
         }
     }
 
-    #endregion
+    public void InvertAnimatorBools(AnimatorBool[] bools)
+    {
+        foreach (var b in bools)
+        {
+            SetBool(b.Name, !b.Result);
+        }
+    }
 
     public void SetInstantBoneMovement(float duration, System.Action callback = null)
     {
@@ -267,6 +281,8 @@ public class AnimationController : Controller
 
         callback?.Invoke();
     }
+
+    #endregion
 
     public bool GetBool(string name)
     {

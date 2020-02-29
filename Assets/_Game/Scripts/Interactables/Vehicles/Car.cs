@@ -197,7 +197,7 @@ public class Car : Vehicle
 
     }
 
-    public override void GetOutOfVehicle(bool ejected = false)
+    public override void GetOutOfVehicle()
     {
         rightHandBone.connectedBody = null;
         leftHandBone.connectedBody = null;
@@ -210,7 +210,9 @@ public class Car : Vehicle
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.UpperBody, false);
         CurrentController.AnimationController.DisableBoneLayer(SimplifiedBodyLayer.LowerBody, false);
 
-        base.GetOutOfVehicle(ejected);
+        CurrentController.transform.position += transform.right;
+
+        base.GetOutOfVehicle();
     }
 
     protected override void UpdateParts()
@@ -271,7 +273,7 @@ public class Car : Vehicle
         if (Equiped && Rigidbody.velocity.magnitude >= minEjectForce && collider.gameObject.GetComponent<Rigidbody>() == null)
         {
             CharacterController controller = CurrentController;
-            GetOutOfVehicle(true);
+            GetOutOfVehicle();
 
             controller.transform.position += transform.forward;
 

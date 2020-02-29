@@ -91,7 +91,7 @@ public class RagdollController : Controller
             bodies.Remove(InteractionController.DragCharacterPart.Rigidbody);
         }
 
-        originalMetaRigRotation = metaRig.transform.rotation;
+        originalMetaRigRotation = metaRig.transform.localRotation;
 
         SetRagdoll(false);
     }
@@ -296,22 +296,22 @@ public class RagdollController : Controller
 
     public void SetMetaRigRotationX(float value)
     {
-        metaRig.rotation = Quaternion.Euler(new Vector3(value, metaRig.rotation.eulerAngles.y, metaRig.rotation.eulerAngles.z));
+        metaRig.localRotation = Quaternion.Euler(new Vector3(value, metaRig.localRotation.eulerAngles.y, metaRig.localRotation.eulerAngles.z));
     }
 
     public void SetMetaRigRotationY(float value)
     {
-        metaRig.rotation = Quaternion.Euler(new Vector3(metaRig.rotation.eulerAngles.x, value, metaRig.rotation.eulerAngles.z));
+        metaRig.localRotation = Quaternion.Euler(new Vector3(metaRig.localRotation.eulerAngles.x, value, metaRig.localRotation.eulerAngles.z));
     }
 
     public void SetMetaRigRotationZ(float value)
     {
-        metaRig.rotation = Quaternion.Euler(new Vector3(metaRig.rotation.eulerAngles.x, metaRig.rotation.eulerAngles.y, value));
+        metaRig.localRotation = Quaternion.Euler(new Vector3(metaRig.localRotation.eulerAngles.x, metaRig.localRotation.eulerAngles.y, value));
     }
 
     public void ResetMetaRigRotation()
     {
-        metaRig.rotation = originalMetaRigRotation;
+        metaRig.localRotation = originalMetaRigRotation;
     }
 
     protected virtual void OnRagdollBegin() { }

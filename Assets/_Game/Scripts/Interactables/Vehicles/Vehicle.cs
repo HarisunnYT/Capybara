@@ -52,6 +52,9 @@ public class Vehicle : Interactable
 
         CurrentController.MovementController.SetMovementStyle(MovementStyle.Driving);
 
+        CurrentController.AnimationController.SetAnimatorBools(vehicleData.AnimatorBools);
+        CurrentController.AnimationController.SetAnimatorLayerWeights(vehicleData.BoneWeights);
+
         yield return new WaitForEndOfFrame();
 
         CurrentController.transform.parent = seatBone;
@@ -72,7 +75,7 @@ public class Vehicle : Interactable
         }
     }
 
-    public virtual void GetOutOfVehicle(bool ejected = false)
+    public virtual void GetOutOfVehicle()
     {
         CurrentController.ResetParent();
         CurrentController.MovementController.SetKinematic(false);
@@ -91,10 +94,8 @@ public class Vehicle : Interactable
         CurrentController.MovementController.SetMovementStyle(MovementStyle.Normal);
         CurrentController.AnimationController.SetInstantBoneMovement(0);
 
-        if (!ejected)
-        {
-            CurrentController.transform.position += transform.right;
-        }
+        CurrentController.AnimationController.InvertAnimatorBools(vehicleData.AnimatorBools);
+        CurrentController.AnimationController.InvertAnimatorLayerWeights(vehicleData.BoneWeights);
 
         CurrentController.InteractionController.CurrentVehicle = null;
 
