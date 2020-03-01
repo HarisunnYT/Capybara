@@ -38,7 +38,7 @@ public class LawnMower : Vehicle
         leftHandBone.connectedAnchor = leftHand.transform.position - leftHandBone.transform.position;
         leftHand.isKinematic = false;
 
-        CurrentController.MovementController.SetMovementStyle(MovementStyle.Normal);
+        CurrentController.MovementController.SetMovementStyle(MovementStyle.Dragging);
         CurrentController.MovementController.SetKinematic(false);
     }
 
