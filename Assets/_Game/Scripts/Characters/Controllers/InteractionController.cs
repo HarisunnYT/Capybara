@@ -7,6 +7,7 @@ public class InteractionController : Controller
 {
     [SerializeField]
     private float interactionRadius;
+    public float InteractionRadius { get { return interactionRadius; } }
 
     [SerializeField]
     private Vector3 interactionOffset = new Vector3(0, 0.5f, 0.5f);
