@@ -21,7 +21,8 @@ public class Projectile : MonoBehaviour
     private Collider collider;
     protected MeshRenderer meshRenderer;
 
-    private float timeUntilColliderEnabled;
+    private ProjectileData data;
+
     private float timeUntilDestroy;
 
     private bool destroyed = false;
@@ -35,7 +36,6 @@ public class Projectile : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        timeUntilColliderEnabled = Time.time + 0.1f;
         timeUntilDestroy = Time.time + lifetime;
 
         Rigidbody.velocity = Vector3.zero;
@@ -44,15 +44,16 @@ public class Projectile : MonoBehaviour
         destroyed = false;
 
         meshRenderer.enabled = true;
-        collider.enabled = false;
+        collider.enabled = true;
+    }
+
+    public void Configure(ProjectileData data)
+    {
+        this.data = data;
     }
 
     private void Update()
     {
-        if (Time.time > timeUntilColliderEnabled)
-        {
-            collider.enabled = true;
-        }
 
         if (!destroyed && Time.time > timeUntilDestroy)
         {
@@ -72,7 +73,12 @@ public class Projectile : MonoBehaviour
     protected virtual void OnCollision(Collision collision) 
     {
         Rigidbody.velocity = Vector3.zero;
-        Rigidbody.isKinematic = true;
+
+        IDamageable damageable = collision.gameObject.GetComponentInParent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.OnDamaged(data.Damage);
+        }
     }
 
     protected virtual void OnDestroyed(Vector3 destroyPoint, float disableDelay) 

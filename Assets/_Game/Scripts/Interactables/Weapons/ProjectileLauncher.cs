@@ -51,10 +51,9 @@ public class ProjectileLauncher : TwoHandedWeapon
 
         projectile.transform.position = worldPosition;
 
-        RaycastHit hitInfo;
-        if (CurrentController == GameManager.Instance.CapyController && CurrentController.AimController.IsAiming && Physics.Raycast(rayStartPoint, CameraController.Instance.transform.forward, out hitInfo, 100, projectile.CollisionLayers))
+        if (CurrentController == GameManager.Instance.CapyController && CurrentController.AimController.IsAiming)
         {
-            projectile.transform.LookAt(hitInfo.point);
+            projectile.transform.LookAt(rayStartPoint + CameraController.Instance.Cam.transform.forward * 5);
         }
         else
         {
@@ -63,6 +62,8 @@ public class ProjectileLauncher : TwoHandedWeapon
 
         //shoot it 
         projectile.Rigidbody.AddForce(projectile.transform.forward * force * projectileData.ForceMultiplier, ForceMode.Impulse);
+
+        projectile.Configure(projectileData);
 
         //add knock back force to our player
         CurrentController.MovementController.AddKnockBackForce(-Util.GetDirection(transform, shootDirection), knockBackForce * projectileData.KnockBackForceMultiplier);

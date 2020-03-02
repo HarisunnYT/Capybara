@@ -53,4 +53,16 @@ public class CharacterController : Controller
 
         throw new System.Exception("Missing " + bodyPartType.ToString() + " on " + name);
     }
+
+    public void KnockOut()
+    {
+        RagdollController.SetRagdoll(true);
+        MovementController.SetMovementState(MovementState.KnockedOut);
+    }
+
+    public void Die()
+    {
+        RagdollController.SetRagdoll(true);
+        MovementController.SetMovementState(MovementState.Dead);
+    }
 }

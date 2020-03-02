@@ -14,10 +14,12 @@ public class CollisionController : Controller
     private float minForceToKnockOut = 10;
 
     public Collider MainCollider { get; private set; }
+    public Collider[] Colliders { get; private set; }
 
     private void Start()
     {
         MainCollider = GetComponent<Collider>();
+        Colliders = GetComponentsInChildren<Collider>();
     }
 
     protected virtual void OnCollisionEnter(Collision collision)
@@ -52,7 +54,7 @@ public class CollisionController : Controller
     {
         if (force >= minForceToKnockOut && MovementController.CurrentMovementState == MovementState.Ragdoll)
         {
-            RagdollController.KnockOut();
+            CharacterController.KnockOut();
         }
     }
 }

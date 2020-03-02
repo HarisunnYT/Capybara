@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour
     public InteractionController InteractionController { get; private set; }
     public AimController AimController { get; private set; }
     public HeadController HeadController { get; private set; }
+    public HealthController HealthController { get; private set; }
 
     private List<Controller> Controllers = new List<Controller>();
 
@@ -27,6 +28,7 @@ public class Controller : MonoBehaviour
         Controllers.Add(InteractionController = GetComponent<InteractionController>());
         Controllers.Add(AimController = GetComponent<AimController>());
         Controllers.Add(HeadController = GetComponent<HeadController>());
+        Controllers.Add(HealthController = GetComponent<HealthController>());
     }
 
     public T GetController<T>() where T : Controller

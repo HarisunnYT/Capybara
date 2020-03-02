@@ -128,15 +128,12 @@ public class RagdollController : Controller
                 spineBody.transform.parent = metaRig;
             }
         }
-        else if ((int)MovementController.CurrentMovementState >= (int)MovementState.Ragdoll)
+        else if ((int)MovementController.CurrentMovementState >= (int)MovementState.Ragdoll && (int)MovementController.CurrentMovementState < (int)MovementState.KnockedOut)
         {
             //check if the spine has stopped moving
-            if (MovementController.CurrentMovementState != MovementState.KnockedOut)
+            if ((spineBody.velocity.magnitude < 0.1f && Time.time > minRagdollTimer) || Time.time > maxRagdollTimer)
             {
-                if ((spineBody.velocity.magnitude < 0.1f && Time.time > minRagdollTimer) || Time.time > maxRagdollTimer)
-                {
-                    SetRagdoll(false);
-                }
+                SetRagdoll(false);
             }
         }
     }
@@ -277,11 +274,6 @@ public class RagdollController : Controller
         {
             legBone.isKinematic = !ragoll;
         }
-    }
-
-    public void KnockOut()
-    {
-        MovementController.SetMovementState(MovementState.KnockedOut);
     }
 
     public void ResetVelocity()

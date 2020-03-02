@@ -22,7 +22,9 @@ public enum MovementState
 
 
     Ragdoll = 100,
-    KnockedOut,
+
+    KnockedOut = 200,
+    Dead
 }
 
 public enum MovementStyle

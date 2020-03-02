@@ -34,6 +34,9 @@ public class AnimationController : Controller
 
         public Transform[] MovingBones;
         public Transform[] AnimatingBones;
+
+        [System.NonSerialized]
+        public Rigidbody[] MovingRigidbodies;
     }
 
     [SerializeField]
@@ -79,6 +82,19 @@ public class AnimationController : Controller
         editorAnimator.enabled = false;
         boneMoveSpeed = originalBoneMoveSpeed;
 
+        for (int i = 0; i < boneLayers.Length; i++)
+        {
+            boneLayers[i].MovingRigidbodies = new Rigidbody[boneLayers[i].MovingBones.Length];
+            for (int x = 0; x < boneLayers[i].MovingBones.Length; x++)
+            {
+                Rigidbody body = boneLayers[i].MovingBones[x].GetComponent<Rigidbody>();
+                if (body)
+                {
+                    boneLayers[i].MovingRigidbodies[x] = body;
+                }
+            }
+        }
+
         DisableAllBoneLayers(false);
     }
 
@@ -98,9 +114,12 @@ public class AnimationController : Controller
                     Layer layer = boneLayers[L];
                     for (int i = 0; i < layer.MovingBones.Length; i++)
                     {
-                        float time = boneMoveSpeed == float.MaxValue ? boneMoveSpeed : boneMoveSpeed * Time.deltaTime;
-                        layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, time);
-                        layer.MovingBones[i].localRotation = Quaternion.Lerp(layer.MovingBones[i].localRotation, layer.AnimatingBones[i].localRotation, time);
+                        if (layer.MovingRigidbodies[i] == null || layer.MovingRigidbodies[i].isKinematic)
+                        {
+                            float time = boneMoveSpeed == float.MaxValue ? boneMoveSpeed : boneMoveSpeed * Time.deltaTime;
+                            layer.MovingBones[i].localPosition = Vector3.Lerp(layer.MovingBones[i].localPosition, layer.AnimatingBones[i].localPosition, time);
+                            layer.MovingBones[i].localRotation = Quaternion.Lerp(layer.MovingBones[i].localRotation, layer.AnimatingBones[i].localRotation, time);
+                        }
                     }
                 }
             }
