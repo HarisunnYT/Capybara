@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
     private Collider collider;
     protected MeshRenderer meshRenderer;
 
-    private ProjectileData data;
+    protected ProjectileData data;
 
     private float timeUntilDestroy;
 

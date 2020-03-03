@@ -35,7 +35,6 @@ namespace NodeCanvas.Tasks.Conditions
             }
 
             if ( Physics.Linecast(agent.position + offset, t.position + offset, out hit, 13, QueryTriggerInteraction.Ignore) ) {
-                Debug.Log(hit.collider);
                 if ( hit.collider != t.GetComponent<Collider>() ) {
                     return false;
                 }

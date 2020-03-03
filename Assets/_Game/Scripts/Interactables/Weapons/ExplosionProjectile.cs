@@ -26,12 +26,12 @@ public class ExplosionProjectile : Projectile
         //ragdoll characters first
         foreach(var col in colliders)
         {
+            float distanceFromObject = Vector3.Distance(col.transform.position, collisionPoint);
+            float explosionForce = explosionRadius - distanceFromObject;
+
             MovementController movementController = col.GetComponent<MovementController>();
             if (movementController)
             {
-                float distanceFromCharacter = Vector3.Distance(movementController.transform.position, collisionPoint);
-                float explosionForce = explosionRadius - distanceFromCharacter;
-
                 if (explosionForce > explosionRadius / 2)
                 {
                     movementController.RagdollController.SetRagdoll(true);
@@ -40,6 +40,14 @@ public class ExplosionProjectile : Projectile
                 {
                     movementController.AddKnockBackForce((collisionPoint - movementController.transform.position).normalized, explosionForce);
                 }
+            }
+
+            float damageMultiplier = explosionForce / explosionRadius;
+
+            IDamageable damageable = col.gameObject.GetComponentInParent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.OnDamaged(data.Damage * damageMultiplier);
             }
         }
 
