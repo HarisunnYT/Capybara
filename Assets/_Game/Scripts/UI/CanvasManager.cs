@@ -12,14 +12,14 @@ public class CanvasManager : Singleton<CanvasManager>
     {
         panels = transform.GetComponentsInChildren<Panel>(true);
         
-        if (LevelLoader.Instance.GetCurrentSceneIndex() == LevelLoader.MenuSceneIndex)
-        {
-            ShowPanel<MainMenuPanel>();
-        }
-        else if (LevelLoader.Instance.GetCurrentSceneIndex() == LevelLoader.GameSceneIndex)
-        {
+        //if (LevelLoader.Instance.GetCurrentSceneIndex() == LevelLoader.MenuSceneIndex)
+        //{
+        //    ShowPanel<MainMenuPanel>();
+        //}
+        //else if (LevelLoader.Instance.GetCurrentSceneIndex() == LevelLoader.GameSceneIndex)
+        //{
             ShowPanel<HUDPanel>();
-        }
+        //}
     }
 
     private void Update()

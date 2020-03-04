@@ -8,4 +8,16 @@ public class DebugPanel : Panel
     {
         GameManager.Instance.CapyController.HealthController.Damaged(1);
     }
+
+    public void CinematicMode()
+    {
+        if (CanvasManager.Instance.GetPanel<HUDPanel>().gameObject.activeSelf)
+        {
+            CanvasManager.Instance.ClosePanel<HUDPanel>();
+        }
+        else
+        {
+            CanvasManager.Instance.ShowPanel<HUDPanel>();
+        }
+    }
 }
