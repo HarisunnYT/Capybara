@@ -17,5 +17,19 @@ public class CapyInteractionController : InteractionController
                 TryPickUpObject(true);
             }
         }
+
+        if (Debug.isDebugBuild)
+        {
+            InControl.InputDevice device = InControl.InputManager.ActiveDevice;
+            if ((device.LeftTrigger && device.RightTrigger && device.LeftBumper && device.RightBumper) || (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.D)) && 
+                !CanvasManager.Instance.GetPanel<DebugPanel>().gameObject.activeSelf)
+            {
+                CanvasManager.Instance.ShowPanel<DebugPanel>();
+            }
+            if (InputController.InputManager.Escape.WasPressed && CanvasManager.Instance.GetPanel<DebugPanel>().gameObject.activeSelf)
+            {
+                CanvasManager.Instance.ClosePanel<DebugPanel>();
+            }
+        }
     }
 }

@@ -77,7 +77,7 @@ public class Projectile : MonoBehaviour
         IDamageable damageable = collision.gameObject.GetComponentInParent<IDamageable>();
         if (damageable != null)
         {
-            damageable.OnDamaged(data.Damage);
+            damageable.Damaged(data.Damage);
         }
     }
 

@@ -47,7 +47,7 @@ public class ExplosionProjectile : Projectile
             IDamageable damageable = col.gameObject.GetComponentInParent<IDamageable>();
             if (damageable != null)
             {
-                damageable.OnDamaged(data.Damage * damageMultiplier);
+                damageable.Damaged(data.Damage * damageMultiplier);
             }
         }
 

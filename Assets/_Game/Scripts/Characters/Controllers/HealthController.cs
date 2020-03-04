@@ -10,13 +10,14 @@ public interface IDamageable
 {
     float CurrentHealth { get; set; }
 
-    void OnDamaged(float amount);
+    void Damaged(float amount);
 }
 
 public class HealthController : Controller, IDamageable
 {
     [SerializeField]
     private int maxHealth = 10;
+    public int MaxHealth { get { return maxHealth; } }
 
     public float CurrentHealth { get; set; }
     public float HealthReadOnly;
@@ -25,6 +26,9 @@ public class HealthController : Controller, IDamageable
     private Color originalMeshColor;
     private Tween flashTween;
 
+    public delegate void HealthChangeEvent(float health);
+    public event HealthChangeEvent OnHealthChanged;
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,11 +36,20 @@ public class HealthController : Controller, IDamageable
         CurrentHealth = maxHealth;
         HealthReadOnly = CurrentHealth;
 
+        OnHealthChanged?.Invoke(CurrentHealth);
+
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         originalMeshColor = skinnedMeshRenderer.material.GetColor("_BaseColor");
     }
 
-    public void OnDamaged(float amount)
+    public void Healed(float amount)
+    {
+        CurrentHealth += amount;
+
+        OnHealthChanged?.Invoke(CurrentHealth);
+    }
+
+    public void Damaged(float amount)
     {
         CurrentHealth -= amount;
         HealthReadOnly = CurrentHealth;
@@ -50,6 +63,8 @@ public class HealthController : Controller, IDamageable
         {
             CharacterController.Die();
         }
+
+        OnHealthChanged?.Invoke(CurrentHealth);
     }
 
     private void FlashRed()

@@ -18,6 +18,10 @@ public class Panel : MonoBehaviour, IAnimationHandler
     private bool pauseTime = false;
     public bool PauseTime { get { return pauseTime; } }
 
+    [Space()]
+    [SerializeField]
+    public GameObject selectedButton;
+
     private Animator animatorGetter;
     private Animator animator
     {
@@ -78,6 +82,8 @@ public class Panel : MonoBehaviour, IAnimationHandler
         {
             Time.timeScale = 0;
         }
+
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(selectedButton);
 
         OnShow();
     }

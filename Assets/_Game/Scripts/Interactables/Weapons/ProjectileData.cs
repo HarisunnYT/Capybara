@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Capybara/Projectile Data")]
 public class ProjectileData : ScriptableObject
 {
-    public int Damage = 1;
+    public float Damage = 1;
 
     [Space()]
     public float ForceMultiplier = 1;
