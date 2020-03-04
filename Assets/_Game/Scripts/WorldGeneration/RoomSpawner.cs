@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnclosureSpawner : Singleton<EnclosureSpawner>
+public class RoomSpawner : Singleton<RoomSpawner>
 {
     private const int enclosureGroupSpawnChance = 80;
+     
+
 
     public void SpawnPrefabbedEnclosures()
     {
@@ -14,7 +16,7 @@ public class EnclosureSpawner : Singleton<EnclosureSpawner>
             {
                 Spawner spawnedSpawner = Instantiate(WorldGenerator.Instance.spawner, new Vector3(x, 0, z), Quaternion.identity);
                 spawnedSpawner.spawnType = Spawner.SpawnType.EnclosureGroup;
-                spawnedSpawner.spawnChance = 80;
+                spawnedSpawner.spawnChance = enclosureGroupSpawnChance;
             }
         }
     }

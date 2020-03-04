@@ -10,7 +10,7 @@ public class EnclosureManager : Singleton<EnclosureManager>
 
     public bool InitEnclosureSpawn()
     {
-        EnclosureSpawner.Instance.SpawnPrefabbedEnclosures();
+        RoomSpawner.Instance.SpawnPrefabbedEnclosures();
 
         return true;
     }
