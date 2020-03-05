@@ -9,11 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M Depth Culling Lit Stencilwrite
   m_Shader: {fileID: 4800000, guid: 0812536a32687450b928d1f47f21148b, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF _RECEIVE_SHADOWS_OFF _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
+  m_CustomRenderQueue: 2100
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 98228ed3b93435a41b08fe8558176c75, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 98228ed3b93435a41b08fe8558176c75, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -53,17 +53,17 @@ Material:
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0
     - _DstBlend: 0
-    - _EnvironmentReflections: 1
+    - _EnvironmentReflections: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _QueueOffset: 0
+    - _QueueOffset: -50
     - _ReadMask: 2
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _Rim: 0
     - _RimFrequency: 0
     - _RimMinPower: 0
@@ -71,21 +71,21 @@ Material:
     - _RimPower: 2
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
+    - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _Stencil: 2
-    - _StencilComp: 8
+    - _StencilComp: 5
     - _StencilFail: 2
     - _StencilOp: 2
     - _StencilZFail: 0
     - _Surface: 0
     - _WorkflowMode: 1
     - _WriteMask: 2
-    - _ZTest: 4
+    - _ZTest: 2
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.13720107, g: 0.8000001, b: 0.9882353, a: 0}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _EmissionColor: {r: 0.5394797, g: 0.5394797, b: 0.5394797, a: 1}
+    - _RimColor: {r: 0.13720089, g: 0.8000001, b: 0.9882353, a: 0}
+    - _SpecColor: {r: 1, g: 1, b: 0.02745098, a: 1}
