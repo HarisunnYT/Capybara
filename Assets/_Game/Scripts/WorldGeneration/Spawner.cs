@@ -16,7 +16,15 @@ public class Spawner : MonoBehaviour
     {
         if (Random.Range(1, 100) <= spawnChance)
         {
-            ObjectSpawner.Instance.PlaceObjectFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), transform.position);
+            if (spawnType == SpawnType.EnclosureGroup)
+            {
+
+                ObjectSpawner.Instance.PlaceRoomFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), transform.position);
+            }
+            else
+            {
+                ObjectSpawner.Instance.PlaceObjectFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), transform.position);
+            }
         }        
     }
 }
