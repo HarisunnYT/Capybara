@@ -31,6 +31,8 @@ public class WorldGenerator : Singleton<WorldGenerator>
     [SerializeField]
     private TextMeshProUGUI seed, genTime;
 
+    public bool treasureRoomSpawned = false, bossRoomSpawned = false;
+
     protected override void Initialize()
     {
         loadingCanvas.SetActive(true);
