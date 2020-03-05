@@ -77,6 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupableItemData: {fileID: 11400000, guid: d2115f2a042828947bf156a3d8c2b6d3, type: 2}
   weaponType: 0
+  attackDelay: 0.2
   projectileData: {fileID: 11400000, guid: dd6be91ee1074ca4aab31d6ee68f13fa, type: 2}
   spawnPosition: {x: -1.59, y: 0, z: 0}
   shootDirection: 2
@@ -139,9 +140,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1642654745573217572, guid: ef91b1169cd6ca4468cd50ce8816d913, type: 3}
-  - {fileID: -3072155499180562189, guid: ef91b1169cd6ca4468cd50ce8816d913, type: 3}
-  - {fileID: -580896390898798407, guid: ef91b1169cd6ca4468cd50ce8816d913, type: 3}
+  - {fileID: 2100000, guid: d6f6a523a5dfaaa48abc6f05b3ff6b4f, type: 2}
+  - {fileID: 2100000, guid: feff3dd195a59884eb0a194864e09103, type: 2}
+  - {fileID: 2100000, guid: a40d25207a1412d4699bc7925d57b246, type: 2}
+  - {fileID: 2100000, guid: 624f611e19325c547a1dc8b8a3f8a645, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
