@@ -20,4 +20,14 @@ public class DebugPanel : Panel
             CanvasManager.Instance.ShowPanel<HUDPanel>();
         }
     }
+
+    public void AddThousandCoins()
+    {
+        CurrencyManager.Instance.AddCurrency(1000);
+    }
+
+    public void ClearCoins()
+    {
+        CurrencyManager.Instance.ClearCurrency();
+    }
 }

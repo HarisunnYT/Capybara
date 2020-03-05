@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
+using DG.Tweening;
 
 public enum Axis
 {
@@ -47,5 +49,16 @@ public static class Util
         }
 
         return transform.forward;
+    }
+
+    public static void PunchIntigerCounter(TMP_Text text, float duration, int previousAmount, int newAmount)
+    {
+        int counter = previousAmount;
+        float punchDuration = duration / (newAmount - previousAmount);
+
+        DOTween.To(() => counter, x => counter = x, newAmount, duration).OnUpdate(() =>
+        {
+            text.text = counter.ToString();
+        });
     }
 }
