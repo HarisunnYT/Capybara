@@ -5,8 +5,9 @@ using UnityEngine;
 public class RoomSpawner : Singleton<RoomSpawner>
 {
     private const int enclosureGroupSpawnChance = 80;
-     
 
+    [SerializeField]
+    private List<Spawner> roomSpawners = new List<Spawner>();
 
     public void SpawnPrefabbedEnclosures()
     {
@@ -17,7 +18,46 @@ public class RoomSpawner : Singleton<RoomSpawner>
                 Spawner spawnedSpawner = Instantiate(WorldGenerator.Instance.spawner, new Vector3(x, 0, z), Quaternion.identity);
                 spawnedSpawner.spawnType = Spawner.SpawnType.EnclosureGroup;
                 spawnedSpawner.spawnChance = enclosureGroupSpawnChance;
+
+                roomSpawners.Add(spawnedSpawner);
             }
         }
+        SpawnRooms();
+    }
+    
+    private void SpawnRooms()
+    {
+        if (!WorldGenerator.Instance.bossRoomSpawned)
+        {
+            int index = Random.Range(0, roomSpawners.Count);
+            roomSpawners[index].SpawnRoom(GetRoomOfType(Room.RoomType.boss), true);
+            roomSpawners.Remove(roomSpawners[index]);
+        }
+
+        if (!WorldGenerator.Instance.treasureRoomSpawned)
+        {
+            int index = Random.Range(0, roomSpawners.Count);
+            roomSpawners[index].SpawnRoom(GetRoomOfType(Room.RoomType.treasure), true);
+            roomSpawners.Remove(roomSpawners[index]);
+        }
+
+        foreach (Spawner roomSpawner in roomSpawners)
+        {
+            roomSpawner.SpawnRoom(GetRoomOfType(Room.RoomType.standard));
+        }       
+    }
+
+    private SpawnObject GetRoomOfType(Room.RoomType roomType)
+    {
+        ObjectManager.SpawnGroup spawnGroup = ObjectManager.Instance.GetSpawnGroup("EnclosureGroup");
+
+        SpawnObject spawnObj = spawnGroup.collection[Random.Range(0, spawnGroup.collection.Length)];
+
+        while (spawnObj.GetComponent<Room>().roomType != roomType)
+        {
+            spawnObj = spawnGroup.collection[Random.Range(0, spawnGroup.collection.Length)];
+        }    
+
+        return spawnObj;
     }
 }

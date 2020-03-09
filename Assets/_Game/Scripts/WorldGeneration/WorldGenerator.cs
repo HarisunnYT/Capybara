@@ -1,7 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class WorldGenerator : Singleton<WorldGenerator>
 {
@@ -72,7 +71,7 @@ public class WorldGenerator : Singleton<WorldGenerator>
     {
         if (isDebug)
         {
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSeconds(.1f);
         }
 
         yield return null;

@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField]
     public enum SpawnType { Pickup, Foliage, EnclosureGroup, Enclosure, Fence, Props };
-
     public SpawnType spawnType;
 
     [Range(1, 100)]
@@ -16,15 +15,18 @@ public class Spawner : MonoBehaviour
     {
         if (Random.Range(1, 100) <= spawnChance)
         {
-            if (spawnType == SpawnType.EnclosureGroup)
-            {
-
-                ObjectSpawner.Instance.PlaceRoomFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), transform.position);
-            }
-            else
+            if (spawnType != SpawnType.EnclosureGroup)
             {
                 ObjectSpawner.Instance.PlaceObjectFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), transform.position);
             }
         }        
+    }
+
+    public void SpawnRoom(SpawnObject spawnObject, bool forceSpawn = false)
+    {
+        if (Random.Range(1, 100) <= spawnChance || forceSpawn)
+        {
+            ObjectSpawner.Instance.PlaceRoomFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), spawnObject, transform.position);
+        }
     }
 }

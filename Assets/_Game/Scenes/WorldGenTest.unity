@@ -308,6 +308,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17194801}
   m_CullTransparentMesh: 0
+--- !u!1 &58138797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 376794898}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376794899}
+  m_Layer: 0
+  m_Name: InControl (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &61793570
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +583,7 @@ MonoBehaviour:
   isDebug: 1
   generatePaths: 0
   loadingCanvas: {fileID: 715611836}
-  mapSize: 225
+  mapSize: 375
   segmentSize: 75
   spawner: {fileID: 4186830885023359583, guid: 0a7a55b5433f8ca4eb60f96782148c8e, type: 3}
   player: {fileID: 7533845370532946597, guid: 95d98cb276bb3bb4f935cf45b724f23c, type: 3}
@@ -576,6 +592,8 @@ MonoBehaviour:
   ground: {fileID: 1272296752}
   seed: {fileID: 1711197491}
   genTime: {fileID: 1875263115}
+  treasureRoomSpawned: 0
+  bossRoomSpawned: 0
 --- !u!114 &89903612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,12 +1292,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2c1bd6474c8b2d4d84ea0717880af87, type: 3}
---- !u!4 &376794899 stripped
+--- !u!4 &376794899
 Transform:
-  m_CorrespondingSourceObject: {fileID: 543982930627597352, guid: a2c1bd6474c8b2d4d84ea0717880af87,
-    type: 3}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 376794898}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58138797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 493311725}
+  m_Father: {fileID: 524080347}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &425518722
 Mesh:
   m_ObjectHideFlags: 0
@@ -1518,6 +1545,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469942858}
   m_CullTransparentMesh: 0
+--- !u!1 &493311724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 376794898}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 493311725}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &493311725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 543982930627597352, guid: a2c1bd6474c8b2d4d84ea0717880af87,
+    type: 3}
+  m_PrefabInstance: {fileID: 376794898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493311724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 376794899}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &502760385
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,6 +4848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f8a82dc0dbd964f884f94ce9438716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomSpawners: []
 --- !u!114 &1963568722
 MonoBehaviour:
   m_ObjectHideFlags: 0

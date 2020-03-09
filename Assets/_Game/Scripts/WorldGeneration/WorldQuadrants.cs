@@ -6,11 +6,6 @@ public class WorldQuadrants : Singleton<WorldQuadrants>
 {
     private const int sectionCount = 4;
 
-    protected override void Initialize()
-    {
-        
-    }
-
     private List<Vector3> xQuads = new List<Vector3>();
     private List<Vector3> zQuads = new List<Vector3>();
 
