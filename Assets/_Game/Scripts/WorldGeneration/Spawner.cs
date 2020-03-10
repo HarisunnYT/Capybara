@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
         {
             if (spawnType != SpawnType.EnclosureGroup)
             {
-                ObjectSpawner.Instance.PlaceObjectFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), transform.position);
+                ObjectSpawner.Instance.PlaceObjectFromSpawner(ObjectManager.Instance.GetSpawnGroup(spawnType.ToString()), transform.position, transform.rotation);
             }
         }        
     }

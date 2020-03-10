@@ -23,9 +23,9 @@ public class ObjectSpawner : Singleton<ObjectSpawner>
         NodeManager.Instance.SetNodeUsed(pos);
     }
 
-    public void PlaceObjectFromSpawner(ObjectManager.SpawnGroup spawnGroup, Vector3 pos)
+    public void PlaceObjectFromSpawner(ObjectManager.SpawnGroup spawnGroup, Vector3 pos, Quaternion rotation)
     {
-        SpawnObject obj = Instantiate(spawnGroup.collection[Random.Range(0, spawnGroup.collection.Length)], pos, Quaternion.identity, spawnGroup.parent);
+        SpawnObject obj = Instantiate(spawnGroup.collection[Random.Range(0, spawnGroup.collection.Length)], pos, rotation, spawnGroup.parent);
 
         for (float x = -obj.MaxBounds() / 2; x < obj.MaxBounds() / 2; x++)
         {
