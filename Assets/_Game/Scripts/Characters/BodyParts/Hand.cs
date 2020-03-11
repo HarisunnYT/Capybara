@@ -19,6 +19,8 @@ public class Hand : BodyPart
     [SerializeField]
     private Hand otherHand;
 
+    public bool AttackedLast = false;
+
     public override void PickUpItem(PickupableItem newItem)
     {
         //try and chuck it on other hand first
@@ -66,7 +68,19 @@ public class Hand : BodyPart
     {
         if (HoldingWeapon())
         {
-            return ((Weapon)currentItemObject).Attack();
+            if (otherHand == null || (otherHand != null && !AttackedLast))
+            {
+                if (((Weapon)currentItemObject).Attack())
+                {
+                    AttackedLast = true;
+                    if (otherHand != null)
+                    {
+                        otherHand.AttackedLast = false;
+                    }
+
+                    return true;
+                }
+            }
         }
 
         return false;

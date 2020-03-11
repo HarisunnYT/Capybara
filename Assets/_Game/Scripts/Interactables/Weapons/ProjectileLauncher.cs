@@ -14,7 +14,7 @@ public class ProjectileLauncher : TwoHandedWeapon
     private Axis shootDirection;
 
     [SerializeField]
-    private float force;
+    private float shootForce;
 
     [SerializeField]
     private float knockBackForce;
@@ -61,7 +61,7 @@ public class ProjectileLauncher : TwoHandedWeapon
         }
 
         //shoot it 
-        projectile.Rigidbody.AddForce(projectile.transform.forward * force * projectileData.ForceMultiplier, ForceMode.Impulse);
+        projectile.Rigidbody.AddForce(projectile.transform.forward * shootForce * projectileData.ForceMultiplier, ForceMode.Impulse);
 
         projectile.Configure(projectileData);
 

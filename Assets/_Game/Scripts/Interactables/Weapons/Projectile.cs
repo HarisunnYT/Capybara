@@ -54,7 +54,6 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-
         if (!destroyed && Time.time > timeUntilDestroy)
         {
             OnDestroyed(transform.position, 0.2f);

@@ -15,8 +15,27 @@ public class AttackController : Controller
 
     protected void Attack()
     {
+        bool attacked = true;
+
         //if the two hand can't attack (eg no weapon) try attacking with single hands instead
-        if (twoHand.Attack() || leftHand.Attack() || rightHand.Attack())
+        if (twoHand.Attack()) 
+        {
+            //empty
+        }
+        else if (leftHand.Attack())
+        {
+            AnimationController.Animator.SetInteger("CurrentHand", 1);
+        }
+        else if (rightHand.Attack())
+        {
+            AnimationController.Animator.SetInteger("CurrentHand", 2);
+        }
+        else
+        {
+            attacked = false;
+        }
+
+        if (attacked)
         {
             AnimationController.SetTrigger("Attack");
         }
