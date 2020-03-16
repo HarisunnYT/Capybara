@@ -42,10 +42,10 @@ public class ExplosionProjectile : Projectile
                 }
             }
 
-            float damageMultiplier = explosionForce / explosionRadius;
+            float damageMultiplier = Mathf.Clamp(explosionForce / explosionRadius, 0, float.MaxValue);
 
             IDamageable damageable = col.gameObject.GetComponentInParent<IDamageable>();
-            if (damageable != null)
+            if (damageable != null && damageMultiplier > 0)
             {
                 damageable.Damaged(data.Damage * damageMultiplier);
             }

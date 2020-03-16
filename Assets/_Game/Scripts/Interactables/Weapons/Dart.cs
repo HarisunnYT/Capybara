@@ -16,7 +16,7 @@ public class Dart : Projectile
             limb.RagdollForDuration(0.5f);
             limb.AddForceToBodies(-collision.relativeVelocity / 2);
 
-            gameObject.SetActive(false);
         }
+        gameObject.SetActive(false);
     }
 }
