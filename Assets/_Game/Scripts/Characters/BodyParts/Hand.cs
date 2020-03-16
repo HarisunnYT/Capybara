@@ -68,7 +68,7 @@ public class Hand : BodyPart
     {
         if (HoldingWeapon())
         {
-            if (otherHand == null || (otherHand != null && !AttackedLast))
+            if (!otherHand.HasItem || !AttackedLast)
             {
                 if (((Weapon)currentItemObject).Attack())
                 {

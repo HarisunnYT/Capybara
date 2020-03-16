@@ -17,6 +17,8 @@ public class BodyPart : MonoBehaviour
 
     public Rigidbody Rigidbody { get; private set; }
 
+    public bool HasItem { get { return currentItemObject != null; } }
+
     private void Awake()
     {
         controller = GetComponentInParent<CharacterController>();
