@@ -1949,6 +1949,7 @@ MonoBehaviour:
   - {fileID: 7533845371253174802}
   - {fileID: 7533845371287467902}
   skeleton: {fileID: 8075963197932047904}
+  middle: {fileID: 43154797151892154}
 --- !u!114 &6057441757747358320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,7 +1964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovementSpeed: 200
   maxVelocity: 5
-  rotationSpeed: 5
+  rotationSpeed: 10
   forwardJumpForce: 10
   upwardJumpForce: 10
   groundedRaySize: 1.5

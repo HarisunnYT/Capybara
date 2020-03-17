@@ -7,17 +7,21 @@ public class CoinDispenser : MonoBehaviour
     [SerializeField]
     private int minCoins, maxCoins;
 
+    [Space()]
+    [SerializeField]
+    private float force;
+
     [SerializeField]
     private GameObject coinPrefab;
 
-    public void DispenseCoins(Vector3 direction, float force)
+    public void DispenseCoins()
     {
         int randomAmount = Random.Range(minCoins, maxCoins);
 
-        DispenseCoins(direction, force, randomAmount);
+        DispenseCoins(randomAmount);
     }
 
-    public void DispenseCoins(Vector3 direction, float force, int exactAmount)
+    public void DispenseCoins(int exactAmount)
     {
         for (int i = 0; i < exactAmount; i++)
         {

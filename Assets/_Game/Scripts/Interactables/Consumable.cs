@@ -4,21 +4,60 @@ using UnityEngine;
 
 public abstract class Consumable : MonoBehaviour
 {
-    protected virtual void OnPickedUp() { }
+    [SerializeField]
+    private float pickUpDistance;
 
-    private void OnTriggerEnter(Collider other)
+    [SerializeField]
+    private float spawnPickUpDelay = 0.5f;
+
+    private bool pickedUp = false;
+    protected bool collected = false;
+
+    private float lerpTarget = 0;
+    private float spawnPickUpTimer;
+
+    private Vector3 pickedUpPosition;
+
+    private const float lerpDuration = 0.1f;
+
+    private void OnEnable()
     {
-        if (other.gameObject.GetComponentInParent<CapyMovementController>())
+        pickedUp = false;
+        collected = false;
+        lerpTarget = 0;
+
+        spawnPickUpTimer = Time.time + spawnPickUpDelay;
+    }
+
+    private void Update()
+    {
+        if (collected)
+            return;
+
+        if (pickedUp)
         {
-            OnPickedUp();
+            lerpTarget += Time.deltaTime;
+            float normalisedTime = lerpTarget / lerpDuration;
+
+            transform.position = Vector3.Lerp(pickedUpPosition, GameManager.Instance.CapyController.Middle.position, normalisedTime);
+
+            if (normalisedTime >= 1)
+            {
+                collected = true;
+                OnPickedUp();
+            }
+        }
+        else if (Time.time > spawnPickUpTimer && Vector3.Distance(transform.position, GameManager.Instance.CapyController.transform.position) < pickUpDistance)
+        {
+            pickedUpPosition = transform.position;
+            pickedUp = true;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnPickedUp() { }
+
+    private void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.GetComponentInParent<CapyMovementController>())
-        {
-            OnPickedUp();
-        }
+        Gizmos.DrawWireSphere(transform.position, pickUpDistance);
     }
 }

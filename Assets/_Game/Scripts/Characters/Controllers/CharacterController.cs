@@ -20,6 +20,10 @@ public class CharacterController : Controller
     private Transform skeleton;
     public Transform Skeleton { get { return skeleton; } }
 
+    [SerializeField]
+    private Transform middle;
+    public Transform Middle { get { return middle; } }
+
     protected override void Awake()
     {
         base.Awake();

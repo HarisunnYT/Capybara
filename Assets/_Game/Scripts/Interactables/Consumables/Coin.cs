@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
-public class Coin : MonoBehaviour
+public class Coin : Consumable
 {
+    [Space()]
     [SerializeField]
-    private int amount = 1;
+    private int amount;
 
-    public void OnCollisionEnter(Collision collision)
+    protected override void OnPickedUp()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            CurrencyManager.Instance.AddCurrency(amount);
-            gameObject.SetActive(false);
-        }
+        CurrencyManager.Instance.AddCurrency(amount);
+        transform.gameObject.SetActive(false);
     }
 }
