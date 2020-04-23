@@ -12,9 +12,17 @@ public class Interactable : MonoBehaviour
 
     protected Collider collider;
 
+    public delegate void OnInteractedEvent();
+    public event OnInteractedEvent OnInteracted;
+
     protected virtual void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
+    }
+
+    public virtual void OnInteraction()
+    {
+        OnInteracted?.Invoke();
     }
 }

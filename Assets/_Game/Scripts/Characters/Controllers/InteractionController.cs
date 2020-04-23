@@ -32,6 +32,8 @@ public class InteractionController : Controller
         Interactable closestObject = FindClosestObject(-1, includeRagdollCharacters);
         if (closestObject != null)
         {
+            closestObject.OnInteraction();
+
             if (closestObject is PickupableItem)
             {
                 PickupItem(closestObject as PickupableItem);

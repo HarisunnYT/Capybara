@@ -61,4 +61,9 @@ public static class Util
             text.text = counter.ToString();
         });
     }
+
+    public static T[] GetItemsOfType<T>(string path) where T : ScriptableObject
+    {
+        return Resources.LoadAll<T>(path);
+    }
 }

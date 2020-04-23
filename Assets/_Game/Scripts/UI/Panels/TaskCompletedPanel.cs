@@ -23,9 +23,9 @@ public class TaskCompletedPanel : Panel, IAnimationHandler
     {
         //do stuff to make the task complete stuff appear in the game UI
         taskPromptUI_TaskTitle.text = taskData.TaskName;
-        taskPromptUI_TaskDesc.text = taskData.TaskDescription;
-        taskPromptUI_TaskIcon.sprite = taskData.TaskIcon;
-        taskPromptUI_CurrencyReward.text = taskData.TaskCurrencyReward.ToString();
+        taskPromptUI_TaskDesc.text = taskData.Description;
+        taskPromptUI_TaskIcon.sprite = taskData.Icon;
+        taskPromptUI_CurrencyReward.text = taskData.CurrencyReward.ToString();
 
         ShowPanel();
     }

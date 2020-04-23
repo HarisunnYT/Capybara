@@ -6,7 +6,6 @@ using TMPro;
 
 public class TaskManager : Singleton<TaskManager>
 {
-    [SerializeField]
     private TaskData[] tasks;
 
     Dictionary<string, int> taskDictionary;
@@ -17,6 +16,7 @@ public class TaskManager : Singleton<TaskManager>
     // Start is called before the first frame update
     private void Start()
     {
+        tasks = Util.GetItemsOfType<TaskData>("");
         GenerateDictionary();
     }
 
@@ -43,13 +43,19 @@ public class TaskManager : Singleton<TaskManager>
     {
         foreach (TaskData task in tasks)
         {
+            //if the task has a required task and the required task isn't completed, continue
+            if (task.RequiredTask != null && taskDictionary[task.RequiredTask.TaskName] < task.RequiredTask.Threshold)
+            {
+                continue;
+            }
+
             if (taskName == task.name)
             {
                 taskDictionary[taskName]++;
 
                 //If the threshold for the task has been reached (per the value in the dictionary) then save that data to player prefs to perminantly unlock it and then go and do the fanfare of the task being completed! 
                 //NOTE: Have used == here instead of => as I can see instances where the number could go beyond the threshold and activate the task unlocking process multiple times
-                if (taskDictionary[taskName] == task.TaskThreshold) 
+                if (taskDictionary[taskName] == task.Threshold) 
                 {
                     SaveTaskData(task);
                     TaskCompleted(task);
@@ -58,7 +64,7 @@ public class TaskManager : Singleton<TaskManager>
                 }
 
                 //If the Task Type is global, we also want it to persist over sessions so we also save it to player prefs.
-                if (task.taskType == TaskData.TaskType.Global)
+                if (task.Type == TaskData.TaskType.Global)
                 {
                     SaveTaskData(task);
                 }
