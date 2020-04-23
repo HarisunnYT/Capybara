@@ -82,7 +82,7 @@ public class TaskManager : Singleton<TaskManager>
     {
         Debug.Log("The Task: " + task.name + "(" + task.name + ")" + " has been completed!");
 
-        CanvasManager.Instance.ShowPanel<TaskCompletedPanel>();
+        CanvasManager.Instance.GetPanel<TaskCompletedPanel>().CompletedTask(task);
 
         //Do a thing to actually award the player with currency
     }

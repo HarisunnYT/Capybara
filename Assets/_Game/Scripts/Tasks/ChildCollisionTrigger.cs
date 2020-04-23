@@ -14,7 +14,7 @@ public class ChildCollisionTrigger : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         CharacterController controller = collision.gameObject.GetComponentInParent<CharacterController>();
-        if (controller == GameManager.Instance.CapyController)
+        if (controller != null && controller == GameManager.Instance.CapyController)
         {
             collisionTrigger.TriggerFromChild();
         }

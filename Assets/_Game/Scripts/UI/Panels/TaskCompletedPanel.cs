@@ -19,8 +19,23 @@ public class TaskCompletedPanel : Panel, IAnimationHandler
     [SerializeField]
     private TextMeshProUGUI taskPromptUI_CurrencyReward;
 
+    private List<TaskData> completedTasks = new List<TaskData>();
+
     public void CompletedTask(TaskData taskData)
     {
+        completedTasks.Add(taskData);
+
+        if (!gameObject.activeSelf)
+        {
+            ShowPrompt();
+        }
+    }
+
+    private void ShowPrompt()
+    {
+        TaskData taskData = completedTasks[completedTasks.Count - 1];
+        completedTasks.Remove(taskData);
+
         //do stuff to make the task complete stuff appear in the game UI
         taskPromptUI_TaskTitle.text = taskData.TaskName;
         taskPromptUI_TaskDesc.text = taskData.Description;
@@ -28,6 +43,14 @@ public class TaskCompletedPanel : Panel, IAnimationHandler
         taskPromptUI_CurrencyReward.text = taskData.CurrencyReward.ToString();
 
         ShowPanel();
+    }
+
+    protected override void OnClose()
+    {
+        if (completedTasks.Count > 0)
+        {
+            ShowPrompt();
+        }
     }
 
 }

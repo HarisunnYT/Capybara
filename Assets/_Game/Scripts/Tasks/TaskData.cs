@@ -29,7 +29,7 @@ public class TaskData : ScriptableObject
     public TaskRarity Rarity;
 
     [Space()]
-    public int Threshold;
+    public int Threshold = 1;  
     public int CurrencyReward;
 
     [Header("Optional")]
