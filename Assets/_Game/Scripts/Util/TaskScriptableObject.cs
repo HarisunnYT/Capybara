@@ -20,14 +20,13 @@ public class TaskData : ScriptableObject
 
     public TaskType taskType;
 
-    public string taskName;
-    public int taskID;
-    public string taskDescription;
-    public Sprite taskIcon;
+    public string TaskName;
+    public string TaskDescription;
+    public Sprite TaskIcon;
 
     public TaskRarity taskRarity;
 
-    public int taskThreshold;
+    public int TaskThreshold;
 
-    public int taskCurrencyReward;
+    public int TaskCurrencyReward;
 }

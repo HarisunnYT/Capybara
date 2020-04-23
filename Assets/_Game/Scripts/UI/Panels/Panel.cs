@@ -18,7 +18,7 @@ public class Panel : MonoBehaviour, IAnimationHandler
     private bool pauseTime = false;
     public bool PauseTime { get { return pauseTime; } }
 
-    [Space()]
+    [Header("Optional")]
     [SerializeField]
     public GameObject selectedButton;
 

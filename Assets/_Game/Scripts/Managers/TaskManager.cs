@@ -11,17 +11,6 @@ public class TaskManager : MonoBehaviour
 
     Dictionary<int, int> taskDictionary;
 
-    [SerializeField]
-    Animator taskPromptUI_Animator;
-    [SerializeField]
-    Image taskPromptUI_TaskIcon;
-    [SerializeField]
-    TextMeshProUGUI taskPromptUI_TaskTitle;
-    [SerializeField]
-    TextMeshProUGUI taskPromptUI_TaskDesc;
-    [SerializeField]
-    TextMeshProUGUI taskPromptUI_CurrencyReward;
-
 
     // Start is called before the first frame update
     void Start()
@@ -96,13 +85,7 @@ public class TaskManager : MonoBehaviour
     {
         Debug.Log("The Task: " + task.taskName + "(" + task.taskID + ")" + " has been completed!");
 
-        //do stuff to make the task complete stuff appear in the game UI
-        taskPromptUI_TaskTitle.text = task.taskName;
-        taskPromptUI_TaskDesc.text = task.taskDescription;
-        taskPromptUI_TaskIcon.sprite = task.taskIcon;
-        taskPromptUI_CurrencyReward.text = task.taskCurrencyReward.ToString();
-
-        taskPromptUI_Animator.SetBool("TaskComplete", true);
+        CanvasManager.Instance.ShowPanel<TaskCompletedPanel>();
 
         //Do a thing to actually award the player with currency
     }
