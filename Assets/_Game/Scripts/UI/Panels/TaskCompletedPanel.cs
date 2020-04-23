@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TaskCompletedPanel : Panel
+public class TaskCompletedPanel : Panel, IAnimationHandler
 {
     [Space()]
     [SerializeField]
@@ -22,10 +22,10 @@ public class TaskCompletedPanel : Panel
     public void CompletedTask(TaskData taskData)
     {
         //do stuff to make the task complete stuff appear in the game UI
-        taskPromptUI_TaskTitle.text = taskData.taskName;
-        taskPromptUI_TaskDesc.text = taskData.taskDescription;
-        taskPromptUI_TaskIcon.sprite = taskData.taskIcon;
-        taskPromptUI_CurrencyReward.text = taskData.taskCurrencyReward.ToString();
+        taskPromptUI_TaskTitle.text = taskData.TaskName;
+        taskPromptUI_TaskDesc.text = taskData.TaskDescription;
+        taskPromptUI_TaskIcon.sprite = taskData.TaskIcon;
+        taskPromptUI_CurrencyReward.text = taskData.TaskCurrencyReward.ToString();
 
         ShowPanel();
     }

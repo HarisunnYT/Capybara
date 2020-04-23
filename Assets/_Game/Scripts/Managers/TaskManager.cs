@@ -4,48 +4,52 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TaskManager : MonoBehaviour
+public class TaskManager : Singleton<TaskManager>
 {
     [SerializeField]
-    TaskData[] tasks;
+    private TaskData[] tasks;
 
-    Dictionary<int, int> taskDictionary;
+    Dictionary<string, int> taskDictionary;
+
+    private const string taskProgressPrefFormat = "task-{0}-progress";
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         GenerateDictionary();
-        UpdateTask(0);
     }
 
-    void GenerateDictionary()
+    private void GenerateDictionary()
     {
-        taskDictionary = new Dictionary<int, int>();
+        taskDictionary = new Dictionary<string, int>(tasks.Length);
+        for (int i = 0; i < tasks.Length; i++)
+        {
+            taskDictionary.Add(tasks[i].name, 0);
+            if (PlayerPrefs.HasKey(string.Format(taskProgressPrefFormat, tasks[i].name)))
+            {
+                taskDictionary[tasks[i].name] = PlayerPrefs.GetInt(string.Format(taskProgressPrefFormat, tasks[i].name));
+            }
+        }
+    }
+
+    public void UpdateTask(TaskData taskData)
+    {
+        UpdateTask(taskData.name);
     }
 
     //Called when an event happens in the game to progress a task, passes though the ID of the task that is to be progressed
-    void UpdateTask(int taskID)
+    public void UpdateTask(string taskName)
     {
         foreach (TaskData task in tasks)
         {
-            if (taskID == task.taskID)
+            if (taskName == task.name)
             {
-                //If the taskDictionary does not yet have an entry for this task, create it and set its value to 1.
-                if (!taskDictionary.ContainsKey(taskID))
-                {
-                    taskDictionary.Add(taskID, 1);
-                }
-
-                //If the taskDictionary DOES have an existing entry for this task, increment it by 1. 
-                else
-                {
-                    taskDictionary[taskID] = taskDictionary[taskID]++;
-                }
+                taskDictionary[taskName]++;
 
                 //If the threshold for the task has been reached (per the value in the dictionary) then save that data to player prefs to perminantly unlock it and then go and do the fanfare of the task being completed! 
                 //NOTE: Have used == here instead of => as I can see instances where the number could go beyond the threshold and activate the task unlocking process multiple times
-                if (taskDictionary[taskID] == task.taskThreshold) 
+                if (taskDictionary[taskName] == task.TaskThreshold) 
                 {
                     SaveTaskData(task);
                     TaskCompleted(task);
@@ -60,37 +64,24 @@ public class TaskManager : MonoBehaviour
                 }
                 return;
             }
-            return;
         }
     }
 
-    void SaveTaskData(TaskData task)
+    private void SaveTaskData(TaskData task)
     {
-        //Check to see if that task has already had some progress made on it by seeing if the pref for it exists. 
-        //If it does, increment it further, if not, create the new pref for it and set it to 1.
-        if (PlayerPrefs.HasKey("task-" + task.taskID + "-progress"))
-        {
-            PlayerPrefs.SetInt("task-" + task.taskID + "-progress", PlayerPrefs.GetInt("task-" + task.taskID + "-progress") + 1);
-            Debug.Log("Pref for task '" + task.taskName + "(" + task.taskID + ")" + "' exists. New value is " + PlayerPrefs.GetInt("task-" + task.taskID + "-progress") + ".");
-        }
-
-        else
-        {
-            Debug.Log("Pref for task '" + task.taskName + "(" + task.taskID + ")" + "' does not exist. Creating new pref...");
-            PlayerPrefs.SetInt("task-" + task.taskID + "-progress", 1);
-        }
+        PlayerPrefs.SetInt(string.Format(taskProgressPrefFormat, task.name), taskDictionary[task.name]);
     }
 
-    void TaskCompleted(TaskData task)
+    private void TaskCompleted(TaskData task)
     {
-        Debug.Log("The Task: " + task.taskName + "(" + task.taskID + ")" + " has been completed!");
+        Debug.Log("The Task: " + task.name + "(" + task.name + ")" + " has been completed!");
 
         CanvasManager.Instance.ShowPanel<TaskCompletedPanel>();
 
         //Do a thing to actually award the player with currency
     }
 
-    void DeletePrefs ()
+    private void DeletePrefs ()
     {
         PlayerPrefs.DeleteAll();
     }
