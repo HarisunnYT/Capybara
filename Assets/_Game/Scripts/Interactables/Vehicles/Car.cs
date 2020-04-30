@@ -108,7 +108,7 @@ public class Car : Vehicle
 
     public void FixedUpdate()
     {
-        if (Equiped)
+        if (Equipped)
         {
             inputVector = CurrentController.MovementController.GetInputVector(cameraRelative: false);
 
@@ -270,7 +270,7 @@ public class Car : Vehicle
     private void Eject(Collider collider)
     {
         //only eject if it hits solid objects
-        if (Equiped && Rigidbody.velocity.magnitude >= minEjectForce && collider.gameObject.GetComponent<Rigidbody>() == null)
+        if (Equipped && Rigidbody.velocity.magnitude >= minEjectForce && collider.gameObject.GetComponent<Rigidbody>() == null)
         {
             CharacterController controller = CurrentController;
             GetOutOfVehicle();

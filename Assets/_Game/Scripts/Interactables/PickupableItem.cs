@@ -26,7 +26,7 @@ public class PickupableItem : Interactable
     {
         if (Time.time > timer)
         {
-            Equiped = false;
+            Equipped = false;
             timer = float.MaxValue;
         }
     }
@@ -45,7 +45,7 @@ public class PickupableItem : Interactable
         CurrentBodyPart = currentBodyPart;
 
         Rigidbody.isKinematic = true;
-        Equiped = true;
+        Equipped = true;
 
         CurrentController.InteractionController.IgnoreCollisions(collider, true);
 
@@ -83,7 +83,7 @@ public class PickupableItem : Interactable
         transform.parent = null;
         Rigidbody.isKinematic = false;
 
-        Equiped = false;
+        Equipped = false;
 
         timer = Time.time + pickUpDelay;
 

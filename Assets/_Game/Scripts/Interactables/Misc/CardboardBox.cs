@@ -21,7 +21,7 @@ public class CardboardBox : PickupableItem
 
     private void Update()
     {
-        if (Equiped)
+        if (Equipped)
         {
             if (CurrentController.MovementController.GetInputVector().magnitude > 0)
             {

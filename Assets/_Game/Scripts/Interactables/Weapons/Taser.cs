@@ -73,7 +73,7 @@ public class Taser : Weapon
 
     private void Update()
     {
-        if (Equiped)
+        if (Equipped)
         {
             transform.localRotation = pickUpRotation;
         }
@@ -81,7 +81,7 @@ public class Taser : Weapon
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Equiped && tasingCharacter == null && collision.gameObject.layer == LayerMask.NameToLayer("Character"))
+        if (Equipped && tasingCharacter == null && collision.gameObject.layer == LayerMask.NameToLayer("Character"))
         {
             StartCoroutine(TaseCharacter(collision.gameObject.GetComponent<CharacterController>()));
         }

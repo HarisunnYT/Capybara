@@ -77,7 +77,7 @@ public class InteractionController : Controller
             for (int i = 0; i < hitCols.Length; i++)
             {
                 Interactable item = hitCols[i].GetComponent<Interactable>();
-                if (item != null && !item.Equiped)
+                if (item != null && !item.Equipped)
                 {
                     if (closestObject == null || Vector3.Distance(hitCols[i].transform.position, transform.position) < Vector3.Distance(hitCols[i].transform.position, closestObject.transform.position))
                     {
