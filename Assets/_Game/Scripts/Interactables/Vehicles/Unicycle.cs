@@ -108,7 +108,7 @@ public class Unicycle : Vehicle
 
     private void Update()
     {
-        if (Equiped)
+        if (Equipped)
         {
             wobbleValue = Mathf.PingPong(Time.time * wobbleSpeed, 2) - 1;
 

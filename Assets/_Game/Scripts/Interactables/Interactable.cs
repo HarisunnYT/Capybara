@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public bool Equiped { get; protected set; }
+    public bool Equipped { get; protected set; }
 
     public CharacterController CurrentController { get; protected set; }
 

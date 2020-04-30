@@ -36,7 +36,7 @@ public class HelicopterHat : PickupableItem
 
     private void FixedUpdate()
     {
-        if (Equiped && CurrentController == GameManager.Instance.CapyController)
+        if (Equipped && CurrentController == GameManager.Instance.CapyController)
         {
             pingPongValue = Mathf.PingPong(Time.time, 2) - 1;
 

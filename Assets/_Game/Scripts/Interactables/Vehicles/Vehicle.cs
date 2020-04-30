@@ -19,7 +19,7 @@ public class Vehicle : Interactable
     private Transform seatBone;
 
     [SerializeField]
-    protected Collider[] carliders;
+    protected Collider[] carliders; // lol
 
     protected float health;
 
@@ -30,7 +30,7 @@ public class Vehicle : Interactable
        
     public void GetInVehicle(CharacterController characterController)
     {
-        Equiped = true;
+        Equipped = true;
         CurrentController = characterController;
 
         StartCoroutine(GetInVehicleIE());
@@ -100,7 +100,7 @@ public class Vehicle : Interactable
         CurrentController.InteractionController.CurrentVehicle = null;
 
         CurrentController = null;
-        Equiped = false;
+        Equipped = false;
     }
 
     protected virtual void UpdateParts()

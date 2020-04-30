@@ -31,7 +31,7 @@ public class HeadController : Controller
 
     private void Update()
     {
-        if (currentInterest != null && !currentInterest.Equiped)
+        if (currentInterest != null && !currentInterest.Equipped)
         {
             Vector3 direction = currentInterest.transform.position - headBone.position;
             Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -57,7 +57,7 @@ public class HeadController : Controller
         if (Util.CheckInsideLayer(interestLayers, other.gameObject.layer))
         {
             PickupableItem pickupableItem = other.gameObject.GetComponent<PickupableItem>();
-            if (pickupableItem != null && pickupableItem.Equiped)
+            if (pickupableItem != null && pickupableItem.Equipped)
             {
                 return;
             }
