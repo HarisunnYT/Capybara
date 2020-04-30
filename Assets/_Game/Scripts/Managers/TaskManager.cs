@@ -6,29 +6,37 @@ using TMPro;
 
 public class TaskManager : Singleton<TaskManager>
 {
-    private TaskData[] tasks;
+    [SerializeField]
+    private TaskList[] taskLists;
+    public TaskList[] TaskLists { get { return taskLists; } private set { taskLists = value; } }
 
     Dictionary<string, int> taskDictionary;
 
     private const string taskProgressPrefFormat = "task-{0}-progress";
 
-
-    // Start is called before the first frame update
     private void Start()
     {
-        tasks = Util.GetItemsOfType<TaskData>("");
         GenerateDictionary();
     }
 
     private void GenerateDictionary()
     {
-        taskDictionary = new Dictionary<string, int>(tasks.Length);
-        for (int i = 0; i < tasks.Length; i++)
+        int tasksLength = 0;
+        foreach (var tasks in TaskLists)
         {
-            taskDictionary.Add(tasks[i].name, 0);
-            if (PlayerPrefs.HasKey(string.Format(taskProgressPrefFormat, tasks[i].name)))
+            tasksLength += tasks.tasks.Length;
+        }
+
+        taskDictionary = new Dictionary<string, int>(tasksLength);
+        foreach (var tasks in TaskLists)
+        {
+            for (int i = 0; i < tasks.tasks.Length; i++)
             {
-                taskDictionary[tasks[i].name] = PlayerPrefs.GetInt(string.Format(taskProgressPrefFormat, tasks[i].name));
+                taskDictionary.Add(tasks.tasks[i].name, 0);
+                if (PlayerPrefs.HasKey(string.Format(taskProgressPrefFormat, tasks.tasks[i].name)))
+                {
+                    taskDictionary[tasks.tasks[i].name] = PlayerPrefs.GetInt(string.Format(taskProgressPrefFormat, tasks.tasks[i].name));
+                }
             }
         }
     }
@@ -41,36 +49,44 @@ public class TaskManager : Singleton<TaskManager>
     //Called when an event happens in the game to progress a task, passes though the ID of the task that is to be progressed
     public void UpdateTask(string taskName)
     {
-        foreach (TaskData task in tasks)
+        foreach (var tasks in TaskLists)
         {
-            //if the task has a required task and the required task isn't completed, continue
-            if (task.RequiredTask != null && taskDictionary[task.RequiredTask.TaskName] < task.RequiredTask.Threshold)
+            foreach (TaskData task in tasks.tasks)
             {
-                continue;
-            }
-
-            if (taskName == task.name)
-            {
-                taskDictionary[taskName]++;
-
-                //If the threshold for the task has been reached (per the value in the dictionary) then save that data to player prefs to perminantly unlock it and then go and do the fanfare of the task being completed! 
-                //NOTE: Have used == here instead of => as I can see instances where the number could go beyond the threshold and activate the task unlocking process multiple times
-                if (taskDictionary[taskName] == task.Threshold) 
+                //if the task has a required task and the required task isn't completed, continue
+                if (task.RequiredTask != null && taskDictionary[task.RequiredTask.TaskName] < task.RequiredTask.Threshold)
                 {
-                    SaveTaskData(task);
-                    TaskCompleted(task);
+                    continue;
+                }
 
+                if (taskName == task.name)
+                {
+                    taskDictionary[taskName]++;
+
+                    //If the threshold for the task has been reached (per the value in the dictionary) then save that data to player prefs to perminantly unlock it and then go and do the fanfare of the task being completed! 
+                    //NOTE: Have used == here instead of => as I can see instances where the number could go beyond the threshold and activate the task unlocking process multiple times
+                    if (taskDictionary[taskName] == task.Threshold)
+                    {
+                        SaveTaskData(task);
+                        TaskCompleted(task);
+
+                        return;
+                    }
+
+                    //If the Task Type is global, we also want it to persist over sessions so we also save it to player prefs.
+                    if (task.Type == TaskData.TaskType.Global)
+                    {
+                        SaveTaskData(task);
+                    }
                     return;
                 }
-
-                //If the Task Type is global, we also want it to persist over sessions so we also save it to player prefs.
-                if (task.Type == TaskData.TaskType.Global)
-                {
-                    SaveTaskData(task);
-                }
-                return;
             }
         }
+    }
+
+    public bool IsTaskComplete(TaskData task)
+    {
+        return PlayerPrefs.GetInt(string.Format(taskProgressPrefFormat, task.name)) >= taskDictionary[task.name];
     }
 
     private void SaveTaskData(TaskData task)

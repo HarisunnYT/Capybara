@@ -66,4 +66,17 @@ public static class Util
     {
         return Resources.LoadAll<T>(path);
     }
+
+    public static float ConvertRange(float previousValue, float previousMin, float previousMax, float newMin, float newMax)
+    {
+        float previousRange = previousMax - previousMin;
+
+        if (System.Math.Abs(previousRange) < Mathf.Epsilon)
+            return newMin;
+
+        float newRange = newMax - newMin;
+        float newValue = (((previousValue - previousMin) * newRange) / previousRange) + newMin;
+        return newValue;
+    }
+
 }

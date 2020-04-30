@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 767496964923656122}
+  - component: {fileID: 4111328630555714037}
   m_Layer: 5
   m_Name: TaskListItem
   m_TagString: Untagged
@@ -114,6 +115,22 @@ RectTransform:
   m_AnchoredPosition: {x: -10.13, y: -19.03}
   m_SizeDelta: {x: 453.52, y: 32.46}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4111328630555714037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182343866134744566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561e15aeba0ed6e4a9dbc5888b6e3164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberText: {fileID: 5792371025440022175}
+  taskTitle: {fileID: 7088692892379524018}
+  tick: {fileID: 7526982386746358514}
+  selectedObj: {fileID: 4941257858625120206}
 --- !u!1 &5915678944211356366
 GameObject:
   m_ObjectHideFlags: 0
