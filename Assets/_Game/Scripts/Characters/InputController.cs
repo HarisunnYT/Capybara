@@ -35,6 +35,9 @@ public class InputProfile : PlayerActionSet
     public PlayerAction Interact;
     public PlayerAction Jump;
 
+    public PlayerAction RightBumper;
+    public PlayerAction LeftBumper;
+
     public PlayerAction Escape;
 
     private ulong updateTick;
@@ -51,6 +54,9 @@ public class InputProfile : PlayerActionSet
         RotateRight = CreatePlayerAction("Rotate Right");
         RotateUp = CreatePlayerAction("Rotate Up");
         RotateDown = CreatePlayerAction("Rotate Down");
+
+        RightBumper = CreatePlayerAction("Right Bumper");
+        LeftBumper = CreatePlayerAction("Left Bumper");
 
         Move = CreateTwoAxisPlayerAction(Left, Right, Down, Up);
         RotateCamera = CreateTwoAxisPlayerAction(RotateLeft, RotateRight, RotateDown, RotateUp);
@@ -116,6 +122,9 @@ public class InputProfile : PlayerActionSet
         Aim.AddDefaultBinding(InputControlType.LeftTrigger);
         Interact.AddDefaultBinding(InputControlType.Action3);
         Jump.AddDefaultBinding(InputControlType.Action1);
+
+        RightBumper.AddDefaultBinding(InputControlType.RightBumper);
+        LeftBumper.AddDefaultBinding(InputControlType.LeftBumper);
 
         Escape.AddDefaultBinding(InputControlType.Start);
     }

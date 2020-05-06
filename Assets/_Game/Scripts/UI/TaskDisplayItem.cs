@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class TaskDisplayItem : DisplayItem
+public class TaskDisplayItem : DisplayItem, ISelectHandler, IDeselectHandler
 {
     [SerializeField]
     private TMP_Text numberText;
@@ -17,15 +18,26 @@ public class TaskDisplayItem : DisplayItem
     [SerializeField]
     private GameObject selectedObj;
 
-    public void Configure(int number, string title, bool completed)
+    private TaskData taskData;
+
+    public void Configure(int number, string title, bool completed, TaskData data)
     {
         numberText.text = "#" + number;
         taskTitle.text = title;
+        taskData = data;
+
         tick.SetActive(completed);
     }
 
-    public void SetSelected(bool selected)
+    public void OnDeselect(BaseEventData eventData)
     {
-        selectedObj.SetActive(selected);
+        selectedObj.SetActive(false);
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        CanvasManager.Instance.GetPanel<TaskJournalPanel>().DisplayTaskInformation(taskData);
+
+        selectedObj.SetActive(true);
     }
 }

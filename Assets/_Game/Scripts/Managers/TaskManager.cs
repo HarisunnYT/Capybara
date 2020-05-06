@@ -89,6 +89,11 @@ public class TaskManager : Singleton<TaskManager>
         return PlayerPrefs.GetInt(string.Format(taskProgressPrefFormat, task.name)) >= taskDictionary[task.name];
     }
 
+    public int GetTaskProgress(TaskData task)
+    {
+        return taskDictionary[task.name];
+    }
+
     private void SaveTaskData(TaskData task)
     {
         PlayerPrefs.SetInt(string.Format(taskProgressPrefFormat, task.name), taskDictionary[task.name]);

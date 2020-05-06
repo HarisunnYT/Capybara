@@ -11,7 +11,7 @@ public class DisplayList : MonoBehaviour
 
     private ScrollRect scrollRect;
 
-    private List<DisplayItem> displayItems = new List<DisplayItem>();
+    public List<DisplayItem> DisplayItems { get; private set; } = new List<DisplayItem>();
 
     private void Awake()
     {
@@ -37,18 +37,18 @@ public class DisplayList : MonoBehaviour
         DisplayItem item = Instantiate(itemToInstantiate, scrollRect.content);
         item.gameObject.SetActive(true);
 
-        displayItems.Add(item);
+        DisplayItems.Add(item);
 
         return item as T;
     }
 
     public void ClearList()
     {
-        for (int i = 0; i < displayItems.Count; i++)
+        for (int i = 0; i < DisplayItems.Count; i++)
         {
-            Destroy(displayItems[i].gameObject);
+            Destroy(DisplayItems[i].gameObject);
         }
 
-        displayItems.Clear();
+        DisplayItems.Clear();
     }
 }

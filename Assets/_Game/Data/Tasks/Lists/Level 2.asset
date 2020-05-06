@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c6290f1c5b53248b884673c870c5cf, type: 3}
-  m_Name: TEST_Damage_Task
+  m_Script: {fileID: 11500000, guid: 75e3c89b5dc4b97488b304849f3b049f, type: 3}
+  m_Name: Level 2
   m_EditorClassIdentifier: 
-  TaskName: 
-  Description: 
-  Icon: {fileID: 0}
-  Type: 0
-  Rarity: 0
-  Threshold: 1
-  CurrencyReward: 0
-  RequiredTask: {fileID: 0}
+  tasks:
+  - {fileID: 11400000, guid: eb7e82f7c64ea104e91e98c2befe3407, type: 2}
+  - {fileID: 11400000, guid: 4061eacf6df05074fb7f71f7e30d4dd5, type: 2}
