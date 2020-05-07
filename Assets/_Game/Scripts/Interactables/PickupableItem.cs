@@ -37,15 +37,26 @@ public class PickupableItem : Interactable
     public virtual void PickUpItem(Transform parent, BodyPart currentBodyPart, CharacterController controller)
     {
         CurrentController = controller;
+        CurrentBodyPart = currentBodyPart;
+        Equipped = true;
 
         transform.parent = parent;
         transform.localPosition = pickupableItemData.GetPosition(controller.CharacterType);
         transform.localRotation = Quaternion.Euler(pickupableItemData.GetEulerRotation(controller.CharacterType));
 
-        CurrentBodyPart = currentBodyPart;
+        SpringJoint joint = GetComponent<SpringJoint>();     //TODO eventually make it so all body parts can connect with joints
+        if (joint && pickupableItemData.GetBodyPartSlotType(controller.CharacterType) == BodyPartType.Mouth)
+        {
+            transform.parent = null;
 
-        Rigidbody.isKinematic = true;
-        Equipped = true;
+            Vector3 direction = controller.GetBodyPart(BodyPartType.Mouth).transform.position - transform.position;
+            joint.anchor = direction;
+            joint.connectedBody = controller.GetBodyPart(BodyPartType.Mouth).Rigidbody;
+        }
+        else
+        {
+            Rigidbody.isKinematic = true;
+        }
 
         CurrentController.InteractionController.IgnoreCollisions(collider, true);
 
