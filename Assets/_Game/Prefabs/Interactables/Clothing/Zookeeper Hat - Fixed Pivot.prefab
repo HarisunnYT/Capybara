@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 530932121469963922}
   - component: {fileID: 530932121469963925}
   - component: {fileID: 530932121469963924}
+  - component: {fileID: -3114819796420547222}
   m_Layer: 0
   m_Name: Zookeeper Hat - Fixed Pivot
   m_TagString: Untagged
@@ -124,3 +125,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.49124146, y: 0.23793101, z: 0.5285492}
   m_Center: {x: -0.011248589, y: -0.014675498, z: 0.007949829}
+--- !u!114 &-3114819796420547222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394660115625580447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8f7bafad7a299499a1e0c1baf9c2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTriggerAmount: 1
+  tasks:
+  - {fileID: 11400000, guid: 373bdba7aae888c4f8adfe3bda849f24, type: 2}

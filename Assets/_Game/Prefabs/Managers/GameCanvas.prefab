@@ -10128,7 +10128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 72.1, y: 21.1}
+  m_AnchoredPosition: {x: 72.1, y: 53}
   m_SizeDelta: {x: 347.15, y: 34.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6702539720739725482
@@ -10159,7 +10159,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: All You Can Eat
+  m_text: All You Can Eat!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f255db4265b09004498022ec77cbc653, type: 2}
   m_sharedMaterial: {fileID: 6214488336640508164, guid: f255db4265b09004498022ec77cbc653,
@@ -10188,14 +10188,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
+  m_fontSize: 27.9
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 27.9
   m_fontStyle: 0
-  m_textAlignment: 258
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -10205,7 +10205,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -10226,10 +10226,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -0.56298643, z: 0.6119504, w: 0.56504565}
+  m_margin: {x: 0, y: 13.654078, z: 0.6119504, w: -39.083282}
   m_textInfo:
     textComponent: {fileID: 8858944912814851949}
-    characterCount: 15
+    characterCount: 16
     spriteCount: 0
     spaceCount: 3
     wordCount: 4
@@ -11967,8 +11967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 72.1, y: -31.7}
-  m_SizeDelta: {x: 347.15, y: 34.35}
+  m_AnchoredPosition: {x: 72.1, y: -45.313}
+  m_SizeDelta: {x: 347.1, y: 54.375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6081523015104815195
 CanvasRenderer:
